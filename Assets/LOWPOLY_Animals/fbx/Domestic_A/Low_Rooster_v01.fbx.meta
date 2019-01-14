@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 136e5921d9948224d883a8200e363d22
+timeCreated: 1513958526
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm.L
+    100002: arm.R
+    100004: Arm_cock
+    100006: Basic
+    100008: body
+    100010: finger1.L
+    100012: finger1.L_end
+    100014: finger1.R
+    100016: finger1.R_end
+    100018: finger2.L
+    100020: finger2.L_end
+    100022: finger2.R
+    100024: finger2.R_end
+    100026: finger3.L
+    100028: finger3.L.002
+    100030: finger3.L_end
+    100032: finger3.R
+    100034: finger3.R_end
+    100036: finger4.L
+    100038: finger4.L_end
+    100040: finger4.R
+    100042: finger4.R_end
+    100044: foot.R
+    100046: hand.L
+    100048: hand.L_end
+    100050: hand.R
+    100052: hand.R_end
+    100054: head
+    100056: leg1.L
+    100058: leg1.R
+    100060: leg2.L
+    100062: leg2.L_end
+    100064: leg2.R
+    100066: leg2.R_end
+    100068: //RootNode
+    100070: mouth
+    100072: mouth_end
+    100074: neck
+    100076: neck_end
+    100078: Rooster_low
+    100080: spine_01
+    100082: spine_02
+    100084: spine_03
+    100086: tail
+    100088: tail_end
+    400000: arm.L
+    400002: arm.R
+    400004: Arm_cock
+    400006: Basic
+    400008: body
+    400010: finger1.L
+    400012: finger1.L_end
+    400014: finger1.R
+    400016: finger1.R_end
+    400018: finger2.L
+    400020: finger2.L_end
+    400022: finger2.R
+    400024: finger2.R_end
+    400026: finger3.L
+    400028: finger3.L.002
+    400030: finger3.L_end
+    400032: finger3.R
+    400034: finger3.R_end
+    400036: finger4.L
+    400038: finger4.L_end
+    400040: finger4.R
+    400042: finger4.R_end
+    400044: foot.R
+    400046: hand.L
+    400048: hand.L_end
+    400050: hand.R
+    400052: hand.R_end
+    400054: head
+    400056: leg1.L
+    400058: leg1.R
+    400060: leg2.L
+    400062: leg2.L_end
+    400064: leg2.R
+    400066: leg2.R_end
+    400068: //RootNode
+    400070: mouth
+    400072: mouth_end
+    400074: neck
+    400076: neck_end
+    400078: Rooster_low
+    400080: spine_01
+    400082: spine_02
+    400084: spine_03
+    400086: tail
+    400088: tail_end
+    4300000: Rooster_low
+    7400000: Arm_cock|attack
+    7400002: Arm_cock|dead
+    7400004: Arm_cock|eat
+    7400006: Arm_cock|hit
+    7400008: Arm_cock|idle_1
+    7400010: Arm_cock|idle_2
+    7400012: Arm_cock|kukareku
+    7400014: Arm_cock|Run
+    7400016: Arm_cock|Walk_fast
+    7400018: Arm_cock|Walk_search
+    7400020: Arm_cock|Walk_slow
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Rooster_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

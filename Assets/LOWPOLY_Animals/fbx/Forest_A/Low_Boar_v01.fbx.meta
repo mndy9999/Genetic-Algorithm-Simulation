@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: c60e723c6afb0fc449ecfd3661b47008
+timeCreated: 1513958283
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_boar
+    100002: Boar_low
+    100004: Bone
+    100006: Bone.001
+    100008: Bone.002
+    100010: Bone.003
+    100012: Bone.003_end
+    100014: Bone.004
+    100016: Bone.004_end
+    100018: Bone.005
+    100020: Bone.006
+    100022: Bone.007
+    100024: Bone.008
+    100026: Bone.009
+    100028: Bone.010
+    100030: Bone.011
+    100032: Bone.011_end
+    100034: Bone.012
+    100036: Bone.012_end
+    100038: Bone.013
+    100040: Bone.014
+    100042: Bone.014_end
+    100044: Bone.015
+    100046: Bone.016
+    100048: Bone.017
+    100050: Bone.017_end
+    100052: Bone.018
+    100054: Bone.018_end
+    100056: Bone.021
+    100058: Bone.022
+    100060: Bone.023
+    100062: Bone.023_end
+    100064: Bone.024
+    100066: Bone.024_end
+    100068: Bone.027
+    100070: Bone.027_end
+    100072: Bone.028
+    100074: Bone.029
+    100076: Bone.030
+    100078: Bone.030_end
+    100080: Bone.031
+    100082: Bone.031_end
+    100084: Bone.033
+    100086: Bone.034
+    100088: Bone.035
+    100090: Bone.035_end
+    100092: Bone.036
+    100094: Bone.036_end
+    100096: //RootNode
+    400000: Arm_boar
+    400002: Boar_low
+    400004: Bone
+    400006: Bone.001
+    400008: Bone.002
+    400010: Bone.003
+    400012: Bone.003_end
+    400014: Bone.004
+    400016: Bone.004_end
+    400018: Bone.005
+    400020: Bone.006
+    400022: Bone.007
+    400024: Bone.008
+    400026: Bone.009
+    400028: Bone.010
+    400030: Bone.011
+    400032: Bone.011_end
+    400034: Bone.012
+    400036: Bone.012_end
+    400038: Bone.013
+    400040: Bone.014
+    400042: Bone.014_end
+    400044: Bone.015
+    400046: Bone.016
+    400048: Bone.017
+    400050: Bone.017_end
+    400052: Bone.018
+    400054: Bone.018_end
+    400056: Bone.021
+    400058: Bone.022
+    400060: Bone.023
+    400062: Bone.023_end
+    400064: Bone.024
+    400066: Bone.024_end
+    400068: Bone.027
+    400070: Bone.027_end
+    400072: Bone.028
+    400074: Bone.029
+    400076: Bone.030
+    400078: Bone.030_end
+    400080: Bone.031
+    400082: Bone.031_end
+    400084: Bone.033
+    400086: Bone.034
+    400088: Bone.035
+    400090: Bone.035_end
+    400092: Bone.036
+    400094: Bone.036_end
+    400096: //RootNode
+    4300000: Boar_low
+    7400000: Arm_boar|attack
+    7400002: Arm_boar|attack_2
+    7400004: Arm_boar|chrom_chrom
+    7400006: Arm_boar|die
+    7400008: Arm_boar|die_2
+    7400010: Arm_boar|down
+    7400012: Arm_boar|eat
+    7400014: Arm_boar|eat_2
+    7400016: Arm_boar|hit_front
+    7400018: Arm_boar|hit_left
+    7400020: Arm_boar|hit_right
+    7400022: Arm_boar|hit_top
+    7400024: Arm_boar|idle_1
+    7400026: Arm_boar|idle_2
+    7400028: Arm_boar|idle_3
+    7400030: Arm_boar|run
+    7400032: Arm_boar|search
+    7400034: Arm_boar|up
+    7400036: Arm_boar|walk
+    7400038: Arm_boar|walk._search
+    7400040: Arm_boar|walk_back
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Boar_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

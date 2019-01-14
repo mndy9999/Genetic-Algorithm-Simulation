@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: fb76b664b4146514eb84ed2e2b070fc6
+timeCreated: 1513958535
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_chick
+    100002: base1
+    100004: base2
+    100006: chick_low
+    100008: feet.L
+    100010: feet.R
+    100012: feet2.L
+    100014: feet2.L_end
+    100016: feet2.R
+    100018: feet2.R_end
+    100020: feet3.L
+    100022: feet3.L_end
+    100024: feet3.R
+    100026: feet3.R_end
+    100028: head
+    100030: Leg1.L
+    100032: Leg1.R
+    100034: Leg2.L
+    100036: Leg2.R
+    100038: Leg3.L
+    100040: Leg3.L_end
+    100042: Leg3.R
+    100044: Leg3.R_end
+    100046: //RootNode
+    100048: mouth
+    100050: mouth_end
+    100052: Neck
+    100054: spine1
+    100056: tail
+    100058: tail_end
+    100060: wing.L
+    100062: wing.L_end
+    100064: wing.R
+    100066: wing.R_end
+    400000: Arm_chick
+    400002: base1
+    400004: base2
+    400006: chick_low
+    400008: feet.L
+    400010: feet.R
+    400012: feet2.L
+    400014: feet2.L_end
+    400016: feet2.R
+    400018: feet2.R_end
+    400020: feet3.L
+    400022: feet3.L_end
+    400024: feet3.R
+    400026: feet3.R_end
+    400028: head
+    400030: Leg1.L
+    400032: Leg1.R
+    400034: Leg2.L
+    400036: Leg2.R
+    400038: Leg3.L
+    400040: Leg3.L_end
+    400042: Leg3.R
+    400044: Leg3.R_end
+    400046: //RootNode
+    400048: mouth
+    400050: mouth_end
+    400052: Neck
+    400054: spine1
+    400056: tail
+    400058: tail_end
+    400060: wing.L
+    400062: wing.L_end
+    400064: wing.R
+    400066: wing.R_end
+    4300000: chick_low
+    7400000: Arm_chick|eat
+    7400002: Arm_chick|end_eat
+    7400004: Arm_chick|hit_front
+    7400006: Arm_chick|hit_left
+    7400008: Arm_chick|hit_right
+    7400010: Arm_chick|idle_1
+    7400012: Arm_chick|idle_2
+    7400014: Arm_chick|Run
+    7400016: Arm_chick|sleep
+    7400018: Arm_chick|sleep_end
+    7400020: Arm_chick|sleep_start
+    7400022: Arm_chick|start_eat
+    7400024: Arm_chick|Walk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: chick_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

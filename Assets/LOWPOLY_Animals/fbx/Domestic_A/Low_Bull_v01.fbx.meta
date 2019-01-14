@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: 1990b71a358e44249b274c74e17c1ba4
+timeCreated: 1513958528
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_bull
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.004
+    100012: Bone.005
+    100014: Bone.006
+    100016: Bone.007
+    100018: Bone.008
+    100020: Bone.009
+    100022: Bone.010
+    100024: Bone.011
+    100026: Bone.012
+    100028: Bone.012_end
+    100030: Bone.013
+    100032: Bone.013_end
+    100034: Bone.014
+    100036: Bone.015
+    100038: Bone.015_end
+    100040: Bone.029
+    100042: Bone.030
+    100044: Bone.030_end
+    100046: Bone.031
+    100048: Bone.032
+    100050: Bone.033
+    100052: Bone.033_end
+    100054: Bone.034
+    100056: Bone.034_end
+    100058: Bone.035
+    100060: Bone.036
+    100062: Bone.037
+    100064: Bone.037_end
+    100066: Bone.038
+    100068: Bone.038_end
+    100070: Bone.039
+    100072: Bone.040
+    100074: Bone.041
+    100076: Bone.041_end
+    100078: Bone.042
+    100080: Bone.042_end
+    100082: Bone.043
+    100084: Bone.043_end
+    100086: Bone.044
+    100088: Bone.045
+    100090: Bone.046
+    100092: Bone.046_end
+    100094: Bone.047
+    100096: Bone.048
+    100098: Bone.049
+    100100: Bone.049_end
+    100102: Bone.050
+    100104: Bone.051
+    100106: Bone.051_end
+    100108: Bone.052
+    100110: Bone.053
+    100112: Bone.053_end
+    100114: Bone.054
+    100116: Bone.054_end
+    100118: Bone.055
+    100120: Bone.055_end
+    100122: bull_low
+    100124: //RootNode
+    400000: Arm_bull
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.004
+    400012: Bone.005
+    400014: Bone.006
+    400016: Bone.007
+    400018: Bone.008
+    400020: Bone.009
+    400022: Bone.010
+    400024: Bone.011
+    400026: Bone.012
+    400028: Bone.012_end
+    400030: Bone.013
+    400032: Bone.013_end
+    400034: Bone.014
+    400036: Bone.015
+    400038: Bone.015_end
+    400040: Bone.029
+    400042: Bone.030
+    400044: Bone.030_end
+    400046: Bone.031
+    400048: Bone.032
+    400050: Bone.033
+    400052: Bone.033_end
+    400054: Bone.034
+    400056: Bone.034_end
+    400058: Bone.035
+    400060: Bone.036
+    400062: Bone.037
+    400064: Bone.037_end
+    400066: Bone.038
+    400068: Bone.038_end
+    400070: Bone.039
+    400072: Bone.040
+    400074: Bone.041
+    400076: Bone.041_end
+    400078: Bone.042
+    400080: Bone.042_end
+    400082: Bone.043
+    400084: Bone.043_end
+    400086: Bone.044
+    400088: Bone.045
+    400090: Bone.046
+    400092: Bone.046_end
+    400094: Bone.047
+    400096: Bone.048
+    400098: Bone.049
+    400100: Bone.049_end
+    400102: Bone.050
+    400104: Bone.051
+    400106: Bone.051_end
+    400108: Bone.052
+    400110: Bone.053
+    400112: Bone.053_end
+    400114: Bone.054
+    400116: Bone.054_end
+    400118: Bone.055
+    400120: Bone.055_end
+    400122: bull_low
+    400124: //RootNode
+    4300000: bull_low
+    7400000: Arm_bull|attack
+    7400002: Arm_bull|dead
+    7400004: Arm_bull|down
+    7400006: Arm_bull|down_idle
+    7400008: Arm_bull|eat
+    7400010: Arm_bull|hit
+    7400012: Arm_bull|idle_1
+    7400014: Arm_bull|idle_2
+    7400016: Arm_bull|ka_ka
+    7400018: Arm_bull|run
+    7400020: Arm_bull|up
+    7400022: Arm_bull|walk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: bull_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

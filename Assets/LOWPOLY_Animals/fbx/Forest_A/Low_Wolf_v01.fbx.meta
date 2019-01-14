@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: ae495434e84223e4986a98db34c5941a
+timeCreated: 1513958282
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature_wolf
+    100002: back_leg_help.L
+    100004: back_leg_help.R
+    100006: basis
+    100008: ear.L
+    100010: ear.R
+    100012: foot_back_1.L
+    100014: foot_back_1.R
+    100016: foot_back_2.L
+    100018: foot_back_2.R
+    100020: foot_fr_1.L
+    100022: foot_fr_1.R
+    100024: foot_fr_2.L
+    100026: foot_fr_2.R
+    100028: front_leg_help.L
+    100030: front_leg_help.R
+    100032: head
+    100034: hip_back.L
+    100036: hip_back.R
+    100038: hip_fr.L
+    100040: hip_fr.R
+    100042: knee_back.L
+    100044: knee_back.R
+    100046: knee_fr.L
+    100048: knee_fr.R
+    100050: leg_back_1.L
+    100052: leg_back_1.R
+    100054: leg_back_2.L
+    100056: leg_back_2.R
+    100058: leg_fr.L
+    100060: leg_fr.R
+    100062: //RootNode
+    100064: mouth
+    100066: neck
+    100068: spin1
+    100070: spin2
+    100072: spin3
+    100074: spin4
+    100076: tail1
+    100078: tail2
+    100080: tail3
+    100082: tail4
+    100084: tail6
+    100086: tail7
+    100088: tongue
+    100090: Wolf_low
+    100092: yail5
+    400000: Armature_wolf
+    400002: back_leg_help.L
+    400004: back_leg_help.R
+    400006: basis
+    400008: ear.L
+    400010: ear.R
+    400012: foot_back_1.L
+    400014: foot_back_1.R
+    400016: foot_back_2.L
+    400018: foot_back_2.R
+    400020: foot_fr_1.L
+    400022: foot_fr_1.R
+    400024: foot_fr_2.L
+    400026: foot_fr_2.R
+    400028: front_leg_help.L
+    400030: front_leg_help.R
+    400032: head
+    400034: hip_back.L
+    400036: hip_back.R
+    400038: hip_fr.L
+    400040: hip_fr.R
+    400042: knee_back.L
+    400044: knee_back.R
+    400046: knee_fr.L
+    400048: knee_fr.R
+    400050: leg_back_1.L
+    400052: leg_back_1.R
+    400054: leg_back_2.L
+    400056: leg_back_2.R
+    400058: leg_fr.L
+    400060: leg_fr.R
+    400062: //RootNode
+    400064: mouth
+    400066: neck
+    400068: spin1
+    400070: spin2
+    400072: spin3
+    400074: spin4
+    400076: tail1
+    400078: tail2
+    400080: tail3
+    400082: tail4
+    400084: tail6
+    400086: tail7
+    400088: tongue
+    400090: Wolf_low
+    400092: yail5
+    4300000: Wolf_low
+    7400000: Armature_wolf|Attack
+    7400002: Armature_wolf|dead
+    7400004: Armature_wolf|Eat
+    7400006: Armature_wolf|Hit_back
+    7400008: Armature_wolf|Hit_front
+    7400010: Armature_wolf|Hit_left
+    7400012: Armature_wolf|Hit_right
+    7400014: Armature_wolf|Howl
+    7400016: Armature_wolf|Idle_1
+    7400018: Armature_wolf|Idle_2
+    7400020: Armature_wolf|Idle_3
+    7400022: Armature_wolf|jump
+    7400024: Armature_wolf|run
+    7400026: Armature_wolf|Search_1
+    7400028: Armature_wolf|Search_2
+    7400030: Armature_wolf|sleep_end
+    7400032: Armature_wolf|sleep_idle
+    7400034: Armature_wolf|sleep_start
+    7400036: Armature_wolf|walk_1
+    7400038: Armature_wolf|walk_2
+    7400040: Armature_wolf|walk_back
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Wolf_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

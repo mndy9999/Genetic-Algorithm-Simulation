@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: c8a560101cbff8745b2edc10489b31bb
+timeCreated: 1513958534
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm.L
+    100002: arm.R
+    100004: Arm_cock
+    100006: Basic
+    100008: body
+    100010: Chicken_high
+    100012: finger1.L
+    100014: finger1.R
+    100016: finger2.L
+    100018: finger2.R
+    100020: finger3.L
+    100022: finger3.L.002
+    100024: finger3.R
+    100026: finger4.L
+    100028: finger4.R
+    100030: foot.R
+    100032: hand.L
+    100034: hand.R
+    100036: head
+    100038: leg1.L
+    100040: leg1.R
+    100042: leg2.L
+    100044: leg2.R
+    100046: //RootNode
+    100048: mouth
+    100050: neck
+    100052: spine_01
+    100054: spine_02
+    100056: spine_03
+    100058: tail
+    400000: arm.L
+    400002: arm.R
+    400004: Arm_cock
+    400006: Basic
+    400008: body
+    400010: Chicken_high
+    400012: finger1.L
+    400014: finger1.R
+    400016: finger2.L
+    400018: finger2.R
+    400020: finger3.L
+    400022: finger3.L.002
+    400024: finger3.R
+    400026: finger4.L
+    400028: finger4.R
+    400030: foot.R
+    400032: hand.L
+    400034: hand.R
+    400036: head
+    400038: leg1.L
+    400040: leg1.R
+    400042: leg2.L
+    400044: leg2.R
+    400046: //RootNode
+    400048: mouth
+    400050: neck
+    400052: spine_01
+    400054: spine_02
+    400056: spine_03
+    400058: tail
+    4300000: Chicken_high
+    7400000: Arm_cock|attack
+    7400002: Arm_cock|dead
+    7400004: Arm_cock|eat
+    7400006: Arm_cock|hit
+    7400008: Arm_cock|idle_1
+    7400010: Arm_cock|idle_2
+    7400012: Arm_cock|kukareku
+    7400014: Arm_cock|Run
+    7400016: Arm_cock|Walk_fast
+    7400018: Arm_cock|Walk_search
+    7400020: Arm_cock|Walk_slow
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Chicken_high
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,2850 @@
+fileFormatVersion: 2
+guid: f788afae0bd523946aa0bf6d09835163
+timeCreated: 1513958285
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_Stag
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.004
+    100012: Bone.004_end
+    100014: Bone.005
+    100016: Bone.006
+    100018: Bone.007
+    100020: Bone.008
+    100022: Bone.009
+    100024: Bone.010
+    100026: Bone.010_end
+    100028: Bone.013
+    100030: Bone.014.L
+    100032: Bone.014.R
+    100034: Bone.015.L
+    100036: Bone.015.R
+    100038: Bone.0155.L
+    100040: Bone.0155.L_end
+    100042: Bone.0155.R
+    100044: Bone.0155.R_end
+    100046: Bone.016.L
+    100048: Bone.016.L_end
+    100050: Bone.016.R
+    100052: Bone.016.R_end
+    100054: Bone.017.L
+    100056: Bone.017.R
+    100058: Bone.018.L
+    100060: Bone.018.R
+    100062: Bone.019.L
+    100064: Bone.019.R
+    100066: Bone.0199.L
+    100068: Bone.0199.L_end
+    100070: Bone.0199.R
+    100072: Bone.0199.R_end
+    100074: Bone.020.L
+    100076: Bone.020.L_end
+    100078: Bone.020.R
+    100080: Bone.020.R_end
+    100082: Bone.021.L
+    100084: Bone.021.R
+    100086: Bone.022.L
+    100088: Bone.022.L_end
+    100090: Bone.022.R
+    100092: Bone.022.R_end
+    100094: Deer_stag_low
+    100096: //RootNode
+    400000: Arm_Stag
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.004
+    400012: Bone.004_end
+    400014: Bone.005
+    400016: Bone.006
+    400018: Bone.007
+    400020: Bone.008
+    400022: Bone.009
+    400024: Bone.010
+    400026: Bone.010_end
+    400028: Bone.013
+    400030: Bone.014.L
+    400032: Bone.014.R
+    400034: Bone.015.L
+    400036: Bone.015.R
+    400038: Bone.0155.L
+    400040: Bone.0155.L_end
+    400042: Bone.0155.R
+    400044: Bone.0155.R_end
+    400046: Bone.016.L
+    400048: Bone.016.L_end
+    400050: Bone.016.R
+    400052: Bone.016.R_end
+    400054: Bone.017.L
+    400056: Bone.017.R
+    400058: Bone.018.L
+    400060: Bone.018.R
+    400062: Bone.019.L
+    400064: Bone.019.R
+    400066: Bone.0199.L
+    400068: Bone.0199.L_end
+    400070: Bone.0199.R
+    400072: Bone.0199.R_end
+    400074: Bone.020.L
+    400076: Bone.020.L_end
+    400078: Bone.020.R
+    400080: Bone.020.R_end
+    400082: Bone.021.L
+    400084: Bone.021.R
+    400086: Bone.022.L
+    400088: Bone.022.L_end
+    400090: Bone.022.R
+    400092: Bone.022.R_end
+    400094: Deer_stag_low
+    400096: //RootNode
+    4300000: Deer_stag_low
+    7400000: attack_1
+    7400002: attack_2
+    7400004: die
+    7400006: eat_1
+    7400008: eat_2
+    7400010: Hate
+    7400012: hit_back
+    7400014: hit_front
+    7400016: hit_left
+    7400018: hit_right
+    7400020: idle_1
+    7400022: idle_2
+    7400024: jump
+    7400026: run
+    7400028: run_attack
+    7400030: sleep_end
+    7400032: sleep_idle
+    7400034: sleep_start
+    7400036: walk_1
+    7400038: walk_back
+    7400040: walk_slow
+    7400042: Arm_Stag|attack_1
+    7400044: Arm_Stag|jump
+    7400046: Arm_Stag|run_attack
+    7400048: Arm_Stag|walk_1
+    7400050: Arm_Stag|walk_back
+    7400052: Arm_Stag|walk_slow
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Deer_stag_low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: attack_1
+      takeName: attack_1
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack_2
+      takeName: attack_2
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: die
+      takeName: die
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: eat_1
+      takeName: eat_1
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: eat_2
+      takeName: eat_2
+      firstFrame: 0
+      lastFrame: 204
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hate
+      takeName: Hate
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit_back
+      takeName: hit_back
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit_front
+      takeName: hit_front
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit_left
+      takeName: hit_left
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit_right
+      takeName: hit_right
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle_1
+      takeName: idle_1
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle_2
+      takeName: idle_2
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: jump
+      takeName: jump
+      firstFrame: 0
+      lastFrame: 45
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: run
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run_attack
+      takeName: run_attack
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sleep_end
+      takeName: sleep_end
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sleep_idle
+      takeName: sleep_idle
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: sleep_start
+      takeName: sleep_start
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk_1
+      takeName: walk_1
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk_back
+      takeName: walk_back
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk_slow
+      takeName: walk_slow
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_Stag
+        weight: 1
+      - path: Arm_Stag/Bone
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.L/Bone.019.L/Bone.020.L/Bone.020.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.001/Bone.002/Bone.018.R/Bone.019.R/Bone.020.R/Bone.020.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.010/Bone.010_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.L/Bone.022.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.007/Bone.008/Bone.009/Bone.022.R/Bone.022.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.L/Bone.015.L/Bone.016.L/Bone.016.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.013/Bone.005/Bone.006/Bone.014.R/Bone.015.R/Bone.016.R/Bone.016.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.L/Bone.0155.L/Bone.0155.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.017.R/Bone.0155.R/Bone.0155.R_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.L/Bone.0199.L/Bone.0199.L_end
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R
+        weight: 1
+      - path: Arm_Stag/Bone/Bone.021.R/Bone.0199.R/Bone.0199.R_end
+        weight: 1
+      - path: Deer_stag_low
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

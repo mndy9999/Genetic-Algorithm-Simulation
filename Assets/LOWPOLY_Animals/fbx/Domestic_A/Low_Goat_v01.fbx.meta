@@ -1,0 +1,907 @@
+fileFormatVersion: 2
+guid: 7bb3fc90a0b306a49b08c7c2075c6ee9
+timeCreated: 1513958532
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_goat
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.004
+    100012: Bone.005
+    100014: Bone.006
+    100016: Bone.007
+    100018: Bone.008
+    100020: Bone.009
+    100022: Bone.010
+    100024: Bone.012
+    100026: Bone.013
+    100028: Bone.014
+    100030: Bone.015
+    100032: Bone.016
+    100034: Bone.017
+    100036: Bone.018
+    100038: Bone.019
+    100040: Bone.020
+    100042: Bone.021
+    100044: Bone.022
+    100046: Bone.023
+    100048: Bone.024
+    100050: Bone.025
+    100052: Bone.027
+    100054: Bone.028
+    100056: Bone.029
+    100058: Bone.030
+    100060: Bone.031
+    100062: Bone.032
+    100064: Bone.033
+    100066: Bone.034
+    100068: Bone.035
+    100070: Bone.037
+    100072: Bone.038
+    100074: Goat_midle
+    100076: //RootNode
+    400000: Arm_goat
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.004
+    400012: Bone.005
+    400014: Bone.006
+    400016: Bone.007
+    400018: Bone.008
+    400020: Bone.009
+    400022: Bone.010
+    400024: Bone.012
+    400026: Bone.013
+    400028: Bone.014
+    400030: Bone.015
+    400032: Bone.016
+    400034: Bone.017
+    400036: Bone.018
+    400038: Bone.019
+    400040: Bone.020
+    400042: Bone.021
+    400044: Bone.022
+    400046: Bone.023
+    400048: Bone.024
+    400050: Bone.025
+    400052: Bone.027
+    400054: Bone.028
+    400056: Bone.029
+    400058: Bone.030
+    400060: Bone.031
+    400062: Bone.032
+    400064: Bone.033
+    400066: Bone.034
+    400068: Bone.035
+    400070: Bone.037
+    400072: Bone.038
+    400074: Goat_midle
+    400076: //RootNode
+    4300000: Goat_midle
+    7400000: die
+    7400002: eat
+    7400004: hit
+    7400006: Idle_2
+    7400008: run
+    7400010: walk
+    7400012: Idle_1.001
+    7400014: Arm_goat|die
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Goat_midle
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: die
+      takeName: die
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_goat
+        weight: 1
+      - path: Arm_goat/Bone.024
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.009
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.010
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.025
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013/Bone.014
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028/Bone.029
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019/Bone.020
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031/Bone.032
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015/Bone.017
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.021
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.023
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034/Bone.035
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.037
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.038
+        weight: 1
+      - path: Goat_midle
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: eat
+      takeName: eat
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_goat
+        weight: 1
+      - path: Arm_goat/Bone.024
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.009
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.010
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.025
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013/Bone.014
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028/Bone.029
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019/Bone.020
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031/Bone.032
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015/Bone.017
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.021
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.023
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034/Bone.035
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.037
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.038
+        weight: 1
+      - path: Goat_midle
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hit
+      takeName: hit
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_goat
+        weight: 1
+      - path: Arm_goat/Bone.024
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.009
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.010
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.025
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013/Bone.014
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028/Bone.029
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019/Bone.020
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031/Bone.032
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015/Bone.017
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.021
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.023
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034/Bone.035
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.037
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.038
+        weight: 1
+      - path: Goat_midle
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_2
+      takeName: Idle_2
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_goat
+        weight: 1
+      - path: Arm_goat/Bone.024
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.009
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.010
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.025
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013/Bone.014
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028/Bone.029
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019/Bone.020
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031/Bone.032
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015/Bone.017
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.021
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.023
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034/Bone.035
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.037
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.038
+        weight: 1
+      - path: Goat_midle
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: run
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_goat
+        weight: 1
+      - path: Arm_goat/Bone.024
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.009
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.010
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.025
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013/Bone.014
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028/Bone.029
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019/Bone.020
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031/Bone.032
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015/Bone.017
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.021
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.023
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034/Bone.035
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.037
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.038
+        weight: 1
+      - path: Goat_midle
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk
+      takeName: walk
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_goat
+        weight: 1
+      - path: Arm_goat/Bone.024
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.009
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.010
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.025
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013/Bone.014
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028/Bone.029
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019/Bone.020
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031/Bone.032
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015/Bone.017
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.021
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.023
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034/Bone.035
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.037
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.038
+        weight: 1
+      - path: Goat_midle
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_1.001
+      takeName: Idle_1.001
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Arm_goat
+        weight: 1
+      - path: Arm_goat/Bone.024
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.009
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.010
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.001/Bone.002/Bone.022/Bone.003/Bone.025
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.012/Bone.016/Bone.013/Bone.014
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone/Bone.027/Bone.033/Bone.028/Bone.029
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.006/Bone.007/Bone.008
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.018/Bone.019/Bone.020
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.004/Bone.005/Bone.030/Bone.031/Bone.032
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.015/Bone.017
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.021
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.023
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.034/Bone.035
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.037
+        weight: 1
+      - path: Arm_goat/Bone.024/Bone.038
+        weight: 1
+      - path: Goat_midle
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
