@@ -5,12 +5,13 @@ using UnityEngine;
 public class AI_Script : MonoBehaviour {
 
     Animator anim;
-    public GameObject player;
+    public GameObject foodSource;
+    public GameObject target;
     float foodLevel = 0; 
 
-    public GameObject GetPlayer()
+    public GameObject GetTarget()
     {
-        return player;
+        return target;
     }
 
 	// Use this for initialization
@@ -20,14 +21,30 @@ public class AI_Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (player) 
-        anim.SetFloat("distance", Vector3.Distance(transform.position, player.transform.position));
-        Debug.Log(foodLevel);
+        if (!target) { anim.SetBool("foundFood", false); setTarget(); Debug.Log("hi"); }
+        if (Vector3.Distance(transform.position, target.transform.position) < 10) { anim.SetBool("foundFood", true); }
+        anim.SetFloat("distance", Vector3.Distance(transform.position, target.transform.position));
+    }
+
+    void setTarget()
+    {
+        float temp = 999;
+        GameObject tempTarget;
+        for (int i = 0; i < foodSource.transform.childCount; i++)
+        {
+            tempTarget = foodSource.transform.GetChild(i).gameObject;
+            if(Vector3.Distance(transform.position, tempTarget.transform.position) < temp)
+            {
+                temp = Vector3.Distance(transform.position, tempTarget.transform.position);
+                target = tempTarget;
+            }
+        }
     }
 
     void eat()
     {
         foodLevel++;
+        target.GetComponent<food>().level--;
         anim.SetFloat("foodLevel", foodLevel);
     }
 

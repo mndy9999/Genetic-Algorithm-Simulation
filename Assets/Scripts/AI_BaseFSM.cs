@@ -15,8 +15,8 @@ public class AI_BaseFSM : StateMachineBehaviour {
     {
         NPC = animator.gameObject;
         setSpeed();
-        if(NPC.GetComponent<AI_Script>())
-            opponent = NPC.GetComponent<AI_Script>().GetPlayer();
+        if (NPC.GetComponent<AI_Script>())
+            opponent = NPC.GetComponent<AI_Script>().GetTarget();
     }
 
     void setSpeed()

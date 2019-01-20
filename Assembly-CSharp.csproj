@@ -222,6 +222,7 @@
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\food.cs" />
     <Compile Include="Assets\Scripts\AI_BaseFSM.cs" />
     <Compile Include="Assets\Scripts\AI_Script.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
