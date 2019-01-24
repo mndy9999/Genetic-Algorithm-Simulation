@@ -11,6 +11,7 @@ public class AI_Traits : MonoBehaviour {
     private void Update()
     {
         findTarget();
+        sight = 10;
     }
 
     void findTarget()

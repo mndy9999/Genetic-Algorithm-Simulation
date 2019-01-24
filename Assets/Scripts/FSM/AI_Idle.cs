@@ -10,19 +10,23 @@ public class AI_Idle : State<AI>
             return;
         _instance = this;
     }
+    //get instance of the state
     public static AI_Idle instance
     {
-        get{
+        get
+        {
+            //if there is no instance
             if (_instance == null)
-                new AI_Idle();
+                new AI_Idle();      //create one
             return _instance;
         }
     }
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Idle State");
-        _owner.animator.Play("Idle");
+        _owner.animator.Play("Idle");       //start playing animation when entering state
     }
+
 
     public override void ExitState(AI _owner)
     {
@@ -31,13 +35,15 @@ public class AI_Idle : State<AI>
 
     public override void UpdateState(AI _owner)
     {
+        //if the target is in the AI's sight
         if (Vector3.Distance(_owner.transform.position, _owner.traits.target.transform.position) < _owner.traits.sight)
         {
-            _owner.stateMachine.ChangeState(AI_Chase.instance);
+            _owner.stateMachine.ChangeState(AI_Chase.instance);     //change to chase state
         }
+        //otherwise, check if the bool in the AI class is true
         else if (_owner.switchState)
         {
-            _owner.stateMachine.ChangeState(AI_Wander.instance);
+            _owner.stateMachine.ChangeState(AI_Wander.instance);    //and change to wander state
         }
     }
 }
