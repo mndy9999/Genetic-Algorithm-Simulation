@@ -51,12 +51,18 @@ public class AI : MonoBehaviour {
 
     public bool CanSeeTarget()
     {
-        return Vector3.Distance(this.transform.position, critter.target.transform.position) < critter.sight;
+        if (critter.target)
+            return Vector3.Distance(this.transform.position, critter.target.transform.position) < critter.sight;
+        else
+            return false;
     }
 
     public bool IsCloseEnoughToEat()
     {
-        return Vector3.Distance(this.transform.position, critter.target.transform.position) < 0.3f;
+        if (critter.target)
+            return Vector3.Distance(this.transform.position, critter.target.transform.position) < 0.3f;
+        else
+            return false;
     }
 
 }

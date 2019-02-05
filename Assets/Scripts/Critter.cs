@@ -10,7 +10,7 @@ public class Critter : MonoBehaviour {
     public float energyPerSecond = 5f;
 
     public float speed = 3f;
-    public float sight = 20f;
+    public float sight = 10f;
 
     public string critterType = "Vegetable";
     public string targetType = "Vegetable";
@@ -65,7 +65,8 @@ public class Critter : MonoBehaviour {
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(sight, 0.0f, sight));
+        if(critterType != "Vegetable")
+            Gizmos.DrawWireCube(transform.position, new Vector3(sight, 0.0f, sight));
     }
 
 }

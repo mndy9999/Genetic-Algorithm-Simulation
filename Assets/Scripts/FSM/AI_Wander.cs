@@ -35,14 +35,13 @@ public class AI_Wander : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.critter.target)
-        {
+
             //if the target is in the AI's sight
         if (_owner.CanSeeTarget())
         {
             _owner.stateMachine.ChangeState(AI_Chase.instance);     //change to chase state
         }
-        }
+        
         
         //otherwise, check if the bool in the AI class is false
         else if (!_owner.switchState)

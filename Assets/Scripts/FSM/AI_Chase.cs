@@ -34,32 +34,30 @@ public class AI_Chase : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.critter.target)
+        //if the AI is close enough to the target
+        if (_owner.IsCloseEnoughToEat())
+        {
+            _owner.stateMachine.ChangeState(AI_Eat.instance);       //change to eating state
+        }
+        
+        else if (_owner.CanSeeTarget())
         {
             //calculate direction, rotation and start moving towards the target
             if (!Critter.crittersDict.ContainsKey(_owner.critter.targetType)) { return; }
-
             var direction = _owner.critter.target.transform.position - _owner.transform.position;
             _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                         Quaternion.LookRotation(direction),
                                         3.0f * Time.deltaTime);
             _owner.transform.Translate(0, 0, Time.deltaTime * 3.0f);
-
-            //if the AI is close enough to the target
-            if (_owner.IsCloseEnoughToEat())
-            {
-                _owner.stateMachine.ChangeState(AI_Eat.instance);       //change to eating state
-            }
-            //if the target is out of the AI's sight
-            else if (!_owner.CanSeeTarget())
-            {
-                _owner.stateMachine.ChangeState(AI_Idle.instance);      //change to idle
-            }
         }
+        //if the target is out of the AI's sight
         else
         {
-            _owner.stateMachine.ChangeState(AI_Idle.instance);
+            _owner.stateMachine.ChangeState(AI_Idle.instance);      //change to idle
         }
-       
+
+
+
     }
+    
 }
