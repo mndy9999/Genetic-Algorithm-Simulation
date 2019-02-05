@@ -5,18 +5,20 @@ using FiniteStateMachine;
 
 public class AI : MonoBehaviour {
 
+    public Vector3 waypoint;
+
     public bool switchState = false;    //bool used to switch between idle and wander
     public float timer;                 
     public int seconds = 0;
     public Animator animator;           //used to set up the animations
-    public AI_Traits traits;            //the traits and characteristics of the individual
+    public Critter critter;
 
     //instance of the state machine as auto property
     public StateMachine<AI> stateMachine { get; set; }
 
     private void Start()
     {
-        traits = GetComponent<AI_Traits>();
+        critter = GetComponent<Critter>();
         stateMachine = new StateMachine<AI>(this);      //pass the gameobject into the state machine
         stateMachine.ChangeState(AI_Idle.instance);     //set default state to idle
         timer = Time.time;        
@@ -37,6 +39,24 @@ public class AI : MonoBehaviour {
         }
 
         stateMachine.Update();      //check for changes in states
+    }
+
+    public void genWaypoint()
+    {
+        float x = Random.Range(transform.position.x + 180, transform.position.x - 180);
+        float y = transform.position.y;
+        float z = Random.Range(transform.position.z + 180, transform.position.z - 180);
+        waypoint = new Vector3(x, y, z);
+    }
+
+    public bool CanSeeTarget()
+    {
+        return Vector3.Distance(this.transform.position, critter.target.transform.position) < critter.sight;
+    }
+
+    public bool IsCloseEnoughToEat()
+    {
+        return Vector3.Distance(this.transform.position, critter.target.transform.position) < 0.3f;
     }
 
 }

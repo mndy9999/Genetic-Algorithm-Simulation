@@ -35,8 +35,9 @@ public class AI_Idle : State<AI>
 
     public override void UpdateState(AI _owner)
     {
+
         //if the target is in the AI's sight
-        if (Vector3.Distance(_owner.transform.position, _owner.traits.target.transform.position) < _owner.traits.sight)
+        if (_owner.CanSeeTarget())
         {
             _owner.stateMachine.ChangeState(AI_Chase.instance);     //change to chase state
         }

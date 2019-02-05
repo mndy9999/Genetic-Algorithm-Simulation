@@ -34,22 +34,31 @@ public class AI_Chase : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        //calculate direction, rotation and start moving towards the target
-        var direction = _owner.traits.target.transform.position - _owner.transform.position;
-        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-                                    Quaternion.LookRotation(direction),
-                                    3.0f * Time.deltaTime);
-        _owner.transform.Translate(0, 0, Time.deltaTime * 3.0f);
+        if (_owner.critter.target)
+        {
+            //calculate direction, rotation and start moving towards the target
+            if (!Critter.crittersDict.ContainsKey(_owner.critter.targetType)) { return; }
 
-        //if the AI is close enough to the target
-        if (Vector3.Distance(_owner.transform.position, _owner.traits.target.transform.position) < 0.3f)
-        {
-            _owner.stateMachine.ChangeState(AI_Eat.instance);       //change to eating state
+            var direction = _owner.critter.target.transform.position - _owner.transform.position;
+            _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                                        Quaternion.LookRotation(direction),
+                                        3.0f * Time.deltaTime);
+            _owner.transform.Translate(0, 0, Time.deltaTime * 3.0f);
+
+            //if the AI is close enough to the target
+            if (_owner.IsCloseEnoughToEat())
+            {
+                _owner.stateMachine.ChangeState(AI_Eat.instance);       //change to eating state
+            }
+            //if the target is out of the AI's sight
+            else if (!_owner.CanSeeTarget())
+            {
+                _owner.stateMachine.ChangeState(AI_Idle.instance);      //change to idle
+            }
         }
-        //if the target is out of the AI's sight
-        else if (Vector3.Distance(_owner.transform.position, _owner.traits.target.transform.position) > _owner.traits.sight)
+        else
         {
-            _owner.stateMachine.ChangeState(AI_Idle.instance);      //change to idle
+            _owner.stateMachine.ChangeState(AI_Idle.instance);
         }
        
     }

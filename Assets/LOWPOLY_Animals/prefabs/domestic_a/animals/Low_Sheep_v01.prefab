@@ -80,6 +80,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4677890034532408}
   - component: {fileID: 111007784282046418}
+  - component: {fileID: 114431507602079662}
+  - component: {fileID: 114868776304814688}
+  - component: {fileID: 95520918575704478}
   m_Layer: 0
   m_Name: Low_Sheep_v01
   m_TagString: Untagged
@@ -1520,6 +1523,24 @@ Transform:
   m_Father: {fileID: 4469584869637216}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95520918575704478
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137286565663060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08eabc78bc031a346b200ec6b211c6c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!111 &111007784282046418
 Animation:
   m_ObjectHideFlags: 1
@@ -1555,6 +1576,42 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &114431507602079662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137286565663060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d4ccce2dd91584482edfdd61fbc512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  energy: 100
+  energyPerSecond: 5
+  speed: 3
+  sight: 20
+  critterType: Vegetable
+  targetType: Vegetable
+  target: {fileID: 0}
+--- !u!114 &114868776304814688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137286565663060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b17812e327a0c246af88d8abfbfe020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint: {x: 0, y: 0, z: 0}
+  switchState: 0
+  timer: 0
+  seconds: 0
+  animator: {fileID: 0}
+  critter: {fileID: 0}
 --- !u!137 &137556777875361732
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

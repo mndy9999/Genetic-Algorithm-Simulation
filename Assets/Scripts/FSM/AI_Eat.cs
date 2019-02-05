@@ -34,10 +34,10 @@ public class AI_Eat : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.traits.target)
+        if (_owner.critter.target)
         {
             //if the AI is not close enough to the target
-            if (Vector3.Distance(_owner.transform.position, _owner.traits.target.transform.position) > 0.3f)
+            if (!_owner.IsCloseEnoughToEat())
             {
                 _owner.stateMachine.ChangeState(AI_Chase.instance);     //change into chase state
             }
@@ -45,8 +45,8 @@ public class AI_Eat : State<AI>
             //and add points to the AI's food level - not yet implemented
             //(all food starts with 10HP. when it reaches 0, the gameObject is destroyed
             //  and the AI get the position of the next closest food source)
-            if (_owner.traits.target.GetComponent<food>().level > 0)
-                _owner.traits.target.GetComponent<food>().level -= 0.1f;
+            if (_owner.critter.target.GetComponent<Critter>().health > 0)
+                _owner.critter.target.GetComponent<Critter>().health -= 0.1f;
         }
     }
 }
