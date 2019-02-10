@@ -3,6 +3,10 @@ using FiniteStateMachine;
 
 public class AI_Eat : State<AI>
 {
+
+    public float eatHPPerSecond = 5f;
+    public float eatHPToEnergy = 2f;
+
     private static AI_Eat _instance;
     private AI_Eat()
     {
@@ -34,7 +38,7 @@ public class AI_Eat : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-
+        Debug.Log("Hi");
         //if the AI is not close enough to the target
         if (!_owner.IsCloseEnoughToEat())
         {
@@ -44,8 +48,14 @@ public class AI_Eat : State<AI>
         //and add points to the AI's food level - not yet implemented
         //(all food starts with 10HP. when it reaches 0, the gameObject is destroyed
         //  and the AI get the position of the next closest food source)
-        if (_owner.critter.target && _owner.critter.target.GetComponent<Critter>().health > 0)
-            _owner.critter.target.GetComponent<Critter>().health -= 0.1f;
+        else
+        {
+            float hpEaten = Mathf.Clamp(eatHPPerSecond, 0, _owner.critter.target.GetComponent<Critter>().health) * Time.deltaTime;
+            _owner.critter.target.GetComponent<Critter>().health -= hpEaten;
+            _owner.critter.energy += hpEaten * eatHPToEnergy;
+        }
+            
+            
 
     }
 }

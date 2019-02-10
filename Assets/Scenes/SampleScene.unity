@@ -3795,7 +3795,7 @@ MonoBehaviour:
   health: 100
   energy: 100
   energyPerSecond: 5
-  speed: 2
+  speed: 5
   sight: 20
   critterType: Carnivore
   targetType: Herbivore
