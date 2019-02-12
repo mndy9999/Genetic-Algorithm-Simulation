@@ -77,7 +77,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Chase
+  m_Name: Run
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -159,16 +159,16 @@ AnimatorStateMachine:
     m_Position: {x: 354.95435, y: 46.98993, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102495372913318910}
-    m_Position: {x: 330.65643, y: 318.00534, z: 0}
+    m_Position: {x: 396, y: 336, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102376505855166982}
-    m_Position: {x: 343.7399, y: 478.7455, z: 0}
+    m_Position: {x: 240, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102417775781182002}
     m_Position: {x: 470.26706, y: 187.69238, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102880233765010220}
-    m_Position: {x: 35.16693, y: 374.3029, z: 0}
+    m_Position: {x: 36, y: 312, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

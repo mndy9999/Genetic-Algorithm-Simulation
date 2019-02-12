@@ -37,7 +37,6 @@ public class AI : MonoBehaviour {
             seconds = 0;
             switchState = !switchState;
         }
-
         stateMachine.Update();      //check for changes in states
     }
 
@@ -53,6 +52,14 @@ public class AI : MonoBehaviour {
     {
         if (critter.target)
             return Vector3.Distance(this.transform.position, critter.target.transform.position) < critter.sight;
+        else
+            return false;
+    }
+
+    public bool CanSeeEnemy()
+    {
+        if (critter.enemy)
+            return Vector3.Distance(this.transform.position, critter.enemy.transform.position) < critter.sight;
         else
             return false;
     }

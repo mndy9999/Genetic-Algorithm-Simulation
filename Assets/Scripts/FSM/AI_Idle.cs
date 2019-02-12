@@ -35,7 +35,11 @@ public class AI_Idle : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-
+        //if the enemy is in the AI's sight
+        if (_owner.CanSeeEnemy())
+        {
+            _owner.stateMachine.ChangeState(AI_Evade.instance);     //change to evade state
+        }
         //if the target is in the AI's sight
         if (_owner.CanSeeTarget())
         {

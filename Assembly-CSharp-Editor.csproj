@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{6394269F-8770-8787-B091-0A98F13FB955}</ProjectGuid>
+    <ProjectGuid>{CB27D03C-CDF2-76FF-0553-8155934FBBA0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -71,16 +71,16 @@
     <Compile Include="Assets\AIBehavior\Plugins\AIBehaviorsMadeEasy\Navigation\RunTimeNavMesh\Editor\NavMeshModifierVolumeEditor.cs" />
     <Compile Include="Assets\AIBehavior\Plugins\AIBehaviorsMadeEasy\Navigation\RunTimeNavMesh\Editor\NavMeshSurfaceEditor.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -370,7 +370,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{3B1B2BE0-1653-9ABB-5774-E07884D9279B}</Project>
+      <Project>{946C33FC-A682-3E08-6CC9-CFFB31CEE464}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

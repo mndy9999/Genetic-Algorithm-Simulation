@@ -24,8 +24,9 @@ public class AI_Wander : State<AI>
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Wander State");
-        _owner.animator.Play("Chase");  //start playing the animation when entering state
+        _owner.animator.Play("Wander");  //start playing the animation when entering state
         _owner.genWaypoint();
+        _owner.critter.speed = _owner.critter.walkSpeed;
     }
 
     public override void ExitState(AI _owner)
@@ -35,8 +36,13 @@ public class AI_Wander : State<AI>
 
     public override void UpdateState(AI _owner)
     {
+        //if the enemy is in the AI's sight
+        if (_owner.CanSeeEnemy())
+        {
+            _owner.stateMachine.ChangeState(AI_Evade.instance);     //change to evade state
+        }
 
-            //if the target is in the AI's sight
+        //if the target is in the AI's sight
         if (_owner.CanSeeTarget())
         {
             _owner.stateMachine.ChangeState(AI_Chase.instance);     //change to chase state
@@ -53,8 +59,8 @@ public class AI_Wander : State<AI>
         var direction = _owner.waypoint - _owner.transform.position;
         _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                     Quaternion.LookRotation(direction),
-                                    3.0f * Time.deltaTime);
-        _owner.transform.Translate(0, 0, Time.deltaTime * 3.0f);
+                                    _owner.critter.speed * Time.deltaTime);
+        _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
     }
 
 

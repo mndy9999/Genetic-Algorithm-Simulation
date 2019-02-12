@@ -9,13 +9,17 @@ public class Critter : MonoBehaviour {
 
     public float energyPerSecond = 5f;
 
-    public float speed = 3f;
+    public float runSpeed = 5f;
+    public float walkSpeed = 2f;
+    public float speed;
     public float sight = 10f;
 
     public string critterType = "Vegetable";
     public string targetType = "Vegetable";
+    public string enemyType = "Carnivore";
 
     public GameObject target;
+    public GameObject enemy;
 
     static public Dictionary<string, List<Critter>> crittersDict;
 
@@ -29,11 +33,11 @@ public class Critter : MonoBehaviour {
         if(!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
         animator = this.GetComponent<Animator>();
+        speed = runSpeed;
 	}
 
     private void OnDestroy()
-    {
-        
+    {       
         crittersDict[critterType].Remove(this);
     }
 
@@ -41,6 +45,7 @@ public class Critter : MonoBehaviour {
     void FixedUpdate()
     {
         FindClosestTarget();
+        FindClosestEnemy();
         energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
         if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime * 5f, 0, 100); }
         if (health <= 0)
@@ -48,23 +53,53 @@ public class Critter : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
-
+        if (energy > 10) { speed = runSpeed; }
         desiredDirections = new List<WeightedDirection>();
     }
 
     void FindClosestTarget()
     {
-        //find closest target
-        target = null;
-        float dist = Mathf.Infinity;
-        foreach (Critter c in Critter.crittersDict[targetType])
+        if (crittersDict.ContainsKey(targetType))
         {
-            float d = Vector3.Distance(this.transform.position, c.transform.position);
-            if (target == null || d < dist)
+            //find closest target
+            target = null;
+            float dist = Mathf.Infinity;
+            foreach (Critter c in Critter.crittersDict[targetType])
             {
-                target = c.gameObject;
-                dist = d;
+                float d = Vector3.Distance(this.transform.position, c.transform.position);
+                if (target == null || d < dist)
+                {
+                    target = c.gameObject;
+                    dist = d;
+                }
             }
+        }
+    }
+
+    void FindClosestEnemy()
+    {
+        if (crittersDict.ContainsKey(enemyType))
+        {
+            //find closest enemy
+            enemy = null;
+            float dist = Mathf.Infinity;
+            foreach (Critter c in Critter.crittersDict[enemyType])
+            {
+                float d = Vector3.Distance(this.transform.position, c.transform.position);
+                if (enemy == null || d < dist)
+                {
+                    enemy = c.gameObject;
+                    dist = d;
+                }
+            }
+        }
+    }
+
+    void changeSpeed()
+    {
+        if (energy < 10)
+        {
+            while (speed > walkSpeed) { speed -= 0.2f; }
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 //created as a namespace so it can be used in any script
 namespace FiniteStateMachine {
     public class StateMachine<T>{
-        public State <T> currentState { get; private set; }     //get the state anywhere, but only set it from withing this class
+        public State <T> currentState { get; private set; }     //get the state anywhere, but only set it from within this class
         public T owner;     //the AI object
 
         public StateMachine(T _o)

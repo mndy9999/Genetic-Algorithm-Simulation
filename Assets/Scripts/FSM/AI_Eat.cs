@@ -38,7 +38,6 @@ public class AI_Eat : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        Debug.Log("Hi");
         //if the AI is not close enough to the target
         if (!_owner.IsCloseEnoughToEat())
         {
@@ -50,7 +49,7 @@ public class AI_Eat : State<AI>
         //  and the AI get the position of the next closest food source)
         else
         {
-            float hpEaten = Mathf.Clamp(eatHPPerSecond, 0, _owner.critter.target.GetComponent<Critter>().health) * Time.deltaTime;
+            float hpEaten = 0.1f;
             _owner.critter.target.GetComponent<Critter>().health -= hpEaten;
             _owner.critter.energy += hpEaten * eatHPToEnergy;
         }

@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{3B1B2BE0-1653-9ABB-5774-E07884D9279B}</ProjectGuid>
+    <ProjectGuid>{946C33FC-A682-3E08-6CC9-CFFB31CEE464}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -234,6 +234,7 @@
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Chase.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Eat.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Evade.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Idle.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Wander.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
@@ -246,16 +247,16 @@
     <None Include="Assets\AIBehavior\AIBehaviorDemoScene\Shaders\AlphaSelfIllumWithFade.shader" />
     <None Include="Assets\AIBehavior\Documentation\_ReleaseNotes.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation 101/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
