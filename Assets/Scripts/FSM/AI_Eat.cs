@@ -50,7 +50,7 @@ public class AI_Eat : State<AI>
         else
         {
             float hpEaten = 0.1f;
-            _owner.critter.target.GetComponent<Critter>().health -= hpEaten;
+            _owner.seek.Target.GetComponent<Critter>().health -= hpEaten;
             _owner.critter.energy += hpEaten * eatHPToEnergy;
         }
             

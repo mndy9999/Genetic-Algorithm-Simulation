@@ -37,8 +37,8 @@ public class AI_Evade : State<AI>
         if (_owner.CanSeeEnemy())
         {
             //calculate direction, rotation and start moving towards the target
-            if (!Critter.crittersDict.ContainsKey(_owner.critter.enemyType)) { return; }
-            var direction = _owner.critter.enemy.transform.position - _owner.transform.position;
+            if (!Critter.crittersDict.ContainsKey(_owner.seek.enemyType)) { return; }
+            var direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
             _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                         Quaternion.LookRotation(-direction),
                                         _owner.critter.speed * Time.deltaTime);

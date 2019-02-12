@@ -12,14 +12,11 @@ public class Critter : MonoBehaviour {
     public float runSpeed = 5f;
     public float walkSpeed = 2f;
     public float speed;
-    public float sight = 10f;
+    public float sight;
 
     public string critterType = "Vegetable";
-    public string targetType = "Vegetable";
-    public string enemyType = "Carnivore";
 
-    public GameObject target;
-    public GameObject enemy;
+    Seek seek;
 
     static public Dictionary<string, List<Critter>> crittersDict;
 
@@ -43,9 +40,7 @@ public class Critter : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate()
-    {
-        FindClosestTarget();
-        FindClosestEnemy();
+    { 
         energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
         if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime * 5f, 0, 100); }
         if (health <= 0)
@@ -55,44 +50,6 @@ public class Critter : MonoBehaviour {
         }
         if (energy > 10) { speed = runSpeed; }
         desiredDirections = new List<WeightedDirection>();
-    }
-
-    void FindClosestTarget()
-    {
-        if (crittersDict.ContainsKey(targetType))
-        {
-            //find closest target
-            target = null;
-            float dist = Mathf.Infinity;
-            foreach (Critter c in Critter.crittersDict[targetType])
-            {
-                float d = Vector3.Distance(this.transform.position, c.transform.position);
-                if (target == null || d < dist)
-                {
-                    target = c.gameObject;
-                    dist = d;
-                }
-            }
-        }
-    }
-
-    void FindClosestEnemy()
-    {
-        if (crittersDict.ContainsKey(enemyType))
-        {
-            //find closest enemy
-            enemy = null;
-            float dist = Mathf.Infinity;
-            foreach (Critter c in Critter.crittersDict[enemyType])
-            {
-                float d = Vector3.Distance(this.transform.position, c.transform.position);
-                if (enemy == null || d < dist)
-                {
-                    enemy = c.gameObject;
-                    dist = d;
-                }
-            }
-        }
     }
 
     void changeSpeed()
@@ -106,7 +63,7 @@ public class Critter : MonoBehaviour {
     private void OnDrawGizmos()
     {
         if(critterType != "Vegetable")
-            Gizmos.DrawWireCube(transform.position, new Vector3(sight, 0.0f, sight));
+            Gizmos.DrawWireSphere(transform.position, sight);
     }
 
 }

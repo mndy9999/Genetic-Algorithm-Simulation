@@ -48,8 +48,8 @@ public class AI_Chase : State<AI>
         else if (_owner.CanSeeTarget())
         {
             //calculate direction, rotation and start moving towards the target
-            if (!Critter.crittersDict.ContainsKey(_owner.critter.targetType)) { return; }
-            var direction = _owner.critter.target.transform.position - _owner.transform.position;
+            if (!Critter.crittersDict.ContainsKey(_owner.seek.targetType)) { return; }
+            var direction = _owner.seek.Target.transform.position - _owner.transform.position;
             _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                         Quaternion.LookRotation(direction),
                                         _owner.critter.speed * Time.deltaTime);

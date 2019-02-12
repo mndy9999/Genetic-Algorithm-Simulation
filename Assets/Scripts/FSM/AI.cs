@@ -12,6 +12,7 @@ public class AI : MonoBehaviour {
     public int seconds = 0;
     public Animator animator;           //used to set up the animations
     public Critter critter;
+    public Seek seek;
 
     //instance of the state machine as auto property
     public StateMachine<AI> stateMachine { get; set; }
@@ -19,6 +20,7 @@ public class AI : MonoBehaviour {
     private void Start()
     {
         critter = GetComponent<Critter>();
+        seek = GetComponent<Seek>();
         stateMachine = new StateMachine<AI>(this);      //pass the gameobject into the state machine
         stateMachine.ChangeState(AI_Idle.instance);     //set default state to idle
         timer = Time.time;        
@@ -50,24 +52,24 @@ public class AI : MonoBehaviour {
 
     public bool CanSeeTarget()
     {
-        if (critter.target)
-            return Vector3.Distance(this.transform.position, critter.target.transform.position) < critter.sight;
+        if (seek.Target)
+            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < critter.sight;
         else
             return false;
     }
 
     public bool CanSeeEnemy()
     {
-        if (critter.enemy)
-            return Vector3.Distance(this.transform.position, critter.enemy.transform.position) < critter.sight;
+        if (seek.Enemy)
+            return Vector3.Distance(this.transform.position, seek.Enemy.transform.position) < critter.sight;
         else
             return false;
     }
 
     public bool IsCloseEnoughToEat()
     {
-        if (critter.target)
-            return Vector3.Distance(this.transform.position, critter.target.transform.position) < 0.3f;
+        if (seek.Target)
+            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 0.3f;
         else
             return false;
     }
