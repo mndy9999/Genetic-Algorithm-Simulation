@@ -7,6 +7,47 @@ public class Seek : MonoBehaviour {
     public string targetType = "Vegetable";
     public string enemyType = "Carnivore";
 
+    public float viewRadius = 10f;
+    public float viewAngle = 90f;
+
+    public List<GameObject> visibleTargets = new List<GameObject>();
+
+    private void Start()
+    {
+        FindVisibleTargets();
+    }
+    private void Update()
+    {
+        FindVisibleTargets();
+    }
+
+    IEnumerator FindTargetsWithDelay(float delay)
+    {
+        while (true){
+            yield return new WaitForSeconds(delay);
+            FindVisibleTargets();
+        }
+    }
+
+    void FindVisibleTargets()
+    {
+        visibleTargets.Clear();
+        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
+        for (int i = 0; i < targetInViewRadius.Length; i++)
+        {
+            GameObject target = targetInViewRadius[i].gameObject;
+            Vector3 direction = (target.transform.position - transform.position).normalized;
+            if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
+            {
+                float distance = Vector3.Distance(transform.position, target.transform.position);
+                if (!Physics.Raycast(transform.position, direction, distance))
+                {
+                    visibleTargets.Add(target);
+                }
+            }
+        }
+    }
+
     public GameObject Target
     {
         get
@@ -18,11 +59,14 @@ public class Seek : MonoBehaviour {
                 float dist = Mathf.Infinity;
                 foreach (Critter c in Critter.crittersDict[targetType])
                 {
-                    float d = Vector3.Distance(this.transform.position, c.transform.position);
-                    if (target == null || d < dist)
+                    if (visibleTargets.Contains(c.gameObject))
                     {
-                        target = c.gameObject;
-                        dist = d;
+                        float d = Vector3.Distance(this.transform.position, c.transform.position);
+                        if (target == null || d < dist)
+                        {
+                            target = c.gameObject;
+                            dist = d;
+                        }                       
                     }
                 }
                 return target;
@@ -42,11 +86,14 @@ public class Seek : MonoBehaviour {
                 float dist = Mathf.Infinity;
                 foreach (Critter c in Critter.crittersDict[enemyType])
                 {
-                    float d = Vector3.Distance(this.transform.position, c.transform.position);
-                    if (enemy == null || d < dist)
+                    if (visibleTargets.Contains(c.gameObject))
                     {
-                        enemy = c.gameObject;
-                        dist = d;
+                        float d = Vector3.Distance(this.transform.position, c.transform.position);
+                        if (enemy == null || d < dist)
+                        {
+                            enemy = c.gameObject;
+                            dist = d;
+                        }
                     }
                 }
                 return enemy;
@@ -54,5 +101,27 @@ public class Seek : MonoBehaviour {
             return null;
         }
     }
+
+    public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)
+    {
+        if (!isGlobal) { angleDegrees += transform.eulerAngles.y; }
+        return new Vector3(Mathf.Sin(angleDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(-angleDegrees * Mathf.Deg2Rad));
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (GetComponent<Critter>().critterType != "Vegetable")
+        {
+            Gizmos.DrawWireSphere(transform.position, viewRadius);
+
+            viewAngle += transform.eulerAngles.y;
+            Vector3 viewAngleA = DirFromAngle(-viewAngle / 2, false);
+            Vector3 viewAngleB = DirFromAngle(viewAngle / 2, false);
+
+            Gizmos.DrawLine(transform.position, transform.position + viewAngleA * viewRadius);
+            Gizmos.DrawLine(transform.position, transform.position + viewAngleB * viewRadius);
+        }
+    }
+
 
 }

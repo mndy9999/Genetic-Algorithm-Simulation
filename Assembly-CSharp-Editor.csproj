@@ -79,6 +79,7 @@
     <Compile Include="Assets\BlackPeaStudios\ScriptDependencyVisualizer\Editor\WindowScripts\ScriptDependencyWindow.cs" />
     <Compile Include="Assets\BlackPeaStudios\ScriptDependencyVisualizer\Editor\WindowScripts\Serializer.cs" />
     <Compile Include="Assets\BlackPeaStudios\ScriptDependencyVisualizer\Editor\WindowScripts\WindowUtilities.cs" />
+    <Compile Include="Assets\Editor\FieldOfViewEditor.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Kim Jong-Un/Desktop/GeneticAlgorithmSimulation/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

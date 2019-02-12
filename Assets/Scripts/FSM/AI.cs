@@ -52,18 +52,12 @@ public class AI : MonoBehaviour {
 
     public bool CanSeeTarget()
     {
-        if (seek.Target)
-            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < critter.sight;
-        else
-            return false;
+        return seek.Target;
     }
 
     public bool CanSeeEnemy()
     {
-        if (seek.Enemy)
-            return Vector3.Distance(this.transform.position, seek.Enemy.transform.position) < critter.sight;
-        else
-            return false;
+        return seek.Enemy;
     }
 
     public bool IsCloseEnoughToEat()

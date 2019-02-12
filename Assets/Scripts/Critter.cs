@@ -7,16 +7,13 @@ public class Critter : MonoBehaviour {
     public float health = 100f;
     public float energy = 100f;
 
-    public float energyPerSecond = 5f;
+    public float energyPerSecond = 1f;
 
     public float runSpeed = 5f;
     public float walkSpeed = 2f;
     public float speed;
-    public float sight;
 
     public string critterType = "Vegetable";
-
-    Seek seek;
 
     static public Dictionary<string, List<Critter>> crittersDict;
 
@@ -24,8 +21,10 @@ public class Critter : MonoBehaviour {
 
     Animator animator;
 
-	// Use this for initialization
-	void Awake () {
+
+
+    // Use this for initialization
+    void Awake () {
 		if(crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if(!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
@@ -42,7 +41,7 @@ public class Critter : MonoBehaviour {
     void FixedUpdate()
     { 
         energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
-        if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime * 5f, 0, 100); }
+        if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -60,10 +59,5 @@ public class Critter : MonoBehaviour {
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        if(critterType != "Vegetable")
-            Gizmos.DrawWireSphere(transform.position, sight);
-    }
 
 }

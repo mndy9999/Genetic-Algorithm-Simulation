@@ -23,10 +23,11 @@ public class AI_Wander : State<AI>
     }
     public override void EnterState(AI _owner)
     {
+        _owner.critter.speed = _owner.critter.walkSpeed;
         Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
         _owner.genWaypoint();
-        _owner.critter.speed = _owner.critter.walkSpeed;
+        
     }
 
     public override void ExitState(AI _owner)
