@@ -19,6 +19,7 @@ public class Seek : MonoBehaviour {
     private void Update()
     {
         FindVisibleTargets();
+        Debug.Log(this.Target);
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -40,9 +41,9 @@ public class Seek : MonoBehaviour {
             if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
             {
                 float distance = Vector3.Distance(transform.position, target.transform.position);
-                if (!Physics.Raycast(transform.position, direction, distance))
+                if (Physics.Raycast(transform.position, direction, distance))
                 {
-                    visibleTargets.Add(target);
+                    visibleTargets.Add(target.transform.root.gameObject);
                 }
             }
         }
@@ -61,6 +62,7 @@ public class Seek : MonoBehaviour {
                 {
                     if (visibleTargets.Contains(c.gameObject))
                     {
+                        Debug.Log("hi");
                         float d = Vector3.Distance(this.transform.position, c.transform.position);
                         if (target == null || d < dist)
                         {
@@ -105,7 +107,7 @@ public class Seek : MonoBehaviour {
     public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)
     {
         if (!isGlobal) { angleDegrees += transform.eulerAngles.y; }
-        return new Vector3(Mathf.Sin(angleDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(-angleDegrees * Mathf.Deg2Rad));
+        return new Vector3(Mathf.Sin(angleDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleDegrees * Mathf.Deg2Rad));
     }
 
     private void OnDrawGizmos()
@@ -114,7 +116,6 @@ public class Seek : MonoBehaviour {
         {
             Gizmos.DrawWireSphere(transform.position, viewRadius);
 
-            viewAngle += transform.eulerAngles.y;
             Vector3 viewAngleA = DirFromAngle(-viewAngle / 2, false);
             Vector3 viewAngleB = DirFromAngle(viewAngle / 2, false);
 

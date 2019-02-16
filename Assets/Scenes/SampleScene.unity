@@ -256,10 +256,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
-  sight: 20
   critterType: Vegetable
-  viewRadius: 10
-  viewAngle: 90
 --- !u!23 &61234886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -463,10 +460,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
-  sight: 20
   critterType: Vegetable
-  viewRadius: 10
-  viewAngle: 90
 --- !u!23 &99433101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -698,10 +692,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
-  sight: 20
   critterType: Vegetable
-  viewRadius: 10
-  viewAngle: 90
 --- !u!23 &243337623
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1426,10 +1417,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
-  sight: 20
   critterType: Vegetable
-  viewRadius: 10
-  viewAngle: 90
 --- !u!23 &761362443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1794,6 +1782,7 @@ GameObject:
   - component: {fileID: 878773092}
   - component: {fileID: 878773093}
   - component: {fileID: 878773096}
+  - component: {fileID: 878773097}
   m_Layer: 0
   m_Name: sheep_prefab
   m_TagString: Untagged
@@ -1838,10 +1827,7 @@ MonoBehaviour:
   runSpeed: 7
   walkSpeed: 2
   speed: 3
-  sight: 10
   critterType: Herbivore
-  viewRadius: 10
-  viewAngle: 90
 --- !u!95 &878773094
 Animator:
   serializedVersion: 3
@@ -1893,6 +1879,17 @@ MonoBehaviour:
   viewRadius: 10
   viewAngle: 100
   visibleTargets: []
+--- !u!114 &878773097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878773091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b83a6dab2821d04fa37e4ad4d7c2bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &911263173
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,10 +2099,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
-  sight: 20
   critterType: Vegetable
-  viewRadius: 10
-  viewAngle: 90
 --- !u!23 &987507061
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2276,10 +2270,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
-  sight: 20
   critterType: Vegetable
-  viewRadius: 10
-  viewAngle: 90
 --- !u!23 &1028832972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2769,7 +2760,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: ba322b0cf29bcf240b226dc270ccc9de, type: 3}
@@ -3937,10 +3928,7 @@ MonoBehaviour:
   runSpeed: 4
   walkSpeed: 2
   speed: 5
-  sight: 10
   critterType: Carnivore
-  viewRadius: 10
-  viewAngle: 90
 --- !u!114 &1845843779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4261,10 +4249,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
-  sight: 20
   critterType: Vegetable
-  viewRadius: 10
-  viewAngle: 90
 --- !u!23 &1989798732
 MeshRenderer:
   m_ObjectHideFlags: 0
