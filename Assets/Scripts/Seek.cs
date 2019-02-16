@@ -19,7 +19,6 @@ public class Seek : MonoBehaviour {
     private void Update()
     {
         FindVisibleTargets();
-        Debug.Log(this.Target);
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -62,7 +61,6 @@ public class Seek : MonoBehaviour {
                 {
                     if (visibleTargets.Contains(c.gameObject))
                     {
-                        Debug.Log("hi");
                         float d = Vector3.Distance(this.transform.position, c.transform.position);
                         if (target == null || d < dist)
                         {

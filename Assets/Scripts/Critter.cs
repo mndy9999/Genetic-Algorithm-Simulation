@@ -58,6 +58,7 @@ public class Critter : MonoBehaviour {
             while (speed > walkSpeed) { speed -= 0.2f; }
         }
     }
-
+    public bool IsAlive() { return health > 0; }
+    public bool IsAttacked { get; set; }
 
 }

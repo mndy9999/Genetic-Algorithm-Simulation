@@ -44,6 +44,10 @@ public class AI_Evade : State<AI>
                                         _owner.critter.speed * Time.deltaTime);
             _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
         }
+        if (_owner.critter.IsAttacked)
+        {
+            _owner.stateMachine.ChangeState(AI_Attack.instance);
+        }
         //if the enemy is out of the AI's sight
         else
         {

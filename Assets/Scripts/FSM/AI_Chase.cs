@@ -42,7 +42,10 @@ public class AI_Chase : State<AI>
         //if the AI is close enough to the target
         if (_owner.IsCloseEnoughToEat())
         {
-            _owner.stateMachine.ChangeState(AI_Eat.instance);       //change to eating state
+
+            _owner.stateMachine.ChangeState(AI_Attack.instance);
+
+            //_owner.stateMachine.ChangeState(AI_Eat.instance);       //change to eating state
         }
         
         else if (_owner.CanSeeTarget())

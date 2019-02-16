@@ -68,4 +68,10 @@ public class AI : MonoBehaviour {
             return false;
     }
 
+    public bool TargetIsDead() {
+        if (seek.Target)
+            return seek.Target.GetComponent<Critter>().health <= 0;
+        else
+            return false;
+    }
 }

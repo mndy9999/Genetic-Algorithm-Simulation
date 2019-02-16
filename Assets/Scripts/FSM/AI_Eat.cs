@@ -53,8 +53,7 @@ public class AI_Eat : State<AI>
             _owner.seek.Target.GetComponent<Critter>().health -= hpEaten;
             _owner.critter.energy += hpEaten * eatHPToEnergy;
         }
-            
-            
-
     }
+
+
 }
