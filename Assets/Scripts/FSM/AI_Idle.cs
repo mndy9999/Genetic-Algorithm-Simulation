@@ -35,21 +35,10 @@ public class AI_Idle : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        //if the enemy is in the AI's sight
-        if (_owner.CanSeeEnemy())
-        {
-            _owner.stateMachine.ChangeState(AI_Evade.instance);     //change to evade state
-        }
-        //if the target is in the AI's sight
-        if (_owner.CanSeeTarget())
-        {
-            _owner.stateMachine.ChangeState(AI_Chase.instance);     //change to chase state
-        }
-        //otherwise, check if the bool in the AI class is true
-        else if (_owner.switchState)
-        {
-            _owner.stateMachine.ChangeState(AI_Wander.instance);    //and change to wander state
-        }
+        if (_owner.IsDead()) { Debug.Log("hi"); _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        else if (_owner.switchState) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
     }
 }

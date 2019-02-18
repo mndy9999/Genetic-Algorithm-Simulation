@@ -39,16 +39,9 @@ public class AI_Eat : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        //if the AI is not close enough to the target
-        if (!_owner.IsCloseEnoughToEat())
-        {
-            _owner.stateMachine.ChangeState(AI_Chase.instance);     //change into chase state
-        }
-        //otherwise, change the health level of the food target
-        //and add points to the AI's food level - not yet implemented
-        //(all food starts with 10HP. when it reaches 0, the gameObject is destroyed
-        //  and the AI get the position of the next closest food source)
-        else
+        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (!_owner.IsCloseEnoughToEat()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        if (_owner.CanSeeTarget())
         {
             float hpEaten = 0.1f;
             _owner.seek.Target.GetComponent<Critter>().resource -= hpEaten;

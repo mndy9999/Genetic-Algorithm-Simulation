@@ -35,6 +35,7 @@ public class AI_Evade : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         if (_owner.CanSeeEnemy())
         {
             //calculate direction, rotation and start moving towards the target
@@ -44,10 +45,6 @@ public class AI_Evade : State<AI>
                                         Quaternion.LookRotation(-direction),
                                         _owner.critter.speed * Time.deltaTime);
             _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
-        }
-        if (_owner.critter.IsAttacked)
-        {
-            _owner.stateMachine.ChangeState(AI_Attack.instance);
         }
         //if the enemy is out of the AI's sight
         else
