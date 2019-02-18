@@ -24,8 +24,7 @@ public class AI_Attack : State<AI>
     }
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Attack State");
-        
+        Debug.Log("Entering Attack State");        
     }
 
     public override void ExitState(AI _owner)
@@ -54,7 +53,7 @@ public class AI_Attack : State<AI>
             float attackPower = 0.05f;
             //start playing the animation when entering state
             _owner.animator.Play("Attack");
-            _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
+           // _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
             _owner.seek.Target.GetComponent<Critter>().health -= attackPower;
             
         }
