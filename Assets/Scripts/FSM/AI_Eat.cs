@@ -38,6 +38,7 @@ public class AI_Eat : State<AI>
 
     public override void UpdateState(AI _owner)
     {
+        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         //if the AI is not close enough to the target
         if (!_owner.IsCloseEnoughToEat())
         {
@@ -50,7 +51,7 @@ public class AI_Eat : State<AI>
         else
         {
             float hpEaten = 0.1f;
-            _owner.seek.Target.GetComponent<Critter>().health -= hpEaten;
+            _owner.seek.Target.GetComponent<Critter>().resource -= hpEaten;
             _owner.critter.energy += hpEaten * eatHPToEnergy;
         }
     }

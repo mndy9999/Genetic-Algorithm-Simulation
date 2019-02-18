@@ -35,11 +35,15 @@ public class AI_Attack : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-
+        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         //if the enemy is in the AI's sight
         if (!_owner.CanSeeTarget())
         {
             _owner.stateMachine.ChangeState(AI_Idle.instance);     //change to idle state
+        }
+        if (_owner.TargetIsDead())
+        {
+            _owner.stateMachine.ChangeState(AI_Eat.instance);
         }
         if(_owner.critter.health < 40)
         {
@@ -51,7 +55,6 @@ public class AI_Attack : State<AI>
             //start playing the animation when entering state
             _owner.animator.Play("Attack");
             _owner.seek.Target.GetComponent<Critter>().health -= attackPower;
-            _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
 
         }
 

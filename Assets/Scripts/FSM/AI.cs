@@ -74,4 +74,9 @@ public class AI : MonoBehaviour {
         else
             return false;
     }
+
+    public bool IsDead()
+    {
+        return critter.health <= 0;
+    }
 }

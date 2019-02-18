@@ -6,6 +6,7 @@ public class Critter : MonoBehaviour {
 
     public float health = 100f;
     public float energy = 100f;
+    public float resource = 100f;
 
     public float energyPerSecond = 1f;
 
@@ -42,7 +43,7 @@ public class Critter : MonoBehaviour {
     { 
         energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
         if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
-        if (health <= 0)
+        if (resource <= 0)
         {
             Destroy(gameObject);
             return;
@@ -60,5 +61,6 @@ public class Critter : MonoBehaviour {
     }
     public bool IsAlive() { return health > 0; }
     public bool IsAttacked { get; set; }
+    public void KillSelf() { Destroy(gameObject); }
 
 }
