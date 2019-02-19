@@ -63,7 +63,7 @@ public class AI : MonoBehaviour {
     public bool IsCloseEnoughToEat()
     {
         if (seek.Target)
-            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 0.5f;
+            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1f;
         else
             return false;
     }
@@ -71,6 +71,13 @@ public class AI : MonoBehaviour {
     public bool TargetIsDead() {
         if (seek.Target)
             return seek.Target.GetComponent<Critter>().health <= 0;
+        else
+            return false;
+    }
+    public bool TargetIsFood()
+    {
+        if (seek.Target)
+            return seek.Target.GetComponent<Critter>().critterType == seek.targetType;
         else
             return false;
     }

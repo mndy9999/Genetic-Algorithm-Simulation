@@ -12,6 +12,8 @@ public class Seek : MonoBehaviour {
 
     public List<GameObject> visibleTargets = new List<GameObject>();
 
+    public GameObject target = null;
+
     private void Start()
     {
         FindVisibleTargets();
@@ -35,14 +37,14 @@ public class Seek : MonoBehaviour {
         Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
         for (int i = 0; i < targetInViewRadius.Length; i++)
         {
-            GameObject target = targetInViewRadius[i].gameObject;
-            Vector3 direction = (target.transform.position - transform.position).normalized;
+            GameObject target2 = targetInViewRadius[i].gameObject;
+            Vector3 direction = (target2.transform.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
             {
-                float distance = Vector3.Distance(transform.position, target.transform.position);
+                float distance = Vector3.Distance(transform.position, target2.transform.position);
                 if (Physics.Raycast(transform.position, direction, distance))
                 {
-                    visibleTargets.Add(target.transform.root.gameObject);
+                    visibleTargets.Add(target2.transform.root.gameObject);
                 }
             }
         }
@@ -52,10 +54,9 @@ public class Seek : MonoBehaviour {
     {
         get
         {
-            if (Critter.crittersDict.ContainsKey(targetType))
+            if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(targetType))
             {
-                //find closest target
-                GameObject target = null;
+                //find closest target               
                 float dist = Mathf.Infinity;
                 foreach (Critter c in Critter.crittersDict[targetType])
                 {
@@ -68,12 +69,11 @@ public class Seek : MonoBehaviour {
                             dist = d;
                         }                       
                     }
-                }
-                return target;
+                }                
             }
-            return null;
+            return target;
         }
-        set { }
+        set { target = value; }
     }
 
     public GameObject Enemy

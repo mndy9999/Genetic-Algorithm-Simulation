@@ -39,7 +39,7 @@ public class AI_Eat : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-       // if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         if (!_owner.IsCloseEnoughToEat()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         if (_owner.CanSeeTarget())
         {

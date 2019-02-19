@@ -60,7 +60,7 @@ public class Critter : MonoBehaviour {
         }
     }
     public bool IsAlive() { return health > 0; }
-    public bool IsAttacked { get; set; }
+    public bool IsAttacked;
     public void KillSelf() { Destroy(gameObject); }
 
 }
