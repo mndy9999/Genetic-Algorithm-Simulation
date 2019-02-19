@@ -53,7 +53,8 @@ public class AI_Attack : State<AI>
             float attackPower = 0.05f;
             //start playing the animation when entering state
             _owner.animator.Play("Attack");
-           // _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
+            _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
+            _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
             _owner.seek.Target.GetComponent<Critter>().health -= attackPower;
             
         }

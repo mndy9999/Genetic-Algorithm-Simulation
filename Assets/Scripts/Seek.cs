@@ -73,6 +73,7 @@ public class Seek : MonoBehaviour {
             }
             return null;
         }
+        set { }
     }
 
     public GameObject Enemy
