@@ -39,14 +39,21 @@ public class AI_Eat : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        if (!_owner.IsCloseEnoughToEat()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-        if (_owner.CanSeeTarget())
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.CanSeeTarget())
         {
-            float hpEaten = 0.1f;
-            _owner.seek.Target.GetComponent<Critter>().resource -= hpEaten;
-            _owner.critter.energy += hpEaten * eatHPToEnergy;
+            if (_owner.IsCloseEnoughToEat()) { Eat(_owner); }
+            else { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         }
+        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+    }
+
+    void Eat(AI _owner)
+    {
+        float hpEaten = 0.1f;
+        _owner.seek.Target.GetComponent<Critter>().resource -= hpEaten;
+        _owner.critter.energy += hpEaten * eatHPToEnergy;
     }
 
 

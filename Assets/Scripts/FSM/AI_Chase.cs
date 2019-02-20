@@ -35,36 +35,25 @@ public class AI_Chase : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        //if the enemy is in the AI's sight
-        if (_owner.CanSeeEnemy())
-        {
-            _owner.stateMachine.ChangeState(AI_Evade.instance);     //change to evade state
-        }
-        //if the AI is close enough to the target
-        if (_owner.IsCloseEnoughToEat())
-        {
-            _owner.stateMachine.ChangeState(AI_Attack.instance);
-        }
-        
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget())
         {
-            //calculate direction, rotation and start moving towards the target
-            if (!Critter.crittersDict.ContainsKey(_owner.seek.targetType)) { return; }
-            var direction = _owner.seek.Target.transform.position - _owner.transform.position;
-            _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-                                        Quaternion.LookRotation(direction),
-                                        _owner.critter.speed * Time.deltaTime);
-            _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
+            if (_owner.IsCloseEnoughToEat()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+            else { Chase(_owner); }
         }
-        //if the target is out of the AI's sight
-        else
-        {
-            _owner.stateMachine.ChangeState(AI_Idle.instance);      //change to idle
-        }
-
-
-
+        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }     
     }
-    
+
+    void Chase(AI _owner)
+    {
+        //calculate direction, rotation and start moving towards the target
+        if (!Critter.crittersDict.ContainsKey(_owner.seek.targetType)) { return; }
+        var direction = _owner.seek.Target.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                                    Quaternion.LookRotation(direction),
+                                    _owner.critter.speed * Time.deltaTime);
+        _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
+    }
+
 }

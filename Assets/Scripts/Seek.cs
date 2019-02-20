@@ -13,22 +13,19 @@ public class Seek : MonoBehaviour {
     public List<GameObject> visibleTargets = new List<GameObject>();
 
     public GameObject target = null;
+    public GameObject enemy = null;
 
     private void Start()
     {
         FindVisibleTargets();
+        target = GetTarget();
+        enemy = GetEnemy();
     }
     private void Update()
     {
         FindVisibleTargets();
-    }
-
-    IEnumerator FindTargetsWithDelay(float delay)
-    {
-        while (true){
-            yield return new WaitForSeconds(delay);
-            FindVisibleTargets();
-        }
+        target = GetTarget();
+        enemy = GetEnemy();
     }
 
     void FindVisibleTargets()
@@ -50,57 +47,60 @@ public class Seek : MonoBehaviour {
         }
     }
 
-    public GameObject Target
+    public GameObject GetTarget()
     {
-        get
-        {
-            if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(targetType))
+        GameObject temp = null;
+        if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(targetType))
+        {            
+            //find closest target               
+            float dist = Mathf.Infinity;
+            foreach (Critter c in Critter.crittersDict[targetType])
             {
-                //find closest target               
-                float dist = Mathf.Infinity;
-                foreach (Critter c in Critter.crittersDict[targetType])
+                if (visibleTargets.Contains(c.gameObject))
                 {
-                    if (visibleTargets.Contains(c.gameObject))
+                    float d = Vector3.Distance(this.transform.position, c.transform.position);
+                    if (temp == null || d < dist)
                     {
-                        float d = Vector3.Distance(this.transform.position, c.transform.position);
-                        if (target == null || d < dist)
-                        {
-                            target = c.gameObject;
-                            dist = d;
-                        }                       
-                    }
-                }                
-            }
-            return target;
-        }
-        set { target = value; }
-    }
-
-    public GameObject Enemy
-    {
-        get
-        {
-            if (Critter.crittersDict.ContainsKey(enemyType))
-            {
-                //find closest enemy
-                GameObject enemy = null;
-                float dist = Mathf.Infinity;
-                foreach (Critter c in Critter.crittersDict[enemyType])
-                {
-                    if (visibleTargets.Contains(c.gameObject))
-                    {
-                        float d = Vector3.Distance(this.transform.position, c.transform.position);
-                        if (enemy == null || d < dist)
-                        {
-                            enemy = c.gameObject;
-                            dist = d;
-                        }
+                        temp = c.gameObject;
+                        dist = d;
                     }
                 }
-                return enemy;
             }
-            return null;
         }
+        return temp;
+    }
+    public GameObject GetEnemy()
+    {
+        GameObject temp = null;
+        if (Critter.crittersDict.ContainsKey(enemyType))
+        {
+            //find closest enemy
+            float dist = Mathf.Infinity;
+            foreach (Critter c in Critter.crittersDict[enemyType])
+            {
+                if (visibleTargets.Contains(c.gameObject))
+                {
+                    float d = Vector3.Distance(this.transform.position, c.transform.position);
+                    if (temp == null || d < dist)
+                    {
+                        temp = c.gameObject;
+                        dist = d;
+                    }
+                }
+            }           
+        }
+        return temp;
+    }
+    
+    public GameObject Target
+    {
+        get { return target; }
+        set { target = value; }
+    }
+    public GameObject Enemy
+    {
+        get { return enemy; }
+        set { enemy = value; }
     }
 
     public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)

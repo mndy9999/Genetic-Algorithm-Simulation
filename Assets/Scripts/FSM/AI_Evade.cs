@@ -35,22 +35,20 @@ public class AI_Evade : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        if (_owner.CanSeeEnemy())
-        {
-            //calculate direction, rotation and start moving towards the target
-            if (!Critter.crittersDict.ContainsKey(_owner.seek.enemyType)) { return; }
-            var direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
-            _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-                                        Quaternion.LookRotation(-direction),
-                                        _owner.critter.speed * Time.deltaTime);
-            _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
-        }
-        //if the enemy is out of the AI's sight
-        else
-        {
-            _owner.stateMachine.ChangeState(AI_Idle.instance);      //change to idle
-        }
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (_owner.CanSeeEnemy()) { Evade(_owner); }
+        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+    }
+
+    void Evade(AI _owner)
+    {
+        //calculate direction, rotation and start moving towards the target
+        if (!Critter.crittersDict.ContainsKey(_owner.seek.enemyType)) { return; }
+        var direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                                    Quaternion.LookRotation(-direction),
+                                    _owner.critter.speed * Time.deltaTime);
+        _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
     }
 
 }

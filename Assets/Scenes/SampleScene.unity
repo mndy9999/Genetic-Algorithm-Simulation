@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &61234884
 Transform:
   m_ObjectHideFlags: 0
@@ -253,6 +253,7 @@ MonoBehaviour:
   health: 0
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 0
   runSpeed: 5
   walkSpeed: 2
@@ -430,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &99433099
 Transform:
   m_ObjectHideFlags: 0
@@ -459,6 +460,7 @@ MonoBehaviour:
   health: 0
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 0
   runSpeed: 5
   walkSpeed: 2
@@ -664,7 +666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &243337621
 Transform:
   m_ObjectHideFlags: 0
@@ -693,6 +695,7 @@ MonoBehaviour:
   health: 0
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 0
   runSpeed: 5
   walkSpeed: 2
@@ -1391,7 +1394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &761362441
 Transform:
   m_ObjectHideFlags: 0
@@ -1420,6 +1423,7 @@ MonoBehaviour:
   health: 0
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 0
   runSpeed: 5
   walkSpeed: 2
@@ -1832,6 +1836,7 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 5
   runSpeed: 4
   walkSpeed: 2
@@ -1864,7 +1869,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 878773091}
-  m_LocalRotation: {x: -0, y: 0.16706121, z: -0, w: 0.98594654}
+  m_LocalRotation: {x: -0, y: 0.9847879, z: -0, w: 0.17376104}
   m_LocalPosition: {x: 209.28, y: 0, z: 111.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1872,7 +1877,7 @@ Transform:
   - {fileID: 1166861656}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 19.234001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 159.98701, z: 0}
 --- !u!114 &878773096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1890,6 +1895,7 @@ MonoBehaviour:
   viewAngle: 100
   visibleTargets: []
   target: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!114 &878773097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,7 +2084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &987507059
 Transform:
   m_ObjectHideFlags: 0
@@ -2107,6 +2113,7 @@ MonoBehaviour:
   health: 0
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 0
   runSpeed: 5
   walkSpeed: 2
@@ -2251,7 +2258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1028832970
 Transform:
   m_ObjectHideFlags: 0
@@ -2280,6 +2287,7 @@ MonoBehaviour:
   health: 0
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 0
   runSpeed: 5
   walkSpeed: 2
@@ -3864,7 +3872,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845843774}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.9419193, z: -0, w: 0.33583924}
   m_LocalPosition: {x: 211.19, y: 0, z: 105.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3872,14 +3880,14 @@ Transform:
   - {fileID: 2115654421}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 140.753, z: 0}
 --- !u!114 &1845843777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845843774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b17812e327a0c246af88d8abfbfe020, type: 3}
   m_Name: 
@@ -3905,6 +3913,7 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 5
   runSpeed: 3
   walkSpeed: 2
@@ -3928,6 +3937,7 @@ MonoBehaviour:
   viewAngle: 110
   visibleTargets: []
   target: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &1858016211
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,7 +4210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1989798730
 Transform:
   m_ObjectHideFlags: 0
@@ -4229,6 +4239,7 @@ MonoBehaviour:
   health: 0
   energy: 100
   resource: 100
+  age: 0
   energyPerSecond: 0
   runSpeed: 5
   walkSpeed: 2

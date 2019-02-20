@@ -227,6 +227,7 @@
     <Compile Include="Assets\Scripts\BehaviourTree\BT_Evade.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\BT_SeekFood.cs" />
     <Compile Include="Assets\Scripts\BehaviourTree\WeightedDirection.cs" />
+    <Compile Include="Assets\Scripts\BreedController.cs" />
     <Compile Include="Assets\Scripts\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\ColourChange.cs" />

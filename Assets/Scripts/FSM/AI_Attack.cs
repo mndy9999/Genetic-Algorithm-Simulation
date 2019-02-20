@@ -36,38 +36,34 @@ public class AI_Attack : State<AI>
     {
 
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        //if the enemy is in the AI's sight
-        if (!_owner.CanSeeTarget())
+        else if (_owner.CanSeeEnemy() && _owner.critter.health < 40) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.CanSeeTarget())
         {
-            _owner.stateMachine.ChangeState(AI_Idle.instance);     //change to idle state
+            if (_owner.TargetIsDead())
+            {
+                _owner.critter.IsAttacked = false;
+                if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
+                else { _owner.seek.Target = null; _owner.stateMachine.ChangeState(AI_Idle.instance); }
+            }
+            else { Attack(_owner); }
         }
-        if (_owner.TargetIsDead())
-        {
-            _owner.critter.IsAttacked = false;
-            if(_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
-            else { _owner.seek.Target = null; _owner.stateMachine.ChangeState(AI_Idle.instance); }            
-        }
-        if(_owner.critter.health < 40 && _owner.CanSeeEnemy())
-        {
-            _owner.stateMachine.ChangeState(AI_Evade.instance);     //change to evade state
-        }
-        if (!_owner.TargetIsDead())
-        {
-            float attackPower = 0.05f;
+        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
 
-            var direction = _owner.seek.Target.transform.position - _owner.transform.position;
-            _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-                                        Quaternion.LookRotation(direction),
-                                        _owner.critter.speed * Time.deltaTime);
+    }
 
-            //start playing the animation when entering state
-            _owner.animator.Play("Attack");
-            _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
-            _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
-            _owner.seek.Target.GetComponent<Critter>().health -= attackPower;
-            
-        }
+    void Attack(AI _owner)
+    {
+        float attackPower = 0.05f;
+        var direction = _owner.seek.Target.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                                    Quaternion.LookRotation(direction),
+                                    _owner.critter.speed * Time.deltaTime);
 
+        //start playing the animation
+        _owner.animator.Play("Attack");
+        _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
+        _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
+        _owner.seek.Target.GetComponent<Critter>().health -= attackPower;
     }
 
 }

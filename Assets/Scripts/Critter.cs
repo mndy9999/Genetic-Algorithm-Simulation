@@ -8,6 +8,8 @@ public class Critter : MonoBehaviour {
     public float energy = 100f;
     public float resource = 100f;
 
+    public float age;
+
     public float energyPerSecond = 1f;
 
     public float runSpeed = 5f;
@@ -26,6 +28,7 @@ public class Critter : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+        age = 0;
 		if(crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if(!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
@@ -43,6 +46,7 @@ public class Critter : MonoBehaviour {
     { 
         energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
         if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
+        if (!IsAlive()) { energy = 0; health = 0; resource = Mathf.Clamp(resource - Time.deltaTime, 0, 100); }
         if (resource <= 0)
         {
             Destroy(gameObject);
@@ -59,7 +63,7 @@ public class Critter : MonoBehaviour {
             while (speed > walkSpeed) { speed -= 0.2f; }
         }
     }
-    public bool IsAlive() { return health > 0; }
+    public bool IsAlive() { return health > 0 && age < 10; }
     public bool IsAttacked;
     public void KillSelf() { Destroy(gameObject); }
 
