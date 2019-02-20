@@ -7,25 +7,33 @@ public class Seek : MonoBehaviour {
     public string targetType = "Vegetable";
     public string enemyType = "Carnivore";
 
-    public float viewRadius = 10f;
-    public float viewAngle = 90f;
+    public float viewRadius;
+    public float viewAngle;
 
     public List<GameObject> visibleTargets = new List<GameObject>();
 
     public GameObject target = null;
     public GameObject enemy = null;
+    public GameObject mate = null;
+
+    Critter critter;
 
     private void Start()
     {
+        critter = GetComponent<Critter>();
+        viewRadius = critter.viewRadius;
+        viewAngle = critter.viewAngle;
         FindVisibleTargets();
         target = GetTarget();
         enemy = GetEnemy();
+        mate = GetMate();
     }
     private void Update()
     {
         FindVisibleTargets();
         target = GetTarget();
         enemy = GetEnemy();
+        mate = GetMate();
     }
 
     void FindVisibleTargets()
@@ -91,7 +99,29 @@ public class Seek : MonoBehaviour {
         }
         return temp;
     }
-    
+    public GameObject GetMate()
+    {
+        GameObject temp = null;
+        if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(critter.critterType))
+        {
+            //find closest target               
+            float dist = Mathf.Infinity;
+            foreach (Critter c in Critter.crittersDict[critter.critterType])
+            {
+                if (visibleTargets.Contains(c.gameObject) && critter.gender != c.gender && critter.CanBreed() && c.CanBreed())
+                {
+                    float d = Vector3.Distance(this.transform.position, c.transform.position);
+                    if (temp == null || d < dist)
+                    {
+                        temp = c.gameObject;
+                        dist = d;
+                    }
+                }
+            }
+        }
+        return temp;
+    }
+
     public GameObject Target
     {
         get { return target; }
@@ -101,6 +131,11 @@ public class Seek : MonoBehaviour {
     {
         get { return enemy; }
         set { enemy = value; }
+    }
+    public GameObject Mate
+    {
+        get { return mate; }
+        set { mate = value; }
     }
 
     public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)

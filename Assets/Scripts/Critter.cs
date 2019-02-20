@@ -16,6 +16,9 @@ public class Critter : MonoBehaviour {
     public float walkSpeed = 2f;
     public float speed;
 
+    public float viewRadius = 10f;
+    public float viewAngle = 90f;
+
     public string critterType = "Vegetable";
 
     static public Dictionary<string, List<Critter>> crittersDict;
@@ -24,15 +27,18 @@ public class Critter : MonoBehaviour {
 
     Animator animator;
 
-    public Vector3 initialSize = new Vector3(0.2f, 0.2f, 0.2f);
+    public Vector3 initialSize;
+    public enum Gender { Male, Female};
+    public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder};
     public Stage lifeStage = Stage.Baby;
 
-    public bool breed;
+    public bool canBreed;
 
     // Use this for initialization
     void Awake () {
-		if(crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
+        initialSize = new Vector3(0.2f, 0.2f, 0.2f);
+        if (crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if(!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
         animator = this.GetComponent<Animator>();
@@ -58,7 +64,7 @@ public class Critter : MonoBehaviour {
         }
         if (energy > 10) { speed = runSpeed; }
         desiredDirections = new List<WeightedDirection>();
-        breed = CanBreed();
+        canBreed = CanBreed();
     }
 
     void changeSpeed()
