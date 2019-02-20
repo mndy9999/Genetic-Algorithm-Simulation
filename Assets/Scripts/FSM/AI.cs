@@ -34,7 +34,7 @@ public class AI : MonoBehaviour {
             timer = Time.time;
             seconds++;
         }
-        if(seconds > 5)
+        if(seconds > 20)
         {
             seconds = 0;
             switchState = !switchState;
@@ -62,24 +62,17 @@ public class AI : MonoBehaviour {
 
     public bool IsCloseEnoughToEat()
     {
-        if (seek.Target)
-            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1f;
-        else
-            return false;
+        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1f;
     }
 
-    public bool TargetIsDead() {
-        if (seek.Target)
-            return seek.Target.GetComponent<Critter>().health <= 0;
-        else
-            return false;
+    public bool TargetIsDead()
+    {
+        return seek.Target.GetComponent<Critter>().health <= 0;
     }
+
     public bool TargetIsFood()
     {
-        if (seek.Target)
-            return seek.Target.GetComponent<Critter>().critterType == seek.targetType;
-        else
-            return false;
+        return seek.Target.GetComponent<Critter>().critterType == seek.targetType;
     }
 
     public bool IsDead()

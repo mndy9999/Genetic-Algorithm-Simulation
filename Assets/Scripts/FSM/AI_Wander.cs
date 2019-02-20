@@ -26,8 +26,7 @@ public class AI_Wander : State<AI>
         _owner.critter.speed = _owner.critter.walkSpeed;
         Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
-        _owner.genWaypoint();
-        
+        _owner.genWaypoint();       
     }
 
     public override void ExitState(AI _owner)
@@ -38,12 +37,15 @@ public class AI_Wander : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
-        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         else if (!_owner.switchState) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        else { Wander(_owner); }
+    }
 
-        //calculate the direction and rotation, and start moving towards the target
+    void Wander(AI _owner)
+    {
         var direction = _owner.waypoint - _owner.transform.position;
         _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                     Quaternion.LookRotation(direction),
