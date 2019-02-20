@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &61234884
 Transform:
   m_ObjectHideFlags: 0
@@ -258,6 +258,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   critterType: Vegetable
+  IsAttacked: 0
 --- !u!23 &61234886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -463,6 +464,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   critterType: Vegetable
+  IsAttacked: 0
 --- !u!23 &99433101
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -662,7 +664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &243337621
 Transform:
   m_ObjectHideFlags: 0
@@ -696,6 +698,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   critterType: Vegetable
+  IsAttacked: 0
 --- !u!23 &243337623
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1388,7 +1391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &761362441
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,6 +1425,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   critterType: Vegetable
+  IsAttacked: 0
 --- !u!23 &761362443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1833,6 +1837,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   critterType: Herbivore
+  IsAttacked: 0
 --- !u!95 &878773094
 Animator:
   serializedVersion: 3
@@ -2073,7 +2078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &987507059
 Transform:
   m_ObjectHideFlags: 0
@@ -2107,6 +2112,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   critterType: Vegetable
+  IsAttacked: 0
 --- !u!23 &987507061
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2279,6 +2285,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   critterType: Vegetable
+  IsAttacked: 0
 --- !u!23 &1028832972
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3903,6 +3910,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   critterType: Carnivore
+  IsAttacked: 0
 --- !u!114 &1845843779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4192,7 +4200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1989798730
 Transform:
   m_ObjectHideFlags: 0
@@ -4226,6 +4234,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   critterType: Vegetable
+  IsAttacked: 0
 --- !u!23 &1989798732
 MeshRenderer:
   m_ObjectHideFlags: 0
