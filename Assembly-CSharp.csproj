@@ -236,6 +236,7 @@
     <Compile Include="Assets\Scripts\food.cs" />
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Attack.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Chase.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Dead.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Eat.cs" />

@@ -799,8 +799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetType: Vegetable
   enemyType: Carnivore
-  viewRadius: 10
-  viewAngle: 100
+  viewRadius: 0
+  viewAngle: 0
   visibleTargets: []
   target: {fileID: 0}
   enemy: {fileID: 0}

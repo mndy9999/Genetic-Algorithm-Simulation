@@ -23,17 +23,17 @@ public class Critter : MonoBehaviour {
 
     static public Dictionary<string, List<Critter>> crittersDict;
 
-    public List<WeightedDirection> desiredDirections;
-
     Animator animator;
 
     public Vector3 initialSize;
     public enum Gender { Male, Female};
     public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder};
-    public Stage lifeStage = Stage.Baby;
+    public Stage lifeStage;
 
     public bool canBreed;
+    public bool breedTimer;
+    public float time;
 
     // Use this for initialization
     void Awake () {
@@ -43,6 +43,7 @@ public class Critter : MonoBehaviour {
         crittersDict[critterType].Add(this);
         animator = this.GetComponent<Animator>();
         speed = runSpeed;
+        time = Time.time;
 	}
 
     private void OnDestroy()
@@ -63,8 +64,22 @@ public class Critter : MonoBehaviour {
             return;
         }
         if (energy > 10) { speed = runSpeed; }
-        desiredDirections = new List<WeightedDirection>();
-        canBreed = CanBreed();
+
+        if (breedTimer)
+        {
+            time = Time.time;
+            canBreed = false;
+            breedTimer = false;
+        }
+        if (Time.time >= time + 5)
+        {
+            canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder;
+        }
+        else
+        {
+            canBreed = false;
+        }
+       // Debug.Log(Time.time + "  " + time+5);
     }
 
     void changeSpeed()
@@ -75,7 +90,16 @@ public class Critter : MonoBehaviour {
         }
     }
     public bool IsAlive() { return health > 0 && age < 15; }
-    public bool CanBreed() { return lifeStage >= Stage.Teen && lifeStage < Stage.Elder; }
+    public bool BreedTimer
+    {
+        get { return breedTimer; }
+        set { breedTimer = value; }
+    }
+    public bool CanBreed
+    {
+        get { return canBreed; }
+        set { canBreed = value; }
+    }
     public bool IsAttacked;
     public void KillSelf() { Destroy(gameObject); }
     void UpdateLifeStage()

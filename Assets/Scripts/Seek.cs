@@ -12,9 +12,12 @@ public class Seek : MonoBehaviour {
 
     public List<GameObject> visibleTargets = new List<GameObject>();
 
-    public GameObject target = null;
-    public GameObject enemy = null;
-    public GameObject mate = null;
+    [SerializeField]
+    GameObject target = null;
+    [SerializeField]
+    GameObject enemy = null;
+    [SerializeField]
+    GameObject mate = null;
 
     Critter critter;
 
@@ -24,9 +27,10 @@ public class Seek : MonoBehaviour {
         viewRadius = critter.viewRadius;
         viewAngle = critter.viewAngle;
         FindVisibleTargets();
-        target = GetTarget();
+        target = GetMate();
         enemy = GetEnemy();
         mate = GetMate();
+        
     }
     private void Update()
     {
@@ -34,6 +38,7 @@ public class Seek : MonoBehaviour {
         target = GetTarget();
         enemy = GetEnemy();
         mate = GetMate();
+        if(mate != null) { target = mate; }
     }
 
     void FindVisibleTargets()
@@ -108,7 +113,7 @@ public class Seek : MonoBehaviour {
             float dist = Mathf.Infinity;
             foreach (Critter c in Critter.crittersDict[critter.critterType])
             {
-                if (visibleTargets.Contains(c.gameObject) && critter.gender != c.gender && critter.CanBreed() && c.CanBreed())
+                if (visibleTargets.Contains(c.gameObject) && critter.gender != c.gender && critter.CanBreed && c.CanBreed)
                 {
                     float d = Vector3.Distance(this.transform.position, c.transform.position);
                     if (temp == null || d < dist)

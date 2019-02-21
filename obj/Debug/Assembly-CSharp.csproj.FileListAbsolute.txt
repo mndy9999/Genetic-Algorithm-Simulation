@@ -166,3 +166,7 @@ C:\Users\Kim Jong-Un\Desktop\Dissertation 101\obj\Debug\Assembly-CSharp.csproj.C
 C:\Users\Kim Jong-Un\Desktop\Dissertation 101\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Kim Jong-Un\Desktop\Dissertation 101\obj\Debug\Assembly-CSharp.dll
 C:\Users\Kim Jong-Un\Desktop\Dissertation 101\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Kim Jong-Un\Desktop\GeneticAlgorithmSimulation\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Kim Jong-Un\Desktop\GeneticAlgorithmSimulation\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Kim Jong-Un\Desktop\GeneticAlgorithmSimulation\obj\Debug\Assembly-CSharp.dll
+C:\Users\Kim Jong-Un\Desktop\GeneticAlgorithmSimulation\obj\Debug\Assembly-CSharp.pdb

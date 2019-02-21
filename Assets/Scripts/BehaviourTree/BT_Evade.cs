@@ -41,7 +41,6 @@ public class BT_Evade : MonoBehaviour {
 
         Vector3 dir = closest.transform.position - this.transform.position;
         dir *= -1;
-        WeightedDirection wd = new WeightedDirection(dir, weight);
-        myCritter.desiredDirections.Add(wd);
+
     }
 }

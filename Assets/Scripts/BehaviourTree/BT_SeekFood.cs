@@ -45,8 +45,7 @@ public class BT_SeekFood : MonoBehaviour {
         else
         {
             Vector3 dir = closest.transform.position - this.transform.position;
-            WeightedDirection wd = new WeightedDirection(dir, 1);
-            myCritter.desiredDirections.Add(wd);
+
         }
         
         
