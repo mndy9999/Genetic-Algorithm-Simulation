@@ -223,17 +223,9 @@
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\AgeController.cs" />
-    <Compile Include="Assets\Scripts\AI_Traits.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BT_Evade.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\BT_SeekFood.cs" />
-    <Compile Include="Assets\Scripts\BehaviourTree\WeightedDirection.cs" />
-    <Compile Include="Assets\Scripts\BreedController.cs" />
     <Compile Include="Assets\Scripts\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\Scripts\ColourChange.cs" />
     <Compile Include="Assets\Scripts\Critter.cs" />
-    <Compile Include="Assets\Scripts\CritterSightController.cs" />
-    <Compile Include="Assets\Scripts\food.cs" />
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Attack.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
@@ -244,7 +236,6 @@
     <Compile Include="Assets\Scripts\FSM\AI_Idle.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Wander.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\OmnivoreTraits.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\SpawnCreature.cs" />
     <None Include="Assets\AIBehavior\Documentation\_ReadMe.txt" />
