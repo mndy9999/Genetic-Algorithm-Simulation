@@ -44,7 +44,7 @@ public class Seek : MonoBehaviour {
     void FindVisibleTargets()
     {
         visibleTargets.Clear();
-        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
+        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.Find("Eyes").gameObject.transform.position, viewRadius);
         for (int i = 0; i < targetInViewRadius.Length; i++)
         {
             GameObject target2 = targetInViewRadius[i].gameObject;
@@ -52,7 +52,7 @@ public class Seek : MonoBehaviour {
             if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
             {
                 float distance = Vector3.Distance(transform.position, target2.transform.position);
-                if (Physics.Raycast(transform.position, direction, distance))
+                if (!Physics.Raycast(transform.position, direction, distance))
                 {
                     visibleTargets.Add(target2.transform.root.gameObject);
                 }
