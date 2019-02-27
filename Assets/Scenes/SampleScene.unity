@@ -512,6 +512,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -758,6 +759,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -1376,6 +1378,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -6886,6 +6889,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -8081,6 +8085,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -8825,6 +8830,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -9620,6 +9626,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -14322,6 +14329,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -15879,6 +15887,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 0
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -16526,6 +16535,7 @@ MonoBehaviour:
   initialSize: {x: 0, y: 0, z: 0}
   gender: 1
   lifeStage: 0
+  availableBehaviours: []
   canBreed: 0
   breedTimer: 0
   time: 0

@@ -23,22 +23,19 @@ public class Critter : MonoBehaviour {
     public string critterType = "Vegetable";
 
     static public Dictionary<string, List<Critter>> crittersDict;
-
-    Animator animator;
+    public List<string> availableBehaviours;
 
     public Vector3 initialSize;
     public enum Gender { Male, Female};
     public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder};
-    public Stage lifeStage;
-
-    public List<string> availableBehaviours;
-
+    public Stage lifeStage;   
 
     public bool canBreed;
     public bool breedTimer;
     public float time;
 
+    Animator animator;
 
     // Use this for initialization
     void Awake () {
@@ -90,7 +87,8 @@ public class Critter : MonoBehaviour {
     void PopulateAvailableBehaviours()
     {
         for(int i = 0; i < Behaviours.behaviours.Count; i++)
-        {            
+        {
+            int r = Random.Range(0, 10);
             availableBehaviours.Add(Behaviours.behaviours[i]);
             Debug.Log(Behaviours.behaviours[i]);
         }
