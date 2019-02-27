@@ -4,6 +4,7 @@ using FiniteStateMachine;
 public class AI_Wander : State<AI>
 {
     private static AI_Wander _instance;
+    private static string _name = "wander";
     private AI_Wander()
     {
         if (_instance != null)
@@ -21,6 +22,13 @@ public class AI_Wander : State<AI>
             return _instance;
         }
     }
+
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
     public override void EnterState(AI _owner)
     {
         _owner.critter.speed = _owner.critter.walkSpeed;

@@ -5,6 +5,7 @@ public class AI_Breed : State<AI>
 {
     float time;
     private static AI_Breed _instance;
+    private static string _name = "breed";
     private AI_Breed()
     {
         if (_instance != null)
@@ -22,6 +23,13 @@ public class AI_Breed : State<AI>
             return _instance;
         }
     }
+
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Breed State");

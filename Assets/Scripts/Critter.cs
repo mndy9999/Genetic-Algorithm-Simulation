@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FiniteStateMachine;
 
 public class Critter : MonoBehaviour {
 
@@ -31,9 +32,13 @@ public class Critter : MonoBehaviour {
     public enum Stage { Baby, Teen, Adult, Elder};
     public Stage lifeStage;
 
+    public List<string> availableBehaviours;
+
+
     public bool canBreed;
     public bool breedTimer;
     public float time;
+
 
     // Use this for initialization
     void Awake () {
@@ -44,6 +49,7 @@ public class Critter : MonoBehaviour {
         animator = this.GetComponent<Animator>();
         speed = runSpeed;
         time = Time.time;
+        PopulateAvailableBehaviours();
 	}
 
     private void OnDestroy()
@@ -79,9 +85,16 @@ public class Critter : MonoBehaviour {
         {
             canBreed = false;
         }
-       // Debug.Log(Time.time + "  " + time+5);
     }
 
+    void PopulateAvailableBehaviours()
+    {
+        for(int i = 0; i < Behaviours.behaviours.Count; i++)
+        {            
+            availableBehaviours.Add(Behaviours.behaviours[i]);
+            Debug.Log(Behaviours.behaviours[i]);
+        }
+    }
     void changeSpeed()
     {
         if (energy < 10)

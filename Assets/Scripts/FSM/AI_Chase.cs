@@ -4,6 +4,7 @@ using FiniteStateMachine;
 public class AI_Chase : State<AI>
 {
     private static AI_Chase _instance;
+    private static string _name = "chase";
     private AI_Chase()
     {
         if (_instance != null)
@@ -21,6 +22,13 @@ public class AI_Chase : State<AI>
             return _instance;
         }
     }
+
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Chase State");

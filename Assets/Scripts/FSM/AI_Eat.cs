@@ -8,6 +8,7 @@ public class AI_Eat : State<AI>
     public float eatHPToEnergy = 2f;
 
     private static AI_Eat _instance;
+    private static string _name = "eat";
     private AI_Eat()
     {
         if (_instance != null)
@@ -25,6 +26,13 @@ public class AI_Eat : State<AI>
             return _instance;
         }
     }
+
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Eat State");

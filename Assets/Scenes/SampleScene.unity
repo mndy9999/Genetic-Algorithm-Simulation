@@ -4121,6 +4121,55 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 606310767}
   m_CullTransparentMesh: 0
+--- !u!1 &610509485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 610509487}
+  - component: {fileID: 610509486}
+  m_Layer: 0
+  m_Name: AnimationStates
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &610509486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 610509485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8f81bc193daf543bf6a41cdb398b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Untitled
+  startFrame: 0
+  endFrame: 0
+  speed: 1
+  animationWrapMode: 2
+  crossFadeIn: 0
+  crossFadeOut: 0
+  transitionTime: 0.2
+  foldoutOpen: 0
+--- !u!4 &610509487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 610509485}
+  m_LocalRotation: {x: -0, y: -0.9847879, z: 0, w: 0.17376104}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 878773095}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612147026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4973,6 +5022,503 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702824998}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &721314359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721314360}
+  - component: {fileID: 721314371}
+  - component: {fileID: 721314370}
+  - component: {fileID: 721314369}
+  - component: {fileID: 721314368}
+  - component: {fileID: 721314367}
+  - component: {fileID: 721314366}
+  - component: {fileID: 721314365}
+  - component: {fileID: 721314364}
+  - component: {fileID: 721314363}
+  - component: {fileID: 721314362}
+  - component: {fileID: 721314361}
+  m_Layer: 0
+  m_Name: States
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721314360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 878773095}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &721314361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed164e0ead76bb84193315d0c5b6f085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Dead
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  destroyGameObject: 0
+  destroyAfterTime: 0
+  destroyColliders: 0
+  destroyComponents: 0
+  componentsToDestroy: []
+  changeTag: 0
+  deadTag: 
+--- !u!114 &721314362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7745108baa048694d991f8569209e1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Get Help
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  cooldownTime: 0
+  startCooldownOnStateEnd: 1
+  helpRadius: 30
+  helpTag: Untagged
+  stateDuration: 1
+  changeToState: {fileID: 0}
+--- !u!114 &721314363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20ce2bc1734da140af811b5f1ba10a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Help
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  helpCondition: 0
+  helpStates: []
+  withinHelpPointDistance: 1
+  helpPoint: {x: 0, y: 0, z: 0}
+  helpPointReachedState: {fileID: 0}
+--- !u!114 &721314364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de8ee7718e399c4eaf5d84126066a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Change
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  changeInto: {fileID: 0}
+--- !u!114 &721314365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422f0c6dcb02c7c4dab06f2380dacd94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Got Hit
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  cooldownTime: 0
+  startCooldownOnStateEnd: 1
+  hitStateDuration: 1
+  returnToPreviousState: 0
+  changeToState: {fileID: 0}
+--- !u!114 &721314366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537b224d4516baf4bb1c4a565e53342c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Defend
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  cooldownTime: 0
+  startCooldownOnStateEnd: 1
+  defensiveBonus: 0
+  defensiveCallScript: {fileID: 0}
+  startDefendMethodName: 
+  endDefendMethodName: 
+--- !u!114 &721314367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6622b13f334cef643b96373de48409ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Attack
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  cooldownTime: 0
+  startCooldownOnStateEnd: 1
+  attackDamage: 10
+  plusOrMinusDamage: 0
+  findVisibleTargetsOnly: 1
+  attackAnimName: 
+  attackPoint: 0.5
+  inheritPreviousStateMovement: 0
+  scriptWithAttackMethod: {fileID: 0}
+  methodName: 
+  attackBasedOn: 0
+  initialAttackTime: 0.5
+  attackInterval: 0.5
+  attacksBeforeReload: 10
+  attackCount: 0
+  reloadState: {fileID: 0}
+  noTargetState: {fileID: 0}
+  animator: {fileID: 0}
+  mecanimLayerIndex: 0
+--- !u!114 &721314368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2edd08ca088e52748a507af760769287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Flee
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  fleeMode: 3
+  fleeTargetTag: Untagged
+  fleeToTarget: {fileID: 0}
+  fleeDirection: {x: 0, y: 0, z: 0}
+  flightEndedState: {fileID: 0}
+  distanceToTargetThreshold: 1
+  stopFleeDistance: 5
+--- !u!114 &721314369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e36a2ed7b7c0e48b576ef3933c15d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Seek
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  specifySeekTarget: 0
+  seekTarget: {fileID: 0}
+  seekTargetReachedState: {fileID: 0}
+  noSeekTargetFoundState: {fileID: 0}
+  distanceToTargetThreshold: 0.25
+  encircleTarget: 0
+  destroyTargetWhenReached: 0
+  getAsCloseAsPossible: 0
+  noMovementState: {fileID: 0}
+--- !u!114 &721314370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497971381bcc6524889f21c87355b575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Patrol
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 0}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  patrolPointsGroup: {fileID: 0}
+  pointDistanceThreshold: 0.5
+  useAccurateCornering: 0
+  corneringError: 10
+  patrolMode: 1
+  continuePatrolMode: 3
+  patrolEndedState: {fileID: 0}
+--- !u!114 &721314371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 721314359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06fe4b26b5c2a840b112db99f0bb88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveId: -1
+  isEnabled: 1
+  name: Idle
+  triggers: []
+  ownsObjectFinder: 0
+  objectFinder:
+    useCustomTags: 0
+    tags:
+    - Player
+    cachePoint: 0
+  movementSpeed: 1
+  rotationSpeed: 360
+  animationStatesComponent: {fileID: 0}
+  animationStates:
+  - {fileID: 610509486}
+  sounds: []
+  spawnItemsOnStateEnter: 0
+  itemSpawnMode: 0
+  itemSpawnPoint: {x: 0, y: 0, z: 0}
+  itemSpawnTfm: {fileID: 0}
+  exactPosition: 0
+  totalAmount: 1
+  spawnableItems: []
+  variables: []
+  rotatesTowardTarget: 0
 --- !u!1 &722333547
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,6 +6833,7 @@ GameObject:
   - component: {fileID: 878773093}
   - component: {fileID: 878773096}
   - component: {fileID: 878773097}
+  - component: {fileID: 878773098}
   m_Layer: 0
   m_Name: sheep_prefab
   m_TagString: Untagged
@@ -6376,6 +6923,8 @@ Transform:
   - {fileID: 2036385941}
   - {fileID: 1166861656}
   - {fileID: 702824999}
+  - {fileID: 610509487}
+  - {fileID: 721314360}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 159.98701, z: 0}
@@ -6407,6 +6956,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b83a6dab2821d04fa37e4ad4d7c2bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &878773098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878773091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c45cbaee3150bb645a875cb460bd3cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &880423320

@@ -4,6 +4,7 @@ using FiniteStateMachine;
 public class AI_Evade : State<AI>
 {
     private static AI_Evade _instance;
+    private static string _name = "evade";
     private AI_Evade()
     {
         if (_instance != null)
@@ -21,6 +22,13 @@ public class AI_Evade : State<AI>
             return _instance;
         }
     }
+
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Evade State");
