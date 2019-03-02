@@ -445,6 +445,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   viewRadius: 10
+  defaultViewAngle: 90
   viewAngle: 90
   critterType: Vegetable
   availableBehaviours: []
@@ -662,6 +663,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   viewRadius: 10
+  defaultViewAngle: 90
   viewAngle: 90
   critterType: Vegetable
   availableBehaviours: []
@@ -1129,6 +1131,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   viewRadius: 10
+  defaultViewAngle: 90
   viewAngle: 90
   critterType: Vegetable
   availableBehaviours: []
@@ -4751,7 +4754,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 878773091}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b17812e327a0c246af88d8abfbfe020, type: 3}
   m_Name: 
@@ -4780,10 +4783,11 @@ MonoBehaviour:
   resource: 100
   age: 0
   energyPerSecond: 5
-  runSpeed: 4
+  runSpeed: 6
   walkSpeed: 2
   speed: 3
   viewRadius: 10
+  defaultViewAngle: 90
   viewAngle: 90
   critterType: Herbivore
   availableBehaviours: []
@@ -4836,7 +4840,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 878773091}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f48a9fd5ca0cde4aabe60f8ef0cda50, type: 3}
   m_Name: 
@@ -5576,6 +5580,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   viewRadius: 10
+  defaultViewAngle: 90
   viewAngle: 90
   critterType: Vegetable
   availableBehaviours: []
@@ -6289,6 +6294,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   viewRadius: 10
+  defaultViewAngle: 90
   viewAngle: 90
   critterType: Vegetable
   availableBehaviours: []
@@ -10148,7 +10154,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845843774}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b17812e327a0c246af88d8abfbfe020, type: 3}
   m_Name: 
@@ -10180,6 +10186,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   viewRadius: 10
+  defaultViewAngle: 70
   viewAngle: 90
   critterType: Carnivore
   availableBehaviours: []
@@ -11617,6 +11624,7 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   viewRadius: 10
+  defaultViewAngle: 90
   viewAngle: 90
   critterType: Vegetable
   availableBehaviours: []

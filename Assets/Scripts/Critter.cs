@@ -18,7 +18,8 @@ public class Critter : MonoBehaviour {
     public float speed;
 
     public float viewRadius = 10f;
-    public float viewAngle = 90f;
+    public float defaultViewAngle = 90f;
+    public float viewAngle;
 
     public string critterType = "Vegetable";
 
@@ -50,6 +51,7 @@ public class Critter : MonoBehaviour {
         time = Time.time;
         PopulateAvailableBehaviours();
         IsChased = false;
+        viewAngle = defaultViewAngle;
 	}
 
     private void OnDestroy()
@@ -125,7 +127,7 @@ public class Critter : MonoBehaviour {
     public void UpdateFOV()
     {
         if (isChased) { viewAngle = 360; }
-        else { viewAngle = 90; }
+        else { viewAngle = defaultViewAngle; }
     }
     void UpdateLifeStage()
     {

@@ -14,6 +14,8 @@ public class AI : MonoBehaviour {
     public Critter critter;
     public Seek seek;
 
+    GameObject lastKnownTarget;
+
     //instance of the state machine as auto property
     public StateMachine<AI> stateMachine { get; set; }
 
@@ -28,6 +30,7 @@ public class AI : MonoBehaviour {
 
     private void Update()
     {
+        
         //timer for changing between the idle and wander states
         if(Time.time > timer + 1)
         {

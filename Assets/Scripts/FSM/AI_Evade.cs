@@ -45,7 +45,7 @@ public class AI_Evade : State<AI>
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { Evade(_owner); }
-        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        else { _owner.critter.IsChased = false; _owner.stateMachine.ChangeState(AI_Wander.instance); }
     }
 
     void Evade(AI _owner)

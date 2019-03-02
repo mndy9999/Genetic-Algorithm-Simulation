@@ -8,9 +8,7 @@ public class Seek : MonoBehaviour {
     public string enemyType = "Carnivore";
 
     public float viewRadius;
-    public float viewAngle;
-
-    
+    public float viewAngle;   
 
     [SerializeField]
     GameObject target = null;
@@ -19,9 +17,15 @@ public class Seek : MonoBehaviour {
     [SerializeField]
     GameObject mate = null;
 
+    GameObject lastKnownTarget = null;
+    GameObject lastKnownEnemy= null;
+    GameObject lastKnownMate = null;
+
     public List<GameObject> visibleTargets = new List<GameObject>();
 
     Critter critter;
+
+    GameObject temp = null;
 
     private void Start()
     {
@@ -42,26 +46,12 @@ public class Seek : MonoBehaviour {
         enemy = GetEnemy();
         mate = GetMate();
         if(mate != null) { target = mate; }
-    }
 
-    //void FindVisibleTargets()
-    //{
-    //    visibleTargets.Clear();
-    //    Collider[] targetInViewRadius = Physics.OverlapSphere(transform.Find("Eyes").gameObject.transform.position, viewRadius);
-    //    for (int i = 0; i < targetInViewRadius.Length; i++)
-    //    {
-    //        GameObject target2 = targetInViewRadius[i].gameObject;
-    //        Vector3 direction = (target2.transform.position - transform.position).normalized;
-    //        if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
-    //        {
-    //            float distance = Vector3.Distance(transform.position, target2.transform.position);
-    //            if (!Physics.Raycast(transform.Find("Eyes").gameObject.transform.position, direction, distance))
-    //            {
-    //                visibleTargets.Add(target2.transform.root.gameObject);
-    //            }
-    //        }
-    //    }
-    //}
+        if (target) { lastKnownTarget = target; }
+        if (enemy) { lastKnownEnemy = enemy; }
+        if (mate) { lastKnownMate = mate; }
+
+    }
 
     void FindVisibleTargets()
     {
@@ -105,7 +95,7 @@ public class Seek : MonoBehaviour {
     }
     public GameObject GetEnemy()
     {
-        GameObject temp = null;
+        
         if (Critter.crittersDict.ContainsKey(enemyType))
         {
             //find closest enemy
@@ -121,6 +111,7 @@ public class Seek : MonoBehaviour {
                         dist = d;
                     }
                 }
+                else { temp = null; }
             }           
         }
         return temp;
@@ -162,6 +153,22 @@ public class Seek : MonoBehaviour {
     {
         get { return mate; }
         set { mate = value; }
+    }
+
+    public GameObject LastKnownTarget
+    {
+        get { return lastKnownTarget; }
+        set { lastKnownTarget = value; }
+    }
+    public GameObject LastKnownEnemy
+    {
+        get { return lastKnownEnemy; }
+        set { lastKnownEnemy = value; }
+    }
+    public GameObject LastKnownMate
+    {
+        get { return lastKnownMate; }
+        set { lastKnownMate = value; }
     }
 
     public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)
