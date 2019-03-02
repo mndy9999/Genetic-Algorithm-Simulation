@@ -10,7 +10,7 @@ public class Seek : MonoBehaviour {
     public float viewRadius;
     public float viewAngle;
 
-    public List<GameObject> visibleTargets = new List<GameObject>();
+    
 
     [SerializeField]
     GameObject target = null;
@@ -18,6 +18,8 @@ public class Seek : MonoBehaviour {
     GameObject enemy = null;
     [SerializeField]
     GameObject mate = null;
+
+    public List<GameObject> visibleTargets = new List<GameObject>();
 
     Critter critter;
 
@@ -34,6 +36,7 @@ public class Seek : MonoBehaviour {
     }
     private void Update()
     {
+        viewAngle = critter.viewAngle;
         FindVisibleTargets();
         target = GetTarget();
         enemy = GetEnemy();
@@ -41,10 +44,29 @@ public class Seek : MonoBehaviour {
         if(mate != null) { target = mate; }
     }
 
+    //void FindVisibleTargets()
+    //{
+    //    visibleTargets.Clear();
+    //    Collider[] targetInViewRadius = Physics.OverlapSphere(transform.Find("Eyes").gameObject.transform.position, viewRadius);
+    //    for (int i = 0; i < targetInViewRadius.Length; i++)
+    //    {
+    //        GameObject target2 = targetInViewRadius[i].gameObject;
+    //        Vector3 direction = (target2.transform.position - transform.position).normalized;
+    //        if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
+    //        {
+    //            float distance = Vector3.Distance(transform.position, target2.transform.position);
+    //            if (!Physics.Raycast(transform.Find("Eyes").gameObject.transform.position, direction, distance))
+    //            {
+    //                visibleTargets.Add(target2.transform.root.gameObject);
+    //            }
+    //        }
+    //    }
+    //}
+
     void FindVisibleTargets()
     {
         visibleTargets.Clear();
-        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.Find("Eyes").gameObject.transform.position, viewRadius);
+        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
         for (int i = 0; i < targetInViewRadius.Length; i++)
         {
             GameObject target2 = targetInViewRadius[i].gameObject;
@@ -52,10 +74,9 @@ public class Seek : MonoBehaviour {
             if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
             {
                 float distance = Vector3.Distance(transform.position, target2.transform.position);
-                if (!Physics.Raycast(transform.position, direction, distance))
-                {
-                    visibleTargets.Add(target2.transform.root.gameObject);
-                }
+
+                visibleTargets.Add(target2.transform.root.gameObject);
+
             }
         }
     }

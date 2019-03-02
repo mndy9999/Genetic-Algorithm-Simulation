@@ -59,6 +59,7 @@ public class AI_Chase : State<AI>
 
     void Chase(AI _owner)
     {
+        _owner.seek.Target.GetComponent<Critter>().IsChased = true;
         //calculate direction, rotation and start moving towards the target
         if (!Critter.crittersDict.ContainsKey(_owner.seek.targetType)) { return; }
         var direction = _owner.seek.Target.transform.position - _owner.transform.position;

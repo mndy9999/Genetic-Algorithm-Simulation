@@ -29,7 +29,9 @@ public class Critter : MonoBehaviour {
     public enum Gender { Male, Female};
     public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder};
-    public Stage lifeStage;   
+    public Stage lifeStage;
+
+    public bool isChased;
 
     public bool canBreed;
     public bool breedTimer;
@@ -47,6 +49,7 @@ public class Critter : MonoBehaviour {
         speed = runSpeed;
         time = Time.time;
         PopulateAvailableBehaviours();
+        IsChased = false;
 	}
 
     private void OnDestroy()
@@ -57,6 +60,7 @@ public class Critter : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+        UpdateFOV();
         UpdateLifeStage();
         energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
         if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
@@ -111,8 +115,18 @@ public class Critter : MonoBehaviour {
         get { return canBreed; }
         set { canBreed = value; }
     }
+    public bool IsChased
+    {
+        get { return isChased; }
+        set { isChased = value; }
+    }
     public bool IsAttacked;
     public void KillSelf() { Destroy(gameObject); }
+    public void UpdateFOV()
+    {
+        if (isChased) { viewAngle = 360; }
+        else { viewAngle = 90; }
+    }
     void UpdateLifeStage()
     {
         if(age < 3) { lifeStage = Stage.Baby; }
