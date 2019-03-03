@@ -33,6 +33,7 @@ public class AI_Idle : State<AI>
     {
         Debug.Log("Entering Idle State");
         _owner.animator.Play("Idle");       //start playing animation when entering state
+        _owner.stateMachine.ChangeState(AI_Wander.instance);
     }
 
 

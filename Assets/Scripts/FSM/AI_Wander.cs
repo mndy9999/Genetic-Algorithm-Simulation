@@ -48,7 +48,7 @@ public class AI_Wander : State<AI>
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-        else if (!_owner.switchState) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+       // else if (!_owner.switchState) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
         else { Wander(_owner); }
     }
 

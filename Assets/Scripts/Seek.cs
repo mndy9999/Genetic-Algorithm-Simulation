@@ -37,20 +37,26 @@ public class Seek : MonoBehaviour {
 
         viewRadius = critter.viewRadius;
         viewAngle = critter.viewAngle;
+
         FindVisibleTargets();
+
         target = GetTarget();
         enemy = GetEnemy();
         mate = GetMate();
         
+
+
     }
     private void Update()
     {
         viewAngle = critter.viewAngle;
         FindVisibleTargets();
-        target = GetTarget();
+
+        if(!critter.IsAttacked) target = GetTarget();
         enemy = GetEnemy();
         mate = GetMate();
         if(mate != null) { target = mate; }
+        
 
         if (target) { lastKnownTarget = target; }
         if (enemy) { lastKnownEnemy = enemy; }
@@ -100,7 +106,7 @@ public class Seek : MonoBehaviour {
             float dist = Mathf.Infinity;
             foreach (Critter c in Critter.crittersDict[enemyType])
             {
-                if (visibleTargets.Contains(c.gameObject))
+                if (visibleTargets.Contains(c.gameObject) && c.GetComponent<Critter>().IsAlive)
                 {
                     float d = Vector3.Distance(this.transform.position, c.transform.position);
                     if (tempEnemy == null || d < dist)

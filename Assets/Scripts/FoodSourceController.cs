@@ -12,7 +12,7 @@ public class FoodSourceController : MonoBehaviour{
         critter.availableBehaviours = null;
         critter.Energy = 0;
         critter.Health = 20;
-        critter.Resource = 20;
+        critter.Resource = 1;
     }
 }
 

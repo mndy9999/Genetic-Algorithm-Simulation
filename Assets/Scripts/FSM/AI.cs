@@ -14,6 +14,7 @@ public class AI : MonoBehaviour {
     public Critter critter;
     public Seek seek;
 
+    [SerializeField] string CurrentState;
 
     //instance of the state machine as auto property
     public StateMachine<AI> stateMachine { get; set; }
@@ -29,7 +30,7 @@ public class AI : MonoBehaviour {
 
     private void Update()
     {
-        
+        CurrentState = stateMachine.currentState.ToString();
         //timer for changing between the idle and wander states
         if(Time.time > timer + 1)
         {
@@ -65,6 +66,11 @@ public class AI : MonoBehaviour {
     public bool IsCloseEnoughToEat()
     {
         return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 0.5f;
+    }
+
+    public bool IsCloseEnoughToAttack()
+    {
+        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1.0f;
     }
 
     public bool TargetIsDead()
