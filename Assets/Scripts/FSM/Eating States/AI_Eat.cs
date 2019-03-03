@@ -60,8 +60,8 @@ public class AI_Eat : State<AI>
     void Eat(AI _owner)
     {
         float hpEaten = 0.1f;
-        _owner.seek.Target.GetComponent<Critter>().resource -= hpEaten;
-        _owner.critter.energy += hpEaten * eatHPToEnergy;
+        _owner.seek.Target.GetComponent<Critter>().Resource -= hpEaten;
+        _owner.critter.Energy += hpEaten * eatHPToEnergy;
     }
 
 

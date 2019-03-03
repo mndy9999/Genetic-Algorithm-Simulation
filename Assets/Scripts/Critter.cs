@@ -5,55 +5,64 @@ using FiniteStateMachine;
 
 public class Critter : MonoBehaviour {
 
-    public float health = 100f;
-    public float energy = 100f;
-    public float resource = 100f;
+    public string critterType = "Vegetable";
+
+    public enum Gender { Male, Female };
+    public Gender gender;
+    public enum Stage { Baby, Teen, Adult, Elder };
+    public Stage lifeStage;
+
+    [SerializeField] float health = 100f;
+    [SerializeField] float energy = 100f;
+    [SerializeField] float resource = 100f;
 
     public float age = 0;
 
-    public float energyPerSecond = 1f;
+    [HideInInspector] public float energyPerSecond = 1f;
 
-    public float runSpeed = 5f;
-    public float walkSpeed = 2f;
+    [HideInInspector] public float runSpeed = 5f;
+    [HideInInspector] public float walkSpeed = 2f;
     public float speed;
 
-    public float viewRadius = 10f;
-    public float defaultViewAngle = 90f;
-    public float viewAngle;
 
-    public string critterType = "Vegetable";
+    
+    [HideInInspector] public float viewRadius = 10f;
+    [HideInInspector] public float defaultViewAngle = 90f;
+    [Range(0, 360)] public float viewAngle;
+   
 
     static public Dictionary<string, List<Critter>> crittersDict;
     public List<string> availableBehaviours;
+    public List<string> availableTargetTypes;
 
-    public Vector3 initialSize;
-    public enum Gender { Male, Female};
-    public Gender gender;
-    public enum Stage { Baby, Teen, Adult, Elder};
-    public Stage lifeStage;
+    [HideInInspector] public Vector3 initialSize;
 
-    public bool isChased;
     public bool isVisible;
+    public bool isChased;
+    public bool isAttacked;
+    
 
     public bool canBreed;
-    public bool breedTimer;
-    public float time;
-
-    Animator animator;
+    [HideInInspector] public bool breedTimer;
+    [HideInInspector] public float time;
 
     // Use this for initialization
     void Awake () {
-        isVisible = true;
-        initialSize = new Vector3(0.2f, 0.2f, 0.2f);
         if (crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
-        if(!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
+        if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
-        animator = this.GetComponent<Animator>();
-        speed = runSpeed;
+
+        isVisible = true;
+        isChased = false;
+        isAttacked = false;
+
+        initialSize = new Vector3(0.2f, 0.2f, 0.2f);
         time = Time.time;
-        PopulateAvailableBehaviours();
-        IsChased = false;
+
+        speed = runSpeed;
         viewAngle = defaultViewAngle;
+
+       // PopulateAvailableBehaviours();               
 	}
 
     private void OnDestroy()
@@ -66,15 +75,12 @@ public class Critter : MonoBehaviour {
     {
         UpdateFOV();
         UpdateLifeStage();
+        UpdateSpeed();
+
         energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
         if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
-        if (!IsAlive()) { energy = 0; health = 0; resource = Mathf.Clamp(resource - Time.deltaTime, 0, 100); }
-        if (resource <= 0)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        if (energy > 10) { speed = runSpeed; }
+        if (!IsAlive) { energy = 0; health = 0; resource = Mathf.Clamp(resource - Time.deltaTime, 0, 100); }
+        if (resource <= 0) { KillSelf(); }
 
         if (breedTimer)
         {
@@ -82,14 +88,8 @@ public class Critter : MonoBehaviour {
             canBreed = false;
             breedTimer = false;
         }
-        if (Time.time >= time + 5)
-        {
-            canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder;
-        }
-        else
-        {
-            canBreed = false;
-        }
+        if (Time.time >= time + 5) { canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder; }
+        else { canBreed = false; }
     }
 
     void PopulateAvailableBehaviours()
@@ -99,14 +99,34 @@ public class Critter : MonoBehaviour {
             availableBehaviours.Add(Behaviours.behaviours[i]);
         }
     }
-    void changeSpeed()
+
+    void UpdateSpeed()
     {
         if (energy < 10)
         {
             while (speed > walkSpeed) { speed -= 0.2f; }
         }
+        else
+        {
+            while (speed < runSpeed) { speed += 0.2f; }
+        }
+    }   
+    void UpdateFOV()
+    {
+        if (isChased) { viewAngle = 360; }
+        else { viewAngle = defaultViewAngle; }
     }
-    public bool IsAlive() { return health > 0 && age < 15; }
+    void UpdateLifeStage()
+    {
+        if(age < 3) { lifeStage = Stage.Baby; }
+        else if(age < 6 && age > 2) { lifeStage = Stage.Teen; }
+        else if(age < 10 && age > 5) { lifeStage = Stage.Adult; }
+        else { lifeStage = Stage.Elder; }
+    }
+
+    public void KillSelf() { Destroy(gameObject); }
+
+    #region Getters And Setters
     public bool BreedTimer
     {
         get { return breedTimer; }
@@ -122,18 +142,30 @@ public class Critter : MonoBehaviour {
         get { return isChased; }
         set { isChased = value; }
     }
-    public bool IsAttacked;
-    public void KillSelf() { Destroy(gameObject); }
-    public void UpdateFOV()
+    public bool IsAttacked
     {
-        if (isChased) { viewAngle = 360; }
-        else { viewAngle = defaultViewAngle; }
+        get { return isAttacked; }
+        set { isAttacked = value; }
     }
-    void UpdateLifeStage()
+    public bool IsAlive
     {
-        if(age < 3) { lifeStage = Stage.Baby; }
-        else if(age < 6 && age > 2) { lifeStage = Stage.Teen; }
-        else if(age < 10 && age > 5) { lifeStage = Stage.Adult; }
-        else { lifeStage = Stage.Elder; }
+        get { return health > 0 && age < 15; }
+        set { }
     }
+    public float Energy
+    {
+        get { return energy; }
+        set { energy = value; }
+    }
+    public float Health
+    {
+        get { return health; }
+        set { health = value; }
+    }
+    public float Resource
+    {
+        get { return resource; }
+        set { resource = value; }
+    }
+    #endregion
 }

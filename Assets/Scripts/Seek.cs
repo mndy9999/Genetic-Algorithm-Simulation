@@ -30,13 +30,10 @@ public class Seek : MonoBehaviour {
 
     Critter critter;
 
-    //GameObject temp = null;
-
     private void Start()
     {
         critter = GetComponent<Critter>();
-
-        availableTargetsType = new List<string>() { "Vegetable", "Tree", "Dirt" };
+        availableTargetsType = critter.availableTargetTypes;
 
         viewRadius = critter.viewRadius;
         viewAngle = critter.viewAngle;
@@ -66,23 +63,18 @@ public class Seek : MonoBehaviour {
         visibleTargets.Clear();
         Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
         for (int i = 0; i < targetInViewRadius.Length; i++)
-        {
+        {            
             GameObject target2 = targetInViewRadius[i].gameObject;
             Vector3 direction = (target2.transform.position - transform.position).normalized;
-            if (target2.GetComponent<Critter>())
+            if (target2.transform.root.GetComponent<Critter>())
             {
                 if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 1.0f) 
                     && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
                 {
-                    float distance = Vector3.Distance(transform.position, target2.transform.position);
-
                     visibleTargets.Add(target2.transform.root.gameObject);
-
                 }
             }
         }
-        visibleTargets = visibleTargets.OrderBy(x => Vector3.Distance(this.transform.position, transform.position)).ToList();
-
     }
 
     public GameObject GetTarget()
@@ -92,7 +84,7 @@ public class Seek : MonoBehaviour {
         for (int i = 0; i < visibleTargets.Count; i++)
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
-            if(d < dist)
+            if(d < dist && availableTargetsType.Contains(visibleTargets[i].GetComponent<Critter>().critterType))
             {
                 dist = d;
                 tempTarget = visibleTargets[i];

@@ -7,7 +7,6 @@ public class Tree : MonoBehaviour {
     Critter critter;
     public GameObject apple;
 
-
 	// Use this for initialization
 	void Awake () {
         critter = GetComponent<Critter>();
@@ -16,8 +15,8 @@ public class Tree : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (critter.health > 10) { critter.isVisible = true; }
-        if (critter.health <= 0) {
+        if (critter.Health > 10) { critter.isVisible = true; }
+        if (critter.Health <= 0) {
             SpawnApples();
         }
         

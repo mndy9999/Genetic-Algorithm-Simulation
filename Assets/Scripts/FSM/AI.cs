@@ -14,7 +14,6 @@ public class AI : MonoBehaviour {
     public Critter critter;
     public Seek seek;
 
-    GameObject lastKnownTarget;
 
     //instance of the state machine as auto property
     public StateMachine<AI> stateMachine { get; set; }
@@ -70,7 +69,7 @@ public class AI : MonoBehaviour {
 
     public bool TargetIsDead()
     {
-        return seek.Target.GetComponent<Critter>().health <= 0;
+        return seek.Target.GetComponent<Critter>().Health <= 0;
     }
 
     public bool TargetIsFood()
@@ -85,6 +84,6 @@ public class AI : MonoBehaviour {
 
     public bool IsDead()
     {
-        return !critter.IsAlive();
+        return !critter.IsAlive;
     }
 }

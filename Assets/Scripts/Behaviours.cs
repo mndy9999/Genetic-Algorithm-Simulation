@@ -19,5 +19,14 @@ public class Behaviours
         AI_Dead.name
     };
 
+    public static List<string> herbivoreTargets = new List<string>()
+    {
+        "Vegetable", "Tree"
+    };
+
+    public static List<string> carnivoreTargets = new List<string>()
+    {
+        "Herbivore"
+    };
 }
 

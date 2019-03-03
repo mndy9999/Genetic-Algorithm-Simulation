@@ -58,7 +58,7 @@ public class AI_Knock : State<AI>
                                     _owner.critter.speed * Time.deltaTime);
 
         _owner.animator.Play("Attack");
-        _owner.seek.Target.GetComponent<Critter>().health -= attackPower;
+        _owner.seek.Target.GetComponent<Critter>().Health -= attackPower;
     }
 
 

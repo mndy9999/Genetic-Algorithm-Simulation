@@ -227,7 +227,9 @@
     <Compile Include="Assets\Scripts\Behaviours.cs" />
     <Compile Include="Assets\Scripts\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\CarnivoreController.cs" />
     <Compile Include="Assets\Scripts\Critter.cs" />
+    <Compile Include="Assets\Scripts\FoodSourceController.cs" />
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Attack.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
@@ -240,8 +242,10 @@
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Eat.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Knock.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\HerbivoreController.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\SpawnCreature.cs" />
+    <Compile Include="Assets\Scripts\VegetablesController.cs" />
     <Compile Include="Assets\Tree.cs" />
     <None Include="Assets\AIBehavior\Documentation\_ReadMe.txt" />
     <None Include="Assets\AIBehavior\Extras\UFPS\UFPS_ReadMe.txt" />

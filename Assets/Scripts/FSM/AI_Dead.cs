@@ -46,7 +46,7 @@ public class AI_Dead : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if(_owner.critter.resource <= 0) { _owner.critter.KillSelf(); }
+        if(_owner.critter.Resource <= 0) { _owner.critter.KillSelf(); }
     }
 
 
