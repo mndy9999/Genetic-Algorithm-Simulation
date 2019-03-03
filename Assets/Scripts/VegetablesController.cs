@@ -14,4 +14,5 @@ public class VegetablesController : MonoBehaviour {
         critter.Health = 0;
         critter.Resource = 20;
     }
+
 }

@@ -454,9 +454,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -686,9 +686,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -1168,9 +1168,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -1574,7 +1574,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
@@ -4515,18 +4515,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1650841479890436, guid: 537f9fe2a7a68804bb4fe90cbd5d1869,
     type: 2}
   m_PrefabInternal: {fileID: 849965039}
---- !u!114 &849965041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 849965040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08bf30be4c0c02a439792683b4321920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  apple: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
 --- !u!114 &849965042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4538,7 +4526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d4ccce2dd91584482edfdd61fbc512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  critterType: Empty
+  critterType: Tree
   gender: 0
   lifeStage: 0
   health: 20
@@ -4555,9 +4543,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -4586,6 +4574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d65729157fb6fe408da9fcec75cc1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  apple: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
 --- !u!1 &861615180
 GameObject:
   m_ObjectHideFlags: 0
@@ -5019,9 +5008,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 1
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -5331,7 +5320,7 @@ RectTransform:
   - {fileID: 840659864}
   - {fileID: 761552944}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5842,9 +5831,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -6570,9 +6559,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -8359,7 +8348,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
       propertyPath: m_Name
@@ -8773,9 +8762,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -8790,7 +8779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08bf30be4c0c02a439792683b4321920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apple: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
 --- !u!64 &1422623143
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8816,6 +8804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d65729157fb6fe408da9fcec75cc1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  apple: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
 --- !u!1 &1425012301
 GameObject:
   m_ObjectHideFlags: 0
@@ -9465,7 +9454,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
       propertyPath: m_Name
@@ -10719,9 +10708,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -12141,7 +12130,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1989798731
 MonoBehaviour:
@@ -12171,9 +12160,9 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isVisible: 0
   isChased: 0
   isAttacked: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0

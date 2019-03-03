@@ -37,10 +37,9 @@ public class Critter : MonoBehaviour {
 
     [HideInInspector] public Vector3 initialSize;
 
-    public bool isVisible;
     public bool isChased;
     public bool isAttacked;
-    
+    public bool isVisible;
 
     public bool canBreed;
     [HideInInspector] public bool breedTimer;
@@ -52,9 +51,9 @@ public class Critter : MonoBehaviour {
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
 
-        isVisible = true;
         isChased = false;
         isAttacked = false;
+        isVisible = true;
 
         initialSize = new Vector3(0.2f, 0.2f, 0.2f);
         time = Time.time;
@@ -73,14 +72,11 @@ public class Critter : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (resource <= 0) { KillSelf(); }
+
         UpdateFOV();
         UpdateLifeStage();
         UpdateSpeed();
-
-        energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
-        if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
-        if (!IsAlive) { energy = 0; health = 0; resource = Mathf.Clamp(resource - Time.deltaTime, 0, 100); }
-        if (resource <= 0) { KillSelf(); }
 
         if (breedTimer)
         {
@@ -122,6 +118,13 @@ public class Critter : MonoBehaviour {
         else if(age < 6 && age > 2) { lifeStage = Stage.Teen; }
         else if(age < 10 && age > 5) { lifeStage = Stage.Adult; }
         else { lifeStage = Stage.Elder; }
+    }
+
+    public void UpdateStats()
+    {
+        energy = Mathf.Clamp(energy - Time.deltaTime * energyPerSecond, 0, 100);
+        if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
+        if (!IsAlive) { energy = 0; health = 0; resource = Mathf.Clamp(resource - Time.deltaTime, 0, 100); }        
     }
 
     public void KillSelf() { Destroy(gameObject); }

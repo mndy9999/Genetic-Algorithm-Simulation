@@ -15,4 +15,8 @@ public class HerbivoreController : MonoBehaviour {
         critter.Health = 100;
         critter.Resource = 100;
     }
+    private void Update()
+    {
+        critter.UpdateStats();
+    }
 }
