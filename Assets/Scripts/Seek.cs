@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Seek : MonoBehaviour {
 
@@ -70,7 +71,8 @@ public class Seek : MonoBehaviour {
             Vector3 direction = (target2.transform.position - transform.position).normalized;
             if (target2.GetComponent<Critter>())
             {
-                if (Vector3.Angle(transform.forward, direction) < viewAngle / 2 && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
+                if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 1.0f) 
+                    && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
                 {
                     float distance = Vector3.Distance(transform.position, target2.transform.position);
 
@@ -79,33 +81,21 @@ public class Seek : MonoBehaviour {
                 }
             }
         }
+        visibleTargets = visibleTargets.OrderBy(x => Vector3.Distance(this.transform.position, transform.position)).ToList();
+
     }
 
-
-    //function keeps going for the trees first becuase that's the first element in the availableTargets List
     public GameObject GetTarget()
     {
         tempTarget = null;
-        foreach (string targetType in availableTargetsType)
+        float dist = Mathf.Infinity;
+        for (int i = 0; i < visibleTargets.Count; i++)
         {
-            if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(targetType))
+            float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
+            if(d < dist)
             {
-                //find closest target               
-                float dist = Mathf.Infinity;
-                foreach (Critter c in Critter.crittersDict[targetType])
-                {                   
-                    if (visibleTargets.Contains(c.gameObject))
-                    {
-                        Debug.Log("hi");
-                        Debug.Log(c.critterType);
-                        float d = Vector3.Distance(this.transform.position, c.transform.position);
-                        if (tempTarget == null || d < dist)
-                        {
-                            tempTarget = c.gameObject;
-                            dist = d;
-                        }
-                    }
-                }
+                dist = d;
+                tempTarget = visibleTargets[i];
             }
         }
         return tempTarget;

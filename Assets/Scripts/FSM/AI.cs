@@ -65,7 +65,7 @@ public class AI : MonoBehaviour {
 
     public bool IsCloseEnoughToEat()
     {
-        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 0.3f;
+        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 0.5f;
     }
 
     public bool TargetIsDead()
