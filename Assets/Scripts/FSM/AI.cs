@@ -65,7 +65,7 @@ public class AI : MonoBehaviour {
 
     public bool IsCloseEnoughToEat()
     {
-        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1f;
+        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 0.3f;
     }
 
     public bool TargetIsDead()
@@ -75,7 +75,12 @@ public class AI : MonoBehaviour {
 
     public bool TargetIsFood()
     {
-        return seek.Target.GetComponent<Critter>().critterType == seek.targetType;
+        return  seek.availableTargetsType.Contains(seek.Target.GetComponent<Critter>().critterType);
+    }
+
+    public bool TargetIsMate()
+    {
+        return seek.Target.GetComponent<Critter>().critterType == critter.critterType && seek.Target.GetComponent<Critter>().gender != critter.gender;
     }
 
     public bool IsDead()

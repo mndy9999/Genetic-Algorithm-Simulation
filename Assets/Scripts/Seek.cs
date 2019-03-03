@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Seek : MonoBehaviour {
 
-    public string targetType = "Vegetable";
     public string enemyType = "Carnivore";
 
     public float viewRadius;
@@ -21,19 +20,27 @@ public class Seek : MonoBehaviour {
     GameObject lastKnownEnemy= null;
     GameObject lastKnownMate = null;
 
+    GameObject tempTarget = null;
+    GameObject tempEnemy = null;
+    GameObject tempMate = null;
+
     public List<GameObject> visibleTargets = new List<GameObject>();
+    public List<string> availableTargetsType;
 
     Critter critter;
 
-    GameObject temp = null;
+    //GameObject temp = null;
 
     private void Start()
     {
         critter = GetComponent<Critter>();
+
+        availableTargetsType = new List<string>() { "Vegetable", "Tree", "Dirt" };
+
         viewRadius = critter.viewRadius;
         viewAngle = critter.viewAngle;
         FindVisibleTargets();
-        target = GetMate();
+        target = GetTarget();
         enemy = GetEnemy();
         mate = GetMate();
         
@@ -61,41 +68,50 @@ public class Seek : MonoBehaviour {
         {
             GameObject target2 = targetInViewRadius[i].gameObject;
             Vector3 direction = (target2.transform.position - transform.position).normalized;
-            if (Vector3.Angle(transform.forward, direction) < viewAngle / 2)
+            if (target2.GetComponent<Critter>())
             {
-                float distance = Vector3.Distance(transform.position, target2.transform.position);
+                if (Vector3.Angle(transform.forward, direction) < viewAngle / 2 && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
+                {
+                    float distance = Vector3.Distance(transform.position, target2.transform.position);
 
-                visibleTargets.Add(target2.transform.root.gameObject);
+                    visibleTargets.Add(target2.transform.root.gameObject);
 
+                }
             }
         }
     }
 
+
+    //function keeps going for the trees first becuase that's the first element in the availableTargets List
     public GameObject GetTarget()
     {
-        GameObject temp = null;
-        if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(targetType))
-        {            
-            //find closest target               
-            float dist = Mathf.Infinity;
-            foreach (Critter c in Critter.crittersDict[targetType])
+        tempTarget = null;
+        foreach (string targetType in availableTargetsType)
+        {
+            if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(targetType))
             {
-                if (visibleTargets.Contains(c.gameObject))
-                {
-                    float d = Vector3.Distance(this.transform.position, c.transform.position);
-                    if (temp == null || d < dist)
+                //find closest target               
+                float dist = Mathf.Infinity;
+                foreach (Critter c in Critter.crittersDict[targetType])
+                {                   
+                    if (visibleTargets.Contains(c.gameObject))
                     {
-                        temp = c.gameObject;
-                        dist = d;
+                        Debug.Log("hi");
+                        Debug.Log(c.critterType);
+                        float d = Vector3.Distance(this.transform.position, c.transform.position);
+                        if (tempTarget == null || d < dist)
+                        {
+                            tempTarget = c.gameObject;
+                            dist = d;
+                        }
                     }
                 }
             }
         }
-        return temp;
+        return tempTarget;
     }
     public GameObject GetEnemy()
-    {
-        
+    {       
         if (Critter.crittersDict.ContainsKey(enemyType))
         {
             //find closest enemy
@@ -105,20 +121,19 @@ public class Seek : MonoBehaviour {
                 if (visibleTargets.Contains(c.gameObject))
                 {
                     float d = Vector3.Distance(this.transform.position, c.transform.position);
-                    if (temp == null || d < dist)
+                    if (tempEnemy == null || d < dist)
                     {
-                        temp = c.gameObject;
+                        tempEnemy = c.gameObject;
                         dist = d;
                     }
                 }
-                else { temp = null; }
+                else { tempEnemy = null; }
             }           
         }
-        return temp;
+        return tempEnemy;
     }
     public GameObject GetMate()
     {
-        GameObject temp = null;
         if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(critter.critterType))
         {
             //find closest target               
@@ -128,15 +143,16 @@ public class Seek : MonoBehaviour {
                 if (visibleTargets.Contains(c.gameObject) && critter.gender != c.gender && critter.CanBreed && c.CanBreed)
                 {
                     float d = Vector3.Distance(this.transform.position, c.transform.position);
-                    if (temp == null || d < dist)
+                    if (tempMate == null || d < dist)
                     {
-                        temp = c.gameObject;
+                        tempMate = c.gameObject;
                         dist = d;
                     }
                 }
+                else { tempMate = null; }
             }
         }
-        return temp;
+        return tempMate;
     }
 
     public GameObject Target

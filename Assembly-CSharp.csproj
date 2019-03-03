@@ -222,6 +222,7 @@
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\Low Poly Fruits\resources\fruits_tester.cs" />
     <Compile Include="Assets\Scripts\AgeController.cs" />
     <Compile Include="Assets\Scripts\Behaviours.cs" />
     <Compile Include="Assets\Scripts\ButtonsHandler.cs" />
@@ -232,13 +233,16 @@
     <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Chase.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Dead.cs" />
-    <Compile Include="Assets\Scripts\FSM\AI_Eat.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Evade.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Idle.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Wander.cs" />
+    <Compile Include="Assets\Scripts\FSM\Eating States\AI_Dig.cs" />
+    <Compile Include="Assets\Scripts\FSM\Eating States\AI_Eat.cs" />
+    <Compile Include="Assets\Scripts\FSM\Eating States\AI_Knock.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\SpawnCreature.cs" />
+    <Compile Include="Assets\Tree.cs" />
     <None Include="Assets\AIBehavior\Documentation\_ReadMe.txt" />
     <None Include="Assets\AIBehavior\Extras\UFPS\UFPS_ReadMe.txt" />
     <None Include="Assets\AIBehavior\AIBehaviorDemoScene\Shaders\DiffuseWithAdjustableIllumin.shader" />

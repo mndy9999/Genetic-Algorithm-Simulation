@@ -50,7 +50,12 @@ public class AI_Attack : State<AI>
             if (_owner.TargetIsDead())
             {
                 _owner.critter.IsAttacked = false;
-                if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
+                if (_owner.TargetIsFood())
+                {
+                    if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree" && _owner.critter.availableBehaviours.Contains(AI_Knock.name)) { _owner.stateMachine.ChangeState(AI_Knock.instance); }
+                    else if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt" && _owner.critter.availableBehaviours.Contains(AI_Dig.name)) { _owner.stateMachine.ChangeState(AI_Dig.instance); }
+                    _owner.stateMachine.ChangeState(AI_Eat.instance);
+                }
                 else { _owner.seek.Target = null; _owner.stateMachine.ChangeState(AI_Idle.instance); }
             }
             else { Attack(_owner); }
@@ -69,8 +74,6 @@ public class AI_Attack : State<AI>
 
         //start playing the animation
         _owner.animator.Play("Attack");
-        _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
-        _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
         _owner.seek.Target.GetComponent<Critter>().health -= attackPower;
     }
 

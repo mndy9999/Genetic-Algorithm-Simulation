@@ -16,7 +16,8 @@ public class SpawnCreature : MonoBehaviour {
             {
                 Instantiate(sheep, hit.point, Quaternion.identity);
             }
-
         }
     }
+
+
 }

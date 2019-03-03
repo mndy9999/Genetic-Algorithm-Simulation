@@ -12,6 +12,8 @@ public class Behaviours
         AI_Chase.name,
         AI_Attack.name,
         AI_Eat.name,
+        AI_Knock.name,
+        AI_Dig.name,
         AI_Evade.name,
         AI_Breed.name,
         AI_Dead.name

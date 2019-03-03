@@ -453,6 +453,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -671,6 +672,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -1139,6 +1141,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -1495,6 +1498,48 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 319743416}
   m_CullTransparentMesh: 0
+--- !u!1001 &325696423
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 212.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 113.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &326649510
 GameObject:
   m_ObjectHideFlags: 0
@@ -4364,6 +4409,116 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 840659863}
   m_CullTransparentMesh: 0
+--- !u!1001 &849965039
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 207.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 105.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085976758013614, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650841479890436, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+      propertyPath: m_Name
+      value: Tree_small_G_001 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 537f9fe2a7a68804bb4fe90cbd5d1869, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &849965040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1650841479890436, guid: 537f9fe2a7a68804bb4fe90cbd5d1869,
+    type: 2}
+  m_PrefabInternal: {fileID: 849965039}
+--- !u!114 &849965041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849965040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bf30be4c0c02a439792683b4321920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apple: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+--- !u!114 &849965042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849965040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d4ccce2dd91584482edfdd61fbc512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  energy: 0
+  resource: 100
+  age: 0
+  energyPerSecond: 1
+  runSpeed: 5
+  walkSpeed: 2
+  speed: 0
+  viewRadius: 10
+  defaultViewAngle: 90
+  viewAngle: 0
+  critterType: Empty
+  availableBehaviours: []
+  initialSize: {x: 0, y: 0, z: 0}
+  gender: 0
+  lifeStage: 0
+  isChased: 0
+  isVisible: 0
+  canBreed: 0
+  breedTimer: 0
+  time: 0
+  IsAttacked: 0
+--- !u!64 &849965043
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 849965040}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300116, guid: 4523007a09b0dc742a7ebfc981c2534e, type: 3}
 --- !u!1 &861615180
 GameObject:
   m_ObjectHideFlags: 0
@@ -4783,7 +4938,7 @@ MonoBehaviour:
   resource: 100
   age: 0
   energyPerSecond: 5
-  runSpeed: 6
+  runSpeed: 2
   walkSpeed: 2
   speed: 3
   viewRadius: 10
@@ -4795,6 +4950,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -4845,7 +5001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f48a9fd5ca0cde4aabe60f8ef0cda50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: Vegetable
   enemyType: Carnivore
   viewRadius: 10
   viewAngle: 100
@@ -4853,6 +5008,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   mate: {fileID: 0}
   visibleTargets: []
+  availableTargetsType: []
 --- !u!114 &878773097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5094,7 +5250,7 @@ RectTransform:
   - {fileID: 840659864}
   - {fileID: 761552944}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5588,6 +5744,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -6302,6 +6459,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -7892,6 +8050,48 @@ Transform:
   m_Father: {fileID: 946083289}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1302549552
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 209.51392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 109.32412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411128782263238, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1305054430
 GameObject:
   m_ObjectHideFlags: 0
@@ -7967,6 +8167,25 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1305054430}
   m_CullTransparentMesh: 0
+--- !u!1 &1305158637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989,
+    type: 2}
+  m_PrefabInternal: {fileID: 1302549552}
+--- !u!64 &1305158642
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1305158637}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300016, guid: 3f4d2118f6a772542a1635ef5bfa6982, type: 3}
 --- !u!1 &1334515337
 GameObject:
   m_ObjectHideFlags: 0
@@ -8339,6 +8558,70 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1419237025}
   m_CullTransparentMesh: 0
+--- !u!1 &1422623137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1650841479890436, guid: 537f9fe2a7a68804bb4fe90cbd5d1869,
+    type: 2}
+  m_PrefabInternal: {fileID: 325696423}
+--- !u!114 &1422623138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422623137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d4ccce2dd91584482edfdd61fbc512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  energy: 0
+  resource: 100
+  age: 0
+  energyPerSecond: 1
+  runSpeed: 5
+  walkSpeed: 2
+  speed: 0
+  viewRadius: 10
+  defaultViewAngle: 90
+  viewAngle: 0
+  critterType: Tree
+  availableBehaviours: []
+  initialSize: {x: 0, y: 0, z: 0}
+  gender: 0
+  lifeStage: 0
+  isChased: 0
+  isVisible: 0
+  canBreed: 0
+  breedTimer: 0
+  time: 0
+  IsAttacked: 0
+--- !u!114 &1422623139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422623137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08bf30be4c0c02a439792683b4321920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apple: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+--- !u!64 &1422623143
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1422623137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300116, guid: 4523007a09b0dc742a7ebfc981c2534e, type: 3}
 --- !u!1 &1425012301
 GameObject:
   m_ObjectHideFlags: 0
@@ -10113,7 +10396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1845843775
 Animator:
   serializedVersion: 3
@@ -10194,6 +10477,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0
@@ -10209,7 +10493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f48a9fd5ca0cde4aabe60f8ef0cda50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: Herbivore
   enemyType: 
   viewRadius: 10
   viewAngle: 110
@@ -10217,6 +10500,7 @@ MonoBehaviour:
   enemy: {fileID: 0}
   mate: {fileID: 0}
   visibleTargets: []
+  availableTargetsType: []
 --- !u!1 &1850798408
 GameObject:
   m_ObjectHideFlags: 0
@@ -11602,7 +11886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1989798731
 MonoBehaviour:
@@ -11632,6 +11916,7 @@ MonoBehaviour:
   gender: 0
   lifeStage: 0
   isChased: 0
+  isVisible: 0
   canBreed: 0
   breedTimer: 0
   time: 0

@@ -33,6 +33,7 @@ public class Critter : MonoBehaviour {
     public Stage lifeStage;
 
     public bool isChased;
+    public bool isVisible;
 
     public bool canBreed;
     public bool breedTimer;
@@ -42,6 +43,7 @@ public class Critter : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+        isVisible = true;
         initialSize = new Vector3(0.2f, 0.2f, 0.2f);
         if (crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if(!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
@@ -92,11 +94,9 @@ public class Critter : MonoBehaviour {
 
     void PopulateAvailableBehaviours()
     {
-        for(int i = 0; i < Behaviours.behaviours.Count; i++)
+        for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
-            int r = Random.Range(0, 10);
             availableBehaviours.Add(Behaviours.behaviours[i]);
-            Debug.Log(Behaviours.behaviours[i]);
         }
     }
     void changeSpeed()

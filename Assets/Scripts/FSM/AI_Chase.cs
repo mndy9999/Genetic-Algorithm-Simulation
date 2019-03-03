@@ -50,7 +50,7 @@ public class AI_Chase : State<AI>
             if (_owner.IsCloseEnoughToEat())
             {
                 if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-                else { _owner.stateMachine.ChangeState(AI_Breed.instance); }
+                else if (_owner.TargetIsMate()) {_owner.stateMachine.ChangeState(AI_Breed.instance); }
             }
             else { Chase(_owner); }
         }
@@ -60,8 +60,7 @@ public class AI_Chase : State<AI>
     void Chase(AI _owner)
     {
         _owner.seek.Target.GetComponent<Critter>().IsChased = true;
-        //calculate direction, rotation and start moving towards the target
-        if (!Critter.crittersDict.ContainsKey(_owner.seek.targetType)) { return; }
+
         var direction = _owner.seek.Target.transform.position - _owner.transform.position;
         _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                     Quaternion.LookRotation(direction),
