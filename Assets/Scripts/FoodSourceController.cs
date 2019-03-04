@@ -8,6 +8,7 @@ public class FoodSourceController : MonoBehaviour{
     public GameObject apple;
 
     bool hasFood;
+    bool appled = false;
 
     private void Awake()
     {
@@ -21,13 +22,15 @@ public class FoodSourceController : MonoBehaviour{
 
     private void Update()
     {
-        hasFood = critter.Health > 10 ? true : false;
+        critter.isVisible = critter.Health > 10;
         SpawnApples();
     }
 
     void SpawnApples()
     {
-        if (critter.isVisible && !hasFood)
+        if (appled) return;
+
+        if (!critter.isVisible)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -35,7 +38,8 @@ public class FoodSourceController : MonoBehaviour{
                 float offsetZ = Random.Range(-1, 1);
 
                 Instantiate(apple, new Vector3(transform.position.x + offsetX, 0.0f, transform.position.z + offsetZ), Quaternion.identity);
-            }        
+            }
+        appled = true;
         }
     }
 }
