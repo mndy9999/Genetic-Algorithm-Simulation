@@ -78,6 +78,8 @@ public class Critter : MonoBehaviour {
         UpdateLifeStage();
         UpdateSpeed();
 
+        if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }
+
         if (breedTimer)
         {
             time = Time.time;
@@ -114,9 +116,9 @@ public class Critter : MonoBehaviour {
     }
     void UpdateLifeStage()
     {
-        if(age < 3) { lifeStage = Stage.Baby; }
-        else if(age < 6 && age > 2) { lifeStage = Stage.Teen; }
-        else if(age < 10 && age > 5) { lifeStage = Stage.Adult; }
+        if(age < 20) { lifeStage = Stage.Baby; }
+        else if(age < 50 && age >= 20) { lifeStage = Stage.Teen; }
+        else if(age < 120 && age >= 50) { lifeStage = Stage.Adult; }
         else { lifeStage = Stage.Elder; }
     }
 
@@ -152,7 +154,7 @@ public class Critter : MonoBehaviour {
     }
     public bool IsAlive
     {
-        get { return health > 0 && age < 15; }
+        get { return health > 0; }
         set { }
     }
     public float Energy
