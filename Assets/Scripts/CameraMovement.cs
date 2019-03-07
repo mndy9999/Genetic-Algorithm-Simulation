@@ -19,8 +19,8 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
-        rotationX = Camera.main.transform.localEulerAngles.y;
-        rotationY = Camera.main.transform.localEulerAngles.z;
+        rotationX = Camera.main.transform.rotation.x;
+        rotationY = Camera.main.transform.rotation.y;
 
     }
 
