@@ -38,15 +38,8 @@ public class FoodSourceController : MonoBehaviour{
             for (int i = 0; i < transform.childCount; i++)
             {
                 GameObject currentChild = transform.GetChild(i).gameObject;
-                Destroy(currentChild);
 
-                float offsetX = Random.Range(-1.0f, 1.0f);
-                float offsetZ = Random.Range(-1.0f, 1.0f);
-
-
-                //currentChild.transform.Translate(new Vector3(currentChild.transform.position.x, 0.0f, currentChild.transform.position.z));
-
-                Instantiate(apple, new Vector3(transform.position.x + offsetX, 0.0f, transform.position.z + offsetZ), Quaternion.identity);
+                currentChild.AddComponent<Rigidbody>();
             }
             appled = true;
         }
