@@ -224,7 +224,6 @@
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\HolyShift\Scripts\CheckForStandardAssets.cs" />
     <Compile Include="Assets\Low Poly Fruits\resources\fruits_tester.cs" />
-    <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -262,11 +261,9 @@
     <Compile Include="Assets\Scripts\SpawnCreature.cs" />
     <Compile Include="Assets\Scripts\VegetablesController.cs" />
     <Compile Include="Assets\Tree.cs" />
-    <None Include="Assets\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
     <None Include="Assets\HolyShift\readme.txt" />
     <None Include="Assets\AIBehavior\Documentation\_ReadMe.txt" />
     <None Include="Assets\AIBehavior\Extras\UFPS\UFPS_ReadMe.txt" />
-    <None Include="Assets\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
     <None Include="Assets\HolyShift\Shaders\WaterInclude.cginc" />
     <None Include="Assets\AIBehavior\AIBehaviorDemoScene\Shaders\DiffuseWithAdjustableIllumin.shader" />
     <None Include="Assets\AIBehavior\AIBehaviorDemoScene\Shaders\Projector Light.shader" />
