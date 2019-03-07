@@ -39,8 +39,9 @@ public class FoodSourceController : MonoBehaviour{
             {
                 GameObject currentChild = transform.GetChild(i).gameObject;
 
-                currentChild.AddComponent<Rigidbody>();
+                currentChild.AddComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             }
+            transform.DetachChildren();
             appled = true;
         }
 
