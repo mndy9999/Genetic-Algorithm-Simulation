@@ -52,7 +52,7 @@ public class Critter : MonoBehaviour {
         if (crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
-
+        availableBehaviours = new List<string>();
         isChased = false;
         isAttacked = false;
         isVisible = true;
