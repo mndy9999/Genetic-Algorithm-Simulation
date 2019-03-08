@@ -21,7 +21,7 @@ public class Behaviours
 
     public static List<string> herbivoreTargets = new List<string>()
     {
-        "Vegetable", "Tree"
+        "Vegetable", "Tree", "Dirt"
     };
 
     public static List<string> carnivoreTargets = new List<string>()

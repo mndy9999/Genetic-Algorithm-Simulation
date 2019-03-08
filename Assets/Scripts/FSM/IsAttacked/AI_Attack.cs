@@ -50,20 +50,19 @@ public class AI_Attack : State<AI>
         if (_owner.IsDead()) {  _owner.stateMachine.ChangeState(AI_Dead.instance); }
        // else if (_owner.CanSeeEnemy() && _owner.critter.Health < 40) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget())
-        {          
+        {
             if (_owner.IsCloseEnoughToEat())
             {
                 if (_owner.TargetIsDead())
                 {
-                    if (_owner.TargetIsFood())
-                    {
-                        if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree" && _owner.critter.availableBehaviours.Contains(AI_Knock.name)) { _owner.stateMachine.ChangeState(AI_Knock.instance); }
-                        else if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt" && _owner.critter.availableBehaviours.Contains(AI_Dig.name)) { _owner.stateMachine.ChangeState(AI_Dig.instance); }
-                        else { _owner.stateMachine.ChangeState(AI_Eat.instance); }
-                    }
+                    if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
                     else { _owner.seek.Target = null; _owner.stateMachine.ChangeState(AI_Idle.instance); }
                 }
-                else { Attack(_owner); }
+                else {
+                    if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree" && _owner.critter.availableBehaviours.Contains(AI_Knock.name)) { _owner.stateMachine.ChangeState(AI_Knock.instance); }
+                    else if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt" && _owner.critter.availableBehaviours.Contains(AI_Dig.name)) { _owner.stateMachine.ChangeState(AI_Dig.instance); }
+                    else { Attack(_owner); }
+                }
 
             }
             else { _owner.stateMachine.ChangeState(AI_Chase.instance); }

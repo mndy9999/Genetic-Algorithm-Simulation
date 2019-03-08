@@ -239,6 +239,7 @@
     <Compile Include="Assets\Scripts\CarnivoreController.cs" />
     <Compile Include="Assets\Scripts\Critter.cs" />
     <Compile Include="Assets\Scripts\CrittersUIController.cs" />
+    <Compile Include="Assets\Scripts\DirtPileController.cs" />
     <Compile Include="Assets\Scripts\FoodSourceController.cs" />
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
