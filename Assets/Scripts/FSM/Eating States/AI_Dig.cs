@@ -32,7 +32,7 @@ public class AI_Dig : State<AI>
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Dig State");
-        _owner.animator.Play("Dig");    //start playing animation when entering state
+       // _owner.animator.Play("Dig");    //start playing animation when entering state
     }
 
     public override void ExitState(AI _owner)
@@ -45,14 +45,18 @@ public class AI_Dig : State<AI>
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
-        else if (_owner.CanSeeTarget()) { Dig(_owner); }
+        else if (_owner.CanSeeTarget()) {
+            if(_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt") { Dig(_owner); }
+            else { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+            
+        }
         else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 
     void Dig(AI _owner)
     {
         _owner.animator.Play("Dig");
-
+        _owner.seek.Target.GetComponent<Critter>().Health -= 0.05f;
     }
 
 

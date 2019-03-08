@@ -72,8 +72,7 @@ public class AI_Attack : State<AI>
     }
 
     void Attack(AI _owner)
-    {
-        
+    {        
         float attackPower = 0.05f;
         var direction = _owner.seek.Target.transform.position - _owner.transform.position;
         _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,

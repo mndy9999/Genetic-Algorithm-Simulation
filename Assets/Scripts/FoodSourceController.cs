@@ -66,13 +66,11 @@ public class FoodSourceController : MonoBehaviour{
 
         if (!critter.isVisible)
         {
-            for (int i = 0; i < transform.childCount; i++)
+            for (int i = 0; i < 5; i++)
             {
-                GameObject currentChild = transform.GetChild(i).gameObject;
-
-                currentChild.AddComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+                GameObject go = Instantiate(apple, transform.position, Quaternion.identity);
+                go.AddComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             }
-            transform.DetachChildren();
             appled = true;
         }
 
