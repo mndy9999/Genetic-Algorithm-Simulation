@@ -37,14 +37,29 @@ public class CrittersUIController : MonoBehaviour
             panel.transform.Find("Age").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Age.ToString();
             panel.transform.Find("Gender").GetComponent<Text>().text = currentGO.GetComponent<Critter>().gender.ToString();
             panel.transform.Find("LifeStage").GetComponent<Text>().text = currentGO.GetComponent<Critter>().lifeStage.ToString();
-
-            currentPanel = panel.transform.GetChild(0).transform.GetChild(0).gameObject;
-            currentPanel.transform.Find("Energy").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Energy.ToString();
-            currentPanel.transform.Find("Health").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Health.ToString();
-            currentPanel.transform.Find("Resources").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Resource.ToString();
-
+            if (panel.transform.GetChild(0).gameObject.activeSelf) { infoPanel(); }
+            if (panel.transform.GetChild(1).gameObject.activeSelf) { statsPanel(); }
         }
-       
+        
+        
+    }
+
+    void infoPanel()
+    {
+        currentPanel = panel.transform.GetChild(0).transform.GetChild(0).gameObject;
+        currentPanel.transform.Find("Energy").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Energy.ToString();
+        currentPanel.transform.Find("Health").GetComponent<Text>().text = ((int)currentGO.GetComponent<Critter>().Health).ToString();
+        currentPanel.transform.Find("Resources").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Resource.ToString();
+    }
+
+    void statsPanel()
+    {
+        currentPanel = panel.transform.GetChild(1).transform.GetChild(0).gameObject;
+        currentPanel.transform.Find("WalkSpeed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().walkSpeed.ToString();
+        currentPanel.transform.Find("RunSpeed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().runSpeed.ToString();
+        currentPanel.transform.Find("Speed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().speed.ToString();
+        currentPanel.transform.Find("Sight").GetComponent<Text>().text = currentGO.GetComponent<Critter>().viewRadius.ToString();
+        currentPanel.transform.Find("SightAngle").GetComponent<Text>().text = currentGO.GetComponent<Critter>().viewAngle.ToString();
     }
 
 }
