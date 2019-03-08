@@ -6,6 +6,7 @@ using FiniteStateMachine;
 public class Critter : MonoBehaviour {
 
     public string critterType = "Vegetable";
+    public string name;
 
     public enum Gender { Male, Female };
     public Gender gender;
@@ -47,6 +48,7 @@ public class Critter : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+        name = transform.name;
         if (crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
@@ -171,6 +173,16 @@ public class Critter : MonoBehaviour {
     {
         get { return resource; }
         set { resource = value; }
+    }
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+    public int Age
+    {
+        get { return (int)age; }
+        set { age = value; }
     }
     #endregion
 }
