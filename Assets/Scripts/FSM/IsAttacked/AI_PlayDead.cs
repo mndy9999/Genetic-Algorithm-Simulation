@@ -1,16 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using FiniteStateMachine;
 
-public class AI_PlayDead : MonoBehaviour {
+public class AI_PlayDead : State<AI>
+{
+    private static AI_PlayDead _instance;
+    public static string _name = "playDead";
+    private AI_PlayDead()
+    {
+        if (_instance != null)
+            return;
+        _instance = this;
+    }
+    //get instance of the state
+    public static AI_PlayDead instance
+    {
+        get
+        {
+            //if there is no instance
+            if (_instance == null)
+                new AI_PlayDead();      //create one
+            return _instance;
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
+    public override void EnterState(AI _owner)
+    {
+        Debug.Log("Entering PlayDead State");
+        _owner.animator.Play("Dead");       //start playing animation when entering state
+        _owner.critter.isVisible = Random.Range(0, 10) < 3;
+    }
+
+
+    public override void ExitState(AI _owner)
+    {
+        Debug.Log("Exiting PlayDead State");
+        _owner.critter.isVisible = true;
+    }
+
+    public override void UpdateState(AI _owner)
+    {
+        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (!_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+    }
 }
