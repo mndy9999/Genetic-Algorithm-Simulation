@@ -92,4 +92,9 @@ public class AI : MonoBehaviour {
     {
         return !critter.IsAlive;
     }
+
+    public string currentState
+    {
+        get { return CurrentState; }
+    }
 }
