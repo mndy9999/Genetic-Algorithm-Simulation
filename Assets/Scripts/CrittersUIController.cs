@@ -9,6 +9,7 @@ public class CrittersUIController : MonoBehaviour
     public GameObject panel;
     public GameObject currentGO;
     public GameObject currentPanel;
+    public GameObject ring;
 
     // Update is called once per frame
     void Update()
@@ -23,26 +24,31 @@ public class CrittersUIController : MonoBehaviour
                 if (hit.transform.GetComponent<Critter>())
                     currentGO = hit.transform.gameObject;
                 panel.gameObject.SetActive(true);
+                ring.SetActive(true);
             }
-            else if (!EventSystem.current.IsPointerOverGameObject(-1)) { panel.gameObject.SetActive(false); }
+            else if (!EventSystem.current.IsPointerOverGameObject(-1)) { ring.gameObject.SetActive(false); panel.gameObject.SetActive(false); }
         }
-        if(currentGO) UpdateInfo();
-        else panel.gameObject.SetActive(false);
+        if (panel && currentGO) UpdateInfo();
+        else
+        {
+            ring.gameObject.SetActive(false);
+            panel.gameObject.SetActive(false);
+        }
     }
 
     void UpdateInfo()
     {
-        if (panel && currentGO)
-        {
-            panel.transform.Find("Name").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Name;
-            panel.transform.Find("Age").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Age.ToString();
-            panel.transform.Find("Gender").GetComponent<Text>().text = currentGO.GetComponent<Critter>().gender.ToString();
-            panel.transform.Find("LifeStage").GetComponent<Text>().text = currentGO.GetComponent<Critter>().lifeStage.ToString();
-            panel.transform.Find("State").GetComponent<Text>().text = currentGO.transform.root.GetComponent<AI>() ? currentGO.GetComponent<AI>().currentState : "N/A";
-            if (panel.transform.GetChild(0).gameObject.activeSelf) { infoPanel(); }
-            if (panel.transform.GetChild(1).gameObject.activeSelf) { statsPanel(); }
-            if (panel.transform.GetChild(2).gameObject.activeSelf) { behavioursPanel(); }
-        }       
+        panel.transform.Find("Name").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Name;
+        panel.transform.Find("Age").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Age.ToString();
+        panel.transform.Find("Gender").GetComponent<Text>().text = currentGO.GetComponent<Critter>().gender.ToString();
+        panel.transform.Find("LifeStage").GetComponent<Text>().text = currentGO.GetComponent<Critter>().lifeStage.ToString();
+        panel.transform.Find("State").GetComponent<Text>().text = currentGO.transform.root.GetComponent<AI>() ? currentGO.GetComponent<AI>().currentState : "N/A";
+        if (panel.transform.GetChild(0).gameObject.activeSelf) { infoPanel(); }
+        if (panel.transform.GetChild(1).gameObject.activeSelf) { statsPanel(); }
+        if (panel.transform.GetChild(2).gameObject.activeSelf) { behavioursPanel(); }
+
+        
+        ring.transform.position = currentGO.transform.position;
     }
 
     void infoPanel()

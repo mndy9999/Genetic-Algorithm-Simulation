@@ -246,7 +246,12 @@
     <Compile Include="Assets\Scripts\FSM\AI_Chase.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Dead.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Idle.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Laydown.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Look.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Sleep.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Wander.cs" />
+    <Compile Include="Assets\Scripts\FSM\Breeding\AI_CallMate.cs" />
+    <Compile Include="Assets\Scripts\FSM\Breeding\AI_PairUp.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Dig.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Eat.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Fish.cs" />
@@ -257,6 +262,10 @@
     <Compile Include="Assets\Scripts\FSM\IsAttacked\AI_PlayDead.cs" />
     <Compile Include="Assets\Scripts\FSM\IsAttacked\AI_Startle.cs" />
     <Compile Include="Assets\Scripts\FSM\IsAttacked\AI_Suicide.cs" />
+    <Compile Include="Assets\Scripts\FSM\Social System\AI_Aggress.cs" />
+    <Compile Include="Assets\Scripts\FSM\Social System\AI_Fight.cs" />
+    <Compile Include="Assets\Scripts\FSM\Social System\AI_Submit.cs" />
+    <Compile Include="Assets\Scripts\FSM\Social System\AI_Threat.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
     <Compile Include="Assets\Scripts\HerbivoreController.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
