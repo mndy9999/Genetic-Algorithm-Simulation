@@ -62,8 +62,7 @@ public class Critter : MonoBehaviour {
 
         speed = runSpeed;
         viewAngle = defaultViewAngle;
-
-       // PopulateAvailableBehaviours();               
+          
 	}
 
     private void OnDestroy()
@@ -77,19 +76,19 @@ public class Critter : MonoBehaviour {
         if (resource <= 0) { KillSelf(); }
 
         UpdateFOV();
-        UpdateLifeStage();
+       // UpdateLifeStage();
         UpdateSpeed();
 
         if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }
 
-        if (breedTimer)
-        {
-            time = Time.time;
-            canBreed = false;
-            breedTimer = false;
-        }
-        if (Time.time >= time + 5) { canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder; }
-        else { canBreed = false; }
+        //if (breedTimer)
+        //{
+        //    time = Time.time;
+        //    canBreed = false;
+        //    breedTimer = false;
+        //}
+        //if (Time.time >= time + 5) { canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder; }
+        //else { canBreed = false; }
     }
 
     void PopulateAvailableBehaviours()

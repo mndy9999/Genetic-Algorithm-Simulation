@@ -58,6 +58,11 @@ public class AI : MonoBehaviour {
         return seek.Target;
     }
 
+    public bool CanSeeMate()
+    {
+        return seek.Mate;
+    }
+
     public bool CanSeeEnemy()
     {
         return seek.Enemy;
@@ -65,7 +70,7 @@ public class AI : MonoBehaviour {
 
     public bool IsCloseEnoughToEat()
     {
-        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 0.5f;
+        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1.0f;
     }
 
     public bool IsCloseEnoughToAttack()

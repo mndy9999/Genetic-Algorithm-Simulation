@@ -251,6 +251,7 @@
     <Compile Include="Assets\Scripts\FSM\AI_Sleep.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Wander.cs" />
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_CallMate.cs" />
+    <Compile Include="Assets\Scripts\FSM\Breeding\AI_Impress.cs" />
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_PairUp.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Dig.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Eat.cs" />

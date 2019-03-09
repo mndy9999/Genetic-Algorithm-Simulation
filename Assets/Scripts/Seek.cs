@@ -42,9 +42,7 @@ public class Seek : MonoBehaviour {
 
         target = GetTarget();
         enemy = GetEnemy();
-        mate = GetMate();
-        
-
+        mate = GetMate();       
 
     }
     private void Update()
@@ -124,15 +122,17 @@ public class Seek : MonoBehaviour {
     {
         if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(critter.critterType))
         {
+            
             //find closest target               
             float dist = Mathf.Infinity;
             foreach (Critter c in Critter.crittersDict[critter.critterType])
             {
                 if (visibleTargets.Contains(c.gameObject) && critter.gender != c.gender && critter.CanBreed && c.CanBreed)
                 {
+                    
                     float d = Vector3.Distance(this.transform.position, c.transform.position);
                     if (tempMate == null || d < dist)
-                    {
+                    {                       
                         tempMate = c.gameObject;
                         dist = d;
                     }
@@ -140,6 +140,7 @@ public class Seek : MonoBehaviour {
                 else { tempMate = null; }
             }
         }
+        if (critter.name == "Female_sheep") Debug.Log("Mate " + tempMate.name);
         return tempMate;
     }
 
