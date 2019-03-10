@@ -239,6 +239,7 @@
     <Compile Include="Assets\Scripts\CarnivoreController.cs" />
     <Compile Include="Assets\Scripts\Critter.cs" />
     <Compile Include="Assets\Scripts\CrittersUIController.cs" />
+    <Compile Include="Assets\Scripts\DirtController.cs" />
     <Compile Include="Assets\Scripts\DirtPileController.cs" />
     <Compile Include="Assets\Scripts\Flocking\AlignmentBehavior.cs" />
     <Compile Include="Assets\Scripts\Flocking\AvoidanceBehavior.cs" />
@@ -247,7 +248,6 @@
     <Compile Include="Assets\Scripts\Flocking\Flock.cs" />
     <Compile Include="Assets\Scripts\Flocking\FlockAgent.cs" />
     <Compile Include="Assets\Scripts\Flocking\FlockBehaviour.cs" />
-    <Compile Include="Assets\Scripts\FoodSourceController.cs" />
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Chase.cs" />
@@ -280,6 +280,7 @@
     <Compile Include="Assets\Scripts\HerbivoreController.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\SpawnCreature.cs" />
+    <Compile Include="Assets\Scripts\TreeController.cs" />
     <Compile Include="Assets\Scripts\VegetablesController.cs" />
     <None Include="Assets\HolyShift\readme.txt" />
     <None Include="Assets\AIBehavior\Documentation\_ReadMe.txt" />
@@ -288,6 +289,7 @@
     <None Include="Assets\AIBehavior\AIBehaviorDemoScene\Shaders\DiffuseWithAdjustableIllumin.shader" />
     <None Include="Assets\AIBehavior\AIBehaviorDemoScene\Shaders\Projector Light.shader" />
     <None Include="Assets\AIBehavior\AIBehaviorDemoScene\Shaders\AlphaSelfIllumWithFade.shader" />
+    <None Include="Assets\Cartoon_Farm_Crops\README.txt" />
     <None Include="Assets\AIBehavior\Documentation\_ReleaseNotes.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\HolyShift\Shaders\FXWaterLowpoly.shader" />

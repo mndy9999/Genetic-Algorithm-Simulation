@@ -89,9 +89,11 @@ public class Critter : MonoBehaviour {
         //}
         //if (Time.time >= time + 5) { canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder; }
         //else { canBreed = false; }
+
+        if(critterType == "Herbivore") PopulateAvailableBehaviours();
     }
 
-    void PopulateAvailableBehaviours()
+    public void PopulateAvailableBehaviours()
     {
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
