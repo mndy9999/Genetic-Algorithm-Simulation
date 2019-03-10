@@ -140,7 +140,6 @@ public class Seek : MonoBehaviour {
                 else { tempMate = null; }
             }
         }
-        if (critter.name == "Female_sheep") Debug.Log("Mate " + tempMate.name);
         return tempMate;
     }
 

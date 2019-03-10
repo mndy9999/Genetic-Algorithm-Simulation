@@ -2421,6 +2421,7 @@ GameObject:
   - component: {fileID: 550888303}
   - component: {fileID: 550888302}
   - component: {fileID: 550888308}
+  - component: {fileID: 550888309}
   m_Layer: 9
   m_Name: apple (9)
   m_TagString: Untagged
@@ -2565,6 +2566,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &550888309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 550888301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3243a5b8ff570294e9eae339b4f76271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flockAgent: {fileID: 0}
 --- !u!1 &556143750
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,7 +3869,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &878773092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6057,7 +6070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &1357725832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6386,6 +6399,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2058717069}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1452107493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1452107495}
+  - component: {fileID: 1452107494}
+  m_Layer: 0
+  m_Name: Flock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1452107494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452107493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b819478ac43116c43a9d9fa41d4ecee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agentPrefab: {fileID: 114333082449061254, guid: 054145568aa4e2e46a05bc2320f38212,
+    type: 2}
+  behavior: {fileID: 0}
+  startingCount: 250
+  driveFactor: 10
+  maxSpeed: 5
+  neighborRadius: 1.5
+  avoidanceRadiusMultiplier: 0.5
+--- !u!4 &1452107495
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452107493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 82.98}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455875510
 GameObject:

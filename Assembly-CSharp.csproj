@@ -240,11 +240,19 @@
     <Compile Include="Assets\Scripts\Critter.cs" />
     <Compile Include="Assets\Scripts\CrittersUIController.cs" />
     <Compile Include="Assets\Scripts\DirtPileController.cs" />
+    <Compile Include="Assets\Scripts\Flocking\AlignmentBehavior.cs" />
+    <Compile Include="Assets\Scripts\Flocking\AvoidanceBehavior.cs" />
+    <Compile Include="Assets\Scripts\Flocking\CohesionBehavior.cs" />
+    <Compile Include="Assets\Scripts\Flocking\CompositBehavior.cs" />
+    <Compile Include="Assets\Scripts\Flocking\Flock.cs" />
+    <Compile Include="Assets\Scripts\Flocking\FlockAgent.cs" />
+    <Compile Include="Assets\Scripts\Flocking\FlockBehaviour.cs" />
     <Compile Include="Assets\Scripts\FoodSourceController.cs" />
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Chase.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Dead.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Flock.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Idle.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Laydown.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Look.cs" />
@@ -267,6 +275,7 @@
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Fight.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Submit.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Threat.cs" />
+    <Compile Include="Assets\Scripts\FSM\Social System\Test.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
     <Compile Include="Assets\Scripts\HerbivoreController.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
