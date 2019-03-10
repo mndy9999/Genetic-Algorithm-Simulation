@@ -7,7 +7,7 @@ public class DirtController : MonoBehaviour {
     Critter critter;
     public GameObject peanut;
 
-    List<Vector3> peanutPos = new List<Vector3>();
+    List<Vector3> peanutPos;
 
     bool harvested = false;
 
@@ -20,6 +20,7 @@ public class DirtController : MonoBehaviour {
         critter.Resource = 1;
 
         SetupPeanuts();
+        peanutPos = new List<Vector3>();
         for (int i = 0; i < transform.childCount; i++)
             peanutPos.Add(transform.GetChild(i).transform.position);
 

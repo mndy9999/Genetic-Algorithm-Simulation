@@ -120,24 +120,15 @@ public class Seek : MonoBehaviour {
     }
     public GameObject GetMate()
     {
-        if (!GetComponent<Critter>().IsAttacked && Critter.crittersDict.ContainsKey(critter.critterType))
+        tempMate = null;
+        float dist = Mathf.Infinity;
+        for (int i = 0; i < visibleTargets.Count; i++)
         {
-            
-            //find closest target               
-            float dist = Mathf.Infinity;
-            foreach (Critter c in Critter.crittersDict[critter.critterType])
+            float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
+            if (d < dist && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
             {
-                if (visibleTargets.Contains(c.gameObject) && critter.gender != c.gender && critter.CanBreed && c.CanBreed)
-                {
-                    
-                    float d = Vector3.Distance(this.transform.position, c.transform.position);
-                    if (tempMate == null || d < dist)
-                    {                       
-                        tempMate = c.gameObject;
-                        dist = d;
-                    }
-                }
-                else { tempMate = null; }
+                dist = d;
+                tempMate = visibleTargets[i];
             }
         }
         return tempMate;

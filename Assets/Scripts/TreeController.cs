@@ -7,7 +7,7 @@ public class TreeController : MonoBehaviour {
     Critter critter;
     public GameObject apple;
 
-    List<Vector3> applePos = new List<Vector3>();
+    List<Vector3> applePos;
 
     bool harvested = false;
 
@@ -18,7 +18,7 @@ public class TreeController : MonoBehaviour {
         critter.Energy = 0;
         critter.Health = 20;
         critter.Resource = 1;
-
+        applePos = new List<Vector3>();
         for (int i = 0; i < transform.childCount; i++)
             applePos.Add(transform.GetChild(i).transform.position);
 

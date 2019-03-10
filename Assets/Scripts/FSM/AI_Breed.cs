@@ -40,15 +40,15 @@ public class AI_Breed : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Breed State");
+        _owner.critter.canBreed = false;
+        _owner.seek.Mate = null;
     }
 
     public override void UpdateState(AI _owner)
     {        
         if(Time.time >= time + 4.6) {
-            Debug.Log("Hi");
             _owner.critter.BreedTimer = true;
             _owner.stateMachine.ChangeState(AI_Idle.instance);
-
         }
     }
 }
