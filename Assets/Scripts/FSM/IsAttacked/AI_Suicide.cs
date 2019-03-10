@@ -43,7 +43,7 @@ public class AI_Suicide : State<AI>
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.IsCloseEnoughToAttack()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.IsCloseEnough()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         Suicide(_owner);
     }
 

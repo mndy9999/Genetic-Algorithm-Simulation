@@ -47,7 +47,7 @@ public class AI_Chase : State<AI>
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget())
         {
-            if (_owner.IsCloseEnoughToEat())
+            if (_owner.IsCloseEnough())
             {
                 if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
                 else if (_owner.TargetIsMate()) { _owner.stateMachine.ChangeState(AI_Breed.instance); }

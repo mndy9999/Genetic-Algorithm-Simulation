@@ -37,6 +37,10 @@ public class AI_Eat : State<AI>
     {
         Debug.Log("Entering Eat State");
         _owner.animator.Play("Eat");    //start playing animation when entering state
+        var direction = _owner.seek.Target.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                                    Quaternion.LookRotation(direction),
+                                    _owner.critter.speed * Time.deltaTime);
     }
 
     public override void ExitState(AI _owner)
@@ -51,7 +55,7 @@ public class AI_Eat : State<AI>
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget())
         {
-            if (_owner.IsCloseEnoughToEat()) { Eat(_owner); }
+            if (_owner.IsCloseEnough()) { Eat(_owner); }
             else { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         }
         else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
@@ -59,6 +63,7 @@ public class AI_Eat : State<AI>
 
     void Eat(AI _owner)
     {
+        
         float hpEaten = 0.1f;
         _owner.seek.Target.GetComponent<Critter>().Resource -= hpEaten;
         _owner.critter.Energy += hpEaten * eatHPToEnergy;

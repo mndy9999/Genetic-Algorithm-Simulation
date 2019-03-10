@@ -45,7 +45,7 @@ public class AI_Knock : State<AI>
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
-        else if (_owner.CanSeeTarget() && _owner.IsCloseEnoughToEat()) { Knock(_owner); }
+        else if (_owner.CanSeeTarget() && _owner.IsCloseEnough()) { Knock(_owner); }
         else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 

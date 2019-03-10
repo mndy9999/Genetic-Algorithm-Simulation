@@ -68,15 +68,14 @@ public class AI : MonoBehaviour {
         return seek.Enemy;
     }
 
-    public bool IsCloseEnoughToEat()
+    public bool IsCloseEnough()
     {
-        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1.0f;
+        if(!GetComponent<MeshCollider>())
+            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < (GetComponentInChildren<MeshCollider>().bounds.size + seek.Target.transform.GetComponentInChildren<MeshCollider>().bounds.size).x/2+0.2f;
+        else
+            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < (GetComponent<MeshCollider>().bounds.size + seek.Target.transform.GetComponent<MeshCollider>().bounds.size).x/2;
     }
 
-    public bool IsCloseEnoughToAttack()
-    {
-        return Vector3.Distance(this.transform.position, seek.Target.transform.position) < 1.0f;
-    }
 
     public bool TargetIsDead()
     {
