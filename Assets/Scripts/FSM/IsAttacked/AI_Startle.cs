@@ -34,12 +34,16 @@ public class AI_Startle : State<AI>
     {
         Debug.Log("Entering Starle State");
         _owner.animator.Play("ShowOff");      //play animation when entering state
+        var direction = _owner.seek.Target.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                            Quaternion.LookRotation(direction),
+                            _owner.critter.speed * Time.deltaTime);
     }
 
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Starlte State");
-
+        _owner.critter.IsAlarmed = false;
     }
 
     public override void UpdateState(AI _owner)
