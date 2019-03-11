@@ -43,7 +43,9 @@ public class Critter : MonoBehaviour {
     public bool isAttacked;
     public bool isVisible;
 
+    public bool canAlarm;
     public bool canBreed;
+
     [HideInInspector] public bool breedTimer;
     [HideInInspector] public float time;
 
@@ -146,6 +148,11 @@ public class Critter : MonoBehaviour {
     {
         get { return isAlarmed; }
         set { isAlarmed = value; }
+    }
+    public bool CanAlarm
+    {
+        get { return canAlarm; }
+        set { canAlarm = value; }
     }
     public bool IsAttacked
     {

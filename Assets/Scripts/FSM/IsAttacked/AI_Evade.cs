@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using FiniteStateMachine;
+using System.Collections;
 
 public class AI_Evade : State<AI>
 {
@@ -40,7 +41,7 @@ public class AI_Evade : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Evade State");
-        _owner.agent.Stop();
+        _owner.agent.ResetPath();
     }
 
     public override void UpdateState(AI _owner)
@@ -48,9 +49,10 @@ public class AI_Evade : State<AI>
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) {
+            if (_owner.critter.CanAlarm) { _owner.stateMachine.ChangeState(AI_Alarm.instance); }
             if (_owner.CanSeeWater() && _owner.critter.availableBehaviours.Contains(AI_Swim.name) && !_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater){ _owner.stateMachine.ChangeState(AI_Swim.instance); }
         }
-        else if(!_owner.CanSeeEnemy()) { _owner.critter.IsAlarmed = false; _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if(!_owner.CanSeeEnemy()) { _owner.StartCoroutine(Resume(_owner)); }
     }
 
     void Evade(AI _owner)
@@ -67,5 +69,12 @@ public class AI_Evade : State<AI>
         NavMeshHit navHit;
         NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
         return navHit.position;
+    }
+
+    IEnumerator Resume(AI _owner)
+    {
+        yield return new WaitForSeconds(3);
+        _owner.critter.IsAlarmed = false;
+        _owner.stateMachine.ChangeState(AI_Wander.instance);
     }
 }
