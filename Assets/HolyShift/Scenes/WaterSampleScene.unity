@@ -1390,8 +1390,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284287695}
-  m_LocalRotation: {x: -0.09625994, y: 0.8163382, z: 0.14251062, w: 0.5513771}
-  m_LocalPosition: {x: -20.635643, y: -13.89492, z: 51.401173}
+  m_LocalRotation: {x: 0, y: 0.000000063325004, z: 0, w: 1}
+  m_LocalPosition: {x: -14.88, y: -2.8600001, z: 60.629997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4169,15 +4169,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904666824}
-  m_LocalRotation: {x: -0, y: 0.7713927, z: -0, w: 0.63635945}
-  m_LocalPosition: {x: -14.85, y: 0.09, z: 49.77}
+  m_LocalRotation: {x: -0, y: 0.21256952, z: -0, w: 0.97714597}
+  m_LocalPosition: {x: -12.6, y: 0.09, z: 61.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 744318554}
   - {fileID: 1399973225}
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 100.95801, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 24.546001, z: 0}
 --- !u!114 &904666833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4189,6 +4189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8172821079877ae48ad1b61f9bb339a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inWater: 0
 --- !u!195 &904666834
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4208,7 +4209,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 13
+  m_WalkableMask: 9
   m_ObstacleAvoidanceType: 4
 --- !u!1 &910826829
 GameObject:
@@ -8438,6 +8439,7 @@ GameObject:
   - component: {fileID: 1845843780}
   - component: {fileID: 1845843781}
   - component: {fileID: 1845843782}
+  - component: {fileID: 1845843783}
   m_Layer: 9
   m_Name: Low_Wolf_v01
   m_TagString: wolf
@@ -8470,7 +8472,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845843774}
-  m_LocalRotation: {x: -0, y: 0.9960919, z: -0, w: 0.08832391}
+  m_LocalRotation: {x: -0, y: 0.5545132, z: -0, w: 0.8321749}
   m_LocalPosition: {x: -19.18, y: 0.09, z: 57.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8478,7 +8480,7 @@ Transform:
   - {fileID: 2115654421}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 169.86601, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 67.354004, z: 0}
 --- !u!114 &1845843777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8601,6 +8603,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 13
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1845843783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845843774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8172821079877ae48ad1b61f9bb339a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inWater: 0
 --- !u!1 &1858016211
 GameObject:
   m_ObjectHideFlags: 0

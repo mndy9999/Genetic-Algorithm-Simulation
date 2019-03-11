@@ -33,7 +33,7 @@ public class AI_Chase : State<AI>
     {
         Debug.Log("Entering Chase State");
         _owner.animator.Play("Run");      //play animation when entering state
-        
+        _owner.agent.ResetPath();
     }
 
     public override void ExitState(AI _owner)

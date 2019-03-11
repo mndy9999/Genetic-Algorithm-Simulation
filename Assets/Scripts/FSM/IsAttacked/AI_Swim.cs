@@ -46,6 +46,7 @@ public class AI_Swim : State<AI>
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if(!_owner.CanSeeEnemy()) _owner.StartCoroutine(ChangeState(_owner));
        
     }

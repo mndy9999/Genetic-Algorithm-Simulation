@@ -36,6 +36,7 @@ public class AI_Wander : State<AI>
     {
         Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
+        _owner.agent.ResetPath();
         Wander(_owner);
     }
 
@@ -59,13 +60,6 @@ public class AI_Wander : State<AI>
     {
         targetPos = RandomNavSphere(_owner.transform.position, 20f, _owner.agent.areaMask);
         _owner.agent.SetDestination(targetPos);
-
-
-        //var direction = _owner.waypoint - _owner.transform.position;
-        //_owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-        //                            Quaternion.LookRotation(direction),
-        //                            _owner.critter.speed * Time.deltaTime);
-        //_owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckEnvironment : MonoBehaviour {
 
-    bool inWater = false;
+    [SerializeField] bool inWater = false;
     public bool InWater { get { return inWater; } }
 
     private void OnTriggerEnter(Collider col)
