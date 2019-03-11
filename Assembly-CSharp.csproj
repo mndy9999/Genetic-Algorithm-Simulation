@@ -257,9 +257,11 @@
     <Compile Include="Assets\Scripts\FSM\AI_Chase.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Dead.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Flock.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Getup.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Idle.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Laydown.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Look.cs" />
+    <Compile Include="Assets\Scripts\FSM\AI_Rest.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Sleep.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Wander.cs" />
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_CallMate.cs" />

@@ -43,6 +43,7 @@ public class AI_Wander : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Wander State");
+        _owner.agent.ResetPath();
     }
 
     public override void UpdateState(AI _owner)
@@ -52,7 +53,7 @@ public class AI_Wander : State<AI>
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         else if (_owner.agent.remainingDistance<=_owner.agent.stoppingDistance) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
-        
+        else if(_owner.critter.Energy < 80) { _owner.stateMachine.ChangeState(AI_Laydown.instance); }
 
     }
 
