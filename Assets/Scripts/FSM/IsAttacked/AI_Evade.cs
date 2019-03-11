@@ -42,6 +42,7 @@ public class AI_Evade : State<AI>
     {
         Debug.Log("Exiting Evade State");
         _owner.agent.ResetPath();
+        _owner.StopAllCoroutines();
     }
 
     public override void UpdateState(AI _owner)
@@ -50,7 +51,8 @@ public class AI_Evade : State<AI>
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) {
             if (_owner.critter.CanAlarm) { _owner.stateMachine.ChangeState(AI_Alarm.instance); }
-            if (_owner.CanSeeWater() && _owner.critter.availableBehaviours.Contains(AI_Swim.name) && !_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater){ _owner.stateMachine.ChangeState(AI_Swim.instance); }
+            else if (_owner.CanSeeWater() && _owner.critter.availableBehaviours.Contains(AI_Swim.name) && !_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater){ _owner.stateMachine.ChangeState(AI_Swim.instance); }
+            else _owner.stateMachine.ChangeState(AI_PlayDead.instance);
         }
         else if(!_owner.CanSeeEnemy()) { _owner.StartCoroutine(Resume(_owner)); }
     }

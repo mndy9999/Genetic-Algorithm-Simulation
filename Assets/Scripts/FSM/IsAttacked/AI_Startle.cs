@@ -1,16 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using FiniteStateMachine;
+using System.Collections;
 
-public class AI_Startle : MonoBehaviour {
+public class AI_Startle : State<AI>
+{
+    private static AI_Startle _instance;
+    private static string _name = "startle";
+    private AI_Startle()
+    {
+        if (_instance != null)
+            return;
+        _instance = this;
+    }
+    //get instance of the state
+    public static AI_Startle instance
+    {
+        get
+        {
+            //if there is no insteance, create one
+            if (_instance == null)
+                new AI_Startle();     //create one
+            return _instance;
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
+    public override void EnterState(AI _owner)
+    {
+        Debug.Log("Entering Starle State");
+        _owner.animator.Play("ShowOff");      //play animation when entering state
+    }
+
+    public override void ExitState(AI _owner)
+    {
+        Debug.Log("Exiting Starlte State");
+
+    }
+
+    public override void UpdateState(AI _owner)
+    {
+        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        //else { _owner.StartCoroutine(Startle()); }
+    }
+
 }
