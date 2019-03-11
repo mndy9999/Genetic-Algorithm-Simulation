@@ -33,7 +33,7 @@ public class AI_Attack : State<AI>
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Attack State");
-        _owner.seek.Target.GetComponent<Critter>().IsChased = false;
+        _owner.seek.Target.GetComponent<Critter>().IsAlarmed = false;
         _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
         if(_owner.seek.Target.GetComponent<Seek>()) _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
     }

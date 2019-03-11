@@ -15,6 +15,7 @@ public class Behaviours
         AI_Knock.name,
         AI_Dig.name,
         AI_Evade.name,
+        AI_Swim.name,
         AI_Breed.name,
         AI_Dead.name
     };

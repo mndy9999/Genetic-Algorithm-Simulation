@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using FiniteStateMachine;
 
 public class AI : MonoBehaviour {
@@ -13,6 +14,7 @@ public class AI : MonoBehaviour {
     public Animator animator;           //used to set up the animations
     public Critter critter;
     public Seek seek;
+    public NavMeshAgent agent;
 
     [SerializeField] string CurrentState;
 
@@ -23,6 +25,7 @@ public class AI : MonoBehaviour {
     {
         critter = GetComponent<Critter>();
         seek = GetComponent<Seek>();
+        agent = GetComponent<NavMeshAgent>();
         stateMachine = new StateMachine<AI>(this);      //pass the gameobject into the state machine
         stateMachine.ChangeState(AI_Idle.instance);     //set default state to idle
         timer = Time.time;        
@@ -37,7 +40,7 @@ public class AI : MonoBehaviour {
             timer = Time.time;
             seconds++;
         }
-        if(seconds > 20)
+        if(seconds > 3)
         {
             seconds = 0;
             switchState = !switchState;
@@ -95,6 +98,16 @@ public class AI : MonoBehaviour {
     public bool IsDead()
     {
         return !critter.IsAlive;
+    }
+
+    public bool InWater()
+    {
+        return GetComponent<CheckEnvironment>().InWater;
+    }
+
+    public bool CanSeeWater()
+    {
+        return seek.water;
     }
 
     public string currentState

@@ -222,6 +222,7 @@
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\CheckEnvironment.cs" />
     <Compile Include="Assets\HolyShift\Scripts\CheckForStandardAssets.cs" />
     <Compile Include="Assets\Low Poly Fruits\resources\fruits_tester.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
@@ -233,6 +234,9 @@
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\AgeController.cs" />
+    <Compile Include="Assets\Scripts\AStar\AStarSearch.cs" />
+    <Compile Include="Assets\Scripts\AStar\GridSetup.cs" />
+    <Compile Include="Assets\Scripts\AStar\Node.cs" />
     <Compile Include="Assets\Scripts\Behaviours.cs" />
     <Compile Include="Assets\Scripts\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
@@ -263,6 +267,7 @@
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_PairUp.cs" />
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_Watch.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Dig.cs" />
+    <Compile Include="Assets\Scripts\FSM\Eating States\AI_Drink.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Eat.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Fish.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Knock.cs" />
@@ -272,11 +277,11 @@
     <Compile Include="Assets\Scripts\FSM\IsAttacked\AI_PlayDead.cs" />
     <Compile Include="Assets\Scripts\FSM\IsAttacked\AI_Startle.cs" />
     <Compile Include="Assets\Scripts\FSM\IsAttacked\AI_Suicide.cs" />
+    <Compile Include="Assets\Scripts\FSM\IsAttacked\AI_Swim.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Aggress.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Fight.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Submit.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Threat.cs" />
-    <Compile Include="Assets\Scripts\FSM\Social System\Test.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
     <Compile Include="Assets\Scripts\HerbivoreController.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />

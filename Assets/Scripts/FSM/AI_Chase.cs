@@ -33,11 +33,14 @@ public class AI_Chase : State<AI>
     {
         Debug.Log("Entering Chase State");
         _owner.animator.Play("Run");      //play animation when entering state
+        
     }
 
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Chase State");
+        _owner.seek.LastKnownTarget.GetComponent<Critter>().IsAlarmed = false;
+        _owner.agent.SetDestination(_owner.transform.position);
     }
 
     public override void UpdateState(AI _owner)
@@ -52,20 +55,13 @@ public class AI_Chase : State<AI>
                 if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
                 else if (_owner.TargetIsMate()) { _owner.stateMachine.ChangeState(AI_Breed.instance); }
             }
-            else { Chase(_owner); }
+            else
+            {
+                _owner.seek.Target.GetComponent<Critter>().IsAlarmed = true;
+                _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+            }
         }
         else { _owner.stateMachine.ChangeState(AI_Idle.instance); }     
-    }
-
-    void Chase(AI _owner)
-    {
-        _owner.seek.Target.GetComponent<Critter>().IsChased = true;
-
-        var direction = _owner.seek.Target.transform.position - _owner.transform.position;
-        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-                                    Quaternion.LookRotation(direction),
-                                    _owner.critter.speed * Time.deltaTime);
-        _owner.transform.Translate(0, 0, Time.deltaTime * _owner.critter.speed);
     }
 
 }

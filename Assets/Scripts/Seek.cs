@@ -30,6 +30,8 @@ public class Seek : MonoBehaviour {
 
     Critter critter;
 
+    public GameObject water;
+
     private void Start()
     {
         critter = GetComponent<Critter>();
@@ -64,6 +66,7 @@ public class Seek : MonoBehaviour {
 
     void FindVisibleTargets()
     {
+
         visibleTargets.Clear();
         Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
         for (int i = 0; i < targetInViewRadius.Length; i++)
@@ -72,12 +75,13 @@ public class Seek : MonoBehaviour {
             Vector3 direction = (target2.transform.position - transform.position).normalized;
             if (target2.transform.root.GetComponent<Critter>())
             {
-                if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 1.0f) 
+                if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 3.0f) 
                     && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
                 {
                     visibleTargets.Add(target2.transform.root.gameObject);
                 }
             }
+            if(target2.layer == LayerMask.NameToLayer("Water")) { water = target2; } else { water = null; }
         }
     }
 
@@ -96,6 +100,7 @@ public class Seek : MonoBehaviour {
         }
         return tempTarget;
     }
+
     public GameObject GetEnemy()
     {       
         if (Critter.crittersDict.ContainsKey(enemyType))
@@ -125,7 +130,7 @@ public class Seek : MonoBehaviour {
         for (int i = 0; i < visibleTargets.Count; i++)
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
-            if (d < dist && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
+            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
             {
                 dist = d;
                 tempMate = visibleTargets[i];

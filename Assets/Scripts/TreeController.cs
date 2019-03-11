@@ -39,6 +39,7 @@ public class TreeController : MonoBehaviour {
                 GameObject currentChild = transform.GetChild(i).gameObject;
                 currentChild.AddComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             }
+            
             transform.DetachChildren();
             harvested = true;
         }

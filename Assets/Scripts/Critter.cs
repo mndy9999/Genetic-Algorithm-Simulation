@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using FiniteStateMachine;
 
 public class Critter : MonoBehaviour {
@@ -38,7 +39,7 @@ public class Critter : MonoBehaviour {
 
     [HideInInspector] public Vector3 initialSize;
 
-    public bool isChased;
+    public bool isAlarmed;
     public bool isAttacked;
     public bool isVisible;
 
@@ -53,7 +54,7 @@ public class Critter : MonoBehaviour {
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
         availableBehaviours = new List<string>();
-        isChased = false;
+        isAlarmed = false;
         isAttacked = false;
         isVisible = true;
 
@@ -90,7 +91,11 @@ public class Critter : MonoBehaviour {
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
             availableBehaviours.Add(Behaviours.behaviours[i]);
-        }
+        }       
+    }
+    public void SetupCritter()
+    {
+        if (availableBehaviours.Contains(AI_Swim.name)) { GetComponent<NavMeshAgent>().areaMask += LayerMask.NameToLayer("Water"); }
     }
 
     void UpdateSpeed()
@@ -106,7 +111,7 @@ public class Critter : MonoBehaviour {
     }   
     void UpdateFOV()
     {
-        if (isChased) { viewAngle = 360; }
+        if (isAlarmed) { viewAngle = 360; }
         else { viewAngle = defaultViewAngle; }
     }
     void UpdateLifeStage()
@@ -137,10 +142,10 @@ public class Critter : MonoBehaviour {
         get { return canBreed; }
         set { canBreed = value; }
     }
-    public bool IsChased
+    public bool IsAlarmed
     {
-        get { return isChased; }
-        set { isChased = value; }
+        get { return isAlarmed; }
+        set { isAlarmed = value; }
     }
     public bool IsAttacked
     {

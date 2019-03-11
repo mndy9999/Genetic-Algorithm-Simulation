@@ -44,8 +44,11 @@ public class AI_Evade : State<AI>
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy()) { Evade(_owner); }
-        else { _owner.critter.IsChased = false; _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if (_owner.CanSeeEnemy()) {
+            if (_owner.CanSeeWater() && _owner.critter.availableBehaviours.Contains(AI_Swim.name)){ _owner.stateMachine.ChangeState(AI_Swim.instance); }
+            Evade(_owner);
+        }
+        else { _owner.critter.IsAlarmed = false; _owner.stateMachine.ChangeState(AI_Wander.instance); }
     }
 
     void Evade(AI _owner)
