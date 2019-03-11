@@ -34,10 +34,11 @@ public class AI_Startle : State<AI>
     {
         Debug.Log("Entering Starle State");
         _owner.animator.Play("ShowOff");      //play animation when entering state
-        var direction = _owner.seek.Target.transform.position - _owner.transform.position;
-        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-                            Quaternion.LookRotation(direction),
-                            _owner.critter.speed * Time.deltaTime);
+        if (Random.Range(0, 10) < _owner.critter.threatPoints)
+        {
+            _owner.seek.Enemy.GetComponent<Seek>().Enemy = _owner.gameObject;
+            _owner.critter.threatPoints += 0.5f;
+        }
     }
 
     public override void ExitState(AI _owner)
@@ -50,7 +51,15 @@ public class AI_Startle : State<AI>
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        //else { _owner.StartCoroutine(Startle()); }
+        else if(!_owner.CanSeeEnemy()){ _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if (_owner.CanSeeEnemy())
+        {
+            var direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
+            _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                                Quaternion.LookRotation(direction),
+                                _owner.critter.speed * Time.deltaTime);
+        }
+        
     }
 
 }

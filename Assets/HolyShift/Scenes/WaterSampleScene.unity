@@ -4262,6 +4262,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 0
@@ -6448,6 +6449,7 @@ MonoBehaviour:
   runSpeed: 2
   walkSpeed: 2
   speed: 3
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -7120,6 +7122,7 @@ MonoBehaviour:
   runSpeed: 2
   walkSpeed: 2
   speed: 3
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -8675,6 +8678,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2
   speed: 0
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 0
@@ -9607,6 +9611,7 @@ MonoBehaviour:
   runSpeed: 2
   walkSpeed: 2
   speed: 3
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -12096,6 +12101,7 @@ MonoBehaviour:
   runSpeed: 2
   walkSpeed: 2
   speed: 3
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -13138,7 +13144,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845843774}
   m_LocalRotation: {x: -0, y: 0.5545132, z: -0, w: 0.8321749}
-  m_LocalPosition: {x: -17.86, y: 0.09, z: 57.72}
+  m_LocalPosition: {x: -19.85, y: 0.09, z: 56.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1068490108}
@@ -13189,6 +13195,7 @@ MonoBehaviour:
   runSpeed: 3
   walkSpeed: 2
   speed: 5
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 70
   viewAngle: 90
@@ -14153,6 +14160,7 @@ MonoBehaviour:
   runSpeed: 2
   walkSpeed: 2
   speed: 3
+  threatPoints: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90

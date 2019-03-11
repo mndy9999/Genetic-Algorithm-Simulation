@@ -26,7 +26,7 @@ public class Critter : MonoBehaviour {
     [HideInInspector] public float walkSpeed = 2f;
     public float speed;
 
-
+    public float threatPoints;
     
     [HideInInspector] public float viewRadius = 10f;
     [HideInInspector] public float defaultViewAngle = 90f;
@@ -59,6 +59,8 @@ public class Critter : MonoBehaviour {
         isAlarmed = false;
         isAttacked = false;
         isVisible = true;
+
+        threatPoints = Random.Range(0, 10);
 
         initialSize = new Vector3(0.2f, 0.2f, 0.2f);
         time = Time.time;
