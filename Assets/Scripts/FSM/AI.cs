@@ -73,10 +73,10 @@ public class AI : MonoBehaviour {
 
     public bool IsCloseEnough()
     {
-        if(!GetComponent<MeshCollider>())
-            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < (GetComponentInChildren<MeshCollider>().bounds.size + seek.Target.transform.GetComponentInChildren<MeshCollider>().bounds.size).x/2+0.2f;
+        if (!GetComponent<MeshCollider>())
+            return Vector3.Distance(GetComponentInChildren<MeshCollider>().bounds.center, seek.Target.GetComponentInChildren<MeshCollider>().bounds.center) < (GetComponentInChildren<MeshCollider>().bounds.size + seek.Target.transform.GetComponentInChildren<MeshCollider>().bounds.size).x / 2 + 0.2f;
         else
-            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < (GetComponent<MeshCollider>().bounds.size + seek.Target.transform.GetComponent<MeshCollider>().bounds.size).x/2;
+            return Vector3.Distance(this.transform.position, seek.Target.transform.position) < (GetComponent<MeshCollider>().bounds.size + seek.Target.transform.GetComponent<MeshCollider>().bounds.size).x / 2;
     }
 
 

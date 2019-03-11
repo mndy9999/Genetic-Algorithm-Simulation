@@ -2706,7 +2706,7 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isChased: 0
+  isAlarmed: 0
   isAttacked: 0
   isVisible: 0
   canBreed: 0
@@ -4085,7 +4085,7 @@ MonoBehaviour:
   mate: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
-  canSeeWater: 0
+  water: {fileID: 0}
 --- !u!114 &904666829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4116,7 +4116,7 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isChased: 0
+  isAlarmed: 0
   isAttacked: 0
   isVisible: 0
   canBreed: 1
@@ -4198,7 +4198,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -5505,7 +5505,7 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isChased: 0
+  isAlarmed: 0
   isAttacked: 0
   isVisible: 0
   canBreed: 0
@@ -6121,7 +6121,7 @@ MonoBehaviour:
   mate: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
-  canSeeWater: 0
+  water: {fileID: 0}
 --- !u!114 &1357725836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6152,7 +6152,7 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isChased: 0
+  isAlarmed: 0
   isAttacked: 0
   isVisible: 0
   canBreed: 1
@@ -8528,7 +8528,7 @@ MonoBehaviour:
   availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isChased: 0
+  isAlarmed: 0
   isAttacked: 0
   isVisible: 0
   canBreed: 0
@@ -8553,7 +8553,7 @@ MonoBehaviour:
   mate: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
-  canSeeWater: 0
+  water: {fileID: 0}
 --- !u!114 &1845843780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8599,7 +8599,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 5
+  m_WalkableMask: 13
   m_ObstacleAvoidanceType: 4
 --- !u!1 &1858016211
 GameObject:

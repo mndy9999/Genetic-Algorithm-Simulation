@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FiniteStateMachine;
+using System.Collections;
 
 public class AI_Swim : State<AI>
 {
@@ -33,7 +34,7 @@ public class AI_Swim : State<AI>
     {
         Debug.Log("Entering Swim State");
         _owner.animator.Play("Run");      //play animation when entering state
-        _owner.agent.SetDestination(_owner.seek.water.transform.position);
+        _owner.agent.SetDestination(_owner.seek.water.GetComponent<Collider>().bounds.center);
     }
 
     public override void ExitState(AI _owner)
@@ -45,17 +46,14 @@ public class AI_Swim : State<AI>
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (!_owner.CanSeeEnemy())
-        {
-            _owner.critter.IsAlarmed = false; _owner.stateMachine.ChangeState(AI_Wander.instance);                                                                                                         
-            Swim(_owner);
-        }
-        else { _owner.critter.IsAlarmed = false; _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if(!_owner.CanSeeEnemy()) _owner.StartCoroutine(ChangeState(_owner));
+       
     }
 
-    void Swim(AI _owner)
+    IEnumerator ChangeState(AI _owner)
     {
-        Debug.Log("swimming");
-
+        yield return new WaitForSeconds(3);
+        _owner.critter.IsAlarmed = false;
+        _owner.stateMachine.ChangeState(AI_Wander.instance);
     }
 }

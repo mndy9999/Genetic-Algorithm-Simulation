@@ -36,6 +36,7 @@ public class AI_Attack : State<AI>
         _owner.seek.Target.GetComponent<Critter>().IsAlarmed = false;
         _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
         if(_owner.seek.Target.GetComponent<Seek>()) _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
+
     }
 
     public override void ExitState(AI _owner)
@@ -78,12 +79,9 @@ public class AI_Attack : State<AI>
         _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                     Quaternion.LookRotation(direction),
                                     _owner.critter.speed * Time.deltaTime);
-
         //start playing the animation
         _owner.animator.Play("Attack");
-        _owner.seek.Target.GetComponent<Critter>().Health -= attackPower;
-        
-        
+        _owner.seek.Target.GetComponent<Critter>().Health -= attackPower;                
     }
 
 }

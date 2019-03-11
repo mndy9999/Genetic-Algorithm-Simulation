@@ -66,7 +66,7 @@ public class Seek : MonoBehaviour {
 
     void FindVisibleTargets()
     {
-
+        water = null;
         visibleTargets.Clear();
         Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
         for (int i = 0; i < targetInViewRadius.Length; i++)
@@ -81,7 +81,7 @@ public class Seek : MonoBehaviour {
                     visibleTargets.Add(target2.transform.root.gameObject);
                 }
             }
-            if(target2.layer == LayerMask.NameToLayer("Water")) { water = target2; } else { water = null; }
+            if(target2.layer == LayerMask.NameToLayer("Water")) { water = target2; }
         }
     }
 
