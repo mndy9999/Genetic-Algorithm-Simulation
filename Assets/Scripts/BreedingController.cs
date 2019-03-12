@@ -14,8 +14,8 @@ public class BreedingController : MonoBehaviour {
     {
         Debug.Log("creating offspring");
         Vector3 pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) + transform.position;
-        offspring = Instantiate(gameObject, pos, Quaternion.identity);
-        offspring.GetComponent<Critter>().isChild = true;
+        offspring = Instantiate(model, pos, Quaternion.identity);
+        offspring.AddComponent<Critter>().isChild = true;
     }
 
     public void Crossover()
@@ -25,16 +25,19 @@ public class BreedingController : MonoBehaviour {
             float rand = (Random.Range(0, 130));
             if (rand < 50 && mother.availableBehaviours.Contains(Behaviours.behaviours[i]))
             {
+                Debug.Log("mother");
                 offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
             }
             else if (rand >= 50 && rand < 100 && father.availableBehaviours.Contains(Behaviours.behaviours[i]))
             {
+                Debug.Log("father");
                 offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
             }
             else if(rand >=100 && rand < 130)
-            {
+            {                
                 if (!mother.availableBehaviours.Contains(Behaviours.behaviours[i]) && !father.availableBehaviours.Contains(Behaviours.behaviours[i]))
                 {
+                    Debug.Log("mutation");
                     offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
                 }
             }

@@ -79,7 +79,7 @@ public class Critter : MonoBehaviour {
 
         canBreed = true;
 
-       // if (!isChild) { PopulateAvailableBehaviours(); }
+        if (!isChild) { PopulateAvailableBehaviours(); }
 
     }
 

@@ -9,7 +9,6 @@ public class HerbivoreController : MonoBehaviour {
     private void Awake()
     {
         critter = GetComponent<Critter>();
-        critter.availableBehaviours = Behaviours.behaviours;
         critter.availableTargetTypes = Behaviours.herbivoreTargets;
         critter.Energy = 100;
         critter.Health = 100;
