@@ -13,9 +13,11 @@ public class Seek : MonoBehaviour {
     [SerializeField]
     GameObject target = null;
     [SerializeField]
-    GameObject enemy = null;
+    GameObject enemy = null;   
     [SerializeField]
     GameObject mate = null;
+    [SerializeField]
+    GameObject opponent = null;
 
     GameObject lastKnownTarget = null;
     GameObject lastKnownEnemy= null;
@@ -44,7 +46,8 @@ public class Seek : MonoBehaviour {
 
         target = GetTarget();
         enemy = GetEnemy();
-        mate = GetMate();       
+        mate = GetMate();
+        opponent = GetOpponent();
 
     }
     private void Update()
@@ -55,6 +58,8 @@ public class Seek : MonoBehaviour {
         if(!critter.IsAttacked) target = GetTarget();
         enemy = GetEnemy();
         mate = GetMate();
+        opponent = GetOpponent();
+        if(opponent != null) { target = opponent; }
         if(mate != null) { target = mate; }
         
 
@@ -131,6 +136,22 @@ public class Seek : MonoBehaviour {
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
             if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
+            {
+                dist = d;
+                tempMate = visibleTargets[i];
+            }
+        }
+        return tempMate;
+    }
+
+    public GameObject GetOpponent()
+    {
+        tempMate = null;
+        float dist = Mathf.Infinity;
+        for (int i = 0; i < visibleTargets.Count; i++)
+        {
+            float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
+            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender == visibleTargets[i].GetComponent<Critter>().gender && critter.canChallenge && visibleTargets[i].GetComponent<Critter>().canChallenge && critter.gameObject != visibleTargets[i].gameObject)
             {
                 dist = d;
                 tempMate = visibleTargets[i];

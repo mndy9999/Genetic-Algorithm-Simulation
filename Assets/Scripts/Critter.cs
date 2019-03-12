@@ -9,7 +9,9 @@ public class Critter : MonoBehaviour {
     public string critterType = "Vegetable";
     public string name;
 
-    public enum Gender { Male, Female };
+    [SerializeField] string rank;
+
+    public enum Gender { Female, Male };
     public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder };
     public Stage lifeStage;
@@ -20,13 +22,15 @@ public class Critter : MonoBehaviour {
 
     public float age = 0;
 
-    [HideInInspector] public float energyPerSecond = 1f;
+    [HideInInspector] public float energyPerSecond = 0.5f;
 
     [HideInInspector] public float runSpeed = 5f;
     [HideInInspector] public float walkSpeed = 2f;
     public float speed;
 
     public float threatPoints;
+    public float rankPoints = 0;
+    public float fitnessScore;
     
     [HideInInspector] public float viewRadius = 10f;
     [HideInInspector] public float defaultViewAngle = 90f;
@@ -42,9 +46,11 @@ public class Critter : MonoBehaviour {
     public bool isAlarmed;
     public bool isAttacked;
     public bool isVisible;
+    public bool isChallenged;
 
     public bool canAlarm;
     public bool canBreed;
+    public bool canChallenge;
 
     [HideInInspector] public bool breedTimer;
     [HideInInspector] public float time;
@@ -59,6 +65,7 @@ public class Critter : MonoBehaviour {
         isAlarmed = false;
         isAttacked = false;
         isVisible = true;
+        canChallenge = true;
 
         threatPoints = Random.Range(0, 10);
 
@@ -190,6 +197,11 @@ public class Critter : MonoBehaviour {
     {
         get { return (int)age; }
         set { age = value; }
+    }
+    public string Rank
+    {
+        get { return rank; }
+        set { rank = value; }
     }
     #endregion
 }

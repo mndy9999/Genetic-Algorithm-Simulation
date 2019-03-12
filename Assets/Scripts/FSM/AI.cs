@@ -97,6 +97,11 @@ public class AI : MonoBehaviour {
         return seek.Target.GetComponent<Critter>().critterType == critter.critterType && seek.Target.GetComponent<Critter>().gender != critter.gender;
     }
 
+    public bool TargetIsOpponent()
+    {
+        return seek.Target.GetComponent<Critter>().critterType == critter.critterType && seek.Target.GetComponent<Critter>().gender == critter.gender;
+    }
+
     public bool IsDead()
     {
         return !critter.IsAlive;
@@ -116,4 +121,10 @@ public class AI : MonoBehaviour {
     {
         get { return CurrentState; }
     }
+    
+    public IEnumerator WaitFor(float s)
+    {
+        yield return new WaitForSeconds(s);
+    }
+
 }

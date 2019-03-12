@@ -267,7 +267,6 @@
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_CallMate.cs" />
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_Impress.cs" />
     <Compile Include="Assets\Scripts\FSM\Breeding\AI_PairUp.cs" />
-    <Compile Include="Assets\Scripts\FSM\Breeding\AI_Watch.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Dig.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Drink.cs" />
     <Compile Include="Assets\Scripts\FSM\Eating States\AI_Eat.cs" />
@@ -284,12 +283,14 @@
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Fight.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Submit.cs" />
     <Compile Include="Assets\Scripts\FSM\Social System\AI_Threat.cs" />
+    <Compile Include="Assets\Scripts\FSM\Social System\AI_Watch.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
     <Compile Include="Assets\Scripts\HerbivoreController.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\SpawnCreature.cs" />
     <Compile Include="Assets\Scripts\TreeController.cs" />
     <Compile Include="Assets\Scripts\VegetablesController.cs" />
+    <Compile Include="Assets\SocialRankManager.cs" />
     <None Include="Assets\HolyShift\readme.txt" />
     <None Include="Assets\AIBehavior\Documentation\_ReadMe.txt" />
     <None Include="Assets\AIBehavior\Extras\UFPS\UFPS_ReadMe.txt" />

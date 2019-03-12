@@ -2199,8 +2199,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284287695}
-  m_LocalRotation: {x: 0, y: 0.000000063325004, z: 0, w: 1}
-  m_LocalPosition: {x: -14.88, y: -2.8600001, z: 60.629997}
+  m_LocalRotation: {x: -0.1899878, y: 0.28479514, z: 0.05768863, w: 0.93779975}
+  m_LocalPosition: {x: -17.265026, y: -2.8743286, z: 58.532207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4252,6 +4252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Vegetable
   name: 
+  rank: 
   gender: 0
   lifeStage: 0
   health: 0
@@ -4263,6 +4264,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 0
@@ -4272,8 +4275,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 0
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!23 &550888305
@@ -6361,6 +6366,7 @@ GameObject:
   - component: {fileID: 904666825}
   - component: {fileID: 904666833}
   - component: {fileID: 904666834}
+  - component: {fileID: 904666835}
   m_Layer: 9
   m_Name: Female_Sheep
   m_TagString: Untagged
@@ -6422,6 +6428,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy: {fileID: 0}
   mate: {fileID: 0}
+  opponent: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
   water: {fileID: 0}
@@ -6439,6 +6446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Herbivore
   name: 
+  rank: 
   gender: 1
   lifeStage: 2
   health: 100
@@ -6450,6 +6458,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -6459,8 +6469,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 1
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!114 &904666830
@@ -6552,6 +6564,17 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 9
   m_ObstacleAvoidanceType: 4
+--- !u!114 &904666835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904666824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f580ceb92e65c43ac7a6e652110a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &910826829
 GameObject:
   m_ObjectHideFlags: 0
@@ -7095,6 +7118,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy: {fileID: 0}
   mate: {fileID: 0}
+  opponent: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
   water: {fileID: 0}
@@ -7112,6 +7136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Herbivore
   name: 
+  rank: 
   gender: 1
   lifeStage: 2
   health: 100
@@ -7123,6 +7148,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -7132,8 +7159,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 1
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1006731151
@@ -8668,6 +8697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Dirt
   name: 
+  rank: 
   gender: 0
   lifeStage: 0
   health: 100
@@ -8679,6 +8709,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 0
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 0
@@ -8688,8 +8720,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 0
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!1001 &1235874739
@@ -9523,13 +9557,14 @@ GameObject:
   - component: {fileID: 1357725833}
   - component: {fileID: 1357725832}
   - component: {fileID: 1357725840}
+  - component: {fileID: 1357725841}
   m_Layer: 9
   m_Name: Male_sheep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &1357725832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9543,7 +9578,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 1
 --- !u!114 &1357725833
 MonoBehaviour:
@@ -9584,6 +9619,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy: {fileID: 0}
   mate: {fileID: 0}
+  opponent: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
   water: {fileID: 0}
@@ -9601,8 +9637,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Herbivore
   name: 
-  gender: 0
-  lifeStage: 2
+  rank: 
+  gender: 1
+  lifeStage: 0
   health: 100
   energy: 100
   resource: 100
@@ -9612,6 +9649,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -9621,8 +9660,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 1
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1357725837
@@ -9672,15 +9713,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357725831}
-  m_LocalRotation: {x: -0, y: 0.6543843, z: -0, w: -0.75616217}
-  m_LocalPosition: {x: -12.43, y: 0.171, z: 71.14}
+  m_LocalRotation: {x: -0, y: 0.96057975, z: -0, w: 0.27800462}
+  m_LocalPosition: {x: -17.42, y: 0.171, z: 64.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591286963}
   - {fileID: 2067438155}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 278.254, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 147.718, z: 0}
 --- !u!195 &1357725840
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -9702,6 +9743,17 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1357725841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357725831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36f580ceb92e65c43ac7a6e652110a5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1372659919
 GameObject:
   m_ObjectHideFlags: 0
@@ -12074,6 +12126,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy: {fileID: 0}
   mate: {fileID: 0}
+  opponent: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
   water: {fileID: 0}
@@ -12091,6 +12144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Herbivore
   name: 
+  rank: 
   gender: 1
   lifeStage: 2
   health: 100
@@ -12102,6 +12156,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -12111,8 +12167,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 1
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1659578269
@@ -13185,6 +13243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Carnivore
   name: 
+  rank: 
   gender: 0
   lifeStage: 0
   health: 100
@@ -13196,6 +13255,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 5
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 70
   viewAngle: 90
@@ -13205,8 +13266,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 0
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1845843779
@@ -13226,6 +13289,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy: {fileID: 0}
   mate: {fileID: 0}
+  opponent: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
   water: {fileID: 0}
@@ -14133,6 +14197,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemy: {fileID: 0}
   mate: {fileID: 0}
+  opponent: {fileID: 0}
   visibleTargets: []
   availableTargetsType: []
   water: {fileID: 0}
@@ -14150,6 +14215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   critterType: Herbivore
   name: 
+  rank: 
   gender: 1
   lifeStage: 2
   health: 100
@@ -14161,6 +14227,8 @@ MonoBehaviour:
   walkSpeed: 2
   speed: 3
   threatPoints: 0
+  rankPoints: 0
+  fitnessScore: 0
   viewRadius: 10
   defaultViewAngle: 90
   viewAngle: 90
@@ -14170,8 +14238,10 @@ MonoBehaviour:
   isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
   canAlarm: 0
   canBreed: 1
+  canChallenge: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1948885003
