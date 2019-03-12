@@ -40,6 +40,8 @@ public class AI_Watch : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Watch State");
+        _owner.critter.isChallenged = false;
+        _owner.StopAllCoroutines();
     }
 
     public override void UpdateState(AI _owner)
@@ -51,7 +53,7 @@ public class AI_Watch : State<AI>
     IEnumerator WaitForAnimation(AI _owner)
     {
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }

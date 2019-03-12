@@ -51,9 +51,10 @@ public class AI_Wander : State<AI>
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.critter.isChallenged) { _owner.stateMachine.ChangeState(AI_Watch.instance); }
         else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         else if (_owner.agent.remainingDistance<=_owner.agent.stoppingDistance) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
-        else if(_owner.critter.Energy < 80) { _owner.stateMachine.ChangeState(AI_Laydown.instance); }
+        else if(_owner.critter.Energy < 90) { _owner.stateMachine.ChangeState(AI_Laydown.instance); }
 
     }
 

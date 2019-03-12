@@ -39,6 +39,7 @@ public class AI_Sleep : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Sleep State");
+        _owner.StopAllCoroutines();
     }
 
     public override void UpdateState(AI _owner)

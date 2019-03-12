@@ -39,6 +39,7 @@ public class AI_Rest : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Rest State");
+        _owner.StopAllCoroutines();
     }
 
     public override void UpdateState(AI _owner)

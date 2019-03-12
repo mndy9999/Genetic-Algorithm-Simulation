@@ -36,7 +36,7 @@ public class AI_Threat : State<AI>
         _owner.animator.Play("ShowOff");      //play animation when entering state   
         
         _owner.seek.Target.GetComponent<Critter>().isChallenged = true;
-        _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
+        _owner.seek.Target.GetComponent<Seek>().Opponent = _owner.gameObject;
 
         CalculateRankPoints(_owner);
 
@@ -45,6 +45,7 @@ public class AI_Threat : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Threat State");
+        _owner.StopAllCoroutines();
     }
 
     public override void UpdateState(AI _owner)
@@ -72,12 +73,14 @@ public class AI_Threat : State<AI>
                 //_owner.seek.Enemy = _owner.seek.Target.gameObject;
                 _owner.seek.Target.GetComponent<Critter>().canChallenge = false;
             }
+            
         }
     }
 
     IEnumerator WaitForAnimation(AI _owner)
     {
         yield return new WaitForSeconds(5);
+        
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }

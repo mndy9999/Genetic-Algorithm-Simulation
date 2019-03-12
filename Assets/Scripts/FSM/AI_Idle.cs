@@ -50,5 +50,6 @@ public class AI_Idle : State<AI>
         else if (_owner.critter.isChallenged) { _owner.stateMachine.ChangeState(AI_Watch.instance); }
         else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         else if (_owner.switchState) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if (_owner.critter.Energy < 90) { _owner.stateMachine.ChangeState(AI_Laydown.instance); }
     }
 }

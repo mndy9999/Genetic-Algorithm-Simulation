@@ -39,6 +39,7 @@ public class AI_Laydown : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Laydown State");
+        _owner.StopAllCoroutines();
     }
 
     public override void UpdateState(AI _owner)
@@ -49,7 +50,7 @@ public class AI_Laydown : State<AI>
     IEnumerator WaitForAnimation(AI _owner)
     {
         yield return new WaitForSeconds(_owner.animator.GetCurrentAnimatorStateInfo(0).length + _owner.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        if (_owner.critter.Energy > 30 && _owner.critter.Energy < 80) { _owner.stateMachine.ChangeState(AI_Rest.instance); }
+        if (_owner.critter.Energy > 30) { _owner.stateMachine.ChangeState(AI_Rest.instance); }
         if (_owner.critter.Energy < 30) { _owner.stateMachine.ChangeState(AI_Sleep.instance); }
     }
 }

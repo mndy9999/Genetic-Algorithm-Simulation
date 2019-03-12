@@ -175,7 +175,11 @@ public class Seek : MonoBehaviour {
         get { return mate; }
         set { mate = value; }
     }
-
+    public GameObject Opponent
+    {
+        get { return opponent; }
+        set { opponent = value; }
+    }
     public GameObject LastKnownTarget
     {
         get { return lastKnownTarget; }
