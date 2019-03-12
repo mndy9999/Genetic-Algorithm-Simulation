@@ -16,7 +16,15 @@ public class Behaviours
         AI_Dig.name,
         AI_Evade.name,
         AI_Swim.name,
+        AI_Threat.name,
+        AI_Startle.name,
+        AI_PlayDead.name,
+        AI_Alarm.name,
         AI_Breed.name,
+        AI_Getup.name,
+        AI_Laydown.name,
+        AI_Sleep.name,
+        AI_Rest.name,
         AI_Dead.name
     };
 

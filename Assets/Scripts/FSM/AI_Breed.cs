@@ -3,6 +3,8 @@ using FiniteStateMachine;
 
 public class AI_Breed : State<AI>
 {
+    BreedingController breeding;
+
     float time;
     private static AI_Breed _instance;
     private static string _name = "breed";
@@ -34,6 +36,21 @@ public class AI_Breed : State<AI>
     {
         Debug.Log("Entering Breed State");
         _owner.animator.Play("Jump");      //play animation when entering state
+        breeding = _owner.GetComponent<BreedingController>();
+        if (breeding)
+        {
+            if (_owner.critter.gender == Critter.Gender.Female)
+            {
+                breeding.mother = _owner.critter;
+                breeding.father = _owner.seek.Target.GetComponent<Critter>();
+            }
+            else
+            {
+                breeding.father = _owner.critter;
+                breeding.mother = _owner.seek.Target.GetComponent<Critter>();
+            }
+        }
+
         time = Time.time;
     }
 
@@ -47,6 +64,13 @@ public class AI_Breed : State<AI>
     public override void UpdateState(AI _owner)
     {        
         if(Time.time >= time + 4.6) {
+            breeding = _owner.GetComponent<BreedingController>();
+            if (breeding)
+            {
+                Debug.Log("hi");
+                breeding.CreateOffspring();
+                breeding.Crossover();
+            }
             _owner.critter.BreedTimer = true;
             _owner.stateMachine.ChangeState(AI_Idle.instance);
         }

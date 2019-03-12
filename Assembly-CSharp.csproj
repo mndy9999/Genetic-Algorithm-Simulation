@@ -238,6 +238,7 @@
     <Compile Include="Assets\Scripts\AStar\GridSetup.cs" />
     <Compile Include="Assets\Scripts\AStar\Node.cs" />
     <Compile Include="Assets\Scripts\Behaviours.cs" />
+    <Compile Include="Assets\Scripts\BreedingController.cs" />
     <Compile Include="Assets\Scripts\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CarnivoreController.cs" />

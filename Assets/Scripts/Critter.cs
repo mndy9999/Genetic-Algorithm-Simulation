@@ -52,6 +52,8 @@ public class Critter : MonoBehaviour {
     public bool canBreed;
     public bool canChallenge;
 
+    public bool isChild;
+
     [HideInInspector] public bool breedTimer;
     [HideInInspector] public float time;
 
@@ -74,9 +76,11 @@ public class Critter : MonoBehaviour {
 
         speed = runSpeed;
         viewAngle = defaultViewAngle;
-        if (critterType == "Herbivore") PopulateAvailableBehaviours();
 
         canBreed = true;
+
+       // if (!isChild) { PopulateAvailableBehaviours(); }
+
     }
 
     private void OnDestroy()
@@ -101,7 +105,8 @@ public class Critter : MonoBehaviour {
     {
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
-            availableBehaviours.Add(Behaviours.behaviours[i]);
+            if(Random.Range(0,10) < 3)
+                availableBehaviours.Add(Behaviours.behaviours[i]);
         }       
     }
     public void SetupCritter()

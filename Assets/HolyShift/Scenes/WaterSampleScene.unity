@@ -2199,8 +2199,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284287695}
-  m_LocalRotation: {x: -0.1899878, y: 0.28479514, z: 0.05768863, w: 0.93779975}
-  m_LocalPosition: {x: -17.265026, y: -2.8743286, z: 58.532207}
+  m_LocalRotation: {x: -0.12239826, y: 0.45678127, z: 0.06361022, w: 0.8788192}
+  m_LocalPosition: {x: -20.22537, y: -3.4024882, z: 59.220512}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4279,6 +4279,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 0
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!23 &550888305
@@ -6367,6 +6368,7 @@ GameObject:
   - component: {fileID: 904666833}
   - component: {fileID: 904666834}
   - component: {fileID: 904666835}
+  - component: {fileID: 904666836}
   m_Layer: 9
   m_Name: Female_Sheep
   m_TagString: Untagged
@@ -6406,7 +6408,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 904666824}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b83a6dab2821d04fa37e4ad4d7c2bba, type: 3}
   m_Name: 
@@ -6447,7 +6449,7 @@ MonoBehaviour:
   critterType: Herbivore
   name: 
   rank: 
-  gender: 1
+  gender: 0
   lifeStage: 2
   health: 100
   energy: 100
@@ -6473,6 +6475,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 1
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!114 &904666830
@@ -6575,6 +6578,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f580ceb92e65c43ac7a6e652110a5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &904666836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904666824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a897fd0cab79522499e19dfe13afdbe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mother: {fileID: 0}
+  father: {fileID: 0}
+  model: {fileID: 904666824}
 --- !u!1 &910826829
 GameObject:
   m_ObjectHideFlags: 0
@@ -7096,7 +7113,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1006731143}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b83a6dab2821d04fa37e4ad4d7c2bba, type: 3}
   m_Name: 
@@ -7163,6 +7180,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 1
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1006731151
@@ -8724,6 +8742,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 0
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!1001 &1235874739
@@ -9597,7 +9616,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357725831}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b83a6dab2821d04fa37e4ad4d7c2bba, type: 3}
   m_Name: 
@@ -9639,7 +9658,7 @@ MonoBehaviour:
   name: 
   rank: 
   gender: 1
-  lifeStage: 0
+  lifeStage: 2
   health: 100
   energy: 100
   resource: 100
@@ -9664,6 +9683,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 1
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1357725837
@@ -12104,7 +12124,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1659578261}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b83a6dab2821d04fa37e4ad4d7c2bba, type: 3}
   m_Name: 
@@ -12171,6 +12191,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 1
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1659578269
@@ -13270,6 +13291,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 0
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1845843779
@@ -14175,7 +14197,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1948884995}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b83a6dab2821d04fa37e4ad4d7c2bba, type: 3}
   m_Name: 
@@ -14242,6 +14264,7 @@ MonoBehaviour:
   canAlarm: 0
   canBreed: 1
   canChallenge: 0
+  isChild: 0
   breedTimer: 0
   time: 0
 --- !u!114 &1948885003
