@@ -1,16 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using FiniteStateMachine;
 
-public class AI_Impress : MonoBehaviour {
+public class AI_Impress : State<AI>
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private static AI_Impress _instance;
+    private static string _name = "impress";
+    private AI_Impress()
+    {
+        if (_instance != null)
+            return;
+        _instance = this;
+    }
+    //get instance of the state
+    public static AI_Impress instance
+    {
+        get
+        {
+            //if there is no insteance, create one
+            if (_instance == null)
+                new AI_Impress();     //create one
+            return _instance;
+        }
+    }
+
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
+    public override void EnterState(AI _owner)
+    {
+        Debug.Log("Entering Impress State");
+        _owner.animator.Play("ShowOff");      //play animation when entering state
+    }
+
+    public override void ExitState(AI _owner)
+    {
+        Debug.Log("Exiting Impress State");
+    }
+
+    public override void UpdateState(AI _owner)
+    {
+
+    }
 }

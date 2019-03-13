@@ -1,16 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using FiniteStateMachine;
 
-public class AI_CallMate : MonoBehaviour {
+public class AI_CallMate : State<AI>
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private static AI_CallMate _instance;
+    private static string _name = "call_mate";
+    private AI_CallMate()
+    {
+        if (_instance != null)
+            return;
+        _instance = this;
+    }
+    //get instance of the state
+    public static AI_CallMate instance
+    {
+        get
+        {
+            //if there is no insteance, create one
+            if (_instance == null)
+                new AI_CallMate();     //create one
+            return _instance;
+        }
+    }
+
+    public static string name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
+    public override void EnterState(AI _owner)
+    {
+        Debug.Log("Entering Call Mate State");
+        _owner.animator.Play("Bee");      //play animation when entering state
+    }
+
+    public override void ExitState(AI _owner)
+    {
+        Debug.Log("Exiting Call Mate State");
+    }
+
+    public override void UpdateState(AI _owner)
+    {
+
+    }
 }

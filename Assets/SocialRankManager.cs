@@ -18,4 +18,12 @@ public class SocialRankManager : MonoBehaviour {
         critter.fitnessScore /= 7;
     }
 
+    void UpdateRanks()
+    {
+        foreach(Critter c in Critter.crittersDict[critter.critterType])
+        {
+
+        }
+    }
+    
 }
