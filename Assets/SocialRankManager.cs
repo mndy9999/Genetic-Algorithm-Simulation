@@ -8,21 +8,58 @@ public class SocialRankManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        critter = GetComponent<Critter>();
         CalculateFitness();
+        UpdateRanks();
+    }
+
+    private void Update()
+    {
+        CalculateFitness();
+        UpdateRanks();
+        //DebugRanks();
+    }
+
+    void DebugRanks()
+    {
+        foreach (string critterType in Critter.crittersDict.Keys)
+        {
+            Debug.Log(critterType);
+            foreach (Critter c in Critter.crittersDict[critterType])
+            {
+                Debug.Log(c.name + "   " + c.fitnessScore);
+            }
+        }
     }
 
     void CalculateFitness()
     {
-        critter.fitnessScore = critter.Age + critter.walkSpeed + critter.runSpeed + critter.threatPoints + critter.availableBehaviours.Count + (int)critter.gender + (int)critter.lifeStage;
-        critter.fitnessScore /= 7;
+        foreach (string critterType in Critter.crittersDict.Keys)
+        {
+            foreach(Critter c in Critter.crittersDict[critterType])
+            {
+                critter = c.GetComponent<Critter>();
+                critter.fitnessScore = critter.Age + critter.walkSpeed + critter.runSpeed + critter.threatPoints + critter.availableBehaviours.Count + (int)critter.gender + (int)critter.lifeStage;
+                critter.fitnessScore /= 7;
+            }            
+        }
     }
 
     void UpdateRanks()
     {
-        foreach(Critter c in Critter.crittersDict[critter.critterType])
-        {
-
+        foreach (string critterType in Critter.crittersDict.Keys) {
+            Critter temp;
+            for (int i = 0; i < Critter.crittersDict[critterType].Count; i++)
+            {
+                for (int j = 0; j < Critter.crittersDict[critterType].Count - 1; j++)
+                {
+                    if (Critter.crittersDict[critterType][j+1].GetComponent<Critter>().fitnessScore > Critter.crittersDict[critterType][j].GetComponent<Critter>().fitnessScore)
+                    {
+                        temp = Critter.crittersDict[critterType][j];
+                        Critter.crittersDict[critterType][j] = Critter.crittersDict[critterType][j + 1];
+                        Critter.crittersDict[critterType][j + 1] = temp;
+                    }
+            }
+            }
         }
     }
     
