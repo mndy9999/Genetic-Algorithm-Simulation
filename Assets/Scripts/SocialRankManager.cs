@@ -16,7 +16,7 @@ public class SocialRankManager : MonoBehaviour {
     {
         CalculateFitness();
         UpdateRanks();
-        DebugRanks();
+        //DebugRanks();
     }
 
     void DebugRanks()

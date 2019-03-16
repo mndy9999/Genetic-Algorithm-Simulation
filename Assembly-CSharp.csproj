@@ -222,7 +222,6 @@
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\PlatformInputController.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonCamera.cs" />
     <Compile Include="Assets\AIBehavior\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.cs" />
-    <Compile Include="Assets\CheckEnvironment.cs" />
     <Compile Include="Assets\HolyShift\Scripts\CheckForStandardAssets.cs" />
     <Compile Include="Assets\Low Poly Fruits\resources\fruits_tester.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
@@ -242,10 +241,10 @@
     <Compile Include="Assets\Scripts\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CarnivoreController.cs" />
+    <Compile Include="Assets\Scripts\CheckEnvironment.cs" />
     <Compile Include="Assets\Scripts\Critter.cs" />
     <Compile Include="Assets\Scripts\CrittersUIController.cs" />
     <Compile Include="Assets\Scripts\DirtController.cs" />
-    <Compile Include="Assets\Scripts\DirtPileController.cs" />
     <Compile Include="Assets\Scripts\Flocking\AlignmentBehavior.cs" />
     <Compile Include="Assets\Scripts\Flocking\AvoidanceBehavior.cs" />
     <Compile Include="Assets\Scripts\Flocking\CohesionBehavior.cs" />
@@ -288,10 +287,10 @@
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
     <Compile Include="Assets\Scripts\HerbivoreController.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
+    <Compile Include="Assets\Scripts\SocialRankManager.cs" />
     <Compile Include="Assets\Scripts\SpawnCreature.cs" />
     <Compile Include="Assets\Scripts\TreeController.cs" />
     <Compile Include="Assets\Scripts\VegetablesController.cs" />
-    <Compile Include="Assets\SocialRankManager.cs" />
     <None Include="Assets\HolyShift\readme.txt" />
     <None Include="Assets\AIBehavior\Documentation\_ReadMe.txt" />
     <None Include="Assets\AIBehavior\Extras\UFPS\UFPS_ReadMe.txt" />

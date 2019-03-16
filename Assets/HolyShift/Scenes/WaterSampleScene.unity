@@ -7798,7 +7798,7 @@ Prefab:
     - target: {fileID: 114909987566964532, guid: 4d5f137a9e68f7540a00203e4b2b7b99,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114725129805099564, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
@@ -8600,7 +8600,7 @@ MonoBehaviour:
   isVisible: 0
   isChallenged: 0
   canAlarm: 0
-  canBreed: 1
+  canBreed: 0
   canChallenge: 0
   isChild: 0
   breedTimer: 0
@@ -8653,7 +8653,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357725831}
   m_LocalRotation: {x: -0, y: 0.96057975, z: -0, w: 0.27800462}
-  m_LocalPosition: {x: -16.538, y: 0.171, z: 63.004}
+  m_LocalPosition: {x: -14.23, y: 0.171, z: 64.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591286963}
