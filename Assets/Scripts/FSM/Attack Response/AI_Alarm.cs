@@ -6,6 +6,7 @@ public class AI_Alarm : State<AI>
 {
     private static AI_Alarm _instance;
     private static string _name = "alarm";
+
     private AI_Alarm()
     {
         if (_instance != null)
@@ -29,6 +30,9 @@ public class AI_Alarm : State<AI>
         get { return _name; }
         set { _name = value; }
     }
+
+    private float weight = 1;
+    public override float GetWeight(AI _owner) { return weight; }
 
     public override void EnterState(AI _owner)
     {

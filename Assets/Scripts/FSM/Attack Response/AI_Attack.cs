@@ -30,6 +30,9 @@ public class AI_Attack : State<AI>
         set { _name = value; }
     }
 
+    private float weight = 1;
+    public override float GetWeight(AI _owner) { return weight; }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Attack State");
@@ -60,8 +63,8 @@ public class AI_Attack : State<AI>
                     else { _owner.seek.Target = null; _owner.stateMachine.ChangeState(AI_Idle.instance); }
                 }
                 else {
-                    if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree" && _owner.critter.availableBehaviours.Contains(AI_Knock.name)) { _owner.stateMachine.ChangeState(AI_Knock.instance); }
-                    else if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt" && _owner.critter.availableBehaviours.Contains(AI_Dig.name)) { _owner.stateMachine.ChangeState(AI_Dig.instance); }
+                    if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree" && _owner.critter.availableBehaviours.Contains(AI_Knock.instance)) { _owner.stateMachine.ChangeState(AI_Knock.instance); }
+                    else if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt" && _owner.critter.availableBehaviours.Contains(AI_Dig.instance)) { _owner.stateMachine.ChangeState(AI_Dig.instance); }
                     else { Attack(_owner); }
                 }
 

@@ -73,14 +73,15 @@ public class CrittersUIController : MonoBehaviour
     }
 
     void behavioursPanel()
-    {       
+    {        
         currentPanel = panel.transform.GetChild(2).transform.GetChild(0).gameObject;
         if (currentGO.GetComponent<Critter>().availableBehaviours.Count > 0)
         {
+            currentPanel.GetComponent<Text>().text = "";
             for (int i = 0; i < currentGO.GetComponent<Critter>().availableBehaviours.Count; i++)
             {
-                if (!currentPanel.GetComponent<Text>().text.Contains(currentGO.GetComponent<Critter>().availableBehaviours[i]))
-                    currentPanel.GetComponent<Text>().text += currentGO.GetComponent<Critter>().availableBehaviours[i] + "\n";
+                if (!currentPanel.GetComponent<Text>().text.Contains(currentGO.GetComponent<Critter>().availableBehaviours[i].ToString()))
+                    currentPanel.GetComponent<Text>().text += currentGO.GetComponent<Critter>().availableBehaviours[i].ToString() + "\n";
             }
         }
         else { currentPanel.GetComponent<Text>().text = "N/A"; }

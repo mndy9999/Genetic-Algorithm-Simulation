@@ -31,6 +31,9 @@ public class AI_Evade : State<AI>
         set { _name = value; }
     }
 
+    private float weight = 1;
+    public override float GetWeight(AI _owner) { return weight; }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Evade State");
@@ -51,7 +54,7 @@ public class AI_Evade : State<AI>
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) {
             if (_owner.critter.CanAlarm) { _owner.stateMachine.ChangeState(AI_Alarm.instance); }
-            else if (_owner.CanSeeWater() && _owner.critter.availableBehaviours.Contains(AI_Swim.name) && !_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater) { _owner.stateMachine.ChangeState(AI_Swim.instance); }
+            else if (_owner.CanSeeWater() && _owner.critter.availableBehaviours.Contains(AI_Swim.instance) && !_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater) { _owner.stateMachine.ChangeState(AI_Swim.instance); }
             else _owner.stateMachine.ChangeState(AI_Startle.instance);
             //else _owner.stateMachine.ChangeState(AI_PlayDead.instance);
         }
@@ -80,4 +83,9 @@ public class AI_Evade : State<AI>
         _owner.critter.IsAlarmed = false;
         _owner.stateMachine.ChangeState(AI_Wander.instance);
     }
+
+    void bla()
+    {
+    }
+
 }

@@ -37,5 +37,6 @@ namespace FiniteStateMachine {
         public abstract void EnterState(T _owner);        
         public abstract void UpdateState(T _owner);
         public abstract void ExitState(T _owner);
+        public abstract float GetWeight(T _owner);
     }
 }

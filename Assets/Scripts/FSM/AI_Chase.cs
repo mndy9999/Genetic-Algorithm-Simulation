@@ -29,6 +29,9 @@ public class AI_Chase : State<AI>
         set { _name = value; }
     }
 
+    private float weight = 1;
+    public override float GetWeight(AI _owner) { return weight; }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Chase State");
@@ -52,7 +55,7 @@ public class AI_Chase : State<AI>
             if (_owner.IsCloseEnough())
             {
                 if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-                else if (_owner.TargetIsMate()) { _owner.stateMachine.ChangeState(AI_Breed.instance); }
+                else if (_owner.TargetIsMate()) { State<AI> chosenState = _owner.BestState(Behaviours.MateEncounterBehaviours); if(chosenState != null) _owner.stateMachine.ChangeState(chosenState); }
                 else if (_owner.TargetIsOpponent()) { _owner.stateMachine.ChangeState(AI_Threat.instance); }
             }
             else
@@ -63,5 +66,7 @@ public class AI_Chase : State<AI>
         }
         else { _owner.stateMachine.ChangeState(AI_Idle.instance); }     
     }
+
+
 
 }

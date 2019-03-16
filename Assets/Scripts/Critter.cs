@@ -34,7 +34,7 @@ public class Critter : MonoBehaviour {
     static public Dictionary<string, List<Critter>> crittersDict;
     public Dictionary <Trait, float> critterTraitsDict;
 
-    public List<string> availableBehaviours;
+    public List<State<AI>> availableBehaviours;
     public List<string> availableTargetTypes;
 
     [HideInInspector] public Vector3 initialSize;
@@ -60,7 +60,7 @@ public class Critter : MonoBehaviour {
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
         critterTraitsDict = new Dictionary<Trait, float>();
-        availableBehaviours = new List<string>();
+        availableBehaviours = new List<State<AI>>();
 
         EncodeTraits();
         if (!isChild) { PopulateAvailableBehaviours(); GenerateRandomTraits(); }
@@ -102,9 +102,26 @@ public class Critter : MonoBehaviour {
     {
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
-            if(Random.Range(0,10) < 3)
+            if (Random.Range(0, 10) < 9)
                 availableBehaviours.Add(Behaviours.behaviours[i]);
-        }       
+        }
+        //for (int i = 0; i < Behaviours.EnemyEncounterBehaviours.Count; i++)
+        //{
+        //    if (Random.Range(0, 10) < 3)
+        //        availableBehaviours.Add(Behaviours.behaviours[i]);
+        //}
+        for (int i = 0; i < Behaviours.MateEncounterBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                availableBehaviours.Add(Behaviours.MateEncounterBehaviours[i]);
+        }
+        //for (int i = 0; i < Behaviours.SocialRankBehaviours.Count; i++)
+        //{
+        //    if (Random.Range(0, 10) < 3)
+        //        availableBehaviours.Add(Behaviours.behaviours[i]);
+        //}
+
+
     }
     public void GenerateRandomTraits()
     {
@@ -119,7 +136,7 @@ public class Critter : MonoBehaviour {
     }
     public void SetupCritter()
     {
-        if (availableBehaviours.Contains(AI_Swim.name)) { GetComponent<NavMeshAgent>().areaMask += LayerMask.NameToLayer("Water"); }
+        if (availableBehaviours.Contains(AI_Swim.instance)) { GetComponent<NavMeshAgent>().areaMask += LayerMask.NameToLayer("Water"); }
     }
 
     void EncodeTraits()

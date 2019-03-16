@@ -3955,7 +3955,6 @@ MonoBehaviour:
   speed: 0
   fitnessScore: 0
   viewAngle: 0
-  availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0
@@ -6349,7 +6348,6 @@ MonoBehaviour:
   speed: 3
   fitnessScore: 0
   viewAngle: 90
-  availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0
@@ -7797,6 +7795,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114909987566964532, guid: 4d5f137a9e68f7540a00203e4b2b7b99,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114725129805099564, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
     - {fileID: 114301006339380108, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
@@ -7843,7 +7846,6 @@ MonoBehaviour:
   speed: 0
   fitnessScore: 0
   viewAngle: 0
-  availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0
@@ -8591,7 +8593,6 @@ MonoBehaviour:
   speed: 3
   fitnessScore: 0
   viewAngle: 90
-  availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0
@@ -8652,7 +8653,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357725831}
   m_LocalRotation: {x: -0, y: 0.96057975, z: -0, w: 0.27800462}
-  m_LocalPosition: {x: -17.42, y: 0.171, z: 64.4}
+  m_LocalPosition: {x: -16.538, y: 0.171, z: 63.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591286963}
@@ -10798,7 +10799,6 @@ MonoBehaviour:
   speed: 3
   fitnessScore: 0
   viewAngle: 90
-  availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0
@@ -11675,7 +11675,6 @@ MonoBehaviour:
   speed: 5
   fitnessScore: 0
   viewAngle: 90
-  availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0
@@ -12589,7 +12588,6 @@ MonoBehaviour:
   speed: 3
   fitnessScore: 0
   viewAngle: 90
-  availableBehaviours: []
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0

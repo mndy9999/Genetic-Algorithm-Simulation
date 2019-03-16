@@ -32,6 +32,9 @@ public class AI_Breed : State<AI>
         set { _name = value; }
     }
 
+    private float weight = 1;
+    public override float GetWeight(AI _owner) { return weight; }
+
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Breed State");

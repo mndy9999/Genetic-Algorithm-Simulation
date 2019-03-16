@@ -3,7 +3,6 @@ using FiniteStateMachine;
 
 public class AI_Fight : State<AI>
 {
-
     private static AI_Fight _instance;
     private static string _name = "fight";
     private AI_Fight()
@@ -29,6 +28,9 @@ public class AI_Fight : State<AI>
         get { return _name; }
         set { _name = value; }
     }
+
+    private float weight = 1;
+    public override float GetWeight(AI _owner) { return weight; }
 
     public override void EnterState(AI _owner)
     {

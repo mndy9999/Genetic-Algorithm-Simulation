@@ -48,12 +48,27 @@ public class AI : MonoBehaviour {
         stateMachine.Update();      //check for changes in states
     }
 
-    public void genWaypoint()
+    public State<AI> BestState(List<State<AI>> behaviours)
     {
-        float x = Random.Range(transform.position.x + 180, transform.position.x - 180);
-        float y = transform.position.y;
-        float z = Random.Range(transform.position.z + 180, transform.position.z - 180);
-        waypoint = new Vector3(x, y, z);
+        float sum = 0;
+        for (int i = 0; i < behaviours.Count; i++)
+        {
+            if (critter.availableBehaviours.Contains(behaviours[i]))
+            {
+                sum += behaviours[i].GetWeight(this);
+            }
+        }
+        float r = Random.Range(0, sum);
+        float newSum = 0;
+        for (int i = 0; i < behaviours.Count; i++)
+        {
+            if (critter.availableBehaviours.Contains(behaviours[i]))
+            {
+                newSum += behaviours[i].GetWeight(this);
+                if (newSum >= r) { return behaviours[i]; }
+            }
+        }
+        return null;
     }
 
     public bool CanSeeTarget()

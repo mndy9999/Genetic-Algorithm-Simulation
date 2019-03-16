@@ -4,10 +4,9 @@ using System.Collections;
 
 public class AI_Impress : State<AI>
 {
-
     private static AI_Impress _instance;
     private static string _name = "impress";
-    public static float weight;
+
     private AI_Impress()
     {
         if (_instance != null)
@@ -28,9 +27,11 @@ public class AI_Impress : State<AI>
 
     public static string name { get { return _name; } }
 
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.Beauty]; }
+
     public override void EnterState(AI _owner)
     {
-        weight = _owner.critter.critterTraitsDict[Critter.Trait.Beauty];
+
         Debug.Log("Entering Impress State");
         _owner.animator.Play("ShowOff");      //play animation when entering state
         _owner.StartCoroutine(WaitForAnimation(_owner));

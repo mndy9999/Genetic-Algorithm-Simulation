@@ -23,6 +23,9 @@ public class AI_Idle : State<AI>
         }
     }
 
+    private float weight = 1;
+    public override float GetWeight(AI _owner) { return weight; }
+
     public static string name
     {
         get { return _name; }

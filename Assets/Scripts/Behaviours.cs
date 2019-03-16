@@ -5,56 +5,56 @@ using FiniteStateMachine;
 
 public class Behaviours
 {
-    public static List<string> behaviours = new List<string>()
+    public static List<State<AI>> behaviours = new List<State<AI>>()
     {
-        AI_Idle.name, 
-        AI_Wander.name,
-        AI_Chase.name,
-        AI_Attack.name,
-        AI_Eat.name,
-        AI_Evade.name,
-        AI_Swim.name,
-        AI_Breed.name,
-        AI_Getup.name,
-        AI_Laydown.name,
-        AI_Watch.name,
-        AI_Submit.name,
-        AI_Dead.name
+        AI_Idle.instance, 
+        AI_Wander.instance,
+        AI_Chase.instance,
+        AI_Attack.instance,
+        AI_Eat.instance,
+        AI_Evade.instance,
+        AI_Swim.instance,
+        AI_Breed.instance,
+        AI_Getup.instance,
+        AI_Laydown.instance,
+        AI_Watch.instance,
+        AI_Submit.instance,
+        AI_Dead.instance
     };
 
-    public static List<string> SocialRankBehaviours = new List<string>()
+    public static List<State<AI>> SocialRankBehaviours = new List<State<AI>>()
     {
-        AI_Threat.name,
-        AI_Aggress.name,
-        AI_Fight.name
+        AI_Threat.instance,
+        AI_Aggress.instance,
+        AI_Fight.instance
     };
 
-    public static List<string> LowEnergyBehaviours = new List<string>()
+    public static List<State<AI>> LowEnergyBehaviours = new List<State<AI>>()
     {
-        AI_Sleep.name,
-        AI_Rest.name
+        AI_Sleep.instance,
+        AI_Rest.instance
     };
 
-    public static List<string> FoodSourceBehaviours = new List<string>()
+    public static List<State<AI>> FoodSourceBehaviours = new List<State<AI>>()
     {
-        AI_Knock.name,
-        AI_Dig.name
+        AI_Knock.instance,
+        AI_Dig.instance
         //AI_Fish.name
     };
 
-    public static List<string> EnemyEncounterBehaviours = new List<string>()
+    public static List<State<AI>> EnemyEncounterBehaviours = new List<State<AI>>()
     {
-        AI_Alarm.name,
-        AI_PlayDead.name,
-        AI_Startle.name
+        AI_Alarm.instance,
+        AI_PlayDead.instance,
+        AI_Startle.instance
         //AI_Suicide.name,
         //AI_Flock.name
     };
 
-    public static List<string> MateEncounterBehaviours = new List<string>()
+    public static List<State<AI>> MateEncounterBehaviours = new List<State<AI>>()
     {
-        AI_CallMate.name,
-        AI_Impress.name
+        AI_CallMate.instance,
+        AI_Impress.instance
         //AI_PairUp.name
     };
 
