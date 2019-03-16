@@ -39,7 +39,7 @@ public class Seek : MonoBehaviour {
         critter = GetComponent<Critter>();
         availableTargetsType = critter.availableTargetTypes;
 
-        viewRadius = critter.viewRadius;
+        viewRadius = critter.critterTraitsDict[Critter.Trait.ViewRadius];
         viewAngle = critter.viewAngle;
 
         FindVisibleTargets();

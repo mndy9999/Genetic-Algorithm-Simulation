@@ -16,7 +16,7 @@ public class SocialRankManager : MonoBehaviour {
     {
         CalculateFitness();
         UpdateRanks();
-        //DebugRanks();
+        DebugRanks();
     }
 
     void DebugRanks()
@@ -32,15 +32,20 @@ public class SocialRankManager : MonoBehaviour {
     }
 
     void CalculateFitness()
-    {
+    {      
         foreach (string critterType in Critter.crittersDict.Keys)
         {
-            foreach(Critter c in Critter.crittersDict[critterType])
+            foreach (Critter c in Critter.crittersDict[critterType])
             {
                 critter = c.GetComponent<Critter>();
-                critter.fitnessScore = critter.Age + critter.walkSpeed + critter.runSpeed + critter.threatPoints + critter.availableBehaviours.Count + (int)critter.gender + (int)critter.lifeStage;
-                critter.fitnessScore /= 7;
-            }            
+                critter.fitnessScore = 0;
+                foreach (Critter.Trait trait in c.critterTraitsDict.Keys)
+                {
+                    critter.fitnessScore += c.critterTraitsDict[trait];
+                }
+                critter.fitnessScore += critter.Age;
+                critter.fitnessScore /= (c.critterTraitsDict.Count+1);
+            }
         }
     }
 

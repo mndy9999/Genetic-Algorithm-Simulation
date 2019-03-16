@@ -15,29 +15,25 @@ public class Critter : MonoBehaviour {
     public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder };
     public Stage lifeStage;
+    public enum Trait { WalkSpeed, RunSpeed, ViewRadius, ViewAngle, ThreatPoints, RankPoints, VoiceStrenght, Beauty };
 
     [SerializeField] float health = 100f;
     [SerializeField] float energy = 100f;
     [SerializeField] float resource = 100f;
-
-    public float age = 0;
-
+   
     [HideInInspector] public float energyPerSecond = 0.5f;
 
-    [HideInInspector] public float runSpeed = 5f;
-    [HideInInspector] public float walkSpeed = 2f;
+    public float age;
     public float speed;
 
-    public float threatPoints;
-    public float rankPoints = 0;
     public float fitnessScore;
-    
-    [HideInInspector] public float viewRadius = 10f;
-    [HideInInspector] public float defaultViewAngle = 90f;
+
     [Range(0, 360)] public float viewAngle;
    
 
     static public Dictionary<string, List<Critter>> crittersDict;
+    public Dictionary <Trait, float> critterTraitsDict;
+
     public List<string> availableBehaviours;
     public List<string> availableTargetTypes;
 
@@ -63,24 +59,25 @@ public class Critter : MonoBehaviour {
         if (crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
+        critterTraitsDict = new Dictionary<Trait, float>();
         availableBehaviours = new List<string>();
+
+        EncodeTraits();
+        if (!isChild) { PopulateAvailableBehaviours(); GenerateRandomTraits(); }
+        DecodeTraits();
+        
+        
         isAlarmed = false;
         isAttacked = false;
         isVisible = true;
         canChallenge = true;
 
-        threatPoints = Random.Range(0, 10);
-
         initialSize = new Vector3(0.2f, 0.2f, 0.2f);
         time = Time.time;
 
-        speed = runSpeed;
-        viewAngle = defaultViewAngle;
+        viewAngle = critterTraitsDict[Trait.ViewAngle];
 
         canBreed = true;
-
-        if (!isChild) { PopulateAvailableBehaviours(); }
-
     }
 
     private void OnDestroy()
@@ -109,26 +106,52 @@ public class Critter : MonoBehaviour {
                 availableBehaviours.Add(Behaviours.behaviours[i]);
         }       
     }
+    public void GenerateRandomTraits()
+    {
+        foreach (Trait t in System.Enum.GetValues(typeof(Trait)))
+        {
+            if (t != Trait.ViewAngle)
+                critterTraitsDict[t] = Random.Range(0, 10);
+            else
+                critterTraitsDict[t] = Random.Range(0, 180);
+        }
+       
+    }
     public void SetupCritter()
     {
         if (availableBehaviours.Contains(AI_Swim.name)) { GetComponent<NavMeshAgent>().areaMask += LayerMask.NameToLayer("Water"); }
+    }
+
+    void EncodeTraits()
+    {
+
+        foreach(Trait t in System.Enum.GetValues(typeof(Trait))){
+            critterTraitsDict.Add(t, 0.0f);
+        }
+
+    }
+    void DecodeTraits()
+    {
+        Debug.Log(name);
+        foreach (Trait t in critterTraitsDict.Keys)
+            Debug.Log(t.ToString() + ":  " + critterTraitsDict[t]);
     }
 
     void UpdateSpeed()
     {
         if (energy < 10)
         {
-            while (speed > walkSpeed) { speed -= 0.2f; }
+            while (speed > critterTraitsDict[Trait.WalkSpeed]) { speed -= 0.2f; }
         }
         else
         {
-            while (speed < runSpeed) { speed += 0.2f; }
+            while (speed < critterTraitsDict[Trait.RunSpeed]) { speed += 0.2f; }
         }
     }   
     void UpdateFOV()
     {
         if (isAlarmed) { viewAngle = 360; }
-        else { viewAngle = defaultViewAngle; }
+        else { viewAngle = critterTraitsDict[Trait.ViewAngle]; }
     }
     void UpdateLifeStage()
     {
@@ -209,4 +232,5 @@ public class Critter : MonoBehaviour {
         set { rank = value; }
     }
     #endregion
+
 }

@@ -3950,16 +3950,10 @@ MonoBehaviour:
   health: 0
   energy: 0
   resource: 20
-  age: 0
   energyPerSecond: 1
-  runSpeed: 5
-  walkSpeed: 2
+  age: 0
   speed: 0
-  threatPoints: 0
-  rankPoints: 0
   fitnessScore: 0
-  viewRadius: 10
-  defaultViewAngle: 90
   viewAngle: 0
   availableBehaviours: []
   availableTargetTypes: []
@@ -6238,7 +6232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &1006731144
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6350,16 +6344,10 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
-  age: 0
   energyPerSecond: 5
-  runSpeed: 2
-  walkSpeed: 2
+  age: 0
   speed: 3
-  threatPoints: 0
-  rankPoints: 0
   fitnessScore: 0
-  viewRadius: 10
-  defaultViewAngle: 90
   viewAngle: 90
   availableBehaviours: []
   availableTargetTypes: []
@@ -7804,6 +7792,11 @@ Prefab:
       propertyPath: mutationRate
       value: 13.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114045431435945082, guid: 4d5f137a9e68f7540a00203e4b2b7b99,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114725129805099564, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
     - {fileID: 114301006339380108, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
@@ -7845,16 +7838,10 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
-  age: 0
   energyPerSecond: 1
-  runSpeed: 5
-  walkSpeed: 2
+  age: 0
   speed: 0
-  threatPoints: 0
-  rankPoints: 0
   fitnessScore: 0
-  viewRadius: 10
-  defaultViewAngle: 90
   viewAngle: 0
   availableBehaviours: []
   availableTargetTypes: []
@@ -8599,16 +8586,10 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
-  age: 0
   energyPerSecond: 5
-  runSpeed: 2
-  walkSpeed: 2
+  age: 0
   speed: 3
-  threatPoints: 0
-  rankPoints: 0
   fitnessScore: 0
-  viewRadius: 10
-  defaultViewAngle: 90
   viewAngle: 90
   availableBehaviours: []
   availableTargetTypes: []
@@ -10700,7 +10681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &1659578262
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10812,16 +10793,10 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
-  age: 0
   energyPerSecond: 5
-  runSpeed: 2
-  walkSpeed: 2
+  age: 0
   speed: 3
-  threatPoints: 0
-  rankPoints: 0
   fitnessScore: 0
-  viewRadius: 10
-  defaultViewAngle: 90
   viewAngle: 90
   availableBehaviours: []
   availableTargetTypes: []
@@ -11621,7 +11596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1845843775
 Animator:
   serializedVersion: 3
@@ -11695,16 +11670,10 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
-  age: 0
   energyPerSecond: 5
-  runSpeed: 3
-  walkSpeed: 2
+  age: 0
   speed: 5
-  threatPoints: 0
-  rankPoints: 0
   fitnessScore: 0
-  viewRadius: 10
-  defaultViewAngle: 70
   viewAngle: 90
   availableBehaviours: []
   availableTargetTypes: []
@@ -12503,7 +12472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &1948884996
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12615,16 +12584,10 @@ MonoBehaviour:
   health: 100
   energy: 100
   resource: 100
-  age: 0
   energyPerSecond: 5
-  runSpeed: 2
-  walkSpeed: 2
+  age: 0
   speed: 3
-  threatPoints: 0
-  rankPoints: 0
   fitnessScore: 0
-  viewRadius: 10
-  defaultViewAngle: 90
   viewAngle: 90
   availableBehaviours: []
   availableTargetTypes: []

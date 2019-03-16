@@ -38,6 +38,7 @@ public class CrittersUIController : MonoBehaviour
 
     void UpdateInfo()
     {
+        
         panel.transform.Find("Name").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Name;
         panel.transform.Find("Age").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Age.ToString();
         panel.transform.Find("Gender").GetComponent<Text>().text = currentGO.GetComponent<Critter>().gender.ToString();
@@ -62,11 +63,13 @@ public class CrittersUIController : MonoBehaviour
     void statsPanel()
     {
         currentPanel = panel.transform.GetChild(1).transform.GetChild(0).gameObject;
-        currentPanel.transform.Find("WalkSpeed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().walkSpeed.ToString();
-        currentPanel.transform.Find("RunSpeed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().runSpeed.ToString();
+        currentPanel.transform.Find("WalkSpeed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().critterTraitsDict[Critter.Trait.WalkSpeed].ToString();
+        currentPanel.transform.Find("RunSpeed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().critterTraitsDict[Critter.Trait.RunSpeed].ToString();
         currentPanel.transform.Find("Speed").GetComponent<Text>().text = currentGO.GetComponent<Critter>().speed.ToString();
-        currentPanel.transform.Find("Sight").GetComponent<Text>().text = currentGO.GetComponent<Critter>().viewRadius.ToString();
-        currentPanel.transform.Find("SightAngle").GetComponent<Text>().text = currentGO.GetComponent<Critter>().viewAngle.ToString();
+        currentPanel.transform.Find("Sight").GetComponent<Text>().text = currentGO.GetComponent<Critter>().critterTraitsDict[Critter.Trait.ViewRadius].ToString();
+        currentPanel.transform.Find("SightAngle").GetComponent<Text>().text = currentGO.GetComponent<Critter>().critterTraitsDict[Critter.Trait.ViewAngle].ToString();
+        //currentPanel.transform.Find("ThreatPoints").GetComponent<Text>().text = currentGO.GetComponent<Critter>().critterTraitsDict[Critter.Trait.Age].ToString();
+        //currentPanel.transform.Find("Beauty").GetComponent<Text>().text = currentGO.GetComponent<Critter>().critterTraitsDict[Critter.Trait.Age].ToString();
     }
 
     void behavioursPanel()

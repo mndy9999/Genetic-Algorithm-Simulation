@@ -59,17 +59,17 @@ public class AI_Threat : State<AI>
         {
             if (Random.Range(0, _owner.seek.Target.GetComponent<Critter>().fitnessScore + _owner.critter.fitnessScore) < _owner.critter.fitnessScore)
             {
-                _owner.critter.threatPoints += 0.2f;
-                _owner.critter.rankPoints += 1;
-                _owner.seek.Target.GetComponent<Critter>().rankPoints -= 1;
+                _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints] += 0.2f;
+                _owner.critter.critterTraitsDict[Critter.Trait.RankPoints] += 1;
+                _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.RankPoints] -= 1;
                 //_owner.seek.Target.GetComponent<Seek>().Enemy = _owner.gameObject;
                 _owner.critter.canChallenge = false;
             }
             else
             {
-                _owner.seek.Target.GetComponent<Critter>().threatPoints += 0.2f;
-                _owner.seek.Target.GetComponent<Critter>().rankPoints += 1;
-                _owner.critter.rankPoints -= 1;
+                _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.ThreatPoints] += 0.2f;
+                _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.RankPoints] += 1;
+                _owner.critter.critterTraitsDict[Critter.Trait.RankPoints] -= 1;
                 //_owner.seek.Enemy = _owner.seek.Target.gameObject;
                 _owner.seek.Target.GetComponent<Critter>().canChallenge = false;
             }

@@ -34,10 +34,10 @@ public class AI_Startle : State<AI>
     {
         Debug.Log("Entering Starle State");
         _owner.animator.Play("ShowOff");      //play animation when entering state
-        if (Random.Range(0, 10) < _owner.critter.threatPoints)
+        if (Random.Range(0, 10) < _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints])
         {
             _owner.seek.Enemy.GetComponent<Seek>().Enemy = _owner.gameObject;
-            _owner.critter.threatPoints += 0.5f;
+            _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints] += 0.5f;
         }
     }
 
