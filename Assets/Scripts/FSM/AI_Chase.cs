@@ -3,6 +3,8 @@ using FiniteStateMachine;
 
 public class AI_Chase : State<AI>
 {
+    State<AI> bestState;
+
     private static AI_Chase _instance;
     private static string _name = "chase";
     private AI_Chase()
@@ -52,11 +54,11 @@ public class AI_Chase : State<AI>
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget())
         {
-            if (_owner.IsCloseEnough())
+            if (_owner.TargetIsOpponent() && _owner.critter.canChallenge) { bestState = _owner.BestState(Behaviours.SocialRankBehaviours); }
+            else if (_owner.IsCloseEnough())
             {
                 if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-                else if (_owner.TargetIsMate()) { State<AI> chosenState = _owner.BestState(Behaviours.MateEncounterBehaviours); if(chosenState != null) _owner.stateMachine.ChangeState(chosenState); }
-                else if (_owner.TargetIsOpponent()) { _owner.stateMachine.ChangeState(AI_Threat.instance); }
+                else if (_owner.TargetIsMate()) { bestState = _owner.BestState(Behaviours.MateEncounterBehaviours); }                     
             }
             else
             {
@@ -64,7 +66,10 @@ public class AI_Chase : State<AI>
                 _owner.agent.SetDestination(_owner.seek.Target.transform.position);
             }
         }
-        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }     
+        else if (_owner.critter.isChallenged) { bestState = _owner.BestState(Behaviours.SocialRankBehaviours); }
+        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        if (bestState != null)
+            _owner.stateMachine.ChangeState(bestState);
     }
 
 

@@ -59,6 +59,12 @@ public class Behaviours
         //AI_PairUp.name
     };
 
+    public static List<State<AI>> ChallengerEncounterBehaviours = new List<State<AI>>()
+    {
+        AI_Watch.instance,
+        AI_Submit.instance
+    };
+
     public static List<string> herbivoreTargets = new List<string>()
     {
         "Vegetable", "Tree", "Dirt"

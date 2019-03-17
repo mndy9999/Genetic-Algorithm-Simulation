@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FiniteStateMachine;
+using System.Collections;
 
 public class AI_Submit : State<AI>
 {
@@ -30,8 +31,7 @@ public class AI_Submit : State<AI>
         set { _name = value; }
     }
 
-    private float weight = 1;
-    public override float GetWeight(AI _owner) { return weight; }
+    public override float GetWeight(AI _owner) { return Critter.crittersDict[_owner.critter.critterType][0].fitnessScore - _owner.critter.fitnessScore; }
 
     public override void EnterState(AI _owner)
     {
@@ -46,6 +46,25 @@ public class AI_Submit : State<AI>
 
     public override void UpdateState(AI _owner)
     {
+        GenerateNewDirection(_owner);
+        _owner.StartCoroutine(WaitForAnimation(_owner));
+    }
 
+    IEnumerator WaitForAnimation(AI _owner)
+    {
+        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        yield return new WaitForSeconds(5);
+        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        else { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+    }
+
+    void GenerateNewDirection(AI _owner)
+    {
+        Vector3 direction = _owner.seek.Opponent.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Lerp(_owner.transform.rotation,
+                                    Quaternion.LookRotation(direction),
+                                    _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed] * Time.deltaTime);
     }
 }

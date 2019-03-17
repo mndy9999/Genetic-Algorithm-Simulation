@@ -1922,8 +1922,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284287695}
-  m_LocalRotation: {x: -0.18394805, y: 0.6166099, z: 0.15113918, w: 0.7504082}
-  m_LocalPosition: {x: -18.67857, y: -4.547485, z: 63.259228}
+  m_LocalRotation: {x: 0, y: 0.000000063325004, z: 0, w: 1}
+  m_LocalPosition: {x: -14.88, y: -2.8600001, z: 60.629997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3966,6 +3966,7 @@ MonoBehaviour:
   canChallenge: 0
   isChild: 0
   breedTimer: 0
+  challengeTimer: 0
   time: 0
 --- !u!23 &550888305
 MeshRenderer:
@@ -6231,7 +6232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!195 &1006731144
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6359,6 +6360,7 @@ MonoBehaviour:
   canChallenge: 0
   isChild: 0
   breedTimer: 0
+  challengeTimer: 0
   time: 0
 --- !u!114 &1006731151
 MonoBehaviour:
@@ -6409,7 +6411,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1006731143}
   m_LocalRotation: {x: -0, y: 0.21256952, z: -0, w: 0.97714597}
-  m_LocalPosition: {x: -7.86, y: 0.09, z: 59.23}
+  m_LocalPosition: {x: -21.81, y: 0.09, z: 78.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 258873082}
@@ -7862,6 +7864,7 @@ MonoBehaviour:
   canChallenge: 0
   isChild: 0
   breedTimer: 0
+  challengeTimer: 0
   time: 0
 --- !u!1001 &1235874739
 Prefab:
@@ -8609,6 +8612,7 @@ MonoBehaviour:
   canChallenge: 0
   isChild: 0
   breedTimer: 0
+  challengeTimer: 0
   time: 0
 --- !u!114 &1357725837
 MonoBehaviour:
@@ -8659,7 +8663,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357725831}
   m_LocalRotation: {x: -0, y: 0.1555066, z: -0, w: -0.9878349}
-  m_LocalPosition: {x: -22.34, y: 0.171, z: 70.13}
+  m_LocalPosition: {x: -21.68, y: 0.171, z: 74.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591286963}
@@ -10816,6 +10820,7 @@ MonoBehaviour:
   canChallenge: 0
   isChild: 0
   breedTimer: 0
+  challengeTimer: 0
   time: 0
 --- !u!114 &1659578269
 MonoBehaviour:
@@ -11603,7 +11608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1845843775
 Animator:
   serializedVersion: 3
@@ -11630,7 +11635,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845843774}
   m_LocalRotation: {x: -0, y: 0.95441633, z: -0, w: 0.2984785}
-  m_LocalPosition: {x: -24.66, y: 0.09, z: 75.75}
+  m_LocalPosition: {x: -24.66, y: 0.19, z: 75.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1068490108}
@@ -11694,6 +11699,7 @@ MonoBehaviour:
   canChallenge: 0
   isChild: 0
   breedTimer: 0
+  challengeTimer: 0
   time: 0
 --- !u!114 &1845843779
 MonoBehaviour:
@@ -12607,6 +12613,7 @@ MonoBehaviour:
   canChallenge: 0
   isChild: 0
   breedTimer: 0
+  challengeTimer: 0
   time: 0
 --- !u!114 &1948885003
 MonoBehaviour:

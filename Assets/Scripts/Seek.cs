@@ -22,6 +22,7 @@ public class Seek : MonoBehaviour {
     GameObject lastKnownTarget = null;
     GameObject lastKnownEnemy= null;
     GameObject lastKnownMate = null;
+    GameObject lastKnownOpponent = null;
 
     GameObject tempTarget = null;
     GameObject tempEnemy = null;
@@ -47,7 +48,7 @@ public class Seek : MonoBehaviour {
         target = GetTarget();
         enemy = GetEnemy();
         mate = GetMate();
-        opponent = GetOpponent();
+        if (!critter.isChallenged) opponent = GetOpponent();
 
     }
     private void Update()
@@ -58,14 +59,15 @@ public class Seek : MonoBehaviour {
         if(!critter.IsAttacked) target = GetTarget();
         enemy = GetEnemy();
         mate = GetMate();
-        opponent = GetOpponent();
-        if(opponent != null) { target = opponent; }
+        if(!critter.isChallenged) opponent = GetOpponent();
+        if(opponent != null && critter.canChallenge) { target = opponent; }
         if(mate != null) { target = mate; }
         
 
         if (target) { lastKnownTarget = target; }
         if (enemy) { lastKnownEnemy = enemy; }
         if (mate) { lastKnownMate = mate; }
+        if (opponent) { lastKnownOpponent = opponent; }
 
     }
 
@@ -194,6 +196,11 @@ public class Seek : MonoBehaviour {
     {
         get { return lastKnownMate; }
         set { lastKnownMate = value; }
+    }
+    public GameObject LastKnownOpponent
+    {
+        get { return lastKnownOpponent; }
+        set { lastKnownOpponent = value; }
     }
 
     public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)

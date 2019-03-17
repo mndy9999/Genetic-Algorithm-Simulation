@@ -15,7 +15,7 @@ public class Critter : MonoBehaviour {
     public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder };
     public Stage lifeStage;
-    public enum Trait { WalkSpeed, RunSpeed, ViewRadius, ViewAngle, ThreatPoints, RankPoints, VoiceStrenght, Beauty, Acting };
+    public enum Trait { WalkSpeed, RunSpeed, ViewRadius, ViewAngle, AttackPoints, ThreatPoints, RankPoints, VoiceStrenght, Beauty, Acting };
 
     [SerializeField] float health = 100f;
     [SerializeField] float energy = 100f;
@@ -51,6 +51,7 @@ public class Critter : MonoBehaviour {
     public bool isChild;
 
     [HideInInspector] public bool breedTimer;
+    [HideInInspector] public float challengeTimer;
     [HideInInspector] public float time;
 
     // Use this for initialization
@@ -89,13 +90,17 @@ public class Critter : MonoBehaviour {
     void FixedUpdate()
     {
         if (resource <= 0) { KillSelf(); }
-
+        if (isChallenged) canChallenge = false;
+        if(challengeTimer > 100 && !isChallenged) { canChallenge = true; }
+        else { challengeTimer += Time.deltaTime; }
+        
         UpdateFOV();
        // UpdateLifeStage();
         UpdateSpeed();
 
-        if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }    
+        if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }
         //canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder;
+
     }
 
     public void PopulateAvailableBehaviours()
@@ -105,22 +110,21 @@ public class Critter : MonoBehaviour {
             if (Random.Range(0, 10) < 9)
                 availableBehaviours.Add(Behaviours.behaviours[i]);
         }
-        availableBehaviours.Add(AI_Flee.instance);
-        //for (int i = 0; i < Behaviours.EnemyEncounterBehaviours.Count; i++)
-        //{
-        //    if (Random.Range(0, 10) < 3)
-        //        availableBehaviours.Add(Behaviours.behaviours[i]);
-        //}
+        for (int i = 0; i < Behaviours.EnemyEncounterBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                availableBehaviours.Add(Behaviours.behaviours[i]);
+        }
         for (int i = 0; i < Behaviours.MateEncounterBehaviours.Count; i++)
         {
             if (Random.Range(0, 10) < 9)
                 availableBehaviours.Add(Behaviours.MateEncounterBehaviours[i]);
         }
-        //for (int i = 0; i < Behaviours.SocialRankBehaviours.Count; i++)
-        //{
-        //    if (Random.Range(0, 10) < 3)
-        //        availableBehaviours.Add(Behaviours.behaviours[i]);
-        //}
+        for (int i = 0; i < Behaviours.SocialRankBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                availableBehaviours.Add(Behaviours.SocialRankBehaviours[i]);
+        }
 
 
     }
@@ -133,8 +137,8 @@ public class Critter : MonoBehaviour {
             else
                 critterTraitsDict[t] = Random.Range(0, 180);
         }
-        critterTraitsDict[Trait.ViewRadius] = 10f;
-        if(critterType == "Herbivore") { critterTraitsDict[Trait.RunSpeed] = 10f; }       
+        critterTraitsDict[Trait.ViewRadius] = 10f;  
+        critterTraitsDict[Trait.RankPoints] = 0.0f;  
     }
     public void SetupCritter()
     {

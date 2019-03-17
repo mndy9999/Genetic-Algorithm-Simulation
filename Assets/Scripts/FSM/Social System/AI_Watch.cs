@@ -30,14 +30,12 @@ public class AI_Watch : State<AI>
         set { _name = value; }
     }
 
-    private float weight = 1;
-    public override float GetWeight(AI _owner) { return weight; }
+    public override float GetWeight(AI _owner) { return _owner.critter.fitnessScore; }
 
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Watch State");
         _owner.animator.Play("Idle");      //play animation when entering state   
-
     }
 
     public override void ExitState(AI _owner)
@@ -49,18 +47,25 @@ public class AI_Watch : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-
+        GenerateNewDirection(_owner);
         _owner.StartCoroutine(WaitForAnimation(_owner));
     }
 
     IEnumerator WaitForAnimation(AI _owner)
-    {
-
-        yield return new WaitForSeconds(5);
+    {       
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
-        else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        yield return new WaitForSeconds(5);
+        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         else { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+    }
+
+    void GenerateNewDirection(AI _owner)
+    {
+        Vector3 direction = _owner.seek.Opponent.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Lerp(_owner.transform.rotation,
+                                    Quaternion.LookRotation(direction),
+                                    _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed] * Time.deltaTime);
     }
 }
