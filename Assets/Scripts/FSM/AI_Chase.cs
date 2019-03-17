@@ -42,7 +42,7 @@ public class AI_Chase : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Chase State");
-        _owner.agent.SetDestination(_owner.transform.position);
+        _owner.agent.ResetPath();
     }
 
     public override void UpdateState(AI _owner)

@@ -31,8 +31,7 @@ public class AI_Alarm : State<AI>
         set { _name = value; }
     }
 
-    private float weight = 1;
-    public override float GetWeight(AI _owner) { return weight; }
+    public override float GetWeight(AI _owner) { return Vector3.Distance(_owner.transform.position, _owner.seek.Enemy.transform.position); }
 
     public override void EnterState(AI _owner)
     {

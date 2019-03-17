@@ -267,6 +267,7 @@
     <Compile Include="Assets\Scripts\FSM\Attack Response\AI_Alarm.cs" />
     <Compile Include="Assets\Scripts\FSM\Attack Response\AI_Attack.cs" />
     <Compile Include="Assets\Scripts\FSM\Attack Response\AI_Evade.cs" />
+    <Compile Include="Assets\Scripts\FSM\Attack Response\AI_Flee.cs" />
     <Compile Include="Assets\Scripts\FSM\Attack Response\AI_PlayDead.cs" />
     <Compile Include="Assets\Scripts\FSM\Attack Response\AI_Startle.cs" />
     <Compile Include="Assets\Scripts\FSM\Attack Response\AI_Suicide.cs" />

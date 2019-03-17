@@ -30,8 +30,7 @@ public class AI_Startle : State<AI>
         set { _name = value; }
     }
 
-    private float weight = 1;
-    public override float GetWeight(AI _owner) { return weight; }
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints]; }
 
     public override void EnterState(AI _owner)
     {

@@ -15,7 +15,7 @@ public class Critter : MonoBehaviour {
     public Gender gender;
     public enum Stage { Baby, Teen, Adult, Elder };
     public Stage lifeStage;
-    public enum Trait { WalkSpeed, RunSpeed, ViewRadius, ViewAngle, ThreatPoints, RankPoints, VoiceStrenght, Beauty };
+    public enum Trait { WalkSpeed, RunSpeed, ViewRadius, ViewAngle, ThreatPoints, RankPoints, VoiceStrenght, Beauty, Acting };
 
     [SerializeField] float health = 100f;
     [SerializeField] float energy = 100f;
@@ -105,6 +105,7 @@ public class Critter : MonoBehaviour {
             if (Random.Range(0, 10) < 9)
                 availableBehaviours.Add(Behaviours.behaviours[i]);
         }
+        availableBehaviours.Add(AI_Flee.instance);
         //for (int i = 0; i < Behaviours.EnemyEncounterBehaviours.Count; i++)
         //{
         //    if (Random.Range(0, 10) < 3)
@@ -132,7 +133,8 @@ public class Critter : MonoBehaviour {
             else
                 critterTraitsDict[t] = Random.Range(0, 180);
         }
-       
+        critterTraitsDict[Trait.ViewRadius] = 10f;
+        if(critterType == "Herbivore") { critterTraitsDict[Trait.RunSpeed] = 10f; }       
     }
     public void SetupCritter()
     {

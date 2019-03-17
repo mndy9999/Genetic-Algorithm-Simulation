@@ -46,7 +46,8 @@ public class Behaviours
     {
         AI_Alarm.instance,
         AI_PlayDead.instance,
-        AI_Startle.instance
+        AI_Startle.instance,
+        AI_Flee.instance
         //AI_Suicide.name,
         //AI_Flock.name
     };

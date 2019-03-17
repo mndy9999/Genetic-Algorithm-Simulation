@@ -37,15 +37,14 @@ public class AI_Evade : State<AI>
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Evade State");
-        _owner.animator.Play("Run");      //play animation when entering state
-        Evade(_owner);
+        //_owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.RunSpeed];
     }
 
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Evade State");
-        _owner.agent.ResetPath();
         _owner.StopAllCoroutines();
+        _owner.agent.ResetPath();
     }
 
     public override void UpdateState(AI _owner)
@@ -53,39 +52,35 @@ public class AI_Evade : State<AI>
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         else if (_owner.CanSeeEnemy()) {
-            if (_owner.critter.CanAlarm) { _owner.stateMachine.ChangeState(AI_Alarm.instance); }
-            else if (_owner.CanSeeWater() && _owner.critter.availableBehaviours.Contains(AI_Swim.instance) && !_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater) { _owner.stateMachine.ChangeState(AI_Swim.instance); }
-            else _owner.stateMachine.ChangeState(AI_Startle.instance);
-            //else _owner.stateMachine.ChangeState(AI_PlayDead.instance);
-        }
-        else if(!_owner.CanSeeEnemy()) { _owner.StartCoroutine(Resume(_owner)); }
-    }
-
-    void Evade(AI _owner)
-    {
-        Vector3 targetPos = RandomNavSphere(_owner.transform.position, 20f, _owner.agent.areaMask);
-        _owner.agent.SetDestination(targetPos);
-    }
-
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
-    {
-        Vector3 randDirection = Random.insideUnitSphere * dist;
-        randDirection.z = dist;
-        randDirection += origin;
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
-        return navHit.position;
+            State<AI> bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
+            if(bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+            else
+                GenerateNewDirection(_owner);
+        }       
+        _owner.StartCoroutine(Resume(_owner));
     }
 
     IEnumerator Resume(AI _owner)
     {
+        GenerateNewTargetPos(_owner);
         yield return new WaitForSeconds(3);
         _owner.critter.IsAlarmed = false;
         _owner.stateMachine.ChangeState(AI_Wander.instance);
     }
 
-    void bla()
+    void GenerateNewDirection(AI _owner)
     {
+        Vector3 direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
+        _owner.transform.rotation = Quaternion.Lerp(_owner.transform.rotation,
+                                    Quaternion.LookRotation(-direction),
+                                    _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed] * Time.deltaTime);
+    }
+
+    void GenerateNewTargetPos(AI _owner)
+    {
+        Vector3 newPos = _owner.transform.position + _owner.transform.forward * 5f;
+        _owner.agent.SetDestination(newPos);
     }
 
 }

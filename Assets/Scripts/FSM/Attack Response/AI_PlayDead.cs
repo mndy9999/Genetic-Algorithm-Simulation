@@ -30,7 +30,7 @@ public class AI_PlayDead : State<AI>
     }
 
     private float weight = 1;
-    public override float GetWeight(AI _owner) { return weight; }
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.Acting]; }
 
     public override void EnterState(AI _owner)
     {

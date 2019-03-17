@@ -14,6 +14,7 @@ public class AI : MonoBehaviour {
     public Animator animator;           //used to set up the animations
     public Critter critter;
     public Seek seek;
+    public SocialRankManager srm;
     public NavMeshAgent agent;
 
     [SerializeField] string CurrentState;

@@ -6379,6 +6379,7 @@ MonoBehaviour:
   animator: {fileID: 1006731152}
   critter: {fileID: 0}
   seek: {fileID: 0}
+  srm: {fileID: 0}
   agent: {fileID: 0}
   CurrentState: 
 --- !u!95 &1006731152
@@ -7800,6 +7801,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1467174846215346, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114725129805099564, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
     - {fileID: 114301006339380108, guid: 4d5f137a9e68f7540a00203e4b2b7b99, type: 2}
@@ -8624,6 +8629,7 @@ MonoBehaviour:
   animator: {fileID: 1357725838}
   critter: {fileID: 0}
   seek: {fileID: 0}
+  srm: {fileID: 0}
   agent: {fileID: 0}
   CurrentState: 
 --- !u!95 &1357725838
@@ -8652,15 +8658,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357725831}
-  m_LocalRotation: {x: -0, y: 0.96057975, z: -0, w: 0.27800462}
-  m_LocalPosition: {x: -14.23, y: 0.171, z: 64.46}
+  m_LocalRotation: {x: -0, y: 0.1555066, z: -0, w: -0.9878349}
+  m_LocalPosition: {x: -22.34, y: 0.171, z: 70.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591286963}
   - {fileID: 2067438155}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 147.718, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 342.108, z: 0}
 --- !u!195 &1357725840
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8671,12 +8677,12 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
@@ -10830,6 +10836,7 @@ MonoBehaviour:
   animator: {fileID: 1659578270}
   critter: {fileID: 0}
   seek: {fileID: 0}
+  srm: {fileID: 0}
   agent: {fileID: 0}
   CurrentState: 
 --- !u!95 &1659578270
@@ -11596,7 +11603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1845843775
 Animator:
   serializedVersion: 3
@@ -11622,15 +11629,15 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845843774}
-  m_LocalRotation: {x: -0, y: 0.5545132, z: -0, w: 0.8321749}
-  m_LocalPosition: {x: -19.85, y: 0.09, z: 56.89}
+  m_LocalRotation: {x: -0, y: 0.95441633, z: -0, w: 0.2984785}
+  m_LocalPosition: {x: -24.66, y: 0.09, z: 75.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1068490108}
   - {fileID: 2115654421}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 67.354004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 145.268, z: 0}
 --- !u!114 &1845843777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11649,6 +11656,7 @@ MonoBehaviour:
   animator: {fileID: 1845843775}
   critter: {fileID: 0}
   seek: {fileID: 0}
+  srm: {fileID: 0}
   agent: {fileID: 0}
   CurrentState: 
 --- !u!114 &1845843778
@@ -11749,7 +11757,7 @@ NavMeshAgent:
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
@@ -12619,6 +12627,7 @@ MonoBehaviour:
   animator: {fileID: 1948885004}
   critter: {fileID: 0}
   seek: {fileID: 0}
+  srm: {fileID: 0}
   agent: {fileID: 0}
   CurrentState: 
 --- !u!95 &1948885004
