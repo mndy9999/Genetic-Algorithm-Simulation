@@ -12,13 +12,10 @@ public class Behaviours
         AI_Chase.instance,
         AI_Attack.instance,
         AI_Eat.instance,
-        AI_Evade.instance,
         AI_Swim.instance,
         AI_Breed.instance,
         AI_Getup.instance,
         AI_Laydown.instance,
-        AI_Watch.instance,
-        AI_Submit.instance,
         AI_Dead.instance
     };
 
@@ -26,7 +23,7 @@ public class Behaviours
     {
         AI_Threat.instance,
         AI_Aggress.instance,
-        AI_Fight.instance
+        AI_Fight.instance,
     };
 
     public static List<State<AI>> LowEnergyBehaviours = new List<State<AI>>()

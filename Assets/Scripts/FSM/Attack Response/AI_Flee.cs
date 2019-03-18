@@ -37,11 +37,13 @@ public class AI_Flee : State<AI>
     {
         Debug.Log("Entering Flee State");
         _owner.animator.Play("Run");      //play animation when entering state       
+        
     }
 
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Flee State");
+        
         _owner.agent.ResetPath();
         _owner.StopAllCoroutines();
     }
@@ -50,35 +52,30 @@ public class AI_Flee : State<AI>
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy()) { _owner.StartCoroutine(Flee(_owner)); }
-        else if (!_owner.CanSeeEnemy()) { _owner.StartCoroutine(Resume(_owner)); }
+        else if (_owner.CanSeeEnemy()) { GenerateNewDirection(_owner); }
+        else { Resume(_owner); }
 
     }
 
     void GenerateNewDirection(AI _owner)
     {
         Vector3 direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
+
         _owner.transform.rotation = Quaternion.Lerp(_owner.transform.rotation,
                                     Quaternion.LookRotation(-direction),
                                     _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed] * Time.deltaTime);
+
+        Vector3 newPos = _owner.transform.position + _owner.transform.forward * 10f;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(newPos, out hit, 5f, _owner.agent.areaMask);
+        _owner.agent.SetDestination(hit.position);
+
     }
 
-    void GenerateNewTargetPos(AI _owner)
-    {
-        Vector3 newPos = _owner.transform.position + _owner.transform.forward * 99f;
-        _owner.agent.SetDestination(newPos);
-    }
 
-    IEnumerator Flee(AI _owner)
-    {
-        GenerateNewDirection(_owner);
-        GenerateNewTargetPos(_owner);
-        yield return null;
-    }
-
-    IEnumerator Resume(AI _owner)
-    {
-        yield return new WaitForSeconds(3);
+    void Resume(AI _owner)
+    { 
+        _owner.seek.enemyType = _owner.seek.defaultEnemyType;
         _owner.critter.IsAlarmed = false;
         _owner.stateMachine.ChangeState(AI_Wander.instance);
     }

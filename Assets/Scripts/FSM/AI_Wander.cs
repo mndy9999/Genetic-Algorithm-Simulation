@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class AI_Wander : State<AI>
 {
     Vector3 targetPos;
-
+    State<AI> bestState;
     private static AI_Wander _instance;
     private static string _name = "wander";
     private AI_Wander()
@@ -53,14 +53,32 @@ public class AI_Wander : State<AI>
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.CanSeeEnemy())
+        {
+            bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
+            if (bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+        }
         else if (_owner.critter.isChallenged)
         {
-            State<AI> bestState = _owner.BestState(Behaviours.ChallengerEncounterBehaviours);
+            bestState = _owner.BestState(Behaviours.ChallengerEncounterBehaviours);
+            if (bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+        }
+        else if (_owner.CanSeeOpponent())
+        {
+            bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
             if (bestState != null)
                 _owner.stateMachine.ChangeState(bestState);
         }
         else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        else if (_owner.CanSeeMate())
+        {
+            bestState = _owner.BestState(Behaviours.MateEncounterBehaviours);
+            if (bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+        }
+        
         else if (_owner.agent.remainingDistance <= _owner.agent.stoppingDistance + 1.0f) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
         //else if(_owner.critter.Energy < 90) { _owner.stateMachine.ChangeState(AI_Laydown.instance); }
 

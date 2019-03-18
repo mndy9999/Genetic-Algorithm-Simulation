@@ -51,14 +51,29 @@ public class AI_Chase : State<AI>
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.CanSeeEnemy())
+        {
+            bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
+            if (bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+        }
         else if (_owner.CanSeeTarget())
         {
-            if (_owner.TargetIsOpponent() && _owner.critter.canChallenge) { bestState = _owner.BestState(Behaviours.SocialRankBehaviours); }
-            else if (_owner.IsCloseEnough())
+            if (_owner.IsCloseEnough())
             {
                 if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-                else if (_owner.TargetIsMate()) { bestState = _owner.BestState(Behaviours.MateEncounterBehaviours); }                     
+                else if (_owner.TargetIsMate())
+                {
+                    bestState = _owner.BestState(Behaviours.MateEncounterBehaviours);
+                    if (bestState != null)
+                        _owner.stateMachine.ChangeState(bestState);
+                }
+                else if (_owner.TargetIsOpponent() && _owner.critter.canChallenge)
+                {
+                    bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
+                    if (bestState != null)
+                        _owner.stateMachine.ChangeState(bestState);
+                }
             }
             else
             {
@@ -66,7 +81,12 @@ public class AI_Chase : State<AI>
                 _owner.agent.SetDestination(_owner.seek.Target.transform.position);
             }
         }
-        else if (_owner.critter.isChallenged) { bestState = _owner.BestState(Behaviours.SocialRankBehaviours); }
+        else if (_owner.critter.isChallenged)
+        {
+            bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
+            if (bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+        }
         else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
         if (bestState != null)
             _owner.stateMachine.ChangeState(bestState);

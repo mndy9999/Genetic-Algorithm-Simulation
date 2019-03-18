@@ -6,6 +6,7 @@ using System.Linq;
 public class Seek : MonoBehaviour {
 
     public string enemyType = "Carnivore";
+    public string defaultEnemyType;
 
     public float viewRadius;
     public float viewAngle;   
@@ -37,6 +38,7 @@ public class Seek : MonoBehaviour {
 
     private void Start()
     {
+        defaultEnemyType = enemyType;
         critter = GetComponent<Critter>();
         availableTargetsType = critter.availableTargetTypes;
 
@@ -45,10 +47,22 @@ public class Seek : MonoBehaviour {
 
         FindVisibleTargets();
 
-        target = GetTarget();
+
+
+        if(!enemy && !opponent && !mate) target = GetTarget();
         enemy = GetEnemy();
+        if (enemy) { target = enemy; }        
         mate = GetMate();
+        if (!enemy && mate) { target = mate; }
         if (!critter.isChallenged) opponent = GetOpponent();
+        if (!enemy && !mate && opponent) { target = opponent; }
+
+
+
+        if (target) { lastKnownTarget = target; }
+        if (enemy) { lastKnownEnemy = enemy; }
+        if (mate) { lastKnownMate = mate; }
+        if (opponent) { lastKnownOpponent = opponent; }
 
     }
     private void Update()
@@ -56,13 +70,20 @@ public class Seek : MonoBehaviour {
         viewAngle = critter.viewAngle;
         FindVisibleTargets();
 
-        if(!critter.IsAttacked) target = GetTarget();
+
+
+        if (!enemy && !opponent && !mate) target = GetTarget();
+
         enemy = GetEnemy();
+        if (enemy) { target = enemy; }
+
         mate = GetMate();
-        if(!critter.isChallenged) opponent = GetOpponent();
-        if(opponent != null && critter.canChallenge) { target = opponent; }
-        if(mate != null) { target = mate; }
-        
+        if (!enemy && mate) { target = mate; }
+
+        if (!critter.isChallenged) opponent = GetOpponent();
+        if (!enemy && !mate && opponent) { target = opponent; }
+
+
 
         if (target) { lastKnownTarget = target; }
         if (enemy) { lastKnownEnemy = enemy; }
@@ -109,24 +130,17 @@ public class Seek : MonoBehaviour {
     }
 
     public GameObject GetEnemy()
-    {       
-        if (Critter.crittersDict.ContainsKey(enemyType))
+    {
+        tempEnemy = null;
+        float dist = Mathf.Infinity;
+        for (int i = 0; i < visibleTargets.Count; i++)
         {
-            //find closest enemy
-            float dist = Mathf.Infinity;
-            foreach (Critter c in Critter.crittersDict[enemyType])
+            float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
+            if (d < dist && visibleTargets[i].GetComponent<Critter>().critterType == enemyType)
             {
-                if (visibleTargets.Contains(c.gameObject) && c.GetComponent<Critter>().IsAlive)
-                {
-                    float d = Vector3.Distance(this.transform.position, c.transform.position);
-                    if (tempEnemy == null || d < dist)
-                    {
-                        tempEnemy = c.gameObject;
-                        dist = d;
-                    }
-                }
-                else { tempEnemy = null; }
-            }           
+                dist = d;
+                tempEnemy = visibleTargets[i];
+            }
         }
         return tempEnemy;
     }
@@ -137,7 +151,7 @@ public class Seek : MonoBehaviour {
         for (int i = 0; i < visibleTargets.Count; i++)
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
-            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
+            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed && !visibleTargets[i].GetComponent<Critter>().IsAlarmed && !critter.IsAlarmed)
             {
                 dist = d;
                 tempMate = visibleTargets[i];
@@ -153,7 +167,7 @@ public class Seek : MonoBehaviour {
         for (int i = 0; i < visibleTargets.Count; i++)
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
-            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender == visibleTargets[i].GetComponent<Critter>().gender && critter.canChallenge && visibleTargets[i].GetComponent<Critter>().canChallenge && critter.gameObject != visibleTargets[i].gameObject)
+            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender == visibleTargets[i].GetComponent<Critter>().gender && critter.canChallenge && visibleTargets[i].GetComponent<Critter>().canChallenge && critter.gameObject != visibleTargets[i].gameObject && !visibleTargets[i].GetComponent<Critter>().IsAlarmed && !critter.IsAlarmed)
             {
                 dist = d;
                 tempMate = visibleTargets[i];

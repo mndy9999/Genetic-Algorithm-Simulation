@@ -82,6 +82,11 @@ public class AI : MonoBehaviour {
         return seek.Mate;
     }
 
+    public bool CanSeeOpponent()
+    {
+        return seek.Opponent;
+    }
+
     public bool CanSeeEnemy()
     {
         return seek.Enemy;

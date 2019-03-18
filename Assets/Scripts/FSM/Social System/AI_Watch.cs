@@ -4,6 +4,7 @@ using System.Collections;
 
 public class AI_Watch : State<AI>
 {
+    State<AI> bestState;
     private static AI_Watch _instance;
     private static string _name = "watch";
     private AI_Watch()
@@ -55,7 +56,13 @@ public class AI_Watch : State<AI>
     {       
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
+        else if (_owner.CanSeeEnemy())
+        {
+            bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
+            if (bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+        }
+        else if (_owner.critter.IsAlarmed || _owner.seek.LastKnownTarget.GetComponent<Critter>().IsAlarmed) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
         yield return new WaitForSeconds(5);
         if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         else { _owner.stateMachine.ChangeState(AI_Wander.instance); }

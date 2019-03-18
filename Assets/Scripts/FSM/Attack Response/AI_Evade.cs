@@ -49,16 +49,7 @@ public class AI_Evade : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy()) {
-            State<AI> bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
-            if(bestState != null)
-                _owner.stateMachine.ChangeState(bestState);
-            else
-                GenerateNewDirection(_owner);
-        }       
-        _owner.StartCoroutine(Resume(_owner));
+
     }
 
     IEnumerator Resume(AI _owner)

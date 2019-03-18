@@ -38,8 +38,6 @@ public class AI_Attack : State<AI>
         Debug.Log("Entering Attack State");
         _owner.seek.Target.GetComponent<Critter>().IsAlarmed = false;
         _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
-        if(_owner.seek.Target.GetComponent<Seek>()) _owner.seek.Target.GetComponent<Seek>().Target = _owner.gameObject;
-
     }
 
     public override void ExitState(AI _owner)
@@ -52,7 +50,6 @@ public class AI_Attack : State<AI>
     {
         
         if (_owner.IsDead()) {  _owner.stateMachine.ChangeState(AI_Dead.instance); }
-       // else if (_owner.CanSeeEnemy() && _owner.critter.Health < 40) { _owner.stateMachine.ChangeState(AI_Evade.instance); }
         else if (_owner.CanSeeTarget())
         {
             if (_owner.IsCloseEnough())

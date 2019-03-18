@@ -43,6 +43,7 @@ public class Critter : MonoBehaviour {
     public bool isAttacked;
     public bool isVisible;
     public bool isChallenged;
+    public bool isScared;
 
     public bool canAlarm;
     public bool canBreed;
@@ -61,10 +62,9 @@ public class Critter : MonoBehaviour {
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
         crittersDict[critterType].Add(this);
         critterTraitsDict = new Dictionary<Trait, float>();
-        availableBehaviours = new List<State<AI>>();
 
         EncodeTraits();
-        if (!isChild) { PopulateAvailableBehaviours(); GenerateRandomTraits(); }
+        if (!isChild) { GenerateRandomTraits(); }
         DecodeTraits();
         
         
@@ -103,31 +103,6 @@ public class Critter : MonoBehaviour {
 
     }
 
-    public void PopulateAvailableBehaviours()
-    {
-        for (int i = 0; i < Behaviours.behaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                availableBehaviours.Add(Behaviours.behaviours[i]);
-        }
-        for (int i = 0; i < Behaviours.EnemyEncounterBehaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                availableBehaviours.Add(Behaviours.behaviours[i]);
-        }
-        for (int i = 0; i < Behaviours.MateEncounterBehaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                availableBehaviours.Add(Behaviours.MateEncounterBehaviours[i]);
-        }
-        for (int i = 0; i < Behaviours.SocialRankBehaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                availableBehaviours.Add(Behaviours.SocialRankBehaviours[i]);
-        }
-
-
-    }
     public void GenerateRandomTraits()
     {
         foreach (Trait t in System.Enum.GetValues(typeof(Trait)))
@@ -218,6 +193,11 @@ public class Critter : MonoBehaviour {
     {
         get { return isAttacked; }
         set { isAttacked = value; }
+    }
+    public bool IsScared
+    {
+        get { return isScared; }
+        set { isScared = value; }
     }
     public bool IsAlive
     {

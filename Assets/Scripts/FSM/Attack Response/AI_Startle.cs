@@ -4,6 +4,7 @@ using System.Collections;
 
 public class AI_Startle : State<AI>
 {
+    State<AI> bestState;
     private static AI_Startle _instance;
     private static string _name = "startle";
     private AI_Startle()
@@ -36,9 +37,11 @@ public class AI_Startle : State<AI>
     {
         Debug.Log("Entering Starle State");
         _owner.animator.Play("ShowOff");      //play animation when entering state
-        if (Random.Range(0, 10) < _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints])
+        if (Random.Range(0, 10) < GetWeight(_owner))
         {
             _owner.seek.Enemy.GetComponent<Seek>().Enemy = _owner.gameObject;
+            _owner.seek.Enemy.GetComponent<Seek>().enemyType = "Herbivore";
+            _owner.seek.Enemy.GetComponent<Critter>().IsAlarmed = true; 
             _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints] += 0.5f;
         }
     }
@@ -51,17 +54,28 @@ public class AI_Startle : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if(!_owner.CanSeeEnemy()){ _owner.stateMachine.ChangeState(AI_Wander.instance); }
-        else if (_owner.CanSeeEnemy())
+        if (_owner.CanSeeEnemy())
         {
             var direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
             _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
                                 Quaternion.LookRotation(direction),
                                 _owner.critter.speed * Time.deltaTime);
         }
-        
+        _owner.StartCoroutine(WaitForAnimation(_owner));
+    }
+
+    IEnumerator WaitForAnimation(AI _owner)
+    {
+        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        yield return new WaitForSeconds(2f);
+        if (_owner.CanSeeEnemy())
+        {
+            bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
+            if (bestState != null)
+                _owner.stateMachine.ChangeState(bestState);
+        }
+        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 
 }
