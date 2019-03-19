@@ -14,23 +14,35 @@ public class Seek : MonoBehaviour {
     [SerializeField]
     GameObject target = null;
     [SerializeField]
+    GameObject challenger = null;
+    [SerializeField]
+    GameObject food = null;
+    [SerializeField]
     GameObject enemy = null;   
     [SerializeField]
+    GameObject potentialMate = null;
+    [SerializeField]
     GameObject mate = null;
+    [SerializeField]
+    GameObject courter = null;
     [SerializeField]
     GameObject opponent = null;
 
     GameObject lastKnownTarget = null;
+    GameObject lastKnownFood = null;
     GameObject lastKnownEnemy= null;
     GameObject lastKnownMate = null;
+    GameObject lastKnownPotentialMate = null;
+    GameObject lastKnownCourter = null;
     GameObject lastKnownOpponent = null;
+    GameObject lastKnownChallenger = null;
 
-    GameObject tempTarget = null;
-    GameObject tempEnemy = null;
-    GameObject tempMate = null;
+    GameObject temp = null;
 
     public List<GameObject> visibleTargets = new List<GameObject>();
     public List<string> availableTargetsType;
+
+    public GameObject[] potentialTargets = new GameObject[6];
 
     Critter critter;
 
@@ -38,6 +50,7 @@ public class Seek : MonoBehaviour {
 
     private void Start()
     {
+
         defaultEnemyType = enemyType;
         critter = GetComponent<Critter>();
         availableTargetsType = critter.availableTargetTypes;
@@ -47,21 +60,29 @@ public class Seek : MonoBehaviour {
 
         FindVisibleTargets();
 
-
-
-        if(!enemy && !opponent && !mate) target = GetTarget();
+        food = GetFood();
         enemy = GetEnemy();
-        if (enemy) { target = enemy; }        
-        mate = GetMate();
-        if (!enemy && mate) { target = mate; }
-        if (!critter.isChallenged) opponent = GetOpponent();
-        if (!enemy && !mate && opponent) { target = opponent; }
+        potentialMate = GetPotantialMate();
 
+        potentialTargets[0] = enemy;
+        potentialTargets[1] = challenger;
+        potentialTargets[2] = mate;
+        potentialTargets[3] = courter;       
+        potentialTargets[4] = food;
+        potentialTargets[5] = potentialMate;
 
+        target = null;
+        for (int i = 0; i < potentialTargets.Length; i++)
+        {
+            if (potentialTargets[i] != null) { target = potentialTargets[i]; break; }
+        }
 
         if (target) { lastKnownTarget = target; }
+        if (food) { lastKnownFood = food; }
         if (enemy) { lastKnownEnemy = enemy; }
         if (mate) { lastKnownMate = mate; }
+        if (potentialMate) { lastKnownMate = mate; }
+        if (courter) { lastKnownCourter = mate; }
         if (opponent) { lastKnownOpponent = opponent; }
 
     }
@@ -70,24 +91,29 @@ public class Seek : MonoBehaviour {
         viewAngle = critter.viewAngle;
         FindVisibleTargets();
 
-
-
-        if (!enemy && !opponent && !mate) target = GetTarget();
-
+        food = GetFood();
         enemy = GetEnemy();
-        if (enemy) { target = enemy; }
+        potentialMate = GetPotantialMate();
 
-        mate = GetMate();
-        if (!enemy && mate) { target = mate; }
+        potentialTargets[0] = enemy;
+        potentialTargets[1] = challenger;
+        potentialTargets[2] = courter;
+        potentialTargets[3] = mate;
+        potentialTargets[4] = food;
+        potentialTargets[5] = potentialMate;
 
-        if (!critter.isChallenged) opponent = GetOpponent();
-        if (!enemy && !mate && opponent) { target = opponent; }
-
-
+        target = null;
+        for (int i = 0; i < potentialTargets.Length; i++)
+        {
+            if(potentialTargets[i] != null) { target = potentialTargets[i]; break; }
+        }
 
         if (target) { lastKnownTarget = target; }
+        if (food) { lastKnownFood = food; }
         if (enemy) { lastKnownEnemy = enemy; }
         if (mate) { lastKnownMate = mate; }
+        if (potentialMate) { lastKnownPotentialMate = potentialMate; }
+        if (courter) { lastKnownCourter = courter; }
         if (opponent) { lastKnownOpponent = opponent; }
 
     }
@@ -113,9 +139,9 @@ public class Seek : MonoBehaviour {
         }
     }
 
-    public GameObject GetTarget()
+    public GameObject GetFood()
     {
-        tempTarget = null;
+        temp = null;
         float dist = Mathf.Infinity;
         for (int i = 0; i < visibleTargets.Count; i++)
         {
@@ -123,46 +149,44 @@ public class Seek : MonoBehaviour {
             if(d < dist && availableTargetsType.Contains(visibleTargets[i].GetComponent<Critter>().critterType))
             {
                 dist = d;
-                tempTarget = visibleTargets[i];
+                temp = visibleTargets[i];
             }
         }
-        return tempTarget;
+        return temp;
     }
-
     public GameObject GetEnemy()
     {
-        tempEnemy = null;
+        temp = null;
         float dist = Mathf.Infinity;
         for (int i = 0; i < visibleTargets.Count; i++)
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
-            if (d < dist && visibleTargets[i].GetComponent<Critter>().critterType == enemyType)
+            if (d < dist && visibleTargets[i].GetComponent<Critter>().critterType == enemyType && visibleTargets[i].GetComponent<Critter>().IsAlive)
             {
                 dist = d;
-                tempEnemy = visibleTargets[i];
+                temp = visibleTargets[i];
             }
         }
-        return tempEnemy;
+        return temp;
     }
-    public GameObject GetMate()
+    public GameObject GetPotantialMate()
     {
-        tempMate = null;
+        temp = null;
         float dist = Mathf.Infinity;
         for (int i = 0; i < visibleTargets.Count; i++)
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
-            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed && !visibleTargets[i].GetComponent<Critter>().IsAlarmed && !critter.IsAlarmed)
+            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
             {
                 dist = d;
-                tempMate = visibleTargets[i];
+                temp = visibleTargets[i];
             }
         }
-        return tempMate;
+        return temp;
     }
-
     public GameObject GetOpponent()
     {
-        tempMate = null;
+        temp = null;
         float dist = Mathf.Infinity;
         for (int i = 0; i < visibleTargets.Count; i++)
         {
@@ -170,52 +194,100 @@ public class Seek : MonoBehaviour {
             if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender == visibleTargets[i].GetComponent<Critter>().gender && critter.canChallenge && visibleTargets[i].GetComponent<Critter>().canChallenge && critter.gameObject != visibleTargets[i].gameObject && !visibleTargets[i].GetComponent<Critter>().IsAlarmed && !critter.IsAlarmed)
             {
                 dist = d;
-                tempMate = visibleTargets[i];
+                temp = visibleTargets[i];
             }
         }
-        return tempMate;
+        return temp;
     }
+
+
 
     public GameObject Target
     {
         get { return target; }
         set { target = value; }
     }
+    public GameObject Food
+    {
+        get { return food; }
+        set { food = value; }
+    }
     public GameObject Enemy
     {
         get { return enemy; }
         set { enemy = value; }
+    }
+    public GameObject PotentialMate
+    {
+        get { return potentialMate; }
+        set { potentialMate = value; }
     }
     public GameObject Mate
     {
         get { return mate; }
         set { mate = value; }
     }
+    public GameObject Courter
+    {
+        get { return  courter; }
+        set { courter = value; }
+    }
     public GameObject Opponent
     {
         get { return opponent; }
         set { opponent = value; }
     }
+    public GameObject Challenger
+    {
+        get { return challenger; }
+        set { challenger = value; }
+    }
+
+
+
+
     public GameObject LastKnownTarget
     {
         get { return lastKnownTarget; }
         set { lastKnownTarget = value; }
+    }
+    public GameObject LastKnownfood
+    {
+        get { return lastKnownFood; }
+        set { lastKnownFood = value; }
     }
     public GameObject LastKnownEnemy
     {
         get { return lastKnownEnemy; }
         set { lastKnownEnemy = value; }
     }
+    public GameObject LastKnownPotentialMate
+    {
+        get { return lastKnownPotentialMate; }
+        set { lastKnownPotentialMate = value; }
+    }
     public GameObject LastKnownMate
     {
         get { return lastKnownMate; }
         set { lastKnownMate = value; }
+    }
+    public GameObject LastKnownCourter
+    {
+        get { return lastKnownCourter; }
+        set { lastKnownCourter = value; }
     }
     public GameObject LastKnownOpponent
     {
         get { return lastKnownOpponent; }
         set { lastKnownOpponent = value; }
     }
+    public GameObject LastKnownChallenger
+    {
+        get { return lastKnownChallenger; }
+        set { lastKnownChallenger = value; }
+    }
+
+
 
     public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)
     {

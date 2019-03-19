@@ -6,6 +6,7 @@ TagManager:
   tags:
   - waypoint
   - wolf
+  - ground
   layers:
   - Default
   - TransparentFX

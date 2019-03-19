@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FiniteStateMachine;
+using System.Collections;
 
 public class AI_Breed : State<AI>
 {
@@ -7,7 +8,6 @@ public class AI_Breed : State<AI>
 
     float time;
     private static AI_Breed _instance;
-    private static string _name = "breed";
     private AI_Breed()
     {
         if (_instance != null)
@@ -26,12 +26,6 @@ public class AI_Breed : State<AI>
         }
     }
 
-    public static string name
-    {
-        get { return _name; }
-        set { _name = value; }
-    }
-
     private float weight = 1;
     public override float GetWeight(AI _owner) { return weight; }
 
@@ -42,16 +36,8 @@ public class AI_Breed : State<AI>
         breeding = _owner.GetComponent<BreedingController>();
         if (breeding)
         {
-            if (_owner.critter.gender == Critter.Gender.Female)
-            {
-                breeding.mother = _owner.critter;
-                breeding.father = _owner.seek.Target.GetComponent<Critter>();
-            }
-            else
-            {
-                breeding.father = _owner.critter;
-                breeding.mother = _owner.seek.Target.GetComponent<Critter>();
-            }
+            breeding.mother = _owner.critter;
+            breeding.father = _owner.seek.Mate.GetComponent<Critter>();
         }
 
         time = Time.time;
@@ -60,22 +46,26 @@ public class AI_Breed : State<AI>
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Breed State");
-        _owner.critter.canBreed = false;
+        
         _owner.seek.Mate = null;
+        _owner.StopAllCoroutines();
     }
 
     public override void UpdateState(AI _owner)
-    {        
-        if(Time.time >= time + 4.6) {
-            breeding = _owner.GetComponent<BreedingController>();
-            if (breeding)
-            {
-                Debug.Log("hi");
-                breeding.CreateOffspring();
-                breeding.Crossover();
-            }
-            _owner.critter.BreedTimer = true;
-            _owner.stateMachine.ChangeState(AI_Idle.instance);
+    {
+        _owner.StartCoroutine(WaitForAnimation(_owner));
+    }
+
+    IEnumerator WaitForAnimation(AI _owner)
+    {
+        yield return new WaitForSeconds(3);
+        breeding = _owner.GetComponent<BreedingController>();
+        if (breeding)
+        {
+            breeding.CreateOffspring();
+            breeding.Crossover();
         }
+        _owner.critter.ResetBreed();
+        _owner.stateMachine.ChangeState(AI_Idle.instance);
     }
 }

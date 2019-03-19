@@ -39,59 +39,69 @@ public class AI_Chase : State<AI>
         Debug.Log("Entering Chase State");
         _owner.animator.Play("Run");      //play animation when entering state
         _owner.agent.ResetPath();
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.RunSpeed];
+
+        _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+        _owner.seek.Target.GetComponent<Critter>().IsAlarmed = true;
+
     }
 
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Chase State");
         _owner.agent.ResetPath();
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed];
     }
 
     public override void UpdateState(AI _owner)
     {
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy())
+        if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+
+        if (_owner.CanSeeTarget())
         {
-            bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
-            if (bestState != null)
-                _owner.stateMachine.ChangeState(bestState);
-        }
-        else if (_owner.CanSeeTarget())
-        {
+            if (_owner.TargetIsEnemy())
+            {
+                bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
+                if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
+            }
+
+            if (_owner.TargetIsChallenger())
+            {
+                bestState = _owner.BestState(Behaviours.ChallengerEncounterBehaviours);
+                if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
+            }
+
+            if (_owner.TargetIsCourter()) { _owner.stateMachine.ChangeState(AI_Watch.instance); }
+
             if (_owner.IsCloseEnough())
             {
-                if (_owner.TargetIsFood()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-                else if (_owner.TargetIsMate())
+                if (_owner.TargetIsMate()) { _owner.stateMachine.ChangeState(AI_Breed.instance); }
+                if (_owner.TargetIsFood())
                 {
-                    bestState = _owner.BestState(Behaviours.MateEncounterBehaviours);
-                    if (bestState != null)
-                        _owner.stateMachine.ChangeState(bestState);
-                }
-                else if (_owner.TargetIsOpponent() && _owner.critter.canChallenge)
-                {
-                    bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
-                    if (bestState != null)
-                        _owner.stateMachine.ChangeState(bestState);
+                    if (_owner.TargetIsDead())
+                    {
+                        if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree") { _owner.stateMachine.ChangeState(AI_Knock.instance); }
+                        if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt") { _owner.stateMachine.ChangeState(AI_Dig.instance); }
+                        _owner.stateMachine.ChangeState(AI_Eat.instance);
+                    }
+                    else { _owner.stateMachine.ChangeState(AI_Attack.instance); }
                 }
             }
-            else
+
+            if (_owner.TargetIsPotentialMate() && !_owner.IsCourted())
             {
-                _owner.seek.Target.GetComponent<Critter>().IsAlarmed = true;
-                _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+                bestState = _owner.BestState(Behaviours.MateEncounterBehaviours);
+                if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
             }
+
+            if (_owner.TargetIsOpponent())
+            {
+                bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
+                if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
+            }
+            _owner.agent.SetDestination(_owner.seek.Target.transform.position);
         }
-        else if (_owner.critter.isChallenged)
-        {
-            bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
-            if (bestState != null)
-                _owner.stateMachine.ChangeState(bestState);
-        }
-        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
-        if (bestState != null)
-            _owner.stateMachine.ChangeState(bestState);
+        else { _owner.stateMachine.ChangeState(AI_Wander.instance); }
     }
-
-
-
 }

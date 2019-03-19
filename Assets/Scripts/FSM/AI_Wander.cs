@@ -40,7 +40,8 @@ public class AI_Wander : State<AI>
         Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
         _owner.agent.ResetPath();
-        Wander(_owner);
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed];
+        
     }
 
     public override void ExitState(AI _owner)
@@ -51,37 +52,14 @@ public class AI_Wander : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeEnemy())
-        {
-            bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
-            if (bestState != null)
-                _owner.stateMachine.ChangeState(bestState);
-        }
-        else if (_owner.critter.isChallenged)
-        {
-            bestState = _owner.BestState(Behaviours.ChallengerEncounterBehaviours);
-            if (bestState != null)
-                _owner.stateMachine.ChangeState(bestState);
-        }
-        else if (_owner.CanSeeOpponent())
-        {
-            bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
-            if (bestState != null)
-                _owner.stateMachine.ChangeState(bestState);
-        }
-        else if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-        else if (_owner.CanSeeMate())
-        {
-            bestState = _owner.BestState(Behaviours.MateEncounterBehaviours);
-            if (bestState != null)
-                _owner.stateMachine.ChangeState(bestState);
-        }
-        
-        else if (_owner.agent.remainingDistance <= _owner.agent.stoppingDistance + 1.0f) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
-        //else if(_owner.critter.Energy < 90) { _owner.stateMachine.ChangeState(AI_Laydown.instance); }
 
+        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        if (_owner.switchState || _owner.agent.remainingDistance <= _owner.agent.stoppingDistance) {
+            if (!_owner.switchState) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+            else { Wander(_owner); }
+        }
     }
 
     void Wander(AI _owner)

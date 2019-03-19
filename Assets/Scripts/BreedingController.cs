@@ -8,16 +8,18 @@ public class BreedingController : MonoBehaviour {
     public Critter father;
 
     GameObject offspring;
-    public GameObject model;
+    public GameObject[] model;
     [Range(0, 100)] public float mutationRate;
 
     public void CreateOffspring()
     {
         Debug.Log("creating offspring");
         Vector3 pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) + transform.position;
-        offspring = Instantiate(model, pos, Quaternion.identity);
-        offspring.AddComponent<Critter>().isChild = true;
-        offspring.GetComponent<Critter>().gender = Random.Range(0, 1) == 0 ? Critter.Gender.Female : Critter.Gender.Male;
+
+        int rand = Random.Range(0, 1);
+        offspring = Instantiate(model[rand], pos, Quaternion.identity);
+
+        offspring.GetComponent<Critter>().isChild = true;
         offspring.GetComponent<Critter>().name = offspring.GetComponent<Critter>().gender.ToString() + " Sheep";
     }
 

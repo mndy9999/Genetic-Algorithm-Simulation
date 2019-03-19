@@ -24,7 +24,6 @@ public class Critter : MonoBehaviour {
     [HideInInspector] public float energyPerSecond = 0.5f;
 
     public float age;
-    public float speed;
 
     public float fitnessScore;
 
@@ -39,21 +38,22 @@ public class Critter : MonoBehaviour {
 
     [HideInInspector] public Vector3 initialSize;
 
-    public bool isAlarmed;
-    public bool isAttacked;
-    public bool isVisible;
-    public bool isChallenged;
-    public bool isScared;
+    [HideInInspector] public bool isAlarmed;
+    [HideInInspector] public bool isAttacked;
+    [HideInInspector] public bool isVisible;
+    [HideInInspector] public bool isChallenged;
+    [HideInInspector] public bool isScared;
+    [HideInInspector] public bool isCourted;
 
-    public bool canAlarm;
-    public bool canBreed;
-    public bool canChallenge;
+    [HideInInspector] public bool canAlarm;
+    [HideInInspector] public bool canBreed;
+    [HideInInspector] public bool canChallenge;
 
-    public bool isChild;
+    [HideInInspector] public bool isChild;
 
-    [HideInInspector] public bool breedTimer;
-    [HideInInspector] public float challengeTimer;
-    [HideInInspector] public float time;
+    [HideInInspector] public float breedTime;
+    [HideInInspector] public float challengeTime;
+    [HideInInspector] public float alarmTime;
 
     // Use this for initialization
     void Awake () {
@@ -65,8 +65,13 @@ public class Critter : MonoBehaviour {
 
         EncodeTraits();
         if (!isChild) { GenerateRandomTraits(); }
-        DecodeTraits();
-        
+        //DecodeTraits();
+
+
+        ResetAlarm();
+        ResetBreed();
+        ResetChallenge();
+
         
         isAlarmed = false;
         isAttacked = false;
@@ -74,16 +79,14 @@ public class Critter : MonoBehaviour {
         canChallenge = true;
 
         initialSize = new Vector3(0.2f, 0.2f, 0.2f);
-        time = Time.time;
 
         viewAngle = critterTraitsDict[Trait.ViewAngle];
-
-        canBreed = true;
     }
 
     private void OnDestroy()
     {       
-        crittersDict[critterType].Remove(this);
+        if(crittersDict[critterType].Contains(this))
+            crittersDict[critterType].Remove(this);
     }
 
     // Update is called once per frame
@@ -91,15 +94,20 @@ public class Critter : MonoBehaviour {
     {
         if (resource <= 0) { KillSelf(); }
         if (isChallenged) canChallenge = false;
-        if(challengeTimer > 100 && !isChallenged) { canChallenge = true; }
-        else { challengeTimer += Time.deltaTime; }
         
         UpdateFOV();
-       // UpdateLifeStage();
-        UpdateSpeed();
+        UpdateLifeStage();
 
-        if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }
-        //canBreed = lifeStage >= Stage.Teen && lifeStage < Stage.Elder;
+        if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }         
+
+        canBreed = breedTime > 10 ? (lifeStage >= Stage.Teen && lifeStage < Stage.Elder) : false;
+        breedTime += Time.deltaTime;
+
+        canAlarm = alarmTime > 10 ? true : false;
+        alarmTime += Time.deltaTime;
+
+        canChallenge = challengeTime > 10 ? !isChallenged : false;
+        challengeTime += Time.deltaTime;
 
     }
 
@@ -108,12 +116,18 @@ public class Critter : MonoBehaviour {
         foreach (Trait t in System.Enum.GetValues(typeof(Trait)))
         {
             if (t != Trait.ViewAngle)
-                critterTraitsDict[t] = Random.Range(0, 10);
+                critterTraitsDict[t] = Random.Range(1, 10);
             else
-                critterTraitsDict[t] = Random.Range(0, 180);
+                critterTraitsDict[t] = Random.Range(1, 180);
         }
         critterTraitsDict[Trait.ViewRadius] = 10f;  
         critterTraitsDict[Trait.RankPoints] = 0.0f;  
+        if(critterTraitsDict[Trait.RunSpeed] < critterTraitsDict[Trait.WalkSpeed])
+        {
+            float temp = critterTraitsDict[Trait.RunSpeed];
+            critterTraitsDict[Trait.RunSpeed] = critterTraitsDict[Trait.RunSpeed];
+            critterTraitsDict[Trait.RunSpeed] = temp;
+        }
     }
     public void SetupCritter()
     {
@@ -135,17 +149,6 @@ public class Critter : MonoBehaviour {
             Debug.Log(t.ToString() + ":  " + critterTraitsDict[t]);
     }
 
-    void UpdateSpeed()
-    {
-        if (energy < 10)
-        {
-            while (speed > critterTraitsDict[Trait.WalkSpeed]) { speed -= 0.2f; }
-        }
-        else
-        {
-            while (speed < critterTraitsDict[Trait.RunSpeed]) { speed += 0.2f; }
-        }
-    }   
     void UpdateFOV()
     {
         if (isAlarmed) { viewAngle = 360; }
@@ -168,12 +171,12 @@ public class Critter : MonoBehaviour {
 
     public void KillSelf() { Destroy(gameObject); }
 
+    public void ResetAlarm() { alarmTime = 0; }
+    public void ResetBreed() { breedTime = 0; }
+    public void ResetChallenge() { challengeTime = 0; }
+
     #region Getters And Setters
-    public bool BreedTimer
-    {
-        get { return breedTimer; }
-        set { breedTimer = value; }
-    }
+
     public bool CanBreed
     {
         get { return canBreed; }

@@ -11,7 +11,7 @@ public class AgeController : MonoBehaviour {
 
     private void Update()
     {
-        critter.age += 0.01f;
+        critter.age += Time.deltaTime;
         ageUp();
     }
 

@@ -34,7 +34,7 @@ public class AI : MonoBehaviour {
 
     private void Update()
     {
-        CurrentState = stateMachine.currentState.ToString();
+        if(stateMachine.currentState != null) CurrentState = stateMachine.currentState.ToString();
         //timer for changing between the idle and wander states
         if(Time.time > timer + 1)
         {
@@ -77,9 +77,24 @@ public class AI : MonoBehaviour {
         return seek.Target;
     }
 
+    public bool IsAttacked()
+    {
+        return critter.IsAttacked;
+    }
+
+    public bool IsChallenged()
+    {
+        return critter.isChallenged;
+    }
+
     public bool CanSeeMate()
     {
         return seek.Mate;
+    }
+
+    public bool CanSeePotentialMate()
+    {
+        return seek.PotentialMate;
     }
 
     public bool CanSeeOpponent()
@@ -94,12 +109,7 @@ public class AI : MonoBehaviour {
 
     public bool IsCloseEnough()
     {
-        //if (!GetComponent<MeshCollider>())
-        //    return Vector3.Distance(GetComponentInChildren<MeshCollider>().bounds.center, seek.Target.GetComponentInChildren<MeshCollider>().bounds.center) < (GetComponentInChildren<MeshCollider>().bounds.size + seek.Target.transform.GetComponentInChildren<MeshCollider>().bounds.size).x / 2 + 0.5f;
-        //else
-        //    return Vector3.Distance(this.transform.position, seek.Target.transform.position) < (GetComponent<MeshCollider>().bounds.size + seek.Target.transform.GetComponent<MeshCollider>().bounds.size).x / 2;
-
-        return Vector3.Distance(transform.position, seek.Target.transform.position) < 2.0f;
+        return Vector3.Distance(transform.position, seek.Target.transform.position) <= agent.stoppingDistance;
     }
 
 
@@ -110,22 +120,47 @@ public class AI : MonoBehaviour {
 
     public bool TargetIsFood()
     {
-        return  seek.availableTargetsType.Contains(seek.Target.GetComponent<Critter>().critterType);
+        return  seek.Target == seek.Food;
     }
 
     public bool TargetIsMate()
     {
-        return seek.Target.GetComponent<Critter>().critterType == critter.critterType && seek.Target.GetComponent<Critter>().gender != critter.gender;
+        return seek.Target == seek.Mate;
+    }
+
+    public bool TargetIsPotentialMate()
+    {
+        return seek.Target == seek.PotentialMate;
+    }
+
+    public bool TargetIsEnemy()
+    {
+        return seek.Target == seek.Enemy;
     }
 
     public bool TargetIsOpponent()
     {
-        return seek.Target.GetComponent<Critter>().critterType == critter.critterType && seek.Target.GetComponent<Critter>().gender == critter.gender;
+        return seek.Target == seek.Opponent;
+    }
+
+    public bool TargetIsChallenger()
+    {
+        return seek.Target == seek.Challenger;
+    }
+
+    public bool TargetIsCourter()
+    {
+        return seek.Target == seek.Courter;
     }
 
     public bool IsDead()
     {
         return !critter.IsAlive;
+    }
+
+    public bool IsCourted()
+    {
+        return critter.isCourted;
     }
 
     public bool InWater()
