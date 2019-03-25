@@ -24,7 +24,7 @@ public class AI_Watch : State<AI>
         }
     }
 
-    public override float GetWeight(AI _owner) { return _owner.critter.fitnessScore; }
+    public override float GetWeight(AI _owner) { return _owner.critter.FitnessScore; }
 
     public override void EnterState(AI _owner)
     {

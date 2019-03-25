@@ -25,7 +25,7 @@ public class AI_Alarm : State<AI>
         }
     }
 
-    public override float GetWeight(AI _owner) { return Vector3.Distance(_owner.transform.position, _owner.seek.Enemy.transform.position)/10 + _owner.critter.critterTraitsDict[Critter.Trait.VoiceStrenght]; }
+    public override float GetWeight(AI _owner) { return Vector3.Distance(_owner.transform.position, _owner.seek.Enemy.transform.position)/10 + _owner.critter.critterTraitsDict[Trait.VoiceStrenght]; }
 
     public override void EnterState(AI _owner)
     {

@@ -5,6 +5,37 @@ using FiniteStateMachine;
 
 public class Behaviours
 {
+
+    public static List<State<AI>> allPossibleBehaviours = new List<State<AI>>()
+    {
+        AI_Idle.instance,
+        AI_Wander.instance,
+        AI_Chase.instance,
+        AI_Attack.instance,
+        AI_Eat.instance,
+        AI_Swim.instance,
+        AI_Breed.instance,
+        AI_Getup.instance,
+        AI_Laydown.instance,
+        AI_Dead.instance,
+        AI_Threat.instance,
+        AI_Aggress.instance,
+        AI_Fight.instance,
+        AI_Sleep.instance,
+        AI_Rest.instance,
+        AI_Knock.instance,
+        AI_Dig.instance,
+        AI_Alarm.instance,
+        AI_PlayDead.instance,
+        AI_Startle.instance,
+        AI_Flee.instance,
+        AI_CallMate.instance,
+        AI_Impress.instance,
+        AI_Watch.instance,
+        AI_Submit.instance
+    };
+
+
     public static List<State<AI>> behaviours = new List<State<AI>>()
     {
         AI_Idle.instance, 
@@ -23,7 +54,7 @@ public class Behaviours
     {
         AI_Threat.instance,
         AI_Aggress.instance,
-        AI_Fight.instance,
+        AI_Fight.instance
     };
 
     public static List<State<AI>> LowEnergyBehaviours = new List<State<AI>>()

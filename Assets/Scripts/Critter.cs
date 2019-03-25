@@ -4,18 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using FiniteStateMachine;
 
-public class Critter : MonoBehaviour {
-
+public class Critter : MonoBehaviour
+{
     public string critterType = "Vegetable";
-    public string name;
-
-    [SerializeField] string rank;
-
-    public enum Gender { Female, Male };
-    public Gender gender;
-    public enum Stage { Baby, Teen, Adult, Elder };
-    public Stage lifeStage;
-    public enum Trait { WalkSpeed, RunSpeed, ViewRadius, ViewAngle, AttackPoints, ThreatPoints, RankPoints, VoiceStrenght, Beauty, Acting };
 
     [SerializeField] float health = 100f;
     [SerializeField] float energy = 100f;
@@ -23,15 +14,17 @@ public class Critter : MonoBehaviour {
    
     [HideInInspector] public float energyPerSecond = 0.5f;
 
-    public float age;
-
-    public float fitnessScore;
+    float age;
+    float fitnessScore;
 
     [Range(0, 360)] public float viewAngle;
-   
 
-    static public Dictionary<string, List<Critter>> crittersDict;
+    public Gender gender;
+    public Stage lifeStage;
+
+
     public Dictionary <Trait, float> critterTraitsDict;
+    static public Dictionary<string, List<Critter>> crittersDict;
 
     public List<State<AI>> availableBehaviours;
     public List<string> availableTargetTypes;
@@ -92,11 +85,10 @@ public class Critter : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (resource <= 0) { KillSelf(); }
+        if (resource <= 0) { Destroy(gameObject); }
         if (isChallenged) canChallenge = false;
         
         UpdateFOV();
-        UpdateLifeStage();
 
         if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }         
 
@@ -118,7 +110,7 @@ public class Critter : MonoBehaviour {
             if (t != Trait.ViewAngle)
                 critterTraitsDict[t] = Random.Range(1, 10);
             else
-                critterTraitsDict[t] = Random.Range(1, 180);
+                critterTraitsDict[t] = Random.Range(1, 360);
         }
         critterTraitsDict[Trait.ViewRadius] = 10f;  
         critterTraitsDict[Trait.RankPoints] = 0.0f;  
@@ -154,13 +146,6 @@ public class Critter : MonoBehaviour {
         if (isAlarmed) { viewAngle = 360; }
         else { viewAngle = critterTraitsDict[Trait.ViewAngle]; }
     }
-    void UpdateLifeStage()
-    {
-        if(age < 20) { lifeStage = Stage.Baby; }
-        else if(age < 50 && age >= 20) { lifeStage = Stage.Teen; }
-        else if(age < 120 && age >= 50) { lifeStage = Stage.Adult; }
-        else { lifeStage = Stage.Elder; }
-    }
 
     public void UpdateStats()
     {
@@ -168,8 +153,6 @@ public class Critter : MonoBehaviour {
         if (energy <= 0) { health = Mathf.Clamp(health - Time.deltaTime, 0, 100); }
         if (!IsAlive) { energy = 0; health = 0; resource = Mathf.Clamp(resource - Time.deltaTime, 0, 100); }        
     }
-
-    public void KillSelf() { Destroy(gameObject); }
 
     public void ResetAlarm() { alarmTime = 0; }
     public void ResetBreed() { breedTime = 0; }
@@ -181,6 +164,11 @@ public class Critter : MonoBehaviour {
     {
         get { return canBreed; }
         set { canBreed = value; }
+    }
+    public float FitnessScore
+    {
+        get { return fitnessScore; }
+        set { fitnessScore = value; }
     }
     public bool IsAlarmed
     {
@@ -227,15 +215,10 @@ public class Critter : MonoBehaviour {
         get { return name; }
         set { name = value; }
     }
-    public int Age
+    public float Age
     {
         get { return (int)age; }
         set { age = value; }
-    }
-    public string Rank
-    {
-        get { return rank; }
-        set { rank = value; }
     }
     #endregion
 

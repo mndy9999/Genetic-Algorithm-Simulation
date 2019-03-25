@@ -23,28 +23,54 @@ public class BreedingController : MonoBehaviour {
         offspring.GetComponent<Critter>().name = offspring.GetComponent<Critter>().gender.ToString() + " Sheep";
     }
 
-    public void Crossover()
+    public void BehavioursCrossover()
     {
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
-            float rand = (Random.Range(0, 130));
-            if (rand < 50 && mother.availableBehaviours.Contains(Behaviours.behaviours[i]))
+            float rand = (Random.Range(0, 100));
+            if (rand < 100-mutationRate/2 && mother.availableBehaviours.Contains(Behaviours.behaviours[i]))
             {
                 Debug.Log("mother");
                 offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
             }
-            else if (rand >= 50 && rand < 100 && father.availableBehaviours.Contains(Behaviours.behaviours[i]))
+            else if (rand >= 100 - mutationRate / 2 && rand < 100 - mutationRate && father.availableBehaviours.Contains(Behaviours.behaviours[i]))
             {
                 Debug.Log("father");
                 offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
             }
-            else if(rand >=100 && rand < 130)
+            else if(rand >= 100 - mutationRate && rand < 100)
             {                
                 if (!mother.availableBehaviours.Contains(Behaviours.behaviours[i]) && !father.availableBehaviours.Contains(Behaviours.behaviours[i]))
                 {
                     Debug.Log("mutation");
                     offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
                 }
+            }
+        }
+    }
+
+    public void TraitsCrossover()
+    {
+        foreach (Trait t in System.Enum.GetValues(typeof(Trait)))
+        {
+            float rand = (Random.Range(0, 100));
+            if (rand < 100 - mutationRate / 2)
+            {
+                Debug.Log("mother");
+                offspring.GetComponent<Critter>().critterTraitsDict[t] = mother.GetComponent<Critter>().critterTraitsDict[t];
+            }
+            else if (rand >= 100 - mutationRate / 2 && rand < 100 - mutationRate)
+            {
+                Debug.Log("father");
+                offspring.GetComponent<Critter>().critterTraitsDict[t] = father.GetComponent<Critter>().critterTraitsDict[t];
+            }
+            else if (rand >= 100 - mutationRate && rand < 100)
+            {
+                Debug.Log("mutation");
+                if (t != Trait.ViewAngle)
+                    offspring.GetComponent<Critter>().critterTraitsDict[t] = Random.Range(0, 10);
+                else
+                    offspring.GetComponent<Critter>().critterTraitsDict[t] = Random.Range(0, 360);
             }
         }
     }

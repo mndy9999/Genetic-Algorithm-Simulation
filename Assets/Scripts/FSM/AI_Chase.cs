@@ -39,7 +39,7 @@ public class AI_Chase : State<AI>
         Debug.Log("Entering Chase State");
         _owner.animator.Play("Run");      //play animation when entering state
         _owner.agent.ResetPath();
-        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.RunSpeed];
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.RunSpeed];
 
         _owner.agent.SetDestination(_owner.seek.Target.transform.position);
         _owner.seek.Target.GetComponent<Critter>().IsAlarmed = true;
@@ -50,7 +50,7 @@ public class AI_Chase : State<AI>
     {
         Debug.Log("Exiting Chase State");
         _owner.agent.ResetPath();
-        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed];
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
     }
 
     public override void UpdateState(AI _owner)

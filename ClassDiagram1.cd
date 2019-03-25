@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GenderShade" Collapsed="true">
+    <Position X="67.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\GenderShade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckForStandardAssets" Collapsed="true">
+    <Position X="69.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\HolyShift\Scripts\CheckForStandardAssets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="fruits_tester" Collapsed="true">
+    <Position X="66" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Low Poly Fruits\resources\fruits_tester.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuSceneLoader" Collapsed="true">
+    <Position X="64.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PauseMenu" Collapsed="true">
+    <Position X="69.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAAAAAQAAAAAAAAAAAAAQgAQgQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\SampleScenes\Menu\Scripts\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneAndURLLoader" Collapsed="true">
+    <Position X="73" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAIAEA=</HashCode>
+      <FileName>Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraSwitch" Collapsed="true">
+    <Position X="64.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEQAAAAIIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\SampleScenes\Scripts\CameraSwitch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelReset" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="73" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\SampleScenes\Scripts\LevelReset.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AgeController" Collapsed="true">
+    <Position X="66" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAACAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AgeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Behaviours" Collapsed="true">
+    <Position X="69.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAIAEBEAAAAAIAABAAAAAAABACAAAACA=</HashCode>
+      <FileName>Assets\Scripts\Behaviours.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BreedingController" Collapsed="true">
+    <Position X="71.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAgAAIAAAAAAAAEACAAAgAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\BreedingController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraMovement" Collapsed="true">
+    <Position X="73" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAIAAACAAAAAAAACAABACAAAgAAAAAQAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\CameraMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CheckEnvironment" Collapsed="true">
+    <Position X="67.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CheckEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CarnivoreController" Collapsed="true">
+    <Position X="66" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Critter Type Controller\CarnivoreController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirtController" Collapsed="true">
+    <Position X="64.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAACAAAAIAAAAAAIAABAAAAAAAAAAAAAAAAAQAEA=</HashCode>
+      <FileName>Assets\Scripts\Critter Type Controller\DirtController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HerbivoreController" Collapsed="true">
+    <Position X="69.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Critter Type Controller\HerbivoreController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeController" Collapsed="true">
+    <Position X="64.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAIEEAAAAAAAQAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Critter Type Controller\TreeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VegetablesController" Collapsed="true">
+    <Position X="66" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Critter Type Controller\VegetablesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Critter">
+    <Position X="68.75" Y="6" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="Critter.Gender" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Critter.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Critter.Stage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Critter.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Critter.Trait" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Critter.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gQhFCAAAMwFUQTQIAFAUoIYAAgisAAAIgQjAQgAClMg=</HashCode>
+      <FileName>Assets\Scripts\Critter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI" Collapsed="true">
+    <Position X="67.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BgQAAASAAWiqSQCgIIAQECBAABJgAwACAgAAAAAIAQA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Attack" Collapsed="true">
+    <Position X="30.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAACAAAAAAAAAAAAAAQAIBAAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Attack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Breed" Collapsed="true">
+    <Position X="39.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABFAAAACAAAAAAAAAABAAAQAABAAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Breed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Chase" Collapsed="true">
+    <Position X="48.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAAACAAAAAAAAAgAAAAQAABEAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Chase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Dead" Collapsed="true">
+    <Position X="57.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkIAAACAAAAAAAAAAAAAAQAABEAEAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Dead.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Eat" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAkIAAAGAAAAAAAAAgAAAAQAABEAEAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Eat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Idle" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAAACAAAAAAAAAgAAAAQAABEAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Idle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Look" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAAACAAAAAAAAAAAAAAQAABEAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Look.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Wander" Collapsed="true">
+    <Position X="23.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAAACAAAAAAAACgAAAAQAABkAAAgAAIQBAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\AI_Wander.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Submit" Collapsed="true">
+    <Position X="32.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEACAACAAAAAAAAAgAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Challenger Encounter\AI_Submit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Watch" Collapsed="true">
+    <Position X="41.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEACAACAAAAAAAAAgAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Challenger Encounter\AI_Watch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Alarm" Collapsed="true">
+    <Position X="50.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAACAAAAAAAAAgAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Enemy Encounter\AI_Alarm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Flee" Collapsed="true">
+    <Position X="59.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEACAACAAAAAAAAAAAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Enemy Encounter\AI_Flee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_PlayDead" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAACAAAAAAAAAAAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Enemy Encounter\AI_PlayDead.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Startle" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAACAAAAAAAAAgAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Enemy Encounter\AI_Startle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Suicide" Collapsed="true">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEIAAACAAAAAAAAAgAAAAQAABEAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Enemy Encounter\AI_Suicide.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Swim" Collapsed="true">
+    <Position X="25.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAAACAAAAAAAAAgAAAAQAABEAAAAAAIABAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Enemy Encounter\AI_Swim.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Dig" Collapsed="true">
+    <Position X="34.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAACAAAAAAgAAgAAAAQAABAAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Food Source\AI_Dig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Knock" Collapsed="true">
+    <Position X="43.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAAACAAAAAAAAAgAAAAQAABAAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Food Source\AI_Knock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_CallMate" Collapsed="true">
+    <Position X="52.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAACAAAAAAAAAgAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Mate Encounter\AI_CallMate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Impress" Collapsed="true">
+    <Position X="61.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAACAAAAAAAAAgAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Mate Encounter\AI_Impress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Getup" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEIAAACAAAAAAAAAgAAAAQAABEAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Regain Energy\AI_Getup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Laydown" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEIAAACAAAAAAAAAAAAAAQAABEAAAgAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Regain Energy\AI_Laydown.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Rest" Collapsed="true">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEIAAACAAAAAAAAAAAAAAQAABEAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Regain Energy\AI_Rest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Sleep" Collapsed="true">
+    <Position X="28" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEIAAACAAAAAAAAAAAAAAQAABEAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Regain Energy\AI_Sleep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Aggress" Collapsed="true">
+    <Position X="37" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEAAAAiAAAAAAAAAgAAAAQAABAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Social Rank\AI_Aggress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Fight" Collapsed="true">
+    <Position X="46" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEIAAAiAAAAAAAAAgAAAAQAABEAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Social Rank\AI_Fight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI_Threat" Collapsed="true">
+    <Position X="55" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABEIAAAiAAAAAAAAAgAAAAQAABEAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\Social Rank\AI_Threat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My" Collapsed="true">
+    <Position X="66" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\My.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Seek" Collapsed="true">
+    <Position X="64.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YwZEAhGAkCEQAFBAIABAACAIECAIIADBICAQAyYCACI=</HashCode>
+      <FileName>Assets\Scripts\Seek.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SocialRankManager" Collapsed="true">
+    <Position X="67.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACACCCAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SocialRankManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestingInfoController" Collapsed="true">
+    <Position X="71.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAgAAAAAAAAAAAIAQABAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\TestingInfoController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AbsoluteTime" Collapsed="true">
+    <Position X="64.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAgAAAI=</HashCode>
+      <FileName>Assets\Scripts\UI Controllers\AbsoluteTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonsHandler" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Controllers\ButtonsHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrittersUIController" Collapsed="true">
+    <Position X="73" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAYAAAAEAAECAAAAAAAAAAAAAAAAAAAAAEAUAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Controllers\CrittersUIController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InventoryButtonsController" Collapsed="true">
+    <Position X="71.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQAAAAAAAIAAAAgIAAAAAAAABIAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Controllers\InventoryButtonsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnCreature" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI Controllers\SpawnCreature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimerController" Collapsed="true">
+    <Position X="73" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\TimerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityStandardAssets.SceneUtils.ParticleSceneControls" Collapsed="true">
+    <Position X="67.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BtQAAAAIYAAAAggAAKAAAACAAQACAAAJIABAQAABgEA=</HashCode>
+      <FileName>Assets\SampleScenes\Scripts\ParticleSceneControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityStandardAssets.SceneUtils.PlaceTargetWithMouse" Collapsed="true">
+    <Position X="71.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAEAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityStandardAssets.SceneUtils.SlowMoButton" Collapsed="true">
+    <Position X="66" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABIACAAAAAAAAAAAAAQBAAAAAAAACAAAQIAAAA=</HashCode>
+      <FileName>Assets\SampleScenes\Scripts\SlowMoButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FiniteStateMachine.StateMachine&lt;T&gt;" Collapsed="true">
+    <Position X="69.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAhAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\StateMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FiniteStateMachine.State&lt;T&gt;" Collapsed="true">
+    <Position X="32.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAQAAAAAAAAAAIABAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FSM\StateMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

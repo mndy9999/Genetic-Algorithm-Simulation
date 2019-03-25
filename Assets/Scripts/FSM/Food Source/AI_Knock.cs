@@ -51,7 +51,7 @@ public class AI_Knock : State<AI>
         _owner.transform.Rotate(direction);
 
         _owner.animator.Play("Attack");
-        _owner.seek.Target.GetComponent<Critter>().Health -= _owner.critter.critterTraitsDict[Critter.Trait.AttackPoints];
+        _owner.seek.Target.GetComponent<Critter>().Health -= _owner.critter.critterTraitsDict[Trait.AttackPoints];
     }
 
 

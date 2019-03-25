@@ -34,12 +34,12 @@ public class HerbivoreController : MonoBehaviour {
         }
         for (int i = 0; i < Behaviours.MateEncounterBehaviours.Count; i++)
         {
-            if (Random.Range(0, 10) < 9)
+            if (Random.Range(0, 10) < 50)
                 critter.availableBehaviours.Add(Behaviours.MateEncounterBehaviours[i]);
         }
         for (int i = 0; i < Behaviours.SocialRankBehaviours.Count; i++)
         {
-            if (Random.Range(0, 10) < 9)
+            if (Random.Range(0, 10) < 50)
                 critter.availableBehaviours.Add(Behaviours.SocialRankBehaviours[i]);
         }
         for (int i = 0; i < Behaviours.ChallengerEncounterBehaviours.Count; i++)

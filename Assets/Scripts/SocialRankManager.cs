@@ -26,7 +26,7 @@ public class SocialRankManager : MonoBehaviour {
             Debug.Log(critterType);
             foreach (Critter c in Critter.crittersDict[critterType])
             {
-                Debug.Log(c.name + "   " + c.fitnessScore);
+                Debug.Log(c.name + "   " + c.FitnessScore);
             }
         }
     }
@@ -38,13 +38,13 @@ public class SocialRankManager : MonoBehaviour {
             foreach (Critter c in Critter.crittersDict[critterType])
             {
                 critter = c.GetComponent<Critter>();
-                critter.fitnessScore = 0;
-                foreach (Critter.Trait trait in c.critterTraitsDict.Keys)
+                critter.FitnessScore = 0;
+                foreach (Trait trait in c.critterTraitsDict.Keys)
                 {
-                    critter.fitnessScore += c.critterTraitsDict[trait];
+                    critter.FitnessScore += c.critterTraitsDict[trait];
                 }
-                critter.fitnessScore += critter.Age;
-                critter.fitnessScore /= (c.critterTraitsDict.Count+1);
+                critter.FitnessScore += critter.Age;
+                critter.FitnessScore /= (c.critterTraitsDict.Count+1);
             }
         }
     }
@@ -57,7 +57,7 @@ public class SocialRankManager : MonoBehaviour {
             {
                 for (int j = 0; j < Critter.crittersDict[critterType].Count - 1; j++)
                 {
-                    if (Critter.crittersDict[critterType][j+1].GetComponent<Critter>().fitnessScore > Critter.crittersDict[critterType][j].GetComponent<Critter>().fitnessScore)
+                    if (Critter.crittersDict[critterType][j+1].GetComponent<Critter>().FitnessScore > Critter.crittersDict[critterType][j].GetComponent<Critter>().FitnessScore)
                     {
                         temp = Critter.crittersDict[critterType][j];
                         Critter.crittersDict[critterType][j] = Critter.crittersDict[critterType][j + 1];

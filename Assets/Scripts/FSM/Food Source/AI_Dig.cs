@@ -48,7 +48,7 @@ public class AI_Dig : State<AI>
     void Dig(AI _owner)
     {
         _owner.animator.Play("Dig");
-        _owner.seek.Target.GetComponent<Critter>().Health -= _owner.critter.critterTraitsDict[Critter.Trait.AttackPoints];
+        _owner.seek.Target.GetComponent<Critter>().Health -= _owner.critter.critterTraitsDict[Trait.AttackPoints];
     }
 
 

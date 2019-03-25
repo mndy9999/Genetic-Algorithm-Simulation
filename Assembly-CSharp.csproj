@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Critter Type Controller\TreeController.cs" />
     <Compile Include="Assets\Scripts\Critter Type Controller\VegetablesController.cs" />
     <Compile Include="Assets\Scripts\Critter.cs" />
+    <Compile Include="Assets\Scripts\CritterBasicsController.cs" />
     <Compile Include="Assets\Scripts\FSM\AI.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Attack.cs" />
     <Compile Include="Assets\Scripts\FSM\AI_Breed.cs" />
@@ -112,8 +113,10 @@
     <Compile Include="Assets\Scripts\FSM\Social Rank\AI_Fight.cs" />
     <Compile Include="Assets\Scripts\FSM\Social Rank\AI_Threat.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\My.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\SocialRankManager.cs" />
+    <Compile Include="Assets\Scripts\TestingInfoController.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\AbsoluteTime.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\CrittersUIController.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Assets\TimerController.cs" />
     <None Include="Assets\HolyShift\readme.txt" />
     <None Include="Assets\HolyShift\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Resources\Results.txt" />
     <None Include="Assets\Cartoon_Farm_Crops\README.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\HolyShift\Shaders\FXWaterLowpoly.shader" />

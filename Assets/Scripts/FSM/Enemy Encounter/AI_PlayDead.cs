@@ -22,14 +22,14 @@ public class AI_PlayDead : State<AI>
         }
     }
 
-    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.Acting]; }
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Trait.Acting]; }
 
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering PlayDead State");
         _owner.animator.Play("Dead");       //start playing animation when entering state
         _owner.critter.isAlarmed = true;
-        _owner.critter.isVisible = Random.Range(0, 10) < _owner.critter.critterTraitsDict[Critter.Trait.Acting];
+        _owner.critter.isVisible = Random.Range(0, 10) < _owner.critter.critterTraitsDict[Trait.Acting];
     }
 
 

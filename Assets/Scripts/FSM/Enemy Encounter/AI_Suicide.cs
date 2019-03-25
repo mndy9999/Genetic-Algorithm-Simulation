@@ -30,7 +30,7 @@ public class AI_Suicide : State<AI>
         set { _name = value; }
     }
 
-    public override float GetWeight(AI _owner) { return Critter.crittersDict[_owner.critter.critterType][0].fitnessScore - _owner.critter.fitnessScore; }
+    public override float GetWeight(AI _owner) { return Critter.crittersDict[_owner.critter.critterType][0].FitnessScore - _owner.critter.FitnessScore; }
 
     public override void EnterState(AI _owner)
     {

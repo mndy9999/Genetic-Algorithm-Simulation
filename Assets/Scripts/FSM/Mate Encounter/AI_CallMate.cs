@@ -25,7 +25,7 @@ public class AI_CallMate : State<AI>
         }
     }
 
-    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.VoiceStrenght]; }
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Trait.VoiceStrenght]; }
 
     public override void EnterState(AI _owner)
     {
@@ -53,7 +53,7 @@ public class AI_CallMate : State<AI>
         yield return new WaitForSeconds(2);
         if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        if (Random.Range(0, 10) < _owner.critter.critterTraitsDict[Critter.Trait.VoiceStrenght])
+        if (Random.Range(0, 10) < _owner.critter.critterTraitsDict[Trait.VoiceStrenght])
         {
             _owner.seek.LastKnownPotentialMate.GetComponent<Seek>().Mate = _owner.gameObject;
             _owner.seek.Mate = _owner.seek.LastKnownPotentialMate;

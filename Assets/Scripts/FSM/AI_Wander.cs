@@ -40,7 +40,7 @@ public class AI_Wander : State<AI>
         Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
         _owner.agent.ResetPath();
-        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed];
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
         
     }
 

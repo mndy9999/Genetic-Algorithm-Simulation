@@ -63,7 +63,8 @@ public class AI_Breed : State<AI>
         if (breeding)
         {
             breeding.CreateOffspring();
-            breeding.Crossover();
+            breeding.BehavioursCrossover();
+            breeding.TraitsCrossover();
         }
         _owner.critter.ResetBreed();
         _owner.stateMachine.ChangeState(AI_Idle.instance);

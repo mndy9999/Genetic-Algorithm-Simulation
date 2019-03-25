@@ -31,7 +31,7 @@ public class AI_Threat : State<AI>
         set { _name = value; }
     }
 
-    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints]; }
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Trait.ThreatPoints]; }
 
     public override void EnterState(AI _owner)
     {
@@ -60,17 +60,17 @@ public class AI_Threat : State<AI>
     void CalculateRankPoints(AI _owner)
     {
 
-        if (Random.Range(0, _owner.seek.Opponent.GetComponent<Critter>().fitnessScore + _owner.critter.fitnessScore) < _owner.critter.fitnessScore)
+        if (Random.Range(0, _owner.seek.Opponent.GetComponent<Critter>().FitnessScore + _owner.critter.FitnessScore) < _owner.critter.FitnessScore)
         {
-            _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints] += 0.2f;
-            _owner.critter.critterTraitsDict[Critter.Trait.RankPoints] += 1;
-            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.RankPoints] -= 1;
+            _owner.critter.critterTraitsDict[Trait.ThreatPoints] += 0.2f;
+            _owner.critter.critterTraitsDict[Trait.RankPoints] += 1;
+            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Trait.RankPoints] -= 1;
         }
         else
         {
-            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.ThreatPoints] += 0.2f;
-            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.RankPoints] += 1;
-            _owner.critter.critterTraitsDict[Critter.Trait.RankPoints] -= 1;
+            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Trait.ThreatPoints] += 0.2f;
+            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Trait.RankPoints] += 1;
+            _owner.critter.critterTraitsDict[Trait.RankPoints] -= 1;
         }
 
         _owner.seek.Target.GetComponent<Critter>().isChallenged = false;

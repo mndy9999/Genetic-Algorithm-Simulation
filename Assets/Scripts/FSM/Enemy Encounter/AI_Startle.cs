@@ -24,7 +24,7 @@ public class AI_Startle : State<AI>
         }
     }
 
-    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints]; }
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Trait.ThreatPoints]; }
 
     public override void EnterState(AI _owner)
     {
@@ -35,7 +35,7 @@ public class AI_Startle : State<AI>
                 _owner.seek.Enemy.GetComponent<Seek>().Enemy = _owner.gameObject;
                 _owner.seek.Enemy.GetComponent<Seek>().enemyType = "Herbivore";
                 _owner.seek.Enemy.GetComponent<Critter>().IsAlarmed = true;
-                _owner.critter.critterTraitsDict[Critter.Trait.ThreatPoints] += 0.5f;
+                _owner.critter.critterTraitsDict[Trait.ThreatPoints] += 0.5f;
         }
     }
 

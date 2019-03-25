@@ -6,8 +6,6 @@ using FiniteStateMachine;
 
 public class AI : MonoBehaviour {
 
-    public Vector3 waypoint;
-
     public bool switchState = false;    //bool used to switch between idle and wander
     public float timer;                 
     public int seconds = 0;
@@ -87,31 +85,10 @@ public class AI : MonoBehaviour {
         return critter.isChallenged;
     }
 
-    public bool CanSeeMate()
-    {
-        return seek.Mate;
-    }
-
-    public bool CanSeePotentialMate()
-    {
-        return seek.PotentialMate;
-    }
-
-    public bool CanSeeOpponent()
-    {
-        return seek.Opponent;
-    }
-
     public bool CanSeeEnemy()
     {
         return seek.Enemy;
     }
-
-    public bool IsCloseEnough()
-    {
-        return Vector3.Distance(transform.position, seek.Target.transform.position) <= agent.stoppingDistance;
-    }
-
 
     public bool TargetIsDead()
     {
@@ -153,6 +130,11 @@ public class AI : MonoBehaviour {
         return seek.Target == seek.Courter;
     }
 
+    public bool IsCloseEnough()
+    {
+        return Vector3.Distance(transform.position, seek.Target.transform.position) <= agent.stoppingDistance;
+    }
+
     public bool IsDead()
     {
         return !critter.IsAlive;
@@ -176,11 +158,6 @@ public class AI : MonoBehaviour {
     public string currentState
     {
         get { return CurrentState; }
-    }
-    
-    public IEnumerator WaitFor(float s)
-    {
-        yield return new WaitForSeconds(s);
     }
 
 }

@@ -24,20 +24,20 @@ public class AI_Flee : State<AI>
         }
     }
 
-    public override float GetWeight(AI _owner) { return Vector3.Distance(_owner.transform.position, _owner.seek.Enemy.transform.position)+_owner.critter.critterTraitsDict[Critter.Trait.RunSpeed]; }
+    public override float GetWeight(AI _owner) { return Vector3.Distance(_owner.transform.position, _owner.seek.Enemy.transform.position)+_owner.critter.critterTraitsDict[Trait.RunSpeed]; }
 
     public override void EnterState(AI _owner)
     {
         Debug.Log("Entering Flee State");
         _owner.animator.Play("Run");      //play animation when entering state       
-        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.RunSpeed];
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.RunSpeed];
     }
 
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Flee State");       
         _owner.agent.ResetPath();
-        _owner.agent.speed = _owner.critter.critterTraitsDict[Critter.Trait.WalkSpeed];
+        _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
         _owner.seek.enemyType = _owner.seek.defaultEnemyType;
         _owner.critter.IsAlarmed = false;
     }

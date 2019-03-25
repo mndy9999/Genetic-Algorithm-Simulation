@@ -31,7 +31,7 @@ public class AI_Fight : State<AI>
         set { _name = value; }
     }
 
-    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Critter.Trait.AttackPoints]; }
+    public override float GetWeight(AI _owner) { return _owner.critter.critterTraitsDict[Trait.AttackPoints]; }
 
     public override void EnterState(AI _owner)
     {
@@ -63,17 +63,17 @@ public class AI_Fight : State<AI>
     void CalculateRankPoints(AI _owner)
     {
 
-        if (Random.Range(0, _owner.seek.Opponent.GetComponent<Critter>().critterTraitsDict[Critter.Trait.AttackPoints] + _owner.critter.critterTraitsDict[Critter.Trait.AttackPoints]) < _owner.critter.critterTraitsDict[Critter.Trait.AttackPoints])
+        if (Random.Range(0, _owner.seek.Opponent.GetComponent<Critter>().critterTraitsDict[Trait.AttackPoints] + _owner.critter.critterTraitsDict[Trait.AttackPoints]) < _owner.critter.critterTraitsDict[Trait.AttackPoints])
         {
-            _owner.critter.critterTraitsDict[Critter.Trait.AttackPoints] += 0.2f;
-            _owner.critter.critterTraitsDict[Critter.Trait.RankPoints] += 1;
-            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.RankPoints] -= 1;
+            _owner.critter.critterTraitsDict[Trait.AttackPoints] += 0.2f;
+            _owner.critter.critterTraitsDict[Trait.RankPoints] += 1;
+            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Trait.RankPoints] -= 1;
         }
         else
         {
-            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.AttackPoints] += 0.2f;
-            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Critter.Trait.RankPoints] += 1;
-            _owner.critter.critterTraitsDict[Critter.Trait.RankPoints] -= 1;
+            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Trait.AttackPoints] += 0.2f;
+            _owner.seek.Target.GetComponent<Critter>().critterTraitsDict[Trait.RankPoints] += 1;
+            _owner.critter.critterTraitsDict[Trait.RankPoints] -= 1;
         }
         _owner.seek.Target.GetComponent<Critter>().isChallenged = false;
     }
