@@ -1594,6 +1594,7 @@ MonoBehaviour:
   energy: 100
   resource: 100
   energyPerSecond: 5
+  age: 0
   viewAngle: 90
   gender: 0
   lifeStage: 2
@@ -1704,8 +1705,8 @@ MonoBehaviour:
   mother: {fileID: 0}
   father: {fileID: 0}
   model:
-  - {fileID: 1246629058814208, guid: 4a23fdf7070ade744a0b03dce1d67f36, type: 2}
-  - {fileID: 1467174846215346}
+  - {fileID: 1948763378187600, guid: cd88d7262ce754943b37704b56cf6548, type: 2}
+  - {fileID: 1058745664365082, guid: 3cec37e45b561ae45809b225b30d8de2, type: 2}
   mutationRate: 0
 --- !u!114 &114909987566964532
 MonoBehaviour:

@@ -126,7 +126,6 @@
     <Compile Include="Assets\TimerController.cs" />
     <None Include="Assets\HolyShift\readme.txt" />
     <None Include="Assets\HolyShift\Shaders\WaterInclude.cginc" />
-    <None Include="Assets\Resources\Results.txt" />
     <None Include="Assets\Cartoon_Farm_Crops\README.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\HolyShift\Shaders\FXWaterLowpoly.shader" />

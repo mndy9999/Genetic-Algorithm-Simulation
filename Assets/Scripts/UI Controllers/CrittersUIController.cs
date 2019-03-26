@@ -40,7 +40,7 @@ public class CrittersUIController : MonoBehaviour
     {
         
         panel.transform.Find("Name").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Name;
-        panel.transform.Find("Age").GetComponent<Text>().text = currentGO.GetComponent<Critter>().Age.ToString();
+        panel.transform.Find("Age").GetComponent<Text>().text = currentGO.GetComponent<Critter>().age.ToString();
         panel.transform.Find("Gender").GetComponent<Text>().text = currentGO.GetComponent<Critter>().gender.ToString();
         panel.transform.Find("LifeStage").GetComponent<Text>().text = currentGO.GetComponent<Critter>().lifeStage.ToString();
         panel.transform.Find("State").GetComponent<Text>().text = currentGO.transform.root.GetComponent<AI>() ? currentGO.GetComponent<AI>().currentState : "N/A";

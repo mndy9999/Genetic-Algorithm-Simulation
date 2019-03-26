@@ -11,7 +11,7 @@ public class AgeController : MonoBehaviour {
 
     private void Update()
     {
-        critter.Age += Time.deltaTime;
+        critter.age += Time.deltaTime;
         ageUp();
         UpdateLifeStage();
     }
@@ -37,9 +37,9 @@ public class AgeController : MonoBehaviour {
 
     void UpdateLifeStage()
     {
-        if (critter.Age < 20) { critter.lifeStage = Stage.Baby; }
-        else if (critter.Age < 50 && critter.Age >= 20) { critter.lifeStage = Stage.Teen; }
-        else if (critter.Age < 120 && critter.Age >= 50) { critter.lifeStage = Stage.Adult; }
+        if (critter.age < 20) { critter.lifeStage = Stage.Baby; }
+        else if (critter.age < 50 && critter.age >= 20) { critter.lifeStage = Stage.Teen; }
+        else if (critter.age < 120 && critter.age >= 50) { critter.lifeStage = Stage.Adult; }
         else { critter.lifeStage = Stage.Elder; }
     }
 

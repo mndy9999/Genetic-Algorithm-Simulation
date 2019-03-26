@@ -12,9 +12,9 @@ public class Critter : MonoBehaviour
     [SerializeField] float energy = 100f;
     [SerializeField] float resource = 100f;
    
-    [HideInInspector] public float energyPerSecond = 0.5f;
+    [HideInInspector] public float energyPerSecond = 0.001f;
 
-    float age;
+    public float age;
     float fitnessScore;
 
     [Range(0, 360)] public float viewAngle;
@@ -50,6 +50,7 @@ public class Critter : MonoBehaviour
 
     // Use this for initialization
     void Awake () {
+        age = 0.0f;
         name = transform.name;
         if (crittersDict == null) { crittersDict = new Dictionary<string, List<Critter>>(); }
         if (!crittersDict.ContainsKey(critterType)) { crittersDict[critterType] = new List<Critter>(); }
@@ -214,11 +215,6 @@ public class Critter : MonoBehaviour
     {
         get { return name; }
         set { name = value; }
-    }
-    public float Age
-    {
-        get { return (int)age; }
-        set { age = value; }
     }
     #endregion
 

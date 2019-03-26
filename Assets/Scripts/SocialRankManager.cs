@@ -43,7 +43,7 @@ public class SocialRankManager : MonoBehaviour {
                 {
                     critter.FitnessScore += c.critterTraitsDict[trait];
                 }
-                critter.FitnessScore += critter.Age;
+                critter.FitnessScore += critter.age;
                 critter.FitnessScore /= (c.critterTraitsDict.Count+1);
             }
         }
