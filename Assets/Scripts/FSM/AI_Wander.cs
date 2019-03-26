@@ -53,11 +53,11 @@ public class AI_Wander : State<AI>
     public override void UpdateState(AI _owner)
     {
 
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         if (_owner.switchState || _owner.agent.remainingDistance <= _owner.agent.stoppingDistance) {
-            if (!_owner.switchState) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+            if (!_owner.switchState && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
             else { Wander(_owner); }
         }
     }

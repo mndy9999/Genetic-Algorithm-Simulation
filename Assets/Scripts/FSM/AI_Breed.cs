@@ -67,6 +67,8 @@ public class AI_Breed : State<AI>
             breeding.TraitsCrossover();
         }
         _owner.critter.ResetBreed();
-        _owner.stateMachine.ChangeState(AI_Idle.instance);
+        if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        
     }
 }

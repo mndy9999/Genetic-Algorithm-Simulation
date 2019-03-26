@@ -1443,7 +1443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b17812e327a0c246af88d8abfbfe020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoint: {x: 0, y: 0, z: 0}
   switchState: 0
   timer: 0
   seconds: 0
@@ -1532,17 +1531,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critterType: Carnivore
-  name: 
-  rank: 
-  gender: 1
-  lifeStage: 2
   health: 100
   energy: 100
   resource: 100
   energyPerSecond: 0.5
-  age: 0
-  fitnessScore: 0
   viewAngle: 0
+  gender: 1
+  lifeStage: 2
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
   isAlarmed: 0
@@ -1668,7 +1663,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1653998740287040}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1680,4 +1675,4 @@ NavMeshAgent:
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 9
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1

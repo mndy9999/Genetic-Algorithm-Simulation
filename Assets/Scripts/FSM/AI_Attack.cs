@@ -46,13 +46,14 @@ public class AI_Attack : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }                
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }                
         if (_owner.CanSeeTarget()) {
-            if (!_owner.IsCloseEnough()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-            if (_owner.TargetIsDead()) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
+            if (!_owner.IsCloseEnough() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+            if (_owner.TargetIsDead() && _owner.critter.availableBehaviours.Contains(AI_Eat.instance)) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
             Attack(_owner);
         }
-        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        else if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)){ _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)){ _owner.stateMachine.ChangeState(AI_Idle.instance); }
         
 
     }

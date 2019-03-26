@@ -50,8 +50,8 @@ public class AI_Swim : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.critter.IsAttacked && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         if (_owner.CanSeeEnemy())
             if (_owner.seek.Enemy.GetComponent<CheckEnvironment>().InWater)
             {
@@ -67,6 +67,7 @@ public class AI_Swim : State<AI>
     {
         yield return new WaitForSeconds(3);
         _owner.critter.IsAlarmed = false;
-        _owner.stateMachine.ChangeState(AI_Wander.instance);
+        if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 }

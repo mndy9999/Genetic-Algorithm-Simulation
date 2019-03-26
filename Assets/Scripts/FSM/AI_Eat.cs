@@ -50,8 +50,8 @@ public class AI_Eat : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.critter.IsAttacked && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         if (_owner.CanSeeEnemy())
         {
             bestState = _owner.BestState(Behaviours.EnemyEncounterBehaviours);
@@ -65,12 +65,13 @@ public class AI_Eat : State<AI>
                 if (_owner.TargetIsFood())
                 {
                     if (_owner.TargetIsDead()) { Eat(_owner); }
-                    else { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+                    else if (_owner.critter.availableBehaviours.Contains(AI_Attack.instance)){ _owner.stateMachine.ChangeState(AI_Attack.instance); }
                 }
             }
-            else { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+            else if(_owner.critter.availableBehaviours.Contains(AI_Chase.instance)){ _owner.stateMachine.ChangeState(AI_Chase.instance); }
         }
-        else { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        else if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)){ _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 
     void Eat(AI _owner)

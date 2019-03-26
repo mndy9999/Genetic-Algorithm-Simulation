@@ -46,13 +46,14 @@ public class AI_Watch : State<AI>
 
     IEnumerator WaitForAnimation(AI _owner)
     {       
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (_owner.CanSeeTarget() && _owner.TargetIsEnemy()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (_owner.CanSeeTarget() && _owner.TargetIsEnemy() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
 
         yield return new WaitForSeconds(3);
-        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-        else { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        else if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)){ _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)){ _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 
     void GenerateNewDirection(AI _owner)

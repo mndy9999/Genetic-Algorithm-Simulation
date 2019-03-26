@@ -41,7 +41,9 @@ public class AI_Chase : State<AI>
         _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.RunSpeed];
 
-        _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+        Vector3 direction = _owner.transform.position - _owner.seek.Target.transform.position;
+        _owner.transform.Rotate(direction);
+
         _owner.seek.Target.GetComponent<Critter>().IsAlarmed = true;
 
     }
@@ -55,8 +57,8 @@ public class AI_Chase : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
 
         if (_owner.CanSeeTarget())
         {
@@ -66,26 +68,28 @@ public class AI_Chase : State<AI>
                 if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
             }
 
+            else _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+
             if (_owner.TargetIsChallenger())
             {
                 bestState = _owner.BestState(Behaviours.ChallengerEncounterBehaviours);
                 if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
             }
 
-            if (_owner.TargetIsCourter()) { _owner.stateMachine.ChangeState(AI_Watch.instance); }
+            if (_owner.TargetIsCourter() && _owner.critter.availableBehaviours.Contains(AI_Watch.instance)) { _owner.stateMachine.ChangeState(AI_Watch.instance); }
 
             if (_owner.IsCloseEnough())
             {
-                if (_owner.TargetIsMate()) { _owner.stateMachine.ChangeState(AI_Breed.instance); }
+                if (_owner.TargetIsMate() && _owner.critter.availableBehaviours.Contains(AI_Breed.instance)) { _owner.stateMachine.ChangeState(AI_Breed.instance); }
                 if (_owner.TargetIsFood())
                 {
                     if (_owner.TargetIsDead())
                     {
                         if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree") { _owner.stateMachine.ChangeState(AI_Knock.instance); }
                         if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt") { _owner.stateMachine.ChangeState(AI_Dig.instance); }
-                        _owner.stateMachine.ChangeState(AI_Eat.instance);
+                        if (_owner.critter.availableBehaviours.Contains(AI_Eat.instance)) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
                     }
-                    else { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+                    else if (_owner.critter.availableBehaviours.Contains(AI_Attack.instance)){ _owner.stateMachine.ChangeState(AI_Attack.instance); }
                 }
             }
 
@@ -100,8 +104,8 @@ public class AI_Chase : State<AI>
                 bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
                 if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
             }
-            _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+             
         }
-        else { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if(_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
     }
 }

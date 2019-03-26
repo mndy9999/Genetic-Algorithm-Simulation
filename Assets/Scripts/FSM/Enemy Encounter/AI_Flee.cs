@@ -44,9 +44,10 @@ public class AI_Flee : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        if (!_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.critter.IsAttacked && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (!_owner.CanSeeEnemy() && _owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (!_owner.CanSeeEnemy() && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }       
         if(_owner.agent.remainingDistance <= _owner.agent.stoppingDistance) { GenerateNewDirection(_owner); }
 
     }
@@ -56,7 +57,7 @@ public class AI_Flee : State<AI>
         if (_owner.seek.Target)
         {
             Vector3 direction = _owner.transform.position - _owner.seek.Target.transform.position;
-            _owner.transform.Rotate(-direction);
+            _owner.transform.Rotate(direction);
         }
 
         Vector3 newPos = _owner.transform.position + _owner.transform.forward * 10f;

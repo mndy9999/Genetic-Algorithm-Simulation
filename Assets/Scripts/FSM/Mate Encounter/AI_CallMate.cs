@@ -51,8 +51,8 @@ public class AI_CallMate : State<AI>
     IEnumerator WaitForAnimation(AI _owner)
     {
         yield return new WaitForSeconds(2);
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.critter.IsAttacked) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.critter.IsAttacked && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         if (Random.Range(0, 10) < _owner.critter.critterTraitsDict[Trait.VoiceStrenght])
         {
             _owner.seek.LastKnownPotentialMate.GetComponent<Seek>().Mate = _owner.gameObject;
@@ -60,7 +60,8 @@ public class AI_CallMate : State<AI>
             _owner.stateMachine.ChangeState(AI_Breed.instance);
         }
         yield return new WaitForSeconds(2f);
-        if (_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-        _owner.stateMachine.ChangeState(AI_Idle.instance);
+        if (_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance))_owner.stateMachine.ChangeState(AI_Wander.instance);
+        if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance))_owner.stateMachine.ChangeState(AI_Idle.instance);
     }
 }

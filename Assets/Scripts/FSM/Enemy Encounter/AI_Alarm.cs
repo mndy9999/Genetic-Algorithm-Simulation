@@ -48,8 +48,8 @@ public class AI_Alarm : State<AI>
     IEnumerator WaitForAnimation(AI _owner)
     {
 
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
 
         yield return new WaitForSeconds(1);
         foreach (GameObject c in _owner.seek.visibleTargets)
@@ -59,7 +59,8 @@ public class AI_Alarm : State<AI>
         _owner.critter.ResetAlarm();
 
         yield return new WaitForSeconds(1);
-        _owner.stateMachine.ChangeState(AI_Wander.instance);
+        if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance))_owner.stateMachine.ChangeState(AI_Wander.instance);
+        if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance))_owner.stateMachine.ChangeState(AI_Idle.instance);
     }
 
 }

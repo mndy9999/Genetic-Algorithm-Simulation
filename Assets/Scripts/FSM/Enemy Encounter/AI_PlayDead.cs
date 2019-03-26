@@ -43,8 +43,9 @@ public class AI_PlayDead : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (!_owner.CanSeeEnemy()) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        else if (!_owner.CanSeeEnemy() && _owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        else if (!_owner.CanSeeEnemy() && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 }

@@ -53,10 +53,10 @@ public class TestingInfoController : MonoBehaviour {
 
     void OutputResults()
     {
-        StreamWriter file = new StreamWriter(@"Assets\Resources\Results.txt", false);
+        StreamWriter file = new StreamWriter(@"Assets\Resources\Results.xls", false);
         for (int i = 0; i < Behaviours.allPossibleBehaviours.Count; i++)
         {
-            file.WriteLine(Behaviours.allPossibleBehaviours[i].ToString() + "   " + behavioursCount[i]);
+            file.WriteLine(Behaviours.allPossibleBehaviours[i].ToString() + "\t" + behavioursCount[i]);
         }
         file.Close();
     }

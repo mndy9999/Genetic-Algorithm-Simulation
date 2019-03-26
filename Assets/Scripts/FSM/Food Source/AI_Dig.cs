@@ -38,10 +38,11 @@ public class AI_Dig : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (_owner.IsDead()) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        if (_owner.IsAttacked()) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        if (_owner.CanSeeTarget() && _owner.seek.Target.GetComponent<Critter>().critterType != "Dirt") { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-        if (!_owner.CanSeeTarget()) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+        if (_owner.CanSeeTarget() && _owner.seek.Target.GetComponent<Critter>().critterType != "Dirt" && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        if (!_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (!_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
         Dig(_owner);
     }
 
