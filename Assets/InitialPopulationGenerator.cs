@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class InitialPopulationGenerator : MonoBehaviour
 {
@@ -18,43 +19,63 @@ public class InitialPopulationGenerator : MonoBehaviour
     public Transform sheepField;
     public Transform wolvesField;
 
+    Vector3 position;
+
     private void Start()
     {
         for (int i = 0; i < maleSheepStartingCount; i++)
         {
-            GameObject newAgent = Instantiate(agentPrefabs[0], (new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * maleSheepStartingCount * AgentDensity) + sheepField.position, Quaternion.identity);
+            position = GeneratePosition(maleSheepStartingCount, AgentDensity, sheepField);
+            GameObject newAgent = Instantiate(agentPrefabs[0], position, Quaternion.identity);
             newAgent.name = "Sheep_Male_" + i;
         }
         for (int i = 0; i < femaleSheepStartingCount; i++)
         {
-            GameObject newAgent = Instantiate(agentPrefabs[1], (new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * femaleSheepStartingCount * AgentDensity) + sheepField.position, Quaternion.identity);
+            position = GeneratePosition(femaleSheepStartingCount, AgentDensity, sheepField);
+            GameObject newAgent = Instantiate(agentPrefabs[1], position, Quaternion.identity);
             newAgent.name = "Sheep_Female_" + i;
         }
         for (int i = 0; i < maleWolfStartingCount; i++)
         {
-            GameObject newAgent = Instantiate(agentPrefabs[2], (new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * maleWolfStartingCount * AgentDensity) + wolvesField.position, Quaternion.identity);
+            position = GeneratePosition(maleWolfStartingCount, AgentDensity, wolvesField);
+            GameObject newAgent = Instantiate(agentPrefabs[2], position, Quaternion.identity);
             newAgent.name = "Wolf_Male_" + i;
         }
         for (int i = 0; i < femaleWolfStartingCount; i++)
         {
-            GameObject newAgent = Instantiate(agentPrefabs[3], (new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * femaleWolfStartingCount * AgentDensity) + wolvesField.position, Quaternion.identity);
+            position = GeneratePosition(femaleWolfStartingCount, AgentDensity, wolvesField);
+            GameObject newAgent = Instantiate(agentPrefabs[3], position, Quaternion.identity);
             newAgent.name = "Wolf_Female_" + i;
         }
         for (int i = 0; i < treesStartingCount; i++)
         {
-            GameObject newAgent = Instantiate(agentPrefabs[4], (new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * treesStartingCount * 5), Quaternion.identity);
+            position = GeneratePosition(treesStartingCount, 5, transform);
+            GameObject newAgent = Instantiate(agentPrefabs[4], position, Quaternion.identity);
             newAgent.name = "Tree_" + i;
         }
         for (int i = 0; i < dirtStartingCount; i++)
         {
-            GameObject newAgent = Instantiate(agentPrefabs[5], (new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * dirtStartingCount * 5), Quaternion.identity);
+            position = GeneratePosition(dirtStartingCount, 5, transform);
+            GameObject newAgent = Instantiate(agentPrefabs[5], position, Quaternion.identity);
             newAgent.name = "Dirt_" + i;
         }
         for (int i = 0; i < hayStartingCount; i++)
         {
-            GameObject newAgent = Instantiate(agentPrefabs[6], (new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * hayStartingCount * 5), Quaternion.identity);
+            position = GeneratePosition(hayStartingCount, 5, transform);
+            GameObject newAgent = Instantiate(agentPrefabs[6], position, Quaternion.identity);
             newAgent.name = "Hay_" + i;
         }
+    }
+
+    Vector3 GeneratePosition(float count, float density, Transform parent)
+    {
+        Vector3 pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * count * density + parent.position;
+        NavMeshHit navHit;
+        while(!NavMesh.SamplePosition(pos, out navHit, 1, 1))
+        {
+            pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * count * density + parent.position;
+        }
+        return pos;
     }
 
 }

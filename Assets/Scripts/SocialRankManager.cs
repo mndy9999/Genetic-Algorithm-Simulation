@@ -6,12 +6,6 @@ public class SocialRankManager : MonoBehaviour {
 
     Critter critter;
 
-	// Use this for initialization
-	void Start () {
-        CalculateFitness();
-        UpdateRanks();
-    }
-
     private void Update()
     {
         CalculateFitness();
@@ -44,7 +38,8 @@ public class SocialRankManager : MonoBehaviour {
                     critter.FitnessScore += c.critterTraitsDict[trait];
                 }
                 critter.FitnessScore += critter.age;
-                critter.FitnessScore /= (c.critterTraitsDict.Count+1);
+                critter.FitnessScore += critter.availableBehaviours.Count;
+                critter.FitnessScore /= (c.critterTraitsDict.Count+2);
             }
         }
     }

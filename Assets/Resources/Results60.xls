@@ -1,46 +1,46 @@
-Total herbivores: 	34
-AI_Idle	29
-AI_Wander	29
-AI_Chase	33
-AI_Attack	33
+Total herbivores: 	37
+AI_Idle	36
+AI_Wander	35
+AI_Chase	35
+AI_Attack	35
 AI_Eat	31
-AI_Swim	29
-AI_Breed	32
-AI_Getup	29
-AI_Laydown	31
-AI_Dead	29
-AI_Threat	34
-AI_Aggress	34
-AI_Fight	34
+AI_Swim	35
+AI_Breed	37
+AI_Getup	35
+AI_Laydown	34
+AI_Dead	33
+AI_Threat	37
+AI_Aggress	37
+AI_Fight	37
 AI_Sleep	0
 AI_Rest	0
 AI_Knock	32
-AI_Dig	32
-AI_Alarm	30
-AI_PlayDead	31
-AI_Startle	29
-AI_Flee	30
-AI_CallMate	34
-AI_Impress	34
-AI_Watch	31
-AI_Submit	33
+AI_Dig	34
+AI_Alarm	37
+AI_PlayDead	33
+AI_Startle	36
+AI_Flee	34
+AI_CallMate	37
+AI_Impress	37
+AI_Watch	36
+AI_Submit	37
 
 
 
-Total carnivores: 	31
-AI_Idle	29
-AI_Wander	29
-AI_Chase	29
-AI_Attack	30
-AI_Eat	30
-AI_Swim	30
-AI_Breed	30
-AI_Getup	30
-AI_Laydown	28
-AI_Dead	28
-AI_Threat	31
-AI_Aggress	30
-AI_Fight	29
+Total carnivores: 	40
+AI_Idle	39
+AI_Wander	38
+AI_Chase	39
+AI_Attack	38
+AI_Eat	39
+AI_Swim	39
+AI_Breed	36
+AI_Getup	40
+AI_Laydown	40
+AI_Dead	37
+AI_Threat	32
+AI_Aggress	37
+AI_Fight	37
 AI_Sleep	0
 AI_Rest	0
 AI_Knock	0
@@ -48,37 +48,37 @@ AI_Dig	0
 AI_Alarm	0
 AI_PlayDead	0
 AI_Startle	0
-AI_Flee	31
-AI_CallMate	26
-AI_Impress	30
+AI_Flee	40
+AI_CallMate	37
+AI_Impress	35
 AI_Watch	0
 AI_Submit	0
 
 
 
-Total creatures: 	65
-AI_Idle	58
-AI_Wander	58
-AI_Chase	62
-AI_Attack	63
-AI_Eat	61
-AI_Swim	59
-AI_Breed	62
-AI_Getup	59
-AI_Laydown	59
-AI_Dead	57
-AI_Threat	65
-AI_Aggress	64
-AI_Fight	63
+Total creatures: 	77
+AI_Idle	75
+AI_Wander	73
+AI_Chase	74
+AI_Attack	73
+AI_Eat	70
+AI_Swim	74
+AI_Breed	73
+AI_Getup	75
+AI_Laydown	74
+AI_Dead	70
+AI_Threat	69
+AI_Aggress	74
+AI_Fight	74
 AI_Sleep	0
 AI_Rest	0
 AI_Knock	32
-AI_Dig	32
-AI_Alarm	30
-AI_PlayDead	31
-AI_Startle	29
-AI_Flee	61
-AI_CallMate	60
-AI_Impress	64
-AI_Watch	31
-AI_Submit	33
+AI_Dig	34
+AI_Alarm	37
+AI_PlayDead	33
+AI_Startle	36
+AI_Flee	74
+AI_CallMate	74
+AI_Impress	72
+AI_Watch	36
+AI_Submit	37

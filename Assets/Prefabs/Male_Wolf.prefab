@@ -1535,6 +1535,7 @@ MonoBehaviour:
   energy: 100
   resource: 100
   energyPerSecond: 0.5
+  age: 0
   viewAngle: 0
   gender: 1
   lifeStage: 2
