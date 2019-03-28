@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BreedingController : MonoBehaviour {
 
@@ -15,16 +16,22 @@ public class BreedingController : MonoBehaviour {
     {
         Debug.Log("creating offspring");
         Vector3 pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) + transform.position;
+        NavMeshHit navHit;
+        while (!NavMesh.SamplePosition(pos, out navHit, 1, 1))
+        {
+            pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) + transform.position;
+        }
 
-        int rand = Random.Range(0, 1);
+        int rand = Random.Range(0, 2);
         offspring = Instantiate(model[rand], pos, Quaternion.identity);
 
         offspring.GetComponent<Critter>().isChild = true;
-        offspring.GetComponent<Critter>().name = offspring.GetComponent<Critter>().gender.ToString() + " Sheep";
+        offspring.GetComponent<Critter>().name = offspring.GetComponent<Critter>().gender.ToString() + " " + offspring.GetComponent<Critter>().critterType;
     }
 
     public void BehavioursCrossover()
     {
+        offspring.GetComponent<Critter>().availableBehaviours = new List<FiniteStateMachine.State<AI>>();
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
             float rand = (Random.Range(0, 100));
@@ -51,6 +58,7 @@ public class BreedingController : MonoBehaviour {
 
     public void TraitsCrossover()
     {
+        offspring.GetComponent<Critter>().critterTraitsDict = new Dictionary<Trait, float>();
         foreach (Trait t in System.Enum.GetValues(typeof(Trait)))
         {
             float rand = (Random.Range(0, 100));

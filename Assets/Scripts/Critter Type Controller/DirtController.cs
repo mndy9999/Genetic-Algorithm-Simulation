@@ -28,8 +28,9 @@ public class DirtController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        critter.isVisible = critter.Health > 10;
-        if (critter.Health > 15) { harvested = false; }
+        if (critter.Health <= 10) { critter.isVisible = false; }
+        if (!critter.isVisible && harvested && critter.Health < 20) { critter.Health += 0.0001f; }
+        if (critter.Health >= 20) { critter.isVisible = true; }
         SpawnPeanuts();
     }
 

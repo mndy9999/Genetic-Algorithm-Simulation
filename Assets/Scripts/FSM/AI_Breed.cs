@@ -41,6 +41,7 @@ public class AI_Breed : State<AI>
         }
 
         time = Time.time;
+        _owner.StartCoroutine(WaitForAnimation(_owner));
     }
 
     public override void ExitState(AI _owner)
@@ -53,7 +54,7 @@ public class AI_Breed : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        _owner.StartCoroutine(WaitForAnimation(_owner));
+        
     }
 
     IEnumerator WaitForAnimation(AI _owner)
@@ -66,7 +67,8 @@ public class AI_Breed : State<AI>
             breeding.BehavioursCrossover();
             breeding.TraitsCrossover();
         }
-        _owner.critter.ResetBreed();
+        _owner.seek.Target.GetComponent<Critter>().ResetBreed();
+        _owner.critter.ResetBreed();        
         if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
         if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
         

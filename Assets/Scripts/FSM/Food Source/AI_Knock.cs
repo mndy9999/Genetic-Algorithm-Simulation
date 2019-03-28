@@ -43,7 +43,7 @@ public class AI_Knock : State<AI>
         if (_owner.CanSeeTarget() && _owner.seek.Target.GetComponent<Critter>().critterType != "Tree" && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         if(!_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
         if(!_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
-        Knock(_owner);
+        if(_owner.CanSeeTarget() && _owner.seek.Target.GetComponent<Critter>().critterType == "Tree") Knock(_owner);
     }
 
     void Knock(AI _owner)
