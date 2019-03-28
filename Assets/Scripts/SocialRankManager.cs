@@ -33,15 +33,15 @@ public class SocialRankManager : MonoBehaviour {
             {
                 foreach (Critter c in Critter.crittersDict[critterType])
                 {
-                    critter = c.GetComponent<Critter>();
-                    critter.FitnessScore = 0;
+                    c.FitnessScore = 0;
                     foreach (Trait trait in c.critterTraitsDict.Keys)
                     {
-                        critter.FitnessScore += c.critterTraitsDict[trait];
+                        c.FitnessScore += c.critterTraitsDict[trait];
                     }
-                    critter.FitnessScore += critter.age;
-                    critter.FitnessScore += critter.availableBehaviours.Count;
-                    critter.FitnessScore /= (c.critterTraitsDict.Count + 2);
+                    c.FitnessScore += c.age;
+                    c.FitnessScore += c.availableBehaviours.Count;
+                    c.FitnessScore /= (c.critterTraitsDict.Count + 2);
+
                 }
             }
         }

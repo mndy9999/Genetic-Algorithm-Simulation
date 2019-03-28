@@ -60,7 +60,7 @@ public class DirtController : MonoBehaviour {
     {
         for(int i=0;i<Random.Range(1, 5); i++)
         {
-            Instantiate(peanut, transform.position- new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)), Quaternion.identity, transform).SetActive(false);
+            Instantiate(peanut, transform.position- new Vector3(Random.Range(-1.0f, 1.0f), 0.2f, Random.Range(-1.0f, 1.0f)), Quaternion.identity, transform).SetActive(false);
         }
     }
 

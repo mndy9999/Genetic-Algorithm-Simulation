@@ -24,6 +24,16 @@ public class TestingInfoController : MonoBehaviour {
         behavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
         herbivoreBehavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
         carnivoreBehavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
+
+
+        StreamWriter file = new StreamWriter(@"Assets\Resources\Fitness.xls", false);
+        file.Write("Generation" + "\t" + "Herbivores" + "\t" + "Carnivores" + "\n");
+        file.Close();
+
+        file = new StreamWriter(@"Assets\Resources\Numbers.xls", false);
+        file.Write("Generation" + "\t" + "Herbivores" + "\t" + "Carnivores" + "\n");
+        file.Close();
+
     }
 	
 	// Update is called once per frame
@@ -96,24 +106,14 @@ public class TestingInfoController : MonoBehaviour {
     void OutputResultsEveryFrame()
     {
         StreamWriter file = new StreamWriter(@"Assets\Resources\Fitness.xls", true);
+        file.WriteLine(currentTime/10 + "\t" + herbivoreFitness + "\t" + carnivoreFitness);       
+        file.Close();
 
-        //file.Write("Current Time: " + "\t" + currentTime);
-
-        //file.Write("Total herbivores: " + "\t" + Critter.crittersDict["Herbivore"].Count);
-        //file.Write("Average Fitness: " + "\t" + herbivoreFitness + "\n");
-
-        //file.Write("Total carnivores: " + "\t" + Critter.crittersDict["Carnivore"].Count);
-        //file.Write("Average Fitness: " + "\t" + carnivoreFitness);
-        //temp = currentTime;
-
-        //file.Write("\n\n");
-
-
-        file.WriteLine(currentTime + "\t" + herbivoreFitness + "\t" + carnivoreFitness);
+        file = new StreamWriter(@"Assets\Resources\Numbers.xls", true);
+        file.WriteLine(currentTime/10 + "\t" + Critter.crittersDict["Herbivore"].Count + "\t" + Critter.crittersDict["Carnivore"].Count);
+        file.Close();
 
         temp = currentTime;
-
-        file.Close();
     }
 
     void OutputResultsAtTimes()

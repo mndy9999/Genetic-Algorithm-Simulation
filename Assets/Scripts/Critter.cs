@@ -91,8 +91,8 @@ public class Critter : MonoBehaviour
         
         UpdateFOV();
 
-        if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }         
-
+        if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }
+        if (!IsAlive) { crittersDict[critterType].Remove(this); }
         canBreed = breedTime > 10 ? (lifeStage >= Stage.Teen && lifeStage < Stage.Elder) : false;
         breedTime += Time.deltaTime;
 

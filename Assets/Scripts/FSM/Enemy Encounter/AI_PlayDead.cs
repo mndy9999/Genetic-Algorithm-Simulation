@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using FiniteStateMachine;
+using System.Collections;
 
 public class AI_PlayDead : State<AI>
 {
@@ -30,6 +31,7 @@ public class AI_PlayDead : State<AI>
         _owner.animator.Play("Dead");       //start playing animation when entering state
         _owner.critter.isAlarmed = true;
         _owner.critter.isVisible = Random.Range(0, 10) < _owner.critter.critterTraitsDict[Trait.Acting];
+        _owner.StartCoroutine(WaitForAnimation(_owner));
     }
 
 
@@ -45,7 +47,13 @@ public class AI_PlayDead : State<AI>
     {
         if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         else if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
-        else if (!_owner.CanSeeEnemy() && _owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
-        else if (!_owner.CanSeeEnemy() && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+    }
+
+    IEnumerator WaitForAnimation(AI _owner)
+    {
+        yield return new WaitForSeconds(3f);
+        if (_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
+        if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+        if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
     }
 }

@@ -37,6 +37,7 @@ public class AI_Startle : State<AI>
                 _owner.seek.Enemy.GetComponent<Critter>().IsAlarmed = true;
                 _owner.critter.critterTraitsDict[Trait.ThreatPoints] += 0.5f;
         }
+        _owner.StartCoroutine(WaitForAnimation(_owner));
     }
 
     public override void ExitState(AI _owner)
@@ -48,19 +49,17 @@ public class AI_Startle : State<AI>
 
     public override void UpdateState(AI _owner)
     {
+        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
+        else if (_owner.critter.IsAttacked && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         if (_owner.seek.Enemy)
         {
             var direction = _owner.seek.Enemy.transform.position - _owner.transform.position;
             _owner.transform.Rotate(direction);
-        }
-
-        _owner.StartCoroutine(WaitForAnimation(_owner));
+        }        
     }
 
     IEnumerator WaitForAnimation(AI _owner)
     {
-        if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
-        else if (_owner.critter.IsAttacked && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         yield return new WaitForSeconds(2f);
         if (_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
         if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }

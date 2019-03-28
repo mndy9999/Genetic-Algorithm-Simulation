@@ -78,7 +78,7 @@ public class CrittersUIController : MonoBehaviour
         if (currentGO.GetComponent<Critter>().availableBehaviours.Count > 0)
         {
             currentPanel.GetComponent<Text>().text = "";
-            for (int i = 0; i < currentGO.GetComponent<Critter>().availableBehaviours.Count-2; i+=2)
+            for (int i = 0; i < currentGO.GetComponent<Critter>().availableBehaviours.Count-1; i+=2)
             {
                 if (!currentPanel.GetComponent<Text>().text.Contains(currentGO.GetComponent<Critter>().availableBehaviours[i].ToString()))
                     currentPanel.GetComponent<Text>().text += currentGO.GetComponent<Critter>().availableBehaviours[i].ToString() + "   " + currentGO.GetComponent<Critter>().availableBehaviours[i+1].ToString() + "    " + currentGO.GetComponent<Critter>().availableBehaviours[i + 2].ToString() + "\n";
