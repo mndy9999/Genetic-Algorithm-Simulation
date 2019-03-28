@@ -88,6 +88,7 @@ public class AI_Chase : State<AI>
                     if (_owner.TargetIsDead())
                     {
                         if (_owner.critter.availableBehaviours.Contains(AI_Eat.instance)) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
+                        else { return; }
                     }
                     if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree") { _owner.stateMachine.ChangeState(AI_Knock.instance); }
                     if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt") { _owner.stateMachine.ChangeState(AI_Dig.instance); }
