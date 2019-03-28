@@ -32,25 +32,25 @@ public class BreedingController : MonoBehaviour {
     public void BehavioursCrossover()
     {
         offspring.GetComponent<Critter>().availableBehaviours = new List<FiniteStateMachine.State<AI>>();
-        for (int i = 0; i < Behaviours.behaviours.Count; i++)
+        for (int i = 0; i < Behaviours.allPossibleBehaviours.Count; i++)
         {
             float rand = (Random.Range(0, 100));
-            if (rand < 100-mutationRate/2 && mother.availableBehaviours.Contains(Behaviours.behaviours[i]))
+            if (rand < 100-mutationRate/2 && mother.availableBehaviours.Contains(Behaviours.allPossibleBehaviours[i]))
             {
                 Debug.Log("mother");
-                offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
+                offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.allPossibleBehaviours[i]);
             }
-            else if (rand >= 100 - mutationRate / 2 && rand < 100 - mutationRate && father.availableBehaviours.Contains(Behaviours.behaviours[i]))
+            else if (rand >= 100 - mutationRate / 2 && rand < 100 - mutationRate && father.availableBehaviours.Contains(Behaviours.allPossibleBehaviours[i]))
             {
                 Debug.Log("father");
-                offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
+                offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.allPossibleBehaviours[i]);
             }
             else if(rand >= 100 - mutationRate && rand < 100)
             {                
-                if (!mother.availableBehaviours.Contains(Behaviours.behaviours[i]) && !father.availableBehaviours.Contains(Behaviours.behaviours[i]))
+                if (!mother.availableBehaviours.Contains(Behaviours.allPossibleBehaviours[i]) && !father.availableBehaviours.Contains(Behaviours.allPossibleBehaviours[i]))
                 {
                     Debug.Log("mutation");
-                    offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.behaviours[i]);
+                    offspring.GetComponent<Critter>().availableBehaviours.Add(Behaviours.allPossibleBehaviours[i]);
                 }
             }
         }

@@ -106,11 +106,15 @@ public class TestingInfoController : MonoBehaviour {
     void OutputResultsEveryFrame()
     {
         StreamWriter file = new StreamWriter(@"Assets\Resources\Fitness.xls", true);
-        file.WriteLine(currentTime/10 + "\t" + herbivoreFitness + "\t" + carnivoreFitness);       
+        file.WriteLine(currentTime/10 + "\t" + herbivoreFitness + "\t" + carnivoreFitness + "\t" + Critter.crittersDict["Herbivore"][0].FitnessScore + "\t" + Critter.crittersDict["Carnivore"][0].FitnessScore);       
         file.Close();
 
         file = new StreamWriter(@"Assets\Resources\Numbers.xls", true);
         file.WriteLine(currentTime/10 + "\t" + Critter.crittersDict["Herbivore"].Count + "\t" + Critter.crittersDict["Carnivore"].Count);
+        file.Close();
+
+        file = new StreamWriter(@"Assets\Resources\Numbers.xls", true);
+        file.WriteLine(currentTime / 10 + "\t" + Critter.crittersDict["Herbivore"].Count + "\t" + Critter.crittersDict["Carnivore"].Count);
         file.Close();
 
         temp = currentTime;

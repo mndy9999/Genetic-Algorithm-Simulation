@@ -93,13 +93,13 @@ public class Critter : MonoBehaviour
 
         if(lifeStage == Stage.Elder) { IsAlive = Random.Range(0, 10) < 3; }
         if (!IsAlive) { crittersDict[critterType].Remove(this); }
-        canBreed = breedTime > 10 ? (lifeStage >= Stage.Teen && lifeStage < Stage.Elder) : false;
+        canBreed = breedTime > 20 ? (lifeStage >= Stage.Teen && lifeStage < Stage.Elder) : false;
         breedTime += Time.deltaTime;
 
-        canAlarm = alarmTime > 10 ? true : false;
+        canAlarm = alarmTime > 20 ? true : false;
         alarmTime += Time.deltaTime;
 
-        canChallenge = challengeTime > 10 ? !isChallenged : false;
+        canChallenge = challengeTime > 20 ? !isChallenged : false;
         challengeTime += Time.deltaTime;
 
     }

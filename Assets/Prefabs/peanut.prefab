@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64479588662044328}
   - component: {fileID: 114314793482089368}
   - component: {fileID: 114089750005677716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: peanut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,26 +123,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   critterType: Vegetable
-  name: 
-  gender: 0
-  lifeStage: 0
   health: 100
   energy: 100
   resource: 100
-  age: 0
   energyPerSecond: 1
-  runSpeed: 5
-  walkSpeed: 2
-  speed: 0
-  viewRadius: 10
-  defaultViewAngle: 90
+  age: 0
   viewAngle: 0
-  availableBehaviours: []
+  gender: 0
+  lifeStage: 0
   availableTargetTypes: []
   initialSize: {x: 0, y: 0, z: 0}
-  isChased: 0
+  isAlarmed: 0
   isAttacked: 0
   isVisible: 0
+  isChallenged: 0
+  isScared: 0
+  isCourted: 0
+  canAlarm: 0
   canBreed: 0
-  breedTimer: 0
-  time: 0
+  canChallenge: 0
+  isChild: 0
+  breedTime: 0
+  challengeTime: 0
+  alarmTime: 0

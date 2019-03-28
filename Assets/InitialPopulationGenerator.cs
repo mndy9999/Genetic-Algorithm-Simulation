@@ -71,7 +71,7 @@ public class InitialPopulationGenerator : MonoBehaviour
     {
         Vector3 pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * count * density + parent.position;
         NavMeshHit navHit;
-        while(!NavMesh.SamplePosition(pos, out navHit, 1, 1))
+        while(!NavMesh.SamplePosition(pos, out navHit, 0.1f, 1))
         {
             pos = new Vector3(Random.insideUnitSphere.x, 0.0f, Random.insideUnitSphere.z) * count * density + parent.position;
         }

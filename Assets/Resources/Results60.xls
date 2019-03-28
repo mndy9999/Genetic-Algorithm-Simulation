@@ -1,84 +1,84 @@
 Total herbivores: 	25
-AI_Idle	25
-AI_Wander	25
-AI_Chase	25
-AI_Attack	25
-AI_Eat	25
-AI_Swim	25
-AI_Breed	25
+AI_Idle	22
+AI_Wander	18
+AI_Chase	24
+AI_Attack	24
+AI_Eat	23
+AI_Swim	22
+AI_Breed	21
+AI_Getup	23
+AI_Laydown	20
+AI_Dead	18
+AI_Threat	8
+AI_Aggress	10
+AI_Fight	13
+AI_Sleep	1
+AI_Rest	2
+AI_Knock	22
+AI_Dig	22
+AI_Alarm	19
+AI_PlayDead	18
+AI_Startle	18
+AI_Flee	22
+AI_CallMate	14
+AI_Impress	12
+AI_Watch	21
+AI_Submit	23
+
+
+
+Total carnivores: 	30
+AI_Idle	26
+AI_Wander	22
+AI_Chase	30
+AI_Attack	27
+AI_Eat	29
+AI_Swim	24
+AI_Breed	28
 AI_Getup	25
-AI_Laydown	25
-AI_Dead	25
-AI_Threat	6
-AI_Aggress	6
-AI_Fight	8
-AI_Sleep	0
+AI_Laydown	26
+AI_Dead	28
+AI_Threat	9
+AI_Aggress	16
+AI_Fight	16
+AI_Sleep	1
 AI_Rest	0
-AI_Knock	16
-AI_Dig	16
-AI_Alarm	16
-AI_PlayDead	16
-AI_Startle	16
-AI_Flee	16
-AI_CallMate	10
-AI_Impress	7
-AI_Watch	16
-AI_Submit	16
-
-
-
-Total carnivores: 	32
-AI_Idle	32
-AI_Wander	32
-AI_Chase	32
-AI_Attack	32
-AI_Eat	32
-AI_Swim	32
-AI_Breed	32
-AI_Getup	32
-AI_Laydown	32
-AI_Dead	32
-AI_Threat	10
-AI_Aggress	11
-AI_Fight	11
-AI_Sleep	0
-AI_Rest	0
-AI_Knock	20
-AI_Dig	20
-AI_Alarm	0
+AI_Knock	26
+AI_Dig	27
+AI_Alarm	1
 AI_PlayDead	0
-AI_Startle	0
-AI_Flee	20
-AI_CallMate	10
-AI_Impress	7
-AI_Watch	20
-AI_Submit	20
-
-
-
-Total creatures: 	57
-AI_Idle	57
-AI_Wander	57
-AI_Chase	57
-AI_Attack	57
-AI_Eat	57
-AI_Swim	57
-AI_Breed	57
-AI_Getup	57
-AI_Laydown	57
-AI_Dead	57
-AI_Threat	16
-AI_Aggress	17
-AI_Fight	19
-AI_Sleep	0
-AI_Rest	0
-AI_Knock	36
-AI_Dig	36
-AI_Alarm	16
-AI_PlayDead	16
-AI_Startle	16
-AI_Flee	36
-AI_CallMate	20
+AI_Startle	1
+AI_Flee	29
+AI_CallMate	19
 AI_Impress	14
-AI_Watch	36
-AI_Submit	36
+AI_Watch	23
+AI_Submit	26
+
+
+
+Total creatures: 	55
+AI_Idle	48
+AI_Wander	40
+AI_Chase	54
+AI_Attack	51
+AI_Eat	52
+AI_Swim	46
+AI_Breed	49
+AI_Getup	48
+AI_Laydown	46
+AI_Dead	46
+AI_Threat	17
+AI_Aggress	26
+AI_Fight	29
+AI_Sleep	2
+AI_Rest	2
+AI_Knock	48
+AI_Dig	49
+AI_Alarm	20
+AI_PlayDead	18
+AI_Startle	19
+AI_Flee	51
+AI_CallMate	33
+AI_Impress	26
+AI_Watch	44
+AI_Submit	49

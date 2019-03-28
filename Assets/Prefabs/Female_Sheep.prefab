@@ -1707,7 +1707,7 @@ MonoBehaviour:
   model:
   - {fileID: 1948763378187600, guid: cd88d7262ce754943b37704b56cf6548, type: 2}
   - {fileID: 1058745664365082, guid: 3cec37e45b561ae45809b225b30d8de2, type: 2}
-  mutationRate: 0
+  mutationRate: 10
 --- !u!114 &114909987566964532
 MonoBehaviour:
   m_ObjectHideFlags: 1

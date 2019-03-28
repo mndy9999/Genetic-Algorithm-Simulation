@@ -24,12 +24,12 @@ public class HerbivoreController : MonoBehaviour {
         critter.availableBehaviours = new List<FiniteStateMachine.State<AI>>();
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
-            if (Random.Range(0, 10) <= 9)
+            if (Random.Range(0, 10) < 9)
                 critter.availableBehaviours.Add(Behaviours.behaviours[i]);
         }
         for (int i = 0; i < Behaviours.EnemyEncounterBehaviours.Count; i++)
         {
-            if (Random.Range(0, 10) <= 9)
+            if (Random.Range(0, 10) < 9)
                 critter.availableBehaviours.Add(Behaviours.EnemyEncounterBehaviours[i]);
         }
         for (int i = 0; i < Behaviours.MateEncounterBehaviours.Count; i++)
@@ -44,12 +44,12 @@ public class HerbivoreController : MonoBehaviour {
         }
         for (int i = 0; i < Behaviours.ChallengerEncounterBehaviours.Count; i++)
         {
-            if (Random.Range(0, 10) <= 9)
+            if (Random.Range(0, 10) < 9)
                 critter.availableBehaviours.Add(Behaviours.ChallengerEncounterBehaviours[i]);
         }
         for (int i = 0; i < Behaviours.FoodSourceBehaviours.Count; i++)
         {
-            if (Random.Range(0, 10) <= 9)
+            if (Random.Range(0, 10) < 9)
                 critter.availableBehaviours.Add(Behaviours.FoodSourceBehaviours[i]);
         }
     }

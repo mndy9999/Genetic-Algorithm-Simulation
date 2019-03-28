@@ -41,16 +41,19 @@ public class AI_Chase : State<AI>
         _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.RunSpeed];
 
-        Vector3 direction = _owner.transform.position - _owner.seek.Target.transform.position;
-        _owner.transform.Rotate(direction);
+        if (_owner.seek.Target)
+        {
+            Vector3 direction = _owner.transform.position - _owner.seek.Target.transform.position;
+            _owner.transform.Rotate(direction);
 
-        _owner.seek.Target.GetComponent<Critter>().IsAlarmed = true;
-
+            _owner.seek.Target.GetComponent<Critter>().IsAlarmed = true;
+        }
     }
 
     public override void ExitState(AI _owner)
     {
         Debug.Log("Exiting Chase State");
+        _owner.agent.velocity = Vector3.zero;
         _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
         if(_owner.seek.LastKnownTarget != null)
@@ -70,7 +73,7 @@ public class AI_Chase : State<AI>
                 if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
             }
 
-            else _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+            if(!_owner.TargetIsEnemy()) _owner.agent.SetDestination(_owner.seek.Target.transform.position);
 
             if (_owner.TargetIsChallenger())
             {
@@ -92,7 +95,7 @@ public class AI_Chase : State<AI>
                     }
                     if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree") { _owner.stateMachine.ChangeState(AI_Knock.instance); }
                     if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt") { _owner.stateMachine.ChangeState(AI_Dig.instance); }
-                    if (_owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
+                    if (!_owner.TargetIsDead() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
                 }
             }
 
