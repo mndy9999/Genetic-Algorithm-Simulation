@@ -26,20 +26,23 @@ public class SocialRankManager : MonoBehaviour {
     }
 
     void CalculateFitness()
-    {      
+    {
         foreach (string critterType in Critter.crittersDict.Keys)
         {
-            foreach (Critter c in Critter.crittersDict[critterType])
+            if (critterType == "Herbivore" || critterType == "Carnivore")
             {
-                critter = c.GetComponent<Critter>();
-                critter.FitnessScore = 0;
-                foreach (Trait trait in c.critterTraitsDict.Keys)
+                foreach (Critter c in Critter.crittersDict[critterType])
                 {
-                    critter.FitnessScore += c.critterTraitsDict[trait];
+                    critter = c.GetComponent<Critter>();
+                    critter.FitnessScore = 0;
+                    foreach (Trait trait in c.critterTraitsDict.Keys)
+                    {
+                        critter.FitnessScore += c.critterTraitsDict[trait];
+                    }
+                    critter.FitnessScore += critter.age;
+                    critter.FitnessScore += critter.availableBehaviours.Count;
+                    critter.FitnessScore /= (c.critterTraitsDict.Count + 2);
                 }
-                critter.FitnessScore += critter.age;
-                critter.FitnessScore += critter.availableBehaviours.Count;
-                critter.FitnessScore /= (c.critterTraitsDict.Count+2);
             }
         }
     }

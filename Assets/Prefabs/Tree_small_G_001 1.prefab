@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7f7360c176ecc439d7627c255b2375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apple: {fileID: 1829371231341652, guid: 426b44a7575f71e479fab4f4e8431989, type: 2}
+  apple: {fileID: 1662643247245970, guid: 03017bcaa02d1dd46879c261fb9d67b8, type: 2}
 --- !u!114 &114093818420227966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -589,6 +589,7 @@ MonoBehaviour:
   energy: 0
   resource: 20
   energyPerSecond: 1
+  age: 0
   viewAngle: 0
   gender: 0
   lifeStage: 0
@@ -623,6 +624,7 @@ MonoBehaviour:
   energy: 0
   resource: 20
   energyPerSecond: 1
+  age: 0
   viewAngle: 0
   gender: 0
   lifeStage: 0
@@ -657,6 +659,7 @@ MonoBehaviour:
   energy: 0
   resource: 20
   energyPerSecond: 1
+  age: 0
   viewAngle: 0
   gender: 0
   lifeStage: 0
@@ -702,6 +705,7 @@ MonoBehaviour:
   energy: 0
   resource: 20
   energyPerSecond: 1
+  age: 0
   viewAngle: 0
   gender: 0
   lifeStage: 0
@@ -747,6 +751,7 @@ MonoBehaviour:
   energy: 0
   resource: 100
   energyPerSecond: 1
+  age: 0
   viewAngle: 0
   gender: 0
   lifeStage: 0
@@ -792,6 +797,7 @@ MonoBehaviour:
   energy: 0
   resource: 20
   energyPerSecond: 1
+  age: 0
   viewAngle: 0
   gender: 0
   lifeStage: 0

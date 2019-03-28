@@ -25,8 +25,9 @@ public class TreeController : MonoBehaviour {
     }
     // Update is called once per frame
     void Update () {
-        critter.isVisible = critter.Health > 10;
-        if (critter.Health > 15) { harvested = false; }
+        if(critter.Health <= 10) { critter.isVisible = false; }
+        if(!critter.isVisible && harvested && critter.Health < 20) { critter.Health += 0.0001f; }
+        if(critter.Health >= 20) { critter.isVisible = true; }
         SpawnApples();
     }
 
@@ -34,6 +35,7 @@ public class TreeController : MonoBehaviour {
     {       
         if (!critter.isVisible && !harvested)
         {
+            critter.Health = 5;
             for (int i = 0; i < transform.childCount; i++)
             {
                 GameObject currentChild = transform.GetChild(i).gameObject;

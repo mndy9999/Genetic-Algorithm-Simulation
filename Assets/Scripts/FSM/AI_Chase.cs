@@ -53,6 +53,8 @@ public class AI_Chase : State<AI>
         Debug.Log("Exiting Chase State");
         _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
+        if(_owner.seek.LastKnownTarget != null)
+            _owner.seek.LastKnownTarget.GetComponent<Critter>().IsAlarmed = false;
     }
 
     public override void UpdateState(AI _owner)
@@ -85,11 +87,11 @@ public class AI_Chase : State<AI>
                 {
                     if (_owner.TargetIsDead())
                     {
-                        if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree") { _owner.stateMachine.ChangeState(AI_Knock.instance); }
-                        if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt") { _owner.stateMachine.ChangeState(AI_Dig.instance); }
                         if (_owner.critter.availableBehaviours.Contains(AI_Eat.instance)) { _owner.stateMachine.ChangeState(AI_Eat.instance); }
                     }
-                    else if (_owner.critter.availableBehaviours.Contains(AI_Attack.instance)){ _owner.stateMachine.ChangeState(AI_Attack.instance); }
+                    if (_owner.seek.Target.GetComponent<Critter>().critterType == "Tree") { _owner.stateMachine.ChangeState(AI_Knock.instance); }
+                    if (_owner.seek.Target.GetComponent<Critter>().critterType == "Dirt") { _owner.stateMachine.ChangeState(AI_Dig.instance); }
+                    if (_owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
                 }
             }
 
@@ -104,8 +106,12 @@ public class AI_Chase : State<AI>
                 bestState = _owner.BestState(Behaviours.SocialRankBehaviours);
                 if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
             }
-             
+
         }
-        else if(_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
-    }
+        else
+        {
+            if (_owner.critter.availableBehaviours.Contains(AI_Wander.instance)) { _owner.stateMachine.ChangeState(AI_Wander.instance); }
+            if (_owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        }
+        }
 }
