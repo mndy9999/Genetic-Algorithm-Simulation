@@ -73,7 +73,7 @@ public class AI_Chase : State<AI>
                 if (bestState != null) { _owner.stateMachine.ChangeState(bestState); }
             }
 
-            if(!_owner.TargetIsEnemy()) _owner.agent.SetDestination(_owner.seek.Target.transform.position);
+            if(!_owner.TargetIsEnemy() && _owner.agent.isActiveAndEnabled) _owner.agent.SetDestination(_owner.seek.Target.transform.position);
 
             if (_owner.TargetIsChallenger())
             {

@@ -61,9 +61,12 @@ public class AI_Attack : State<AI>
     void Attack(AI _owner)
     {        
         var direction = _owner.seek.Target.transform.position - _owner.transform.position;
-        _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
-                                    Quaternion.LookRotation(direction),
-                                    _owner.agent.speed * Time.deltaTime);
+        if (direction != Vector3.zero)
+        {
+            _owner.transform.rotation = Quaternion.Slerp(_owner.transform.rotation,
+                                        Quaternion.LookRotation(direction),
+                                        _owner.agent.speed * Time.deltaTime);
+        }
         //start playing the animation
         _owner.animator.Play("Attack");
         _owner.seek.Target.GetComponent<Critter>().Health -= _owner.critter.critterTraitsDict[Trait.AttackPoints]/100;                

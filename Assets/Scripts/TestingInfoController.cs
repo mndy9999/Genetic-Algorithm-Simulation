@@ -21,6 +21,7 @@ public class TestingInfoController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Debug.unityLogger.logEnabled = false;
         behavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
         herbivoreBehavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
         carnivoreBehavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
