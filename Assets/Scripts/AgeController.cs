@@ -6,18 +6,21 @@ public class AgeController : MonoBehaviour {
 
     private void Start()
     {
+        //get refrence to the critter component
         critter = GetComponent<Critter>();
     }
 
     private void Update()
     {
+        //increase the age based on time
         critter.age += Time.deltaTime;
         ageUp();
         UpdateLifeStage();
     }
 
+    //set the size of the creature depending on its life stage 
     void ageUp()
-    {
+    {        
         switch (critter.lifeStage)
         {
             case Stage.Baby:
@@ -35,6 +38,7 @@ public class AgeController : MonoBehaviour {
         }
     }
 
+    //update the critter's life stage based on its age
     void UpdateLifeStage()
     {
         if (critter.age < 20) { critter.lifeStage = Stage.Baby; }

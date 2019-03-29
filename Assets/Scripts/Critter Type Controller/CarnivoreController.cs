@@ -27,11 +27,26 @@ public class CarnivoreController : MonoBehaviour
     {
 
         critter.availableBehaviours = new List<FiniteStateMachine.State<AI>>();
+        //basic behaviours
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
             if (Random.Range(0, 10) < 9)
                 critter.availableBehaviours.Add(Behaviours.behaviours[i]);
         }
+        for (int i = 0; i < Behaviours.ChallengerEncounterBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                critter.availableBehaviours.Add(Behaviours.ChallengerEncounterBehaviours[i]);
+        }
+        for (int i = 0; i < Behaviours.LowEnergyBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                critter.availableBehaviours.Add(Behaviours.LowEnergyBehaviours[i]);
+        }
+
+
+
+        //iteractional behaviours
         for (int i = 0; i < Behaviours.MateEncounterBehaviours.Count; i++)
         {
             if (Random.Range(0, 10) < 5)
@@ -42,16 +57,9 @@ public class CarnivoreController : MonoBehaviour
             if (Random.Range(0, 10) < 5)
                 critter.availableBehaviours.Add(Behaviours.SocialRankBehaviours[i]);
         }
-        for (int i = 0; i < Behaviours.ChallengerEncounterBehaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                critter.availableBehaviours.Add(Behaviours.ChallengerEncounterBehaviours[i]);
-        }
-        for (int i = 0; i < Behaviours.FoodSourceBehaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                critter.availableBehaviours.Add(Behaviours.FoodSourceBehaviours[i]);
-        }
+
+
+        //Enemy encounter - wolves only get flee
         critter.availableBehaviours.Add(AI_Flee.instance);
     }
 }

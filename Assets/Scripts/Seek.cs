@@ -8,9 +8,10 @@ public class Seek : MonoBehaviour {
     public string enemyType = "Carnivore";
     public string defaultEnemyType;
 
-    public float viewRadius;
-    public float viewAngle;   
+    public float viewRadius;        //how much can it see
+    public float viewAngle;         //how far can it see
 
+    //different types of tagets
     [SerializeField]
     GameObject target = null;
     [SerializeField]
@@ -28,6 +29,7 @@ public class Seek : MonoBehaviour {
     [SerializeField]
     GameObject opponent = null;
 
+    //keep track of the last known targets
     GameObject lastKnownTarget = null;
     GameObject lastKnownFood = null;
     GameObject lastKnownEnemy= null;
@@ -39,75 +41,91 @@ public class Seek : MonoBehaviour {
 
     GameObject temp = null;
 
-    public List<GameObject> visibleTargets = new List<GameObject>();
-    public List<string> availableTargetsType;
+    public List<GameObject> visibleTargets = new List<GameObject>();    //all the gameobjects in the field of view
+    public List<string> availableTargetsType;       //food types the critter will look after
 
-    public GameObject[] potentialTargets = new GameObject[6];
+    [SerializeField] GameObject[] potentialTargets;     //holds the closest available targets of each type that are in the field of view
 
     Critter critter;
 
-    public GameObject water;
+    public GameObject water;    //this is to check if it can see water
 
     private void Start()
     {
-
-        defaultEnemyType = enemyType;
+        potentialTargets = new GameObject[7];
+        defaultEnemyType = enemyType;       //save the default enemy type
         critter = GetComponent<Critter>();
         availableTargetsType = critter.availableTargetTypes;
 
+        //get view radius and view angle from the critter component
         viewRadius = critter.critterTraitsDict[Trait.ViewRadius];
         viewAngle = critter.viewAngle;
 
+        //look for all the colliders in the field of view
         FindVisibleTargets();
 
+        //find specific targets that are in the field of view
         food = GetFood();
         enemy = GetEnemy();
         potentialMate = GetPotantialMate();
+        opponent = GetOpponent();
 
+        //setup the array with all the possible targets, sorted based on their importance
         potentialTargets[0] = enemy;
         potentialTargets[1] = challenger;
         potentialTargets[2] = mate;
         potentialTargets[3] = courter;       
         potentialTargets[4] = food;
         potentialTargets[5] = potentialMate;
+        potentialTargets[6] = opponent;
 
+        //set the current target to the most important potential target
         target = null;
         for (int i = 0; i < potentialTargets.Length; i++)
         {
             if (potentialTargets[i] != null) { target = potentialTargets[i]; break; }
         }
 
+        //save informaion about the last known targets
         if (target) { lastKnownTarget = target; }
         if (food) { lastKnownFood = food; }
         if (enemy) { lastKnownEnemy = enemy; }
         if (mate) { lastKnownMate = mate; }
-        if (potentialMate) { lastKnownMate = mate; }
+        if (potentialMate) { lastKnownPotentialMate = mate; }
         if (courter) { lastKnownCourter = mate; }
         if (opponent) { lastKnownOpponent = opponent; }
 
     }
     private void Update()
     {
-        viewAngle = critter.viewAngle;
+        viewAngle = critter.viewAngle; //update view angle from the critter component
+
+        //look for all the colliders in the field of view
         FindVisibleTargets();
 
+        //find specific targets that are in the field of view
         food = GetFood();
         enemy = GetEnemy();
         potentialMate = GetPotantialMate();
+        opponent = GetOpponent();
 
+        //setup the array with all the possible targets, sorted based on their importance
         potentialTargets[0] = enemy;
         potentialTargets[1] = challenger;
         potentialTargets[2] = courter;
         potentialTargets[3] = mate;
         potentialTargets[4] = food;
         potentialTargets[5] = potentialMate;
+        potentialTargets[6] = opponent;
 
+        //set the current target to the most important potential target
         target = null;
         for (int i = 0; i < potentialTargets.Length; i++)
         {
             if(potentialTargets[i] != null) { target = potentialTargets[i]; break; }
         }
 
+        //save informaion about the last known targets
         if (target) { lastKnownTarget = target; }
         if (food) { lastKnownFood = food; }
         if (enemy) { lastKnownEnemy = enemy; }
@@ -120,33 +138,35 @@ public class Seek : MonoBehaviour {
 
     void FindVisibleTargets()
     {
-        water = null;
-        visibleTargets.Clear();
-        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);
-        for (int i = 0; i < targetInViewRadius.Length; i++)
+        water = null;       //reset the water each time it looks for new targets
+        visibleTargets.Clear();     //reset the visible targets to add new ones
+        Collider[] targetInViewRadius = Physics.OverlapSphere(transform.position, viewRadius);      //create a sphere around the critter and put all the colliders in it into an array
+        for (int i = 0; i < targetInViewRadius.Length; i++) //loop through every gabe object in the view radius
         {            
-            GameObject target2 = targetInViewRadius[i].gameObject;
+            GameObject target2 = targetInViewRadius[i].gameObject;  
             Vector3 direction = (target2.transform.position - transform.position).normalized;
             if (target2.transform.root.GetComponent<Critter>())
             {
+                //if the game object is visibile and is in the field of view OR is close to the critter
                 if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 3.0f) 
                     && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
                 {
-                    visibleTargets.Add(target2.transform.root.gameObject);
+                    visibleTargets.Add(target2.transform.root.gameObject);      //add it to the visible targets
                 }
             }
-            if(target2.layer == LayerMask.NameToLayer("Water")) { water = target2; }
+            if(target2.layer == LayerMask.NameToLayer("Water")) { water = target2; }    //if the colliders is water, keep track of it
         }
     }
 
-    public GameObject GetFood()
+    GameObject GetFood()
     {
         temp = null;
         float dist = Mathf.Infinity;
-        for (int i = 0; i < visibleTargets.Count; i++)
+        for (int i = 0; i < visibleTargets.Count; i++)  //loop through all the visible targets
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
-            if(d < dist && availableTargetsType.Contains(visibleTargets[i].GetComponent<Critter>().critterType))
+            //then find the closest food type critter
+            if(d < dist && availableTargetsType.Contains(visibleTargets[i].GetComponent<Critter>().critterType)) 
             {
                 dist = d;
                 temp = visibleTargets[i];
@@ -154,13 +174,14 @@ public class Seek : MonoBehaviour {
         }
         return temp;
     }
-    public GameObject GetEnemy()
+    GameObject GetEnemy()
     {
         temp = null;
         float dist = Mathf.Infinity;
-        for (int i = 0; i < visibleTargets.Count; i++)
+        for (int i = 0; i < visibleTargets.Count; i++)      //loop through all the visible targets
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
+            //find the closest enemy type critter
             if (d < dist && visibleTargets[i].GetComponent<Critter>().critterType == enemyType && visibleTargets[i].GetComponent<Critter>().IsAlive)
             {
                 dist = d;
@@ -169,13 +190,14 @@ public class Seek : MonoBehaviour {
         }
         return temp;
     }
-    public GameObject GetPotantialMate()
+    GameObject GetPotantialMate()
     {
         temp = null;
         float dist = Mathf.Infinity;
-        for (int i = 0; i < visibleTargets.Count; i++)
+        for (int i = 0; i < visibleTargets.Count; i++)      //loop through all the visible targets
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
+            //find the closest critter from the same specied, different gender and can breed
             if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
             {
                 dist = d;
@@ -184,13 +206,14 @@ public class Seek : MonoBehaviour {
         }
         return temp;
     }
-    public GameObject GetOpponent()
+    GameObject GetOpponent()
     {
         temp = null;
         float dist = Mathf.Infinity;
-        for (int i = 0; i < visibleTargets.Count; i++)
+        for (int i = 0; i < visibleTargets.Count; i++)      //loop through all the visible targets
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
+            //find the closest critter of the same species, same gender and can be challenged
             if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender == visibleTargets[i].GetComponent<Critter>().gender && critter.canChallenge && visibleTargets[i].GetComponent<Critter>().canChallenge && critter.gameObject != visibleTargets[i].gameObject && !visibleTargets[i].GetComponent<Critter>().IsAlarmed && !critter.IsAlarmed)
             {
                 dist = d;
@@ -200,8 +223,7 @@ public class Seek : MonoBehaviour {
         return temp;
     }
 
-
-
+    //getters and setters
     public GameObject Target
     {
         get { return target; }
@@ -242,8 +264,6 @@ public class Seek : MonoBehaviour {
         get { return challenger; }
         set { challenger = value; }
     }
-
-
 
 
     public GameObject LastKnownTarget
@@ -288,8 +308,8 @@ public class Seek : MonoBehaviour {
     }
 
 
-
-    public Vector3 DirFromAngle(float angleDegrees, bool isGlobal)
+    //calculate direction from angle
+    Vector3 DirFromAngle(float angleDegrees, bool isGlobal)
     {
         if (!isGlobal) { angleDegrees += transform.eulerAngles.y; }
         return new Vector3(Mathf.Sin(angleDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleDegrees * Mathf.Deg2Rad));

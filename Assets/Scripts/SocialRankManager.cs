@@ -13,6 +13,7 @@ public class SocialRankManager : MonoBehaviour {
         //DebugRanks();
     }
 
+    //output the fitness score of each creature to the debugger
     void DebugRanks()
     {
         foreach (string critterType in Critter.crittersDict.Keys)
@@ -29,24 +30,25 @@ public class SocialRankManager : MonoBehaviour {
     {
         foreach (string critterType in Critter.crittersDict.Keys)
         {
-            if (critterType == "Herbivore" || critterType == "Carnivore")
+            if (critterType == "Herbivore" || critterType == "Carnivore")   //go through all the carnivores and herbivores in the dictionary
             {
-                foreach (Critter c in Critter.crittersDict[critterType])
+                foreach (Critter c in Critter.crittersDict[critterType])    //for each creature in the species
                 {
-                    c.FitnessScore = 0;
+                    c.FitnessScore = 0;     //reset fitness score
                     foreach (Trait trait in c.critterTraitsDict.Keys)
                     {
-                        c.FitnessScore += c.critterTraitsDict[trait];
+                        c.FitnessScore += c.critterTraitsDict[trait];   //add up all the traits values
                     }
-                    c.FitnessScore += c.age;
-                    c.FitnessScore += c.availableBehaviours.Count;
-                    c.FitnessScore /= (c.critterTraitsDict.Count + 2);
+                    c.FitnessScore += c.age;                            //and the age
+                    c.FitnessScore += c.availableBehaviours.Count;      //and the number of available behaviours
+                    c.FitnessScore /= (c.critterTraitsDict.Count + 2);  //then average the value to get the fitness score
 
                 }
             }
         }
     }
-
+    
+    //bubble sort algorithm to sort the dictionary based on the critter's fitness score
     void UpdateRanks()
     {
         foreach (string critterType in Critter.crittersDict.Keys) {

@@ -5,7 +5,7 @@ using FiniteStateMachine;
 
 public class Behaviours
 {
-
+    //hold all possible behaviours kept in a single array for easy looping through
     public static List<State<AI>> allPossibleBehaviours = new List<State<AI>>()
     {
         AI_Idle.instance,
@@ -35,7 +35,7 @@ public class Behaviours
         AI_Submit.instance
     };
 
-
+    //basic behaviours
     public static List<State<AI>> behaviours = new List<State<AI>>()
     {
         AI_Idle.instance, 
@@ -43,7 +43,6 @@ public class Behaviours
         AI_Chase.instance,
         AI_Attack.instance,
         AI_Eat.instance,
-        AI_Swim.instance,
         AI_Breed.instance,
         AI_Getup.instance,
         AI_Laydown.instance,
@@ -75,7 +74,8 @@ public class Behaviours
         AI_Alarm.instance,
         AI_PlayDead.instance,
         AI_Startle.instance,
-        AI_Flee.instance
+        AI_Flee.instance,
+        AI_Swim.instance
         //AI_Suicide.name,
         //AI_Flock.name
     };

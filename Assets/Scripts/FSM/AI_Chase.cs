@@ -54,7 +54,7 @@ public class AI_Chase : State<AI>
     {
         Debug.Log("Exiting Chase State");
         _owner.agent.velocity = Vector3.zero;
-        _owner.agent.ResetPath();
+        if (_owner.agent.isActiveAndEnabled) _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
         if(_owner.seek.LastKnownTarget != null)
             _owner.seek.LastKnownTarget.GetComponent<Critter>().IsAlarmed = false;

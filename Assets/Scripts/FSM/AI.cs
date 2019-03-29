@@ -47,29 +47,33 @@ public class AI : MonoBehaviour {
         stateMachine.Update();      //check for changes in states
     }
 
+    //Roulette Wheel selection for behaviours
     public State<AI> BestState(List<State<AI>> behaviours)
     {
-        float sum = 0;
+        float sum = 0;      //create initial sum 0
         for (int i = 0; i < behaviours.Count; i++)
         {
             if (critter.availableBehaviours.Contains(behaviours[i]))
             {
-                sum += behaviours[i].GetWeight(this);
+                sum += behaviours[i].GetWeight(this);           //add up all the viable behaviours weights
             }
         }
-        float r = Random.Range(0, sum);
-        float newSum = 0;
+        float r = Random.Range(0, sum);     //generate random number between 0 and initial sum
+        float newSum = 0;       //create new sum
         for (int i = 0; i < behaviours.Count; i++)
         {
             if (critter.availableBehaviours.Contains(behaviours[i]))
-            {
-                newSum += behaviours[i].GetWeight(this);
-                if (newSum >= r) { return behaviours[i]; }
+            {   
+                newSum += behaviours[i].GetWeight(this);        //add up all the viable behaviours weights
+                if (newSum >= r) { return behaviours[i]; }      //if the new sum is higher than the random number generated, return the last behaviour added
             }
         }
-        return null;
+        return null;    //if there's no behaviours, return null
     }
 
+
+
+    //events
     public bool CanSeeTarget()
     {
         return seek.Target;

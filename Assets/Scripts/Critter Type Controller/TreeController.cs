@@ -26,13 +26,14 @@ public class TreeController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if(critter.Health <= 10) { critter.isVisible = false; }
-        if(!critter.isVisible && harvested && critter.Health < 20) { critter.Health += 0.0001f; }
-        if(critter.Health >= 20) { critter.isVisible = true; }
+        if(!critter.isVisible && harvested && critter.Health < 20) { critter.Health += 0.0001f; } //if the critter's health is low and it is not currently attacked, start regenerating
+        if (critter.Health >= 20) { critter.isVisible = true; } //when regenerated enough, make it visible again
         SpawnApples();
     }
 
     void SpawnApples()
-    {       
+    {   
+        //when it's harvested, detach all children
         if (!critter.isVisible && !harvested)
         {
             critter.Health = 5;
@@ -45,7 +46,7 @@ public class TreeController : MonoBehaviour {
             transform.DetachChildren();
             harvested = true;
         }
-
+        //when it's harvestable again, create new children
         else if (critter.isVisible && transform.childCount <= 0)
         {
             for (int i = 0; i < applePos.Count; i++)

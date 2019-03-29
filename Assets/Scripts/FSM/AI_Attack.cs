@@ -69,7 +69,7 @@ public class AI_Attack : State<AI>
         }
         //start playing the animation
         _owner.animator.Play("Attack");
-        _owner.seek.Target.GetComponent<Critter>().Health -= _owner.critter.critterTraitsDict[Trait.AttackPoints]/100;                
+        _owner.seek.Target.GetComponent<Critter>().Health -= _owner.critter.critterTraitsDict[Trait.AttackPoints]/100;      //deal damage           
     }
 
 }

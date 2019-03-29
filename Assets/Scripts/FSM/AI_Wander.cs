@@ -39,7 +39,7 @@ public class AI_Wander : State<AI>
     {
         Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
-        _owner.agent.ResetPath();
+        if (_owner.agent.isActiveAndEnabled) _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
         
     }
@@ -65,7 +65,7 @@ public class AI_Wander : State<AI>
     void Wander(AI _owner)
     {
         targetPos = RandomNavSphere(_owner.transform.position, 20f, _owner.agent.areaMask);
-        _owner.agent.SetDestination(targetPos);
+        if (_owner.agent.isActiveAndEnabled) _owner.agent.SetDestination(targetPos);
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)

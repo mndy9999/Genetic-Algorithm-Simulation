@@ -61,9 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GenderShade.cs" />
     <Compile Include="Assets\HolyShift\Scripts\CheckForStandardAssets.cs" />
-    <Compile Include="Assets\InitialPopulationGenerator.cs" />
     <Compile Include="Assets\Low Poly Fruits\resources\fruits_tester.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
@@ -114,32 +112,36 @@
     <Compile Include="Assets\Scripts\FSM\Social Rank\AI_Fight.cs" />
     <Compile Include="Assets\Scripts\FSM\Social Rank\AI_Threat.cs" />
     <Compile Include="Assets\Scripts\FSM\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\My.cs" />
+    <Compile Include="Assets\Scripts\GenderShade.cs" />
+    <Compile Include="Assets\Scripts\InitialPopulationGenerator.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\SocialRankManager.cs" />
     <Compile Include="Assets\Scripts\TestingInfoController.cs" />
+    <Compile Include="Assets\Scripts\TimerController.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\AbsoluteTime.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\ButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\CrittersUIController.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\InventoryButtonsController.cs" />
     <Compile Include="Assets\Scripts\UI Controllers\SpawnCreature.cs" />
-    <Compile Include="Assets\TimerController.cs" />
+    <None Include="Assets\Resources\ff.txt" />
     <None Include="Assets\HolyShift\readme.txt" />
     <None Include="Assets\HolyShift\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\Resources\20-20\aa.txt" />
+    <None Include="Assets\Resources\11.txt" />
     <None Include="Assets\Cartoon_Farm_Crops\README.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\HolyShift\Shaders\FXWaterLowpoly.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/16025091.UNI.001/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/16025091.UNI.001/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/16025091.UNI.001/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/16025091.UNI.001/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/Desktop/Dissertation-GA-Simulation/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -340,10 +342,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/16025091.UNI.001/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/16025091.UNI.001/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Kim Jong-Un/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

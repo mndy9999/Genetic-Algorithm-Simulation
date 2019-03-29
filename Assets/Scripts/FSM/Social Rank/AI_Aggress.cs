@@ -48,7 +48,7 @@ public class AI_Aggress : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        Vector3 direction = _owner.seek.Opponent.transform.position - _owner.transform.position;
+        Vector3 direction = _owner.seek.LastKnownOpponent.transform.position - _owner.transform.position;
         _owner.transform.Rotate(direction);
         _owner.StartCoroutine(WaitForAnimation(_owner));
     }

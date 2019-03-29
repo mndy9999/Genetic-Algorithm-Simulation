@@ -17,10 +17,15 @@ public class TestingInfoController : MonoBehaviour {
 
     public TimerController time;
     int currentTime;
-    int temp = -10;
+    int temp;
+    int genTemp;
 
     // Use this for initialization
     void Start () {
+
+        temp = -10;
+        genTemp = -60;
+
         Debug.unityLogger.logEnabled = false;
         behavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
         herbivoreBehavioursCount = new int[Behaviours.allPossibleBehaviours.Count];
@@ -28,6 +33,10 @@ public class TestingInfoController : MonoBehaviour {
 
 
         StreamWriter file = new StreamWriter(@"Assets\Resources\Fitness.xls", false);
+        file.Write("Generation" + "\t" + "Herbivores" + "\t" + "Carnivores" + "\n");
+        file.Close();
+
+        file = new StreamWriter(@"Assets\Resources\Behaviours.xls", false);
         file.Write("Generation" + "\t" + "Herbivores" + "\t" + "Carnivores" + "\n");
         file.Close();
 
@@ -42,14 +51,18 @@ public class TestingInfoController : MonoBehaviour {
         GetBehavioursAverage();
         GetFitnessAverage();
 
-        if ((int)time.timer == 1 || (int)time.timer == 60 || (int)time.timer == 180 || (int)time.timer == 300)
-            OutputResultsAtTimes();
-
-
         currentTime = (int)time.timer;
+
         if (currentTime >= temp + 10)
         {
             OutputResultsEveryFrame();
+            temp = currentTime;
+            
+        }
+        if (currentTime >= genTemp + 60)
+        {
+            OutputResultsAtTimes();
+            genTemp = currentTime;
         }
     }
 
@@ -106,54 +119,27 @@ public class TestingInfoController : MonoBehaviour {
 
     void OutputResultsEveryFrame()
     {
+        temp = currentTime;
+
         StreamWriter file = new StreamWriter(@"Assets\Resources\Fitness.xls", true);
         file.WriteLine(currentTime/10 + "\t" + herbivoreFitness + "\t" + carnivoreFitness + "\t" + Critter.crittersDict["Herbivore"][0].FitnessScore + "\t" + Critter.crittersDict["Carnivore"][0].FitnessScore);       
         file.Close();
 
         file = new StreamWriter(@"Assets\Resources\Numbers.xls", true);
         file.WriteLine(currentTime/10 + "\t" + Critter.crittersDict["Herbivore"].Count + "\t" + Critter.crittersDict["Carnivore"].Count);
-        file.Close();
-
-        file = new StreamWriter(@"Assets\Resources\Numbers.xls", true);
-        file.WriteLine(currentTime / 10 + "\t" + Critter.crittersDict["Herbivore"].Count + "\t" + Critter.crittersDict["Carnivore"].Count);
-        file.Close();
-
-        temp = currentTime;
+        file.Close();        
     }
 
     void OutputResultsAtTimes()
-    {
-        StreamWriter file = new StreamWriter(@"Assets\Resources\Results"+(int)time.timer+".xls", false);
+    {        
+        StreamWriter file = new StreamWriter(@"Assets\Resources\Behaviours.xls", true);
 
-
-        file.WriteLine("Total herbivores: " + "\t" + Critter.crittersDict["Herbivore"].Count);
         for (int i = 0; i < Behaviours.allPossibleBehaviours.Count; i++)
         {
-            file.WriteLine(Behaviours.allPossibleBehaviours[i].ToString() + "\t" + herbivoreBehavioursCount[i]);
+            file.WriteLine(Behaviours.allPossibleBehaviours[i].ToString() + "\t" + herbivoreBehavioursCount[i] + "\t" + carnivoreBehavioursCount[i]);
         }
-
-
-        file.WriteLine("\n\n");
-
-
-        file.WriteLine("Total carnivores: " + "\t" + Critter.crittersDict["Carnivore"].Count);
-        for (int i = 0; i < Behaviours.allPossibleBehaviours.Count; i++)
-        {
-            file.WriteLine(Behaviours.allPossibleBehaviours[i].ToString() + "\t" + carnivoreBehavioursCount[i]);
-        }
-
-
-        file.WriteLine("\n\n");
-
-        int totalCreatures = Critter.crittersDict["Herbivore"].Count + Critter.crittersDict["Carnivore"].Count;
-        file.WriteLine("Total creatures: " + "\t" + totalCreatures);
-        for (int i = 0; i < Behaviours.allPossibleBehaviours.Count; i++)
-        {
-            file.WriteLine(Behaviours.allPossibleBehaviours[i].ToString() + "\t" + behavioursCount[i]);
-        }
-
-
-        file.Close();
+        file.WriteLine("Generation" + currentTime/10 + "\n\n");
+        file.Close();       
     }
 
 }

@@ -22,6 +22,8 @@ public class HerbivoreController : MonoBehaviour {
     private void PopulateAvailableBehaviours()
     {
         critter.availableBehaviours = new List<FiniteStateMachine.State<AI>>();
+
+        //basic behaviours
         for (int i = 0; i < Behaviours.behaviours.Count; i++)
         {
             if (Random.Range(0, 10) < 9)
@@ -32,6 +34,23 @@ public class HerbivoreController : MonoBehaviour {
             if (Random.Range(0, 10) < 9)
                 critter.availableBehaviours.Add(Behaviours.EnemyEncounterBehaviours[i]);
         }
+        for (int i = 0; i < Behaviours.ChallengerEncounterBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                critter.availableBehaviours.Add(Behaviours.ChallengerEncounterBehaviours[i]);
+        }
+        for (int i = 0; i < Behaviours.LowEnergyBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                critter.availableBehaviours.Add(Behaviours.LowEnergyBehaviours[i]);
+        }
+        for (int i = 0; i < Behaviours.FoodSourceBehaviours.Count; i++)
+        {
+            if (Random.Range(0, 10) < 9)
+                critter.availableBehaviours.Add(Behaviours.FoodSourceBehaviours[i]);
+        }
+
+        //interactional behaviours
         for (int i = 0; i < Behaviours.MateEncounterBehaviours.Count; i++)
         {
             if (Random.Range(0, 10) < 5)
@@ -42,15 +61,6 @@ public class HerbivoreController : MonoBehaviour {
             if (Random.Range(0, 10) < 5)
                 critter.availableBehaviours.Add(Behaviours.SocialRankBehaviours[i]);
         }
-        for (int i = 0; i < Behaviours.ChallengerEncounterBehaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                critter.availableBehaviours.Add(Behaviours.ChallengerEncounterBehaviours[i]);
-        }
-        for (int i = 0; i < Behaviours.FoodSourceBehaviours.Count; i++)
-        {
-            if (Random.Range(0, 10) < 9)
-                critter.availableBehaviours.Add(Behaviours.FoodSourceBehaviours[i]);
-        }
+
     }
 }
