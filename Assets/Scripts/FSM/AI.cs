@@ -136,7 +136,7 @@ public class AI : MonoBehaviour {
 
     public bool IsCloseEnough()
     {
-        return Vector3.Distance(transform.position, seek.Target.transform.position) <= agent.stoppingDistance;
+        return Vector3.Distance(transform.position, seek.Target.transform.position) <= 3.0f;
     }
 
     public bool IsDead()

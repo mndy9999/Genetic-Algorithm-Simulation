@@ -148,7 +148,7 @@ public class Seek : MonoBehaviour {
             if (target2.transform.root.GetComponent<Critter>())
             {
                 //if the game object is visibile and is in the field of view OR is close to the critter
-                if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 3.0f) 
+                if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 5.0f) 
                     && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
                 {
                     visibleTargets.Add(target2.transform.root.gameObject);      //add it to the visible targets
