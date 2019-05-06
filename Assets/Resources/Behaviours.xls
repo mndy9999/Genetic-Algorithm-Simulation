@@ -1,85 +1,29 @@
 Generation	Herbivores	Carnivores
-AI_Idle	17	20
-AI_Wander	19	17
-AI_Chase	17	17
-AI_Attack	19	18
-AI_Eat	19	18
-AI_Swim	18	0
-AI_Breed	16	18
-AI_Getup	18	18
-AI_Laydown	17	19
-AI_Dead	17	19
-AI_Threat	10	10
-AI_Aggress	14	11
-AI_Fight	10	11
-AI_Sleep	16	18
-AI_Rest	16	18
-AI_Knock	19	0
-AI_Dig	19	0
-AI_Alarm	19	0
-AI_PlayDead	18	0
-AI_Startle	16	0
-AI_Flee	20	20
-AI_CallMate	11	10
-AI_Impress	12	11
-AI_Watch	20	17
-AI_Submit	11	18
-Generation0
-
-
-AI_Idle	18	22
-AI_Wander	20	18
-AI_Chase	18	20
-AI_Attack	20	19
-AI_Eat	20	21
-AI_Swim	19	1
-AI_Breed	16	20
-AI_Getup	19	21
+AI_Idle	19	19
+AI_Wander	18	14
+AI_Chase	20	19
+AI_Attack	20	14
+AI_Eat	18	19
+AI_Swim	20	0
+AI_Breed	18	19
+AI_Getup	16	17
 AI_Laydown	18	19
-AI_Dead	18	21
-AI_Threat	11	11
-AI_Aggress	15	12
-AI_Fight	9	13
-AI_Sleep	16	21
-AI_Rest	17	21
-AI_Knock	20	0
-AI_Dig	20	0
-AI_Alarm	20	0
+AI_Dead	16	18
+AI_Threat	13	5
+AI_Aggress	9	8
+AI_Fight	11	14
+AI_Sleep	18	20
+AI_Rest	18	19
+AI_Knock	18	0
+AI_Dig	17	0
+AI_Alarm	19	0
 AI_PlayDead	19	0
-AI_Startle	16	1
-AI_Flee	21	23
-AI_CallMate	11	11
-AI_Impress	11	14
-AI_Watch	21	20
-AI_Submit	12	21
-Generation6
-
-
-AI_Idle	10	32
-AI_Wander	10	21
-AI_Chase	10	31
-AI_Attack	10	26
-AI_Eat	10	31
-AI_Swim	8	4
-AI_Breed	7	30
-AI_Getup	7	30
-AI_Laydown	6	29
-AI_Dead	8	28
-AI_Threat	6	15
-AI_Aggress	6	23
-AI_Fight	6	24
-AI_Sleep	8	32
-AI_Rest	8	31
-AI_Knock	10	2
-AI_Dig	9	2
-AI_Alarm	10	1
-AI_PlayDead	7	1
-AI_Startle	10	4
-AI_Flee	9	29
-AI_CallMate	5	12
-AI_Impress	5	24
-AI_Watch	10	28
-AI_Submit	10	32
-Generation12
+AI_Startle	18	0
+AI_Flee	14	20
+AI_CallMate	16	10
+AI_Impress	12	11
+AI_Watch	17	19
+AI_Submit	20	15
+Generation0
 
 
