@@ -1,29 +1,169 @@
 Generation	Herbivores	Carnivores
-AI_Idle	19	19
-AI_Wander	18	14
-AI_Chase	20	19
-AI_Attack	20	14
-AI_Eat	18	19
-AI_Swim	20	0
+AI_Idle	20	19
+AI_Wander	16	15
+AI_Chase	18	20
+AI_Attack	18	15
+AI_Eat	16	17
+AI_Swim	17	0
 AI_Breed	18	19
-AI_Getup	16	17
-AI_Laydown	18	19
-AI_Dead	16	18
-AI_Threat	13	5
-AI_Aggress	9	8
-AI_Fight	11	14
-AI_Sleep	18	20
-AI_Rest	18	19
-AI_Knock	18	0
-AI_Dig	17	0
-AI_Alarm	19	0
-AI_PlayDead	19	0
-AI_Startle	18	0
-AI_Flee	14	20
-AI_CallMate	16	10
-AI_Impress	12	11
-AI_Watch	17	19
-AI_Submit	20	15
+AI_Getup	19	13
+AI_Laydown	18	18
+AI_Dead	19	20
+AI_Threat	10	4
+AI_Aggress	11	8
+AI_Fight	12	9
+AI_Sleep	17	19
+AI_Rest	17	15
+AI_Knock	16	0
+AI_Dig	19	0
+AI_Alarm	18	0
+AI_PlayDead	16	0
+AI_Startle	20	0
+AI_Flee	17	20
+AI_CallMate	9	12
+AI_Impress	10	14
+AI_Watch	19	19
+AI_Submit	19	17
 Generation0
+
+
+AI_Idle	27	25
+AI_Wander	19	19
+AI_Chase	27	26
+AI_Attack	25	19
+AI_Eat	19	24
+AI_Swim	25	1
+AI_Breed	22	26
+AI_Getup	27	16
+AI_Laydown	24	24
+AI_Dead	25	26
+AI_Threat	10	6
+AI_Aggress	15	11
+AI_Fight	19	13
+AI_Sleep	20	26
+AI_Rest	23	18
+AI_Knock	22	0
+AI_Dig	26	1
+AI_Alarm	24	3
+AI_PlayDead	20	0
+AI_Startle	28	1
+AI_Flee	25	26
+AI_CallMate	15	18
+AI_Impress	12	18
+AI_Watch	24	26
+AI_Submit	26	22
+Generation6
+
+
+AI_Idle	29	43
+AI_Wander	20	34
+AI_Chase	30	50
+AI_Attack	25	31
+AI_Eat	16	49
+AI_Swim	22	4
+AI_Breed	22	49
+AI_Getup	29	30
+AI_Laydown	25	46
+AI_Dead	25	41
+AI_Threat	10	9
+AI_Aggress	19	27
+AI_Fight	23	28
+AI_Sleep	19	46
+AI_Rest	26	25
+AI_Knock	24	1
+AI_Dig	29	3
+AI_Alarm	25	15
+AI_PlayDead	21	1
+AI_Startle	30	5
+AI_Flee	29	51
+AI_CallMate	23	40
+AI_Impress	13	38
+AI_Watch	24	47
+AI_Submit	26	45
+Generation12
+
+
+AI_Idle	32	63
+AI_Wander	24	46
+AI_Chase	31	79
+AI_Attack	29	51
+AI_Eat	15	79
+AI_Swim	18	7
+AI_Breed	23	78
+AI_Getup	30	51
+AI_Laydown	27	77
+AI_Dead	28	61
+AI_Threat	17	15
+AI_Aggress	24	50
+AI_Fight	26	52
+AI_Sleep	20	70
+AI_Rest	29	30
+AI_Knock	24	5
+AI_Dig	32	10
+AI_Alarm	26	36
+AI_PlayDead	27	3
+AI_Startle	29	18
+AI_Flee	26	79
+AI_CallMate	28	70
+AI_Impress	12	67
+AI_Watch	23	67
+AI_Submit	24	76
+Generation18
+
+
+AI_Idle	25	94
+AI_Wander	19	57
+AI_Chase	24	116
+AI_Attack	22	79
+AI_Eat	11	117
+AI_Swim	10	13
+AI_Breed	18	114
+AI_Getup	23	84
+AI_Laydown	24	110
+AI_Dead	20	82
+AI_Threat	11	33
+AI_Aggress	20	75
+AI_Fight	19	92
+AI_Sleep	18	104
+AI_Rest	20	32
+AI_Knock	15	9
+AI_Dig	26	17
+AI_Alarm	14	64
+AI_PlayDead	16	4
+AI_Startle	25	29
+AI_Flee	22	112
+AI_CallMate	18	103
+AI_Impress	10	101
+AI_Watch	16	92
+AI_Submit	14	114
+Generation24
+
+
+AI_Idle	14	154
+AI_Wander	12	104
+AI_Chase	13	206
+AI_Attack	9	148
+AI_Eat	8	205
+AI_Swim	3	44
+AI_Breed	12	203
+AI_Getup	15	166
+AI_Laydown	13	176
+AI_Dead	10	132
+AI_Threat	5	76
+AI_Aggress	11	113
+AI_Fight	12	168
+AI_Sleep	12	169
+AI_Rest	8	43
+AI_Knock	8	28
+AI_Dig	15	44
+AI_Alarm	5	121
+AI_PlayDead	6	22
+AI_Startle	15	58
+AI_Flee	14	181
+AI_CallMate	7	184
+AI_Impress	5	183
+AI_Watch	13	142
+AI_Submit	6	196
+Generation30
 
 
