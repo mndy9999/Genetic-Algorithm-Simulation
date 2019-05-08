@@ -38,14 +38,14 @@ public class AI_Dead : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Dead State");
+        //Debug.Log("Entering Dead State");
         _owner.animator.Play("Dead");    //start playing animation when entering state
         _owner.critter.IsAlive = false;
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Dead State");
+        //Debug.Log("Exiting Dead State");
     }
 
     public override void UpdateState(AI _owner)

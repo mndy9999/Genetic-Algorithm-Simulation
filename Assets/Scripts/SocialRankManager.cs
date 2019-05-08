@@ -18,10 +18,10 @@ public class SocialRankManager : MonoBehaviour {
     {
         foreach (string critterType in Critter.crittersDict.Keys)
         {
-            Debug.Log(critterType);
+            //Debug.Log(critterType);
             foreach (Critter c in Critter.crittersDict[critterType])
             {
-                Debug.Log(c.name + "   " + c.FitnessScore);
+                //Debug.Log(c.name + "   " + c.FitnessScore);
             }
         }
     }

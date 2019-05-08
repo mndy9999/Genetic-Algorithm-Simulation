@@ -31,7 +31,7 @@ public class AI_Breed : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Breed State");
+        //Debug.Log("Entering Breed State");
         _owner.animator.Play("Jump");      //play animation when entering state
         breeding = _owner.GetComponent<BreedingController>();
         if (breeding)
@@ -46,7 +46,7 @@ public class AI_Breed : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Breed State");
+        //Debug.Log("Exiting Breed State");
         
         _owner.seek.Mate = null;
         _owner.StopAllCoroutines();

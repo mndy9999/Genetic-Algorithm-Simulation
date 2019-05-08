@@ -35,7 +35,7 @@ public class AI_Idle : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Idle State");
+        //Debug.Log("Entering Idle State");
         _owner.animator.Play("Idle");       //start playing animation when entering state
         _owner.seconds = 0;
     }
@@ -43,7 +43,7 @@ public class AI_Idle : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Idle State");
+        //Debug.Log("Exiting Idle State");
     }
 
     public override void UpdateState(AI _owner)

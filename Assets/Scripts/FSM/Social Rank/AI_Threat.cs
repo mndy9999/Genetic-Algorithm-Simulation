@@ -35,7 +35,7 @@ public class AI_Threat : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Threat State");
+        //Debug.Log("Entering Threat State");
         _owner.animator.Play("ShowOff");      //play animation when entering state   
 
         CalculateRankPoints(_owner);
@@ -48,7 +48,7 @@ public class AI_Threat : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Threat State");
+        //Debug.Log("Exiting Threat State");
         _owner.StopAllCoroutines();
     }
 

@@ -28,14 +28,14 @@ public class AI_Impress : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Impress State");
+        //Debug.Log("Entering Impress State");
         _owner.animator.Play("ShowOff");      //play animation when entering state
         _owner.seek.Target.GetComponent<Critter>().isCourted = true;
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Impress State");
+        //Debug.Log("Exiting Impress State");
         _owner.seek.LastKnownPotentialMate.GetComponent<Critter>().isCourted = false;
         _owner.critter.ResetBreed();
         _owner.StopAllCoroutines();

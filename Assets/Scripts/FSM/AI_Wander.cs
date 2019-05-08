@@ -37,7 +37,7 @@ public class AI_Wander : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Wander State");
+        //Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
         if (_owner.agent.isActiveAndEnabled) _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
@@ -46,7 +46,7 @@ public class AI_Wander : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Wander State");
+        //Debug.Log("Exiting Wander State");
         _owner.agent.ResetPath();
     }
 

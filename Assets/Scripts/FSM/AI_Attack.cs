@@ -29,13 +29,13 @@ public class AI_Attack : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Attack State");        
+        //Debug.Log("Entering Attack State");        
         if(_owner.seek.Target) _owner.seek.Target.GetComponent<Critter>().IsAttacked = true;
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Attack State");
+        //Debug.Log("Exiting Attack State");
         if (_owner.seek.LastKnownTarget)
         {
             _owner.seek.LastKnownTarget.GetComponent<Critter>().IsAlarmed = false;

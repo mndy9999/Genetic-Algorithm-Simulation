@@ -34,13 +34,13 @@ public class AI_Suicide : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Suicide State");
+        //Debug.Log("Entering Suicide State");
         _owner.seek.Target = _owner.seek.Enemy;
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Suicide State");
+        //Debug.Log("Exiting Suicide State");
     }
 
     public override void UpdateState(AI _owner)

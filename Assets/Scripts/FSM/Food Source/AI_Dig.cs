@@ -28,12 +28,12 @@ public class AI_Dig : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Dig State");
+        //Debug.Log("Entering Dig State");
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Dig State");
+        //Debug.Log("Exiting Dig State");
     }
 
     public override void UpdateState(AI _owner)

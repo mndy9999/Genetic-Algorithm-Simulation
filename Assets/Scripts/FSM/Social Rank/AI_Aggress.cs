@@ -28,7 +28,7 @@ public class AI_Aggress : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Aggress State");
+        //Debug.Log("Entering Aggress State");
         _owner.animator.Play("Bee");      //play animation when entering state   
 
         CalculateRankPoints(_owner);
@@ -42,7 +42,7 @@ public class AI_Aggress : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Aggress State");
+        //Debug.Log("Exiting Aggress State");
         _owner.StopAllCoroutines();
     }
 

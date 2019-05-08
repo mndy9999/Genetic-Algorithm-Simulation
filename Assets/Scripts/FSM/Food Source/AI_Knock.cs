@@ -28,12 +28,12 @@ public class AI_Knock : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Knock State");
+        //Debug.Log("Entering Knock State");
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Knock State");
+        //Debug.Log("Exiting Knock State");
     }
 
     public override void UpdateState(AI _owner)

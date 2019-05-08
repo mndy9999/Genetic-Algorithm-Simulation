@@ -20,13 +20,13 @@ public class BreedingController : MonoBehaviour {
         Vector3 localPos = Random.insideUnitSphere * 5.0f;
         localPos.y = 0.0f;
         Vector3 pos = localPos + transform.position;
-        NavMeshHit navHit;
-        while (!NavMesh.SamplePosition(pos, out navHit, 0.1f, 1))   //make sure the position is on the navmesh to avoid spawning the offspring off map
-        {
-            localPos = Random.insideUnitSphere * 5.0f;
-            localPos.y = 0.0f;
-            pos = localPos + transform.position;
-        }
+        //NavMeshHit navHit;
+        //while (!NavMesh.SamplePosition(pos, out navHit, 0.1f, 1))   //make sure the position is on the navmesh to avoid spawning the offspring off map
+        //{
+        //    localPos = Random.insideUnitSphere * 5.0f;
+        //    localPos.y = 0.0f;
+        //    pos = localPos + transform.position;
+        //}
 
         //randomly generate and spawn the corresponding prefab - gender is set on prefab by default (0 for male, 1 for female)
         int rand = Random.Range(0, 2);

@@ -36,13 +36,13 @@ public class AI_Getup : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Getup State");
+        //Debug.Log("Entering Getup State");
         _owner.animator.Play("Getup");      //play animation when entering state        
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Getup State");
+        //Debug.Log("Exiting Getup State");
     }
 
     public override void UpdateState(AI _owner)

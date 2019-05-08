@@ -34,13 +34,13 @@ public class AI_Rest : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Rest State");
+        //Debug.Log("Entering Rest State");
         _owner.animator.Play("Sleep");      //play animation when entering state        
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Rest State");
+        //Debug.Log("Exiting Rest State");
         _owner.StopAllCoroutines();
     }
 

@@ -28,14 +28,14 @@ public class AI_Flee : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Flee State");
+        //Debug.Log("Entering Flee State");
         _owner.animator.Play("Run");      //play animation when entering state       
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.RunSpeed];
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Flee State");       
+        //Debug.Log("Exiting Flee State");       
         _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
         _owner.seek.enemyType = _owner.seek.defaultEnemyType;

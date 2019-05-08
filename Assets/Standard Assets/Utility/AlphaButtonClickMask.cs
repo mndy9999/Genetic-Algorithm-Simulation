@@ -21,7 +21,7 @@ public class AlphaButtonClickMask : MonoBehaviour, ICanvasRaycastFilter
             }
             catch (UnityException e)
             {
-                Debug.LogError(e.Message);
+                //Debug.LogError(e.Message);
                 isInvalid = true;
             }
         }
@@ -32,7 +32,7 @@ public class AlphaButtonClickMask : MonoBehaviour, ICanvasRaycastFilter
 
         if (isInvalid)
         {
-            Debug.LogError("This script need an Image with a readbale Texture2D to work.");
+            //Debug.LogError("This script need an Image with a readbale Texture2D to work.");
         }
     }
 
