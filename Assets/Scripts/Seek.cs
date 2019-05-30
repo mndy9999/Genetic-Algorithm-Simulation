@@ -62,7 +62,7 @@ public class Seek : MonoBehaviour {
         viewAngle = critter.viewAngle;
 
         //look for all the colliders in the field of view
-        FindVisibleTargets();
+        //FindVisibleTargets();
 
         //find specific targets that are in the field of view
         food = GetFood();
@@ -95,19 +95,21 @@ public class Seek : MonoBehaviour {
         if (courter) { lastKnownCourter = mate; }
         if (opponent) { lastKnownOpponent = opponent; }
 
+        StartCoroutine("FindTargetsWithDelay", .2f);
+
     }
     private void Update()
     {
         viewAngle = critter.viewAngle; //update view angle from the critter component
 
         //look for all the colliders in the field of view
-        FindVisibleTargets();
+        //FindVisibleTargets();
 
         //find specific targets that are in the field of view
-        food = GetFood();
-        enemy = GetEnemy();
-        potentialMate = GetPotantialMate();
-        opponent = GetOpponent();
+        //food = GetFood();
+        //enemy = GetEnemy();
+        //potentialMate = GetPotantialMate();
+        //opponent = GetOpponent();
 
         //setup the array with all the possible targets, sorted based on their importance
         potentialTargets[0] = enemy;
@@ -136,6 +138,22 @@ public class Seek : MonoBehaviour {
 
     }
 
+    IEnumerator FindTargetsWithDelay(float delay)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(delay);
+            FindVisibleTargets();
+
+            food = GetFood();
+            enemy = GetEnemy();
+            potentialMate = GetPotantialMate();
+            opponent = GetOpponent();
+
+        }
+    }
+
+
     void FindVisibleTargets()
     {
         water = null;       //reset the water each time it looks for new targets
@@ -148,7 +166,7 @@ public class Seek : MonoBehaviour {
             if (target2.transform.root.GetComponent<Critter>())
             {
                 //if the game object is visibile and is in the field of view OR is close to the critter
-                if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 3.0f) 
+                if ((Vector3.Angle(transform.forward, direction) < viewAngle / 2 || Vector3.Distance(transform.position, target2.transform.position) < 5.0f) 
                     && target2.transform.root.gameObject.GetComponent<Critter>().isVisible)
                 {
                     visibleTargets.Add(target2.transform.root.gameObject);      //add it to the visible targets
@@ -198,7 +216,7 @@ public class Seek : MonoBehaviour {
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
             //find the closest critter from the same specied, different gender and can breed
-            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed)
+            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender != visibleTargets[i].GetComponent<Critter>().gender && critter.canBreed && visibleTargets[i].GetComponent<Critter>().canBreed && visibleTargets[i].GetComponent<Critter>().IsAlive)
             {
                 dist = d;
                 temp = visibleTargets[i];
@@ -214,7 +232,7 @@ public class Seek : MonoBehaviour {
         {
             float d = Vector3.Distance(transform.position, visibleTargets[i].transform.position);
             //find the closest critter of the same species, same gender and can be challenged
-            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender == visibleTargets[i].GetComponent<Critter>().gender && critter.canChallenge && visibleTargets[i].GetComponent<Critter>().canChallenge && critter.gameObject != visibleTargets[i].gameObject && !visibleTargets[i].GetComponent<Critter>().IsAlarmed && !critter.IsAlarmed)
+            if (d < dist && critter.critterType == visibleTargets[i].GetComponent<Critter>().critterType && critter.gender == visibleTargets[i].GetComponent<Critter>().gender && critter.canChallenge && visibleTargets[i].GetComponent<Critter>().canChallenge && critter.gameObject != visibleTargets[i].gameObject && !visibleTargets[i].GetComponent<Critter>().IsAlarmed && !critter.IsAlarmed && visibleTargets[i].GetComponent<Critter>().IsAlive)
             {
                 dist = d;
                 temp = visibleTargets[i];

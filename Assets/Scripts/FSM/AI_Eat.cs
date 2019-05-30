@@ -39,13 +39,13 @@ public class AI_Eat : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Eat State");
+        //Debug.Log("Entering Eat State");
         _owner.animator.Play("Eat");    //start playing animation when entering state
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Eat State");
+        //Debug.Log("Exiting Eat State");
     }
 
     public override void UpdateState(AI _owner)

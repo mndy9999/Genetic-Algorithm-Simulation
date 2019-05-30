@@ -35,13 +35,13 @@ public class AI_Look : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Look State");
+        //Debug.Log("Entering Look State");
         _owner.animator.Play("Dig");      //play animation when entering state
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Look State");
+        //Debug.Log("Exiting Look State");
     }
 
     public override void UpdateState(AI _owner)

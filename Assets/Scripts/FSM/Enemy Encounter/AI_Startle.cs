@@ -28,7 +28,7 @@ public class AI_Startle : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Starle State");
+        //Debug.Log("Entering Starle State");
         _owner.animator.Play("ShowOff");      //play animation when entering state
         if (Random.Range(0, 10) < GetWeight(_owner))
         {
@@ -42,7 +42,7 @@ public class AI_Startle : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Starlte State");
+        //Debug.Log("Exiting Starlte State");
         _owner.StopAllCoroutines();
         _owner.critter.IsAlarmed = false;
     }

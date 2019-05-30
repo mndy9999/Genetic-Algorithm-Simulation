@@ -28,13 +28,13 @@ public class AI_Submit : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Submit State");
+        //Debug.Log("Entering Submit State");
         _owner.animator.Play("Dig");      //play animation when entering state
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Submit State");
+        //Debug.Log("Exiting Submit State");
         _owner.StopAllCoroutines();
     }
 

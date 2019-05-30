@@ -30,14 +30,14 @@ public class AI_CallMate : State<AI>
     public override void EnterState(AI _owner)
     {
         
-        Debug.Log("Entering Call Mate State");
+        //Debug.Log("Entering Call Mate State");
         _owner.animator.Play("Bee");      //play animation when entering state
         _owner.seek.Target.GetComponent<Critter>().isCourted = true;
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Call Mate State");
+        //Debug.Log("Exiting Call Mate State");
         _owner.seek.LastKnownPotentialMate.GetComponent<Critter>().isCourted = false;
         _owner.critter.ResetBreed();
         _owner.StopAllCoroutines();

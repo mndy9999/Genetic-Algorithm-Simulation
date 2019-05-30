@@ -36,7 +36,7 @@ public class AI_Chase : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Chase State");
+        //Debug.Log("Entering Chase State");
         _owner.animator.Play("Run");      //play animation when entering state
         _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.RunSpeed];
@@ -52,7 +52,7 @@ public class AI_Chase : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Chase State");
+        //Debug.Log("Exiting Chase State");
         _owner.agent.velocity = Vector3.zero;
         if (_owner.agent.isActiveAndEnabled) _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];

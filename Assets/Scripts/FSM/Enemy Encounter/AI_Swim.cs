@@ -38,14 +38,14 @@ public class AI_Swim : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Swim State");
+        //Debug.Log("Entering Swim State");
         _owner.animator.Play("Run");      //play animation when entering state
         _owner.agent.SetDestination(_owner.seek.water.GetComponent<Collider>().bounds.center);
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Swim State");
+        //Debug.Log("Exiting Swim State");
     }
 
     public override void UpdateState(AI _owner)

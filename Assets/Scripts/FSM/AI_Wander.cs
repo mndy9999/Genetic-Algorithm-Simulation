@@ -37,7 +37,7 @@ public class AI_Wander : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Wander State");
+        //Debug.Log("Entering Wander State");
         _owner.animator.Play("Wander");  //start playing the animation when entering state
         if (_owner.agent.isActiveAndEnabled) _owner.agent.ResetPath();
         _owner.agent.speed = _owner.critter.critterTraitsDict[Trait.WalkSpeed];
@@ -46,7 +46,7 @@ public class AI_Wander : State<AI>
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Wander State");
+        //Debug.Log("Exiting Wander State");
         _owner.agent.ResetPath();
     }
 
@@ -56,25 +56,32 @@ public class AI_Wander : State<AI>
         if (_owner.IsDead() && _owner.critter.availableBehaviours.Contains(AI_Dead.instance)) { _owner.stateMachine.ChangeState(AI_Dead.instance); }
         if (_owner.IsAttacked() && _owner.critter.availableBehaviours.Contains(AI_Attack.instance)) { _owner.stateMachine.ChangeState(AI_Attack.instance); }
         if (_owner.CanSeeTarget() && _owner.critter.availableBehaviours.Contains(AI_Chase.instance)) { _owner.stateMachine.ChangeState(AI_Chase.instance); }
-        if (_owner.switchState || _owner.agent.remainingDistance <= _owner.agent.stoppingDistance) {
-            if (!_owner.switchState && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
-            else { Wander(_owner); }
-        }
+        if (!_owner.switchState && _owner.critter.availableBehaviours.Contains(AI_Idle.instance)) { _owner.stateMachine.ChangeState(AI_Idle.instance); }
+        if (_owner.agent.remainingDistance <= _owner.agent.stoppingDistance) { Wander(_owner); }
     }
 
     void Wander(AI _owner)
     {
-        targetPos = RandomNavSphere(_owner.transform.position, 20f, _owner.agent.areaMask);
-        if (_owner.agent.isActiveAndEnabled) _owner.agent.SetDestination(targetPos);
-    }
+        NavMeshPath path = new NavMeshPath();
 
-    public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask)
-    {
-        Vector3 randDirection = Random.insideUnitCircle.normalized * dist;
-        randDirection += origin;
-        NavMeshHit navHit;
-        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
-        return navHit.position;
+        do
+        {
+            Vector3 direction = new Vector3(Random.value, Random.value, Random.value);
+            direction *= 20f;
+
+            //randomly pick a negative value for the x or z
+            if (Random.Range(0, 2) == 0) direction.x *= -1;
+            if (Random.Range(0, 2) == 0) direction.z *= -1;
+
+            //add the random vector to the current position
+            Vector3 targetPos = _owner.transform.position + direction;
+
+            //calculate the path
+            _owner.agent.CalculatePath(targetPos, path);
+        } while (path.status != NavMeshPathStatus.PathComplete);
+
+        if (_owner.agent.isActiveAndEnabled) _owner.agent.SetPath(path);
+
     }
 
 }

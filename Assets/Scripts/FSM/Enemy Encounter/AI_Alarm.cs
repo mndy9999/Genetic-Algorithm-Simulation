@@ -29,13 +29,13 @@ public class AI_Alarm : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Alarm State");
+        //Debug.Log("Entering Alarm State");
         _owner.animator.Play("Bee");      //play animation when entering state
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Alarm State");
+        //Debug.Log("Exiting Alarm State");
         _owner.StopAllCoroutines();
     }
 

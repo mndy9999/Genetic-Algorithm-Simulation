@@ -149,9 +149,9 @@ public class Critter : MonoBehaviour
     //log the traits for testing purposes
     void DecodeTraits()
     {
-        Debug.Log(name);
-        foreach (Trait t in critterTraitsDict.Keys)
-            Debug.Log(t.ToString() + ":  " + critterTraitsDict[t]);
+        //Debug.Log(name);
+        //foreach (Trait t in critterTraitsDict.Keys)
+            //Debug.Log(t.ToString() + ":  " + critterTraitsDict[t]);
     }
 
     //set the view angle to 360 if the critter is alarmed, otherwise set it to the default value

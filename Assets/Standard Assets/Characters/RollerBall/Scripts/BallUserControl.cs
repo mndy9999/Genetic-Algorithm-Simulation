@@ -29,8 +29,8 @@ namespace UnityStandardAssets.Vehicles.Ball
             }
             else
             {
-                Debug.LogWarning(
-                    "Warning: no main camera found. Ball needs a Camera tagged \"MainCamera\", for camera-relative controls.");
+                //Debug.LogWarning(
+                   // "Warning: no main camera found. Ball needs a Camera tagged \"MainCamera\", for camera-relative controls.");
                 // we use world-relative controls in this case, which may not be what the user wants, but hey, we warned them!
             }
         }

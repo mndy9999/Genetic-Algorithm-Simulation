@@ -28,13 +28,13 @@ public class AI_Watch : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Watch State");
+        //Debug.Log("Entering Watch State");
         _owner.animator.Play("Idle");      //play animation when entering state   
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Watch State");
+        //Debug.Log("Exiting Watch State");
         _owner.StopAllCoroutines();
     }
 

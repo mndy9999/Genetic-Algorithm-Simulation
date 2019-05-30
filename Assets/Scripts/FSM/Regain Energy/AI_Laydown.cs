@@ -35,13 +35,13 @@ public class AI_Laydown : State<AI>
 
     public override void EnterState(AI _owner)
     {
-        Debug.Log("Entering Laydown State");
+        //Debug.Log("Entering Laydown State");
         _owner.animator.Play("Laydown");      //play animation when entering state        
     }
 
     public override void ExitState(AI _owner)
     {
-        Debug.Log("Exiting Laydown State");
+        //Debug.Log("Exiting Laydown State");
         _owner.StopAllCoroutines();
     }
 
